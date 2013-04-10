@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
+The top-level auxiliary file: ReplyToAuthors.aux
+The style file: genetics.bst
+Database file #1: /Users/Simon/Documents/Literature/BibDesk/Jshort_dot.bib
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+Reallocated str_pool (elt_size=1) to 195000 items from 130000.
+Database file #2: /Users/Simon/Documents/Literature/BibDesk/central.bib
+You've used 8 entries,
+            2739 wiz_defined-function locations,
+            10111 strings with 160714 characters,
+and the built_in function-call counts, 4113 in all, are:
+= -- 381
+> -- 210
+< -- 4
++ -- 70
+- -- 60
+* -- 454
+:= -- 700
+add.period$ -- 16
+call.type$ -- 8
+change.case$ -- 60
+chr.to.int$ -- 8
+cite$ -- 8
+duplicate$ -- 187
+empty$ -- 286
+format.name$ -- 74
+if$ -- 793
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 8
+newline$ -- 27
+num.names$ -- 32
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 52
+quote$ -- 0
+skip$ -- 98
+stack$ -- 0
+substring$ -- 270
+swap$ -- 70
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 72
+warning$ -- 0
+while$ -- 36
+width$ -- 0
+write$ -- 90

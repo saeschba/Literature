@@ -1,0 +1,295 @@
+\documentclass[11pt]{article}
+\usepackage[total={17cm, 24cm}]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[normalem]{ulem}
+\usepackage{natbib}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{color}
+\usepackage[
+	bookmarks = true,
+	bookmarksnumbered = false, 	% true means bookmarks in
+							% navigation window are numbered
+	bookmarksopen = false, 		% true means only level 1
+							% are displayed.
+	colorlinks = true,			% false for frames around links, true for color
+	linkcolor = myred,
+	citecolor = mygreen,
+	urlcolor = myblue
+	]{hyperref}
+	
+\definecolor{mygreen}{rgb}{0, 0.5, 0}	% less intense green
+\definecolor{myblue}{rgb}{0, 0, 0.75}		% less intense blue
+\definecolor{myred}{rgb}{0.75, 0, 0}		% less intense red
+\definecolor{myrev1}{rgb}{1, 0, 0}		% less intense red; after approval, simply turn into black
+\definecolor{temphidden}{rgb}{0, 0, 0}		% less intense red; to re-highlight items that finally need to be changed,
+									% but should be black temporarilly
+% \definecolor{myrev1}{rgb}{0, 0, 0}
+\definecolor{mycorr1}{rgb}{0, 0, 1}		% less intense red; after approval, simply turn into black
+
+
+
+% Define customised list environments.
+\newenvironment{my_description}
+{\begin{description}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{description}}
+
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{enumerate}}
+
+\newcommand{\ra}{$\rightarrow$\ }
+\newcommand{\C}{\textbf{C:}\ }
+\newcommand{\Q}{\textbf{Q:}\ }
+\newcommand{\R}{\textbf{R:}\ }
+
+\newcommand{\fst}{$F_{\mathrm{ST}}\ $}
+\newcommand{\qst}{$Q_{\mathrm{ST}}\ $}
+
+
+\title{Reply to Montero-Pau et al. ``Founder effects drive the genetic structure of passively dispersed aquatic invertebrates''}
+%\author{Simon Aeschbacher}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+
+\section{General issues}
+
+
+\begin{my_enumerate}
+	\item Both \emph{Introduction} and \emph{Discussion} would profit from a more concise exposure of the line(s) of arguments. There should be a better separation of causes and effects and, among these, it should become clear which are the ones the authors want to focus on mainly and which are those of minor importance (at least for this paper). For instance, after reading the first paragraph of the \emph{Introduction}, it is not clear whether the focus is on understanding details of the dispersal and colonisation process, or if it is on quantifying the consequences of particular modes of dispersal and colonisation -- or on both.
+	\item During the asexual growth phase, no genetic drift is modeled. No justificication is given for this, although it is known that changes in population size have an impact on the effective population size and, hence, on the relative importance of evolutionary forces \citep{Wright:1938uq}. Rapid population growth may weaken genetic drift after a bottleneck. Some quantitative argument should be given \cite[e.g.][]{Slatkin:1996fk}. Along these lines, it would also be worth discussing if the model studied by \citet{Slatkin:1996fk} could account for patterns similar to those found in this study -- but without the need of an asexual growth phase (i.e. with selection and drift happening on the same time scale).
+	\item The authors claim to provide an `explicit theoretical analysis', but in fact, they present a simulation study. The paper would profit from an analytical part. If this is not possible for the full model, then, at least, some analysis should be done for marginal special cases (e.g. no asexual growth phase and no egg bank). These might build a bridge to the more classical -- and better understood -- models of migration and selection in structured populations \cite[e.g.][]{Slatkin:1996fk, Nagylaki:2008uq}. If this has been done before, than references to the corresponding literature should be given.
+	\item There is potential confusion about \qst. The authors seem to compute \fst for loci under selection and then simply `call' this \qst. However, \qst is defined as the ratio of the genetic variance of a quantitative trait between populations divided by the sum of the genetic variation between and within populations \cite[][and references therein]{Whitlock:2008uq}. For neutral traits that are genetically controlled by addititve genes, the mean \qst is equal to the mean \fst of neutral genetic loci \citep{Whitlock:2008uq}. However, I suspect this is not true for traits under selection. To avoid confusion, the authors should use \fst throughout, potentially with an index to differentiate between neutral and selected loci. There is no conceptual problem with computing \fst from genes (putatively) under selection \cite[e.g.][]{Beaumont:1996zr}.
+	\item The range of migrant numbers explored for the different $K$ does not result in the same maximum proportion of immigrants replaced under the two population sizes. For instance, with $K = 2\times10^2$, $M= 5$ corresponds to a proportion $m = M/K = 0.025$, but with $K =  2\times10^7$, the proportion is five times smaller, $m = M/K = 0.005$.
+	\item I wonder if the model and parametrisation explored here is plausible. In particular, I do not think that it is realistic to assume very small founder sizes on the one hand ($F= 1\ldots50$), but migration numbers up to $10^5$ (in the case of $K = 2\times10^7$). I would assume that if there are so many migrant eggs reaching the population, it is not realistic to assume that a local population is founded by $<10$ individuals. That is, I would assume that bottlenecks that strong do not occur in species/populations with such high migration rates. If this conclusion is na\"ive, then the authors should explain why their choices are plausible.
+	\item The model explored here is a non-standard model, and the results presented depend exclusively on simulations that are performed according to code (most likely) implemented \emph{ad hoc}. There is nothing wrong with this in principle, but the authors should (i) make the source code available and (ii) report on some checks against analytical results or established code (e.g. for marginal cases that collapse with more parsimonial models).
+	\item I wonder if an ANOVA is the appropriate method to test for differences in \fst values. The ANOVA assumes that the residuals are normally distributed and have equal variances. The distribution of \fst is not known analytically, but has been shown to be close to a Chi-squared distribution for neutral loci \citep{Lewontin:1973bh, Whitlock:2009vn}. Moreover, the distribution for neutral versus selected loci, and for loci under different levels of gene flow, may differ strongly, so that assuming equal variances is hard to justify. In particular, the distribution of \fst tends to be strongly asymmetric, so that tests that do not account for this might lead to wrong conclusions. Since the main results of this paper are based on comparisons of \fst, I am worried about the impact of this choice of method.
+	\item One of the main conclusions made by the authors is that migration is less efficient in reducing genetic differentiation of populations in the case of large population sizes compared to small population sizes. However, this conclusion is based on absolute numbers of immigrants, not on \emph{proportions} of immigrants. If the latter are considered, the conclusion is actually reversed. See comment to lines 237--243 and Fig. 2 below.
+	\item Throughout the paper, it is not clear whether the authors are interested in the genetic differentiation between the two populations at equilibrium of evolutionary forces, or at a given point in time after foundation. In the former case, the range of numbers of sexual generations ($y$) explored is by far not large enough for high $K$. In the latter case, the choices of particular values of $y$ should be well justified, and more work is needed to understand the interaction of evolutionary forces at the non-equilibrium state. See also comment to lines 246--256 and Fig. 3 below.
+	\item The paragraphs on the interplay of drift, selection and recombination in the \emph{Results} contain some apparent contradictions that are not resolved. Explanations should be given and motivated. See comments to lines 306--311, line 326 or lines 387--391, for instance. Again, there is also the problem that the results are compared at a stage where populations have not reached the equilibrium of evolutionary forces. The authors focus on a comparison of the effects of local adaptation and persistent founder effect. But as long as equilibrium has not been reached, the relative strenght of these forces may change any time. Without further justification and exploration, the conclusions therefore don't seem generic.
+	\item I got the impression that the quality of writing (English, phrasing) varried across the manuscript, with certain paragraphs or sentences of suboptimal quality for publication.
+\end{my_enumerate}
+
+\section{Specific comments}
+
+\subsection{Abbreviations used}
+\begin{my_description}
+	\item[Q] Question
+	\item[C] Comment
+	\item[R] Re-formulation needed (usually followed by a suggestion)
+	\item[\ra] Suggested change/correction
+\end{my_description}
+
+
+\subsection{Abstract}
+
+\begin{my_description}
+\item[l.27] `strongest effect \ldots{} is persistent founder effects' \ra strongest effect \ldots{} is caused by persistent founder effects
+\item[l.28] `few population founders' \ra a few population founders
+\item[l.29--32] \C It is not clear what the main message of this sentence is; `role of local adaptation \dots is limited to small populations, which would result \ldots' \ra `effect on neutral differentiation of local adaptation \dots is weaker in large populations compared to small ones. This could result \ldots'
+\end{my_description}
+
+
+\subsection{Introduction}
+
+\begin{my_description}
+	\item[l.39] `on the face of' \ra in the face of
+	\item[l.42] `from a complex' \ra from a potentially complex; \C There is an inflation of the term complex.
+	\item[l.45] `, etc' \ra \sout{, etc}.
+	\item[l.48] \R `\dots{} are also needed to understand dispersion and colonization \ldots{}' \ra may act as modulators and lead to different evolutionary outcomes.
+	\item[l.49--50] `For example, \ldots{} increase their genetic viariability \ldots{}' \ra For example, \ldots{} maintain their genetic variability \ldots{}; \C For new genetic variability to arise, mutation is needed. You could mention that recombination may lead to new combinations, though.
+	\item[l.51] `resistant life stages': give an example in parentheses
+	\item[l.53] `all these' \ra these
+	\item[l.54] `, which requires' \ra , and requires
+	\item[l.65] `in their life cycle, which \ldots' \ra in their life cycle. The latter \ldots
+	\item[l.66] `forming' \ra and form; `and constitute \ldots{} \ra ; they constitute \ldots{}
+	\item[l.69] `(``high-density blocking") (Hewitt, 1993)' \ra (``high-density blocking"; Hewitt, 1993)
+	\item[l.72] `as an important force contributing to reduce effective \ldots{}' \ra , reducing effective \ldots{}
+	\item[l.73] `to maintain' \ra maintaining
+	\item[l.76] `associations arising randomly \ldots{}' \ra buildup of linkage disequilibrium between \ldots{}
+	\item[l.82] `(``isolation-by-adaptation") (Nosil et al., 2007)' \ra (``isolation-by-adaptation"; Nosil et al., 2007)
+	\item[l.79--81] \R The message of the sentence is not clear; I also struggled seeing the connection to the two examples given just after. Local adaptation is one kind of selection, but how, then, can it consist of other processes than selection? You probably mean that the genetic composition of populations that have experienced local adaptation can be co-determined by other (demographic/neutral) factors?
+	\item[l.83] `gene flow' \ra effective gene flow (?)
+	\item[l.84] `being locally adapted' \ra local adaptation
+	\item[l.93] `could not be direct' \ra may be indirecet (?)
+	\item[l.95] `importance and interactions between' \ra importance of and the interactions between
+	\item[l.97] `explicit theoretical analysis' \C By an explicit theoretical analysis I would understand an analytical analysis -- or at least to some degree. But this study is a pure simulation study. It is a matter of definition, but I would not call this `explicitly theoretical' and just write `an analysis'. See also general issue 3.
+	\item[l.98] `timely' \ra due
+	\item[l.99--100] `specially, ' \ra especially during; more sensitive to the outcome of this interplay.' \ra `more sensitive to stochastic effects.'
+	\item[l.101--105] \C This sentence is too long and should be re-formulated. \ra Here, we have modeled the colonization process of zooplanktonic organisms to clarify how migration rate, growth rate, population size, local adaptation and the existence of a propagule bank shape the population genetic structure during the first stages of colonization. \C You don't need to mention the interplay with genetic and selective processes. Local adaptation is the only selective process studied here, and it is mentioned in the sentence above.
+	\item[l.105--106] `Of primary interest \ldots{} insight into' \ra Our primary interest is to gain insight into \ldots{}.
+	\item[l.108] \C Add linkage disequilibrium in parentheses.
+\end{my_description}
+
+\subsection{Materials and Methods}
+
+\begin{my_description}
+	\item[l.113] \sout{and genetic flow}
+	\item[l.119] `consists in' \ra consists of
+	\item[l.121] `As not all eggs hatch' \ra As all eggs do not hatch
+	\item[l.122] `growing period' \ra `growth period'; `forming' \ra and form
+	\item[l.124] `consists in' \ra consists of
+	\item[l.125] `inmigrant' \ra immigrant
+	\item[l.125--130] Emigration is not explicitly modeled, and it is therefore not clear where the migrants come from (ancestral gene pool, other population, or both?). Does emigration change the size of the source population? (you say it does not for the ancestral population; but what about the other population?)
+	\item[l.131] `demographic dynamics' \ra `demography'; \sout{different}
+	\item[l.132] `growing' \ra growth
+	\item[l.134] \C It is not clear where the migrants come from in any particular case (or point in time), even after reading this sentence.
+	\item[l.140] \Q Is there always one neutral locus linked to one locus under selection? You should describe the genetic architecture in more detail.
+	\item[l.142--143] Delete `For simplicity \ldots{} growth rate.' It is misleading, given that later you specify $\delta$ with indices specific to alleles and contexts.
+	\item[l.145] \C Say earlier on that there are two locations (demes).
+	\item[l.147] `growth rate depending' \ra growth rate by $|2\delta|$ depending
+	\item[l.148] `decomposed in' \ra decomposed into; `$\theta$' \ra $\theta_{g,l}$
+	\item[l.151] \C Give the formula for $\theta_{g,l} = \sum_{j = 1}^{5}\delta_{i,j,l}$, instead of a verbal description? But this is a matter of editorial style.
+	\item[l.158--159] `as:' \ra as; add a comma after the formula;
+	\item[l.158--165] Give references to \fst and use the notation that is consistant with other articles in the journal. What you compute here for the selected loci does \emph{not} seem to be \qst, but simply \fst. See also general issue 4.
+	\item[l.168] `grows according' \ra grows deterministically according
+	\item[l.169] Add a comma after the formula
+	\item[l.170] `$N_{l,g}$' \ra $\sum_{g}N_{l,g}$ (if you mean total population size at location $l$)
+	\item[l.174] \Q Is there an explicit solution to this logistic growth model or do you numerically iterate it? The reader might appreciate a comment on this.
+	\item[l.178] \C It would be helfpul to state here already that this step is implemented in a stochastic way (now the reader waits till lines 216--217)
+	\item[l.179] \Q Can age-independent survival be justified? If yes, state it and give references.
+	\item[l.186] \Q Where do further migrants come from? (See earlier comment, too.)
+	\item[l.191] `tested' \ra varied; `would be the' \ra is
+	\item[l.193] `equivalent to' \ra in good agreement with
+	\item[l.194] \C Avoid starting a sentence with a parameter name ($r$ in this case). \Q Why did you not fully cover the range of $r$ observed in nature (up to 1.5 per day)?
+	\item[l.189--198] \C When giving ranges, you may also want to give step sizes of the grid across which you explored the parameter values.
+	\item[l.197--199] \C I missed a justification (references) for the small number of founders.	
+	\item[l.202] `age independent' \ra age-independent; 'on the sediment' \ra in the sediment (?)
+	\item[l.202--203] \Q Is $\lambda = 1$ in scenario 1?
+	\item[l.205--206] \R `estimated \ldots{} by adjusting them \ldots{}' does not make clear what is meant.
+	\item[l.208] \C You should make the source code available and refer to results from validation and verification (see general issue 7).
+	\item[l.209--210] \R The remark in parentheses in `50 replicates \ldots{} were performed.' is not clear. What do you mean?
+	\item[l.210--212] \C Drawing the alleles from a uniform distribution is a strong assumption, corresponding to the assumptions of (i) infinite size (no drift), (ii) neutrality and (iii) equal recurrent mutation rates among alleles. Assumptions (i) and (ii) are stated in lines 183--187, but (iii) is not stated explicitly. Given the importance of founder and sampling effects in this study, it seems worth stating and justifying these assumptions again here. Alternatively, you might consider simulating the ancestry of your sample from the source population by the coalescent and assign allelic types according to the equilibrium distribution justified for your mutation model of choice \cite[e.g.][]{Wakeley:2009kx}.
+	\item[l.215] 'Selection of immigrants' \Q Where from? (see previous comments)
+	\item[l.220] \C You should justify the choice of the ANOVA to test for differences in \fst. See also general issue 8.
+	\item[l.221] `conditions' \ra combinations
+	\item[l.223] \C Give a reference to SPSS Inc.
+\end{my_description}
+
+\subsection{Results}
+\begin{my_description}
+	\item[l.226] Delete the subtitle `Overview'. The paragraph essentially just says that population size is approximately equal to $K$ immediately, but it does not provide an overview of the results.
+	\item[l.228--229] `-which' \ra -- which; `the growing season length' \ra the length of the growth season; `growing rate' \ra growth rate
+	\item[l.230] `(Allan, 1976)-' \ra `(Allan, 1976) --' 
+	\item[l.231] `even for the case' \ra even in the case
+	\item[l.234--235] `Our model results show \ldots{} (i.e. population size) (Fig. 2).' \ra The effect of the number of immigrants on genetic differentiation strongly depends on $K$ (i.e. population size; Fig. 2).
+	\item[l.235] `populations Fst \ldots{}' \ra populations, \fst \ldots{}
+	\item[l.236] Add a reference to \citet{Wright:1931rr} for the decrease of \fst as a function of the strength of migration; `In the \ldots{}' \ra For the \ldots{}
+	\item[l.237--243, Fig. 2] \C Although the difference in numbers of migrants needed to observe a considerable reduction in \fst differs between $K = 2 \times 10^2$ and $K = 2 \times 10^7$ by a factor of $100$ (without egg bank)  to $1000$ (with egg bank), if you compare the \emph{proportion} of hatching eggs that are immigrants, then there is no surprise. For $K=2\times10^2$, the proporiton is $m_{\mathit{small}} = 1/(2\times10^2) = 0.005$, and for $K=2\times10^7$ it is $m_{\mathit{large}} = 100/(2\times10^7) = 5\times10^{-6}$ (without egg bank) and $m_{\mathit{large}} = 100/(2\times10^7) = 5\times 10^{-5}$ (with egg bank). So, considering immigrant \emph{proportions}, the results are inverted and one would conclude that for larger $K$, population differentiation breaks down at lower migration intensity compared to smaller $K$. From that perspective, gene flow seems more efficient in making populations homogeneous and in opposing genetic drift for large $K$, compared to small $K$. But this is expected from classical theory, isn't it?
+	\item[l.238] `at the hightest' \ra for the highest
+	\item[l.240] `high levels of migration': high relative to what?
+	\item[l.241] `striking' \ra considerable
+	\item[l.249] `intermetiade values' \ra intermediate values of $K$; `as a result of' \ra `due to'
+	\item[l.250] `As a result' \ra In other words,
+	\item[l.251] `regardless the existence or not of' \ra with and without
+	\item[l.252--253] `if no egg bank was assumed' \ra without egg bank, and maximum $F_{ST}$ is higher with diapausing egg bank.; `regarding the maximum' \ra to changes in the maximum
+	\item[l.255] `generations the peak' \ra generations, the peak
+	\item[l.246--256, Fig. 3] \Q Are you interested in the drift-migration equilibrium reached in the end or do you want to focus on a particular number of generations, independently of $K$? This is not clear. \C In the former case, the range of numbers of generations explored ($y=100\dots4000$) is not enough to reach the equilibrium in the case of large $K$. You can take the drift-only senario as a rough guide: classical theory of the realtaion between \fst and $N_e$ ($K$ in your case) suggests that, with $K=2\times10^7$, you need to simulate about $2\times10^8$ generations until you reach fixation (equilibrium). This is an extreme case, but with migration you also need much more generations for \fst to reach equilibrium. On the other hand, if you are not interested in the equilibrium, but in the state of the system at a certain point in time, you should justify your choice of $y$. I suspect that the intermediate peak of \fst values as a function of $K$ is an artifact of the non-equilibrium sate (interaction between founder effect, drift and migration), as you imply. But then, I would suggest you try to understand this by quantifying the respective forces. You coud try and come up with an effective population size that accounts for the drift effects and see if it peaks at intermediate $K$. Definitely, you should plot $H_{S}$ and $H_{T}$ separately as a function of $K$, since \fst is the ratio of functions of these, and hence only a summary of summaries. Since you are interested in a \emph{persistent} founder effect, you should definitely contrast your results with an expectation. This expectation must depend on the number of sexual generations at which you want to look at your system. Such considerations are missing.
+	\item[l.257--258] \C See previous comment regarding the range of $y$.
+	\item[l.265] `inmigrants' \ra immigrants
+	\item[l.268--269] \C It would be worth supporting this conjecture by some analysis/quantitative argument.
+	\item[l.269--271] \C As mentioned above, finally a drift-migration equilibrium will be reached and the persistent founder effect will be gone. It depends on the point in time (number of sexual generations $y$) you choose to pick.
+	\item[l.272--276] \C Again, I suspect this is a consequence of the non-equilibrium state. If so, it should be justified.
+	\item[l.278--284, Fig. 6] \C This goes more or less with my expectation. \Q However, what about the crossing of the solid orange and brown lines, and the double crossing of the dotted orange and brown lines in Fig. 6A? I suggest running the experiment for more than $y=4000$ generations to see an approach to the equilibrium.
+	\item[l.289] `rates -from' \ra rates -- from
+	\item[l.290] `genes- were' \ra genes -- were; \sout{also}
+	\item[l.294--296, Fig. 7] Na\"ively, one might expect that with recombination rate $\rho = 0$ you obtain \fst$=$ \qst, but this is not the case since you start with standing variation on both the neutral and selected loci in the migrant pool. So, initially, there is linkage equilibrium between the neutral and selected loci, and during local adaptation your populations experience a soft sweep \citep{Hermisson:2005uq}. It seems worth pointing this out to the reader. After foundation of populations, you expect linkage disequilibrium ($D$) to build up between neutral and selected loci, and the extent of this should depend on $F$ and $K$; of course, $D$ will decay as a function of $\rho$ and so its dynamics must reflect this interplay. It would be interesting to see plots of $D$ as a function of time, for different values of $K$, $F$ and $\rho$.
+	\item[l.297] `regardless the' \ra irrespective of the; `at high $K$ only' \ra for high $K$, only
+	\item[l.300] `acts on loci tightly linkes' \ra acts only on neutral loci tightly linked; \C This should be a well-established fact and you should give references to earlier work.
+	\item[l.300--301] \R I did not understand the meaning of this sentence. What is the explanation?
+	\item[l.305] `Contrastinly' \ra In contrast
+	\item[l.306--307] \C This is counter-intuitive, at least from the perspective of classical models, and you should explain better.
+	\item[l.309--311] \C This reads like a contradiction to lines 306--307. Clarification is needed.
+	\item[l.312, Fig. S1] \C It says `similar', but I would not call Fig. S1C (third plot in the row) similar to Fig. 7C.
+	\item[l.316--319] \C I could not reconstruct this conclusion (number 2) from Fig. S1 by comparing weak to strong selection. Also, the variance of \fst and \qst is huge for $K = 2\times 10^4$. In combination with my previous doubts about the use of an ANOVA as a statistical test, I am uneasy about this conclusion.
+	\item[l.317] `--unlike' \ra -- unlike
+	\item[l.318] `rates{-}{-}' \ra rates --
+	\item[l.322] `to reach fixation' \C There was no fixation in Fig. 7B and Fig. S1B for $K=2\times10^2$. Do you `mean maximum observed \fst'? But again, how can you be sure that drift-migration-selection equilibrium has been reached after 1000 sexual generations?
+	\item[l.326] \C But \fst and \qst don't seem to be positively correlated in Fig. S1d, for instance.
+\end{my_description}
+
+\subsection{Discussion}
+
+\begin{my_description}
+	\item[In general:] The \emph{Discussion} seems lengthy and would profit from shortening to a more concise version. Currently, there is the impression that the results are over-emphasised, given the concerns I have expressed above.
+	\item[l.334--335] \C This sentence reads bold, given the potential issues mentioned so far. \R We have presented a specific model and, by simulation, explored the effects of genetic drift (founder effects), gene flow via migration and local adaptation on genetic differentiation.
+	\item[l.336] `simulation results' \ra results
+	\item[l.337--338] `organisms, including the interaction of the following factors: few \ldots{}' \ra organisms: few \ldots{}
+	\item[l.342--345] \C Again, a more moderate statement seems appropriate, given that so many issues are not yet clarified (see comments above). A central potential flaw is the fact that the results depend on the non-equilibrium state, ang this has to be justified and better understood.
+	\item[l.346] `Our simulations also show that, in agreement' \ra `In agreement'
+	\item[l.374] Insert comma before `but'
+	\item[l.376] `species-' \ra species --
+	\item[l.377] `its effect' \ra it
+	\item[l.379--381] \C This is in contrast to standard classical models and must be discussed/motivated
+	\item[l.384] \sout{the role of}; \sout{of neutral genes linked to genes under selection}; \C This result should be put into a broader context. Previous literature must have dealt with this question and references are due.
+	\item[l.385] `on' \ra in shaping neutral
+	\item[l.387--388] \C I could not reconstruct this conclusion. For $K=2\times10^4$, there seems to be an effect of hitch-hinking for all parameter combinations explored.
+	\item[l.387--391] \C I got confused about whether you now interpret high \fst or \qst in Fig. 7 as due to selection (local adaptation) or du to genetic drift. Clarification is needed.
+	\item[l.400] `--e.g. after glaciation-,' \ra -- e.g. after glaciation -- 
+	\item[l.401--402] \Q Isn't this expected? You might want to refer to the place where this is shown in the manuscript and comment on whether or not one should be surprised about this.
+	\item[l.395--402] \C There is a contradiction between very low numbers of founders versus high numbers of immigrants, as mentioned above. Some more biological justification would be appropriate (more examples).
+	\item[l.403--407] \C But, again, this depends on what time (i.e. number of sexual generations after foundation) you look at. See the discussion above regarding the assumption or not of evolutionary equilibrium.
+	\item[l.409] `--as' \ra -- as
+	\item[l.411] `2011)-,' \ra 2011) --,
+	\item[l.428] add a comma after `stage banks and'
+	\item[l.429--430] \C Without selection, isn't there, finally, a drift-migration equilibrium? The founder effect cannot stay for ever, can it? \citet{Takahata:1983fj}, \citet{Crow:1984kx} and \citet{Slatkin:1995kx} and provide the formula for $F_{ST}$ to be expected at that equilibrium:
+	\begin{equation}
+		\hat{F}_{\mathrm{ST}} = \frac{1}{1 + \frac{4mN_ed^2}{(d-1)^2}},
+	\end{equation}
+	where $m$ is the migration rate, $N_e$ the local effective population size ($M=N_e m$) and $d$ the number of demes. For large $d$, this is approximated by the well-known relation $\hat{F}_{\mathrm{ST}} = 1/(1+4N_em)$.
+	\item[l.441--443] \Q How was the `establishment of the founder effects' defined? Perhaps worth reminding the reader.
+	\item[l.448] `gene flow' \ra effective gene flow (?)
+	\item[l.451] `the magnitude of the purging' \ra the relative magnitute of purging
+	\item[l.452] Add commas after `model' and `wild'
+	\item[l.457] `-inbreeding' \ra -- inbreeding
+	\item[l.458] `immigrants-' \ra immigrants --
+	\item[l.469--472] \C This paper claims to dissect the factors, but it does not do so in a convincing way.
+	\item[l.472--474] \C This seems to depend on the parameter combination chosen, though.
+\end{my_description}
+
+	
+\subsection{Figures and tables}
+\begin{my_description}
+	\item[l.646] \C Add a reference to Table 1 and define $B$.
+	\item[Fig. 1] `on sexual generation' \ra in sexual generation (several times). Add an arrow pointing to stages where random sampling takes place. Where exactly do founders enter? Mention that migration happens after foundation, and foundation does not happen in place of migration. Where do emigrants come from and when do they leave the source?
+	\item[l.653] Add comma before `respectively'
+	\item[Fig. 2] This is after $10^3$ sexual generations. For most $K$, equilibrium between drift and migration will not have been reached. The choice of $10^3$ seems arbitrary.
+	\item[Fig. 3] Comparison of the two boxes for $K = 2\times10^7$ between Fig. 2 and 3 reveals no agreement. Were these two separate runs? If so, you may want to mention it. `dipausing' \ra diapausing; see also comments to Fig. 3. mentioned earlier.
+	\item[l.662] `on \fst' \ra on the trajectory of \fst
+	\item[l.668] Add comma after `mean'
+	\item[l.669] `show intial' \ra show the initial
+	\item[Fig. 2--4] I suggest you plot $H_\mathrm{S}$ and $H_\mathrm{T}$ separately as functions of $y$ and $K$, too.
+	Mention that $M=2$ (?)
+	\item[Fig. 5] What is the grid of values (resolution) explored?
+	\item[Fig. 6] \C $M$ = ?
+	\item[l.684] Delete comma after `panel';  `The rest of' \ra Other
+	\item[Table 1] `Egg annual survival proportion in the bank egg' \ra Annual survival proportion of eggs in the egg bank; `Annual hatching proportion of diapausing eggs' \ra Annual hatching proportion of surviving diapausing eggs; Correct the typesetting for the references in the footnote of the table (parantheses, commas wrong/missing).
+\end{my_description}
+
+\section{Supporting Information}
+\subsection{Supporting figures}
+
+\begin{my_description}
+	\item[l.4] \sout{presence of}
+\end{my_description}
+
+\bibliographystyle{genetics}
+\bibliography{/Users/Simon/Documents/Literature/BibDesk/central}
+
+\end{document}  

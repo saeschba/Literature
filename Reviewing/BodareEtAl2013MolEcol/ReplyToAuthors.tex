@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+\usepackage[total={17cm, 24cm}]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[normalem]{ulem}
+\usepackage{natbib}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{color}
+\usepackage[
+	bookmarks = true,
+	bookmarksnumbered = false, 	% true means bookmarks in
+							% navigation window are numbered
+	bookmarksopen = false, 		% true means only level 1
+							% are displayed.
+	colorlinks = true,			% false for frames around links, true for color
+	linkcolor = myred,
+	citecolor = mygreen,
+	urlcolor = myblue
+	]{hyperref}
+	
+\definecolor{mygreen}{rgb}{0, 0.5, 0}	% less intense green
+\definecolor{myblue}{rgb}{0, 0, 0.75}		% less intense blue
+\definecolor{myred}{rgb}{0.75, 0, 0}		% less intense red
+\definecolor{myrev1}{rgb}{1, 0, 0}		% less intense red; after approval, simply turn into black
+\definecolor{temphidden}{rgb}{0, 0, 0}		% less intense red; to re-highlight items that finally need to be changed,
+									% but should be black temporarilly
+% \definecolor{myrev1}{rgb}{0, 0, 0}
+\definecolor{mycorr1}{rgb}{0, 0, 1}		% less intense red; after approval, simply turn into black
+
+
+
+% Define customised list environments.
+\newenvironment{my_description}
+{\begin{description}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{description}}
+
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{enumerate}}
+
+\newcommand{\ra}{$\rightarrow$\ }
+\newcommand{\C}{\textbf{C:}\ }
+\newcommand{\Q}{\textbf{Q:}\ }
+\newcommand{\R}{\textbf{R:}\ }
+\newcommand{\V}{\textbf{S:}\ }
+
+\newcommand{\fst}{$F_{\mathrm{ST}}\ $}
+\newcommand{\qst}{$Q_{\mathrm{ST}}\ $}
+
+
+\title{Reply to Bodare \emph{et al.} ``Origin and demographic history of the endemic Taiwanese spruce (\emph{Picea morrisonicola})''}
+%\author{Simon Aeschbacher}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+\section{Summary}
+This study aims at measuring and explaining contemporary genetic variation and assessing long-term genetic stability of Taiwan spruce (\emph{Picea morrisonicola}) endemic to the island of Taiwan. Approximate Bayesian computation (ABC) is applied to compare alternative models for the demographic history of the species and to infer parameters (effective population size and its variation over time, \dots). Using previously published sequences of four supposedly closely related species (including \emph{P. wilsonii}), the authors establish the phylogenetic origin of \emph{P. morrisonicola}, suggesting closest relationship to \emph{P. wilsonii}. When ignoring variation in $N_{e}$ (see above), the authors date the split to 4--8 million years ago, which coincides with the formation of the island of Taiwan. When accounting for variation in $N_e$, the split between \emph{P. morrisonicola} and \emph{P. wilsonii} is dated to a much more recent point in time.
+
+
+[Say something about the relevance, impact and writing.]
+
+\begin{itemize}
+	\item What about assessing the genetic stability? Why not put a sentence in the Abstract?
+	\item \emph{P. morrisonicola} suffers from overexploitation from logging. Conservational interest of the paper?
+	\item Is there evidence for there being habitat suitable for conifers immediately after formation of Proto-Taiwan? In other words, does 4--8 mya sound like a realistic time for the split between \emph{P. morrisonicola} and \emph{P. wilsonii}?
+	\item Are power and false positive rate of the ABC-type model comparison procedure appropriately assessed? Are they assessed with respect to sampling size only or also with respect to the choice of statistics?
+	\item How do the authors deal with and discuss the main issues of ABC: i) choice of summary statistics, ii) choice of algorithm (rejection vs. ABC-MCMC), iii) choice of distance metric?
+\end{itemize}
+
+Main goals of the study:
+\begin{my_enumerate}
+	\item Compare extant genetic diversity to that of other spruce species.
+	\item Assess the impact of climate change on the trajectory of $N_e$. This uses ABC, comparing alternative demographic models.
+	\item Estimate divergence time and rates of gene flow between \emph{P. morrisonicola} and four related spruce species found on mainland China. Two Bayesian approaches (ABC, MIMAR) are used and compared.
+	\
+\end{my_enumerate}
+
+
+\section{General issues}
+
+\begin{my_enumerate}
+	\item Judging from a map of Taiwan, it is not obvious if the sampling locations used in this study cover the whole distributional area of \emph{P. morrisonicola} or actually only a small percentage of it (\emph{cf.} Figure 1). Incomplete sampling of the species range could lead to artefacts that are not discussed. Although conifer species usually show little population substructure, I would like to have some support for or against the idea that the samples used by the authors are representative of the whole island. Moreover, as the samples are confined to a small area, micro rather than macro climatic conditions might have played just as big a role. In the lack of a `control' location, it is not possible to disentangle potential effects and interactions.
+	\item The supporting data (sample locations, DNA sequences and input files for \textsc{MIMAR} and \textsc{Structure} should have been available to the reviewers. Judging from the intention of the authors to make these data available on DRYAD, I suggest the data be made available for a potential second round of review.
+	\item The choice of summary statistics in known to be crucial in ABC, but the authors do not mention this. Given that several approaches for choosing them have recently been published \citep[][]{Joyce:2008sf, Wegmann:2009sf, Nunes:2010fk, Fearnhead:2011uq,Aeschbacher:2011fk}, it would seem appropriate that studies applying ABC should at least properly discuss their choice, if not apply at least one of these approaches.
+	\item Related to the previous point, ABC-based model comparison suffers from the lack of sufficient statistics, even more so than ABC-based inference of parameters for a specific model. Although the authors have performed a simulateion-based power analysis (which is much appreciated), they should explicitly mention the issue and refer to the respective literature \cite[\emph{e.g.}][]{Robert:2011fk}. See l.266--271.
+	
+	\end{my_enumerate}
+	
+
+\section{Specific comments}
+
+\subsection{Abbreviations used}
+\begin{my_description}
+	\item[Q] Question
+	\item[C] Comment
+	\item[S] Suggestion (mostly style)
+	\item[R] Re-formulation or change needed (usually followed by a suggestion)
+	\item[\ra] Suggested change/correction
+\end{my_description}
+
+
+%\subsection{Abstract}
+%
+%\begin{my_description}
+%	\item First comment
+%\end{my_description}
+
+\subsection{Introduction}
+
+\begin{my_description}
+	\item[l.39] \V Comma after `In the face of global warming'
+	\item[l.40] \V Ditto after `For some species'
+	\item[l.50--51] `\dots is subjected to very different climatic pressures than its mainland or boreal relatives' \ra \dots is subject to climatic conditions very different from those experienced by its mainland or boreal relatives. \V In brackets, give examples (in terms of temperature, humidity\dots).
+	\item[l.51] \Q I guess `boreal' is an established term. If so, why do you quote it? If no, please define it. Is there a difference between `cool-termperature' and `boreal' species (\emph{cf.} l.55--56)?
+	\item[l.90--92] \C It was not clear to me what was meant to be said in this sentence. A population genetic approach does not \emph{per se} justify the use of more independent loci compared to increasing the number of sampled individuals. This depends on the question of interest (\emph{e.g.}\ fine-scale study of population structure \emph{vs.}\ medium- to long-terms studies of population history/admixture/growth). I guess the authors want to make sure that the relatively small sample size (actually, both in terms if individuals and loci) is not a major limitation to the study. Analysis of power and false positive rate are done, which is fine. It's just that this one sentence reads confusing. Why not directly state that sample sizes are rather small for a relatively large area? In orther to really `profit' from a large number of independent loci, the number of loci might have to be well beyond 15, depending on the question of interest.
+	\item[l.112--113] `This method [ABC] is approximate and assumes\dots relevant to the model'. \R Either drop `approximate and' because `approximate' is already part of the name of the method and hence redundant, or make sure that the reader does not get the impression that the use (and choice) of summary statistics is the only approximation involved. The others being i) the choice of a distance metric (rejection tolerance) and ii) the fact that a finite number of simulation is used, whereas convergence to the true ABC posterior would only be reached with an infinite number of simulations \citep[see one of the recent ABC reviews, \emph{e.g.}][]{Beaumont:2010uq}.
+	\item[l.116] No comma after `Although'.
+	\item[l.120] `supplement' \ra complement (?)
+
+\end{my_description}
+
+
+
+\subsection{Materials and Methods}
+As a more general comment, I suggest inverting the order of subsections `Within-species ABC models' and `Between-species ABC models' (and accordingly of Figures 2 and 3). This would avoid switching forth and back between the `within' and `between' species context.
+
+\begin{my_description}
+	\item[l.130--136] \C As all fifteen loci were initially called in species other than \emph{P. morrisonicola}, some of them not very closely related to \emph{P. morrisonicola}, I missed a justificiation for why the authors think that the markers they used are appropriate (\emph{e.g.}\ no ascertainment bias, putative neutrality, map distances / physical linkage structure). The assumption of no physical linkage seems particularly important (\emph{cf.} l.161) and should be stated and justified.
+	\item[l.138] \Q What is the maximum number of copies tolerated? Is copy number variation for a given gene comparable across the spruce species concerned here?
+	\item[l.163--165] \C A potentially considerable amount of information is thrown out here (62 out of 192 SNPs are kept) in order to have putatively low physical linkage (or background LD) between markders. This is not a criticism of the paper, but rather represents the state of current inference methods and shows the need for methods that can account for between-locus physical linkage (or, from another perspective, within-locus recombination). \C Nevertheless, you might want to justify the choice of 50bp for the minimum distance between retained SNPs. In their Discussion, \citet[][]{Falush:2003fk}  suggest two ways of doing so: i) combining historical information about likely admixture times and knowledge of between-locus recombination rates or ii) post-hoc inspection of \textsc{Structure} output with, in this case, varying choices of between-marker distance.
+	\item[l.187] \Q Is it justified to assume symmetric gene flow between \emph{P. morrisonicola} and \emph{P. wilsonii}? In any case, you should discuss and if possible justify the assumption.
+	\item[l.202--204] \C The argumentation here seems somewhat circular. Not only do estimates of divergence time depend on mutation rates, but estimates of population mutation rates / substitution rates are themselves dependent on (non-genetic) estimates of divergence time.
+	\item[l.227--228] \R For consistency between main text and figures: `\dots at $t$ coalescent units\dots' \ra at $t_0 = t$ coalescent units\dots; `\dots that persist for 0.2 coalescent time units\dots' \ra \dots that persist for $t_1 = 0.2$ coalescent time units\dots
+	\item[l.229--230] \V `choose' \ra chose (?).
+	\item[l.234--235] \V `\dots against a `null' constant effective population size model\dots' \ra \dots against a null model with constant effective population size\dots
+	\item[l.235--237] \V I suggest using a different formulation for the priors: `The priors for the model parameters were chosen to be uniform as follows: $\theta \sim U(0, 0.01)$, $\rho \sim U(0, 0.02)$, $t \sim U(0, 1.5)$, \dots' \R The prior for $\alpha$,  $U(1,1.5)$, did not make sense to me, at least when following Figure 2, where it says that the size of the bottlenecked population is $\alpha N$. I would thus expect $\alpha < 1$ throughout if one wants to consider bottlenecks only. From l.272 it seems, however, that the lower bound should be 0 instead of 1 and that the authors would like to include the potential of population growth, too (upper bound of 1.5).
+	\item[l.237--238] \R The choice of summary statistics should be appropriately discussed (see general issues 3 and 4 above).
+	\item[l.247] \V Comma after `In the simplest scenario'
+	\item[l.269--271] See general issue 4 above.
+	\item[l.271--272] \V Again, I suggest using standard notation for the priors (see comment to l.235--237 above).
+\end{my_description}
+
+
+\subsection{Results}
+In analogy to `Materials and Methods', I suggest inverting the order of the subsections on within- \emph{vs.} between-species ABC.
+\begin{my_description}
+	\item[l.xx] `strongest effect \ldots{} is persistent founder effects' \ra strongest effect \ldots{} is caused by persistent founder effects
+	\item[l.xx] `few population founders' \ra a few population founders
+\end{my_description}
+
+
+\subsection{Discussion}
+
+\begin{my_description}
+	\item[l.xx] `strongest effect \ldots{} is persistent founder effects' \ra strongest effect \ldots{} is caused by persistent founder effects
+	\item[l.xx] `few population founders' \ra a few population founders
+\end{my_description}
+	
+
+\subsection{Figures and tables}
+
+\begin{my_description}
+	\item[l.713] \C Figure 1 definitely needs a more comprehensive caption, with a delineation of the species range and a code mapping colors to altitudes. It would also be desirable to have a distinction between woodland and open areas, if applicaple. I further missed a declaration of the cartographic source in the caption (rather than the main text, see l.131--130). The figure needs a compass rose, a scale and, ideally, an inset figure showing the larger geographic context including parts of mainland China.
+	\item[.715--719] \C I suggest using the same symbol for the effective population size in main text and figures. Specifically, I suggest replacing $N$ in Figures 2 and 3 by $N_e$.
+	
+\end{my_description}
+
+
+\section{Supporting Information}
+
+\subsection{Supporting figures}
+
+\begin{my_description}
+	\item[l.xx] `strongest effect \ldots{} is persistent founder effects' \ra strongest effect \ldots{} is caused by persistent founder effects
+	\item[l.xx] `few population founders' \ra a few population founders
+\end{my_description}
+
+\bibliographystyle{genetics}
+\bibliography{/Users/Simon/Documents/Literature/BibDesk/Jshort_dot,/Users/Simon/Documents/Literature/BibDesk/central}
+\end{document}  
