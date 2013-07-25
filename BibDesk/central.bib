@@ -2,7 +2,7 @@
 %% http://bibdesk.sourceforge.net/
 
 
-%% Created for Simon Aeschbacher at 2013-07-24 17:48:43 +0200 
+%% Created for Simon Aeschbacher at 2013-07-25 18:52:42 +0200 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,40 @@
 
 @string{macro = {definition}}
 
+
+@article{Kobayashi:2008fk,
+	Abstract = {Genetic influx into a population often does not correspond to the real migration rate ( m ) of individuals, due to class structure within the population. The effective migration rate ( m e ) is a concept to measure gene flow in such a situation. The ratio of the effective migration rate to the real migration rate ( m e m ) is called the gene flow factor, and represents the degree of gene flow modification. Prior authors proposed different definitions of the effective migration rate. These may be categorized into two groups: the neutral effective migration rate and the selective effective migration rate. In this article, we construct a general model of a class-structured population with a mainland-island structure. Using the model, we prove that the gene flow factor of the neutral effective migration rate converges to the mean reproductive value of immigrants if the limit is taken with the real migration rate converging to zero. This limit theorem provides a novel interpretation of gene flow and can be used to derive approximation formulae of the neutral effective migration rate. We illustrate this method analyzing two examples, sex ratio distortion due to extrinsic factors and hybrid zones with underdominance. },
+	Annote = {- KHT2008 mention that a variety of previous studies have introduced a notion of effective migration rate (EMR) (Petry 1983, Bengthsson 1985, Barton and Bengtsson 1986, Ingvarsson and Whitlock 2000, Telschow et al. 2002, Rousse 2004, Telschow et al. 2006). KHT2008 distinguish between two classes of EMR: "netural" and "selective" EMR.
+
+- Neutral EMR: based on allele frequency changes at a neutral locus, regarding selection as an external factor (Barton and Bengtsson 1986).
+
+- Selective EMR: quantifies gene flow from balancing selection and migration pressures; defined using equilibrium allele frequencies (Telschow et al. 2006).
+
+- KHT2008 are concerned only with neutral EMR (simply called EMR hereafter).
+
+- The gene flow factor is defined as GFF = m_e/m; it is inversely proportional to the strength of the genetical barrier to gene flow (cf. Barton and Bengtsson 1986).
+
+- The paper aims at proving the following limit theorem: The GFF converges to the mean reproductive value of immigrants if the limit is taken with immigration and emigration rates converging to zero.
+
+- The reproductive value RV is devined as the relative contribution of the focal individual to the gene pool of the population in the distant future (Fisher 1930, Taylor 1990).
+
+- The effective migration rate m_e is defined as m_e := lim_{t -> +inf} [p(t+1) - p(t)]/([q - q(t)]), where q is the frequency of the focal neutral allele on the continent and p(t) is its frequency at time t on the island.},
+	Author = {Kobayashi, Yutaka and Hammerstein, Peter and Telschow, Arndt},
+	Date-Added = {2013-07-25 08:25:23 +0000},
+	Date-Modified = {2013-07-25 09:37:24 +0000},
+	Doi = {http://dx.doi.org/10.1016/j.tpb.2008.05.001},
+	Issn = {0040-5809},
+	Journal = TheorPopulBiol,
+	Journal_Long = {Theoretical Population Biology},
+	Keywords = {gene flow, effective gene flow, population structure, neutral effective migration rate, selective effective migration rate, genetic barrier, hybrid zone, sex ratio, speciation, reproductive isolation, biodiversity},
+	Number = {1},
+	Pages = {84 - 92},
+	Title = {The neutral effective migration rate in a mainland-island context},
+	Url = {http://www.sciencedirect.com/science/article/pii/S0040580908000567},
+	Volume = {74},
+	Year = {2008},
+	Bdsk-Url-1 = {http://www.sciencedirect.com/science/article/pii/S0040580908000567},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1016/j.tpb.2008.05.001}}
 
 @article{Simonsen:1995fk,
 	Abstract = {A class of statistical tests based on molecular polymorphism data is studied to determine size and power properties. The class includes Tajima's D statistic as well as the D* and F* tests proposed by Fu and Li. A new method of constructing critical values for these tests is described. Simulations indicate that Tajima's test is generally most powerful against the alternative hypotheses of selective sweep, population bottleneck, and population subdivision, among tests within this class. However, even Tajima's test can detect a selective sweep or bottleneck only if it has occurred within a specific interval of time in the recent past or population subdivision only when it has persisted for a very long time. For greatest power against the particular alternatives studied here, it is better to sequence more alleles than more sites.},
@@ -1301,10 +1335,19 @@ Definitions
 
 - Bengtsson (1985) introduced the gene flow factor gff = m_e/m. BB1986 define b = 1/gff = m/m_e as the strength of a barrier to gene flow.
 
-- Two situations are considered: i) two distinct populations which exchange migrants directly and ii) two genetically different populations meet in a one-dimensional habitat in which the population density is everywhere constant.},
+- Two situations are considered: i) two distinct populations which exchange migrants directly and ii) two genetically different populations meet in a one-dimensional habitat in which the population density is everywhere constant.
+
+- In case ii) (one-dimensional habitat), Deltau is the difference in allele frequencies immediately to the left and right of the barrier. u' is defined as the gradient deltau/deltax (x is space) 'somewhat' to the left and right of the barrier. Then, the strength of the barrier is defined as B = Deltau/uPrime. It has the dimension of a distance and can be thought of as the length of unimpeded habitat that would present an equivalent obstacle to the flow of a neutral allele down a uniform gradient uPrime.
+
+- BB1986 show that B can also be written as B = (sigma^2/2)(Deltau/deltau).
+
+- The influence of the barrier on gene flow depends on the ratio B/sgima, where sigma is the standard deviation of the parent-offspring distance (Nagylaki, 1975). Introgression of neutral alleles across the barrier will be delayed for ~(B/sigma)2 generations (from Barton, 1979). However, even slightly advantageous alleles will pass through a localised barrier vary rapidly (within ~ log((B/sigma)^2 pi s / 2)/2s generations if s >> (B/sigma){-2}). Such alleles are delayed for much lesst time than they would need to cross a length B of unimpeded habitat (!). Hence, although the effect of physical distance and of localised barrier on a neutral allele qre equivalent, simple physical distance is a much more effective obstacle to the spread of advantageous alleles than a localised genetical barrier.
+
+- Coming back to the case of two discrete populations. Recall the strength of the barrier b = m/m_e = m Deltau / deltau, which is dimensionless. Neutral alleles will be delayed for ~ b/m generations, whereas slightly advantageous (s > (b/m)^{-1}) alleles will be delayed for ~ log((b/m)s)/s generations.
+},
 	Author = {Barton, Nick and Bengtsson, Bengt O.},
 	Date-Added = {2013-04-22 11:57:54 +0000},
-	Date-Modified = {2013-07-24 15:47:27 +0000},
+	Date-Modified = {2013-07-25 06:56:19 +0000},
 	Doi = {doi:10.1038/hdy.1986.135},
 	Journal = Heredity,
 	Journal_Long = {Heredity},
@@ -21677,9 +21720,11 @@ from a sample of N identified diploids as from N identified haploid types, where
 	Ap = {ISSN 0018-067X},
 	Author = {Barton, N. H. and Slatkin, M.},
 	Date-Added = {2008-03-05 16:08:09 +0000},
-	Date-Modified = {2008-03-05 16:08:09 +0000},
+	Date-Modified = {2013-07-25 06:10:27 +0000},
 	Isi = {WOS:A1986C827000015},
 	Journal = Heredity,
+	Journal_Long = {Heredity},
+	Keywords = {quasi-equilibrium, distribution of rare alleles, subdivided populations},
 	Pages = {409--415},
 	Part-Number = {3},
 	Publication-Type = {J},
@@ -21847,13 +21892,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>AdaptiveDivergence</string>
 		<key>keys</key>
-		<string>White:2013vn,Kim:1999lq,Sanchez-Molano:2013vn,Turner:2008ve,Stolting:2013ys,Xing:2013uq,Hawthorne:2001bh,Rogers:2007qf,De-Wit:2013fk,Nadeau:2012vn,Keller:2013uq,Baack:2008ul,Bourret:2013fk,Wright:2010ly,Sousa:2013fk,Burke:2002pd,Joost:2013fk,Nadeau:2013vn,Fourcade:2013fk,Bierne:2013kx,Albert:2009gf</string>
+		<string>White:2013vn,Albert:2009gf,Sanchez-Molano:2013vn,Turner:2008ve,Stolting:2013ys,Xing:2013uq,Hawthorne:2001bh,Rogers:2007qf,De-Wit:2013fk,Nadeau:2012vn,Keller:2013uq,Baack:2008ul,Bourret:2013fk,Wright:2010ly,Sousa:2013fk,Burke:2002pd,Joost:2013fk,Nadeau:2013vn,Fourcade:2013fk,Bierne:2013kx,Kim:1999lq</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>AlpineIbex</string>
 		<key>keys</key>
-		<string>Aeschbacher:1978vn,Abderhalden:2004bh,Slatkin:1995fk,Stuwe:1992eq,Loison:2002bh,Toigo:2007kx,Giacometti:2004fk,Stuwe:1987rw,Maudet:2002wt,Couturier:1962fk,Kemp:1995ys,Biebach:2009ly,Stuwe:1991qa,Luikart:1999vn,Willisch:2009uq,Scribner:1994cs,Grossen:2005vn,Nievergelt:1966fk,Stuwe:1986kl,Mainguy:2005fk,Willisch:2010fk,Toigo:2002qf,Stuwe:1989oj</string>
+		<string>Toigo:2002qf,Stuwe:1989oj,Slatkin:1995fk,Stuwe:1992eq,Loison:2002bh,Toigo:2007kx,Giacometti:2004fk,Stuwe:1987rw,Maudet:2002wt,Couturier:1962fk,Kemp:1995ys,Biebach:2009ly,Stuwe:1991qa,Luikart:1999vn,Willisch:2009uq,Scribner:1994cs,Grossen:2005vn,Nievergelt:1966fk,Stuwe:1986kl,Mainguy:2005fk,Willisch:2010fk,Aeschbacher:1978vn,Abderhalden:2004bh</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -21883,7 +21928,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>DistribFitnessEffects</string>
 		<key>keys</key>
-		<string>Imhof:2001zr,Gillespie:1984uq,Sanjuan:2004ys,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Kassen:2006ly,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Rokyta:2005ve,Barrett:2006fk,Eyre-Walker:2007fk,Cowperthwaite:2005vn</string>
+		<string>Eyre-Walker:2007fk,Cowperthwaite:2005vn,Sanjuan:2004ys,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Kassen:2006ly,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Imhof:2001zr,Gillespie:1984uq,Rokyta:2005ve,Barrett:2006fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -21925,7 +21970,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>LineageSorting</string>
 		<key>keys</key>
-		<string>Rannala:2008sf,Carstens:2007rz,Maddison:2006zl</string>
+		<string>Maddison:2006zl,Carstens:2007rz,Rannala:2008sf</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -21973,13 +22018,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>RareAlleles</string>
 		<key>keys</key>
-		<string>Rousset:2008yq,Slatkin:2002dq,Slatkin:1989lh,Barton:1986cr,Slatkin:1985nx</string>
+		<string>Slatkin:1985nx,Slatkin:2002dq,Slatkin:1989lh,Barton:1986cr,Rousset:2008yq</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>Reviews</string>
 		<key>keys</key>
-		<string>Bachtrog:2011fk,Renaut:2012kx,Charlesworth:2012fg,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Guerrero:2012qf,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Strasburg:2012uq,Feder:2012dq,Nunney:1994fk,Powell:2010fk,Hickerson:2010ec,Rannala:2008sf,Whitlock:2008uq,Otto:2011uq</string>
+		<string>Otto:2011uq,Renaut:2012kx,Charlesworth:2012fg,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Guerrero:2012qf,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Strasburg:2012uq,Feder:2012dq,Nunney:1994fk,Powell:2010fk,Hickerson:2010ec,Rannala:2008sf,Whitlock:2008uq,Bachtrog:2011fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -21991,13 +22036,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>SexChromosomes</string>
 		<key>keys</key>
-		<string>Otto:2011uq,Charlesworth:2012fg,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Rice:1984vn,Otto:1997fk,Rice:1987rt,Bachtrog:2011fk</string>
+		<string>Bachtrog:2011fk,Charlesworth:2012fg,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Rice:1984vn,Otto:1997fk,Otto:2011uq,Rice:1987rt</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>Software</string>
 		<key>keys</key>
-		<string>Quardokus:2000zi,Perez-Figueroa:2009ng,Lesnoff:2009uq,Currat:2004sf,Laval:2004sf,Lipson:2013qf,Labate:2000ux,Croissant:2008kx,Thompson:1995ft,Strand:2002gf,Balloux:2001wk,Kuhner:2006sf,Anderson:2005la,Kuo:2003kx,Hampe:1998ly,rcore:2011fk,Guillot:2009sf,Dettling:2003rm,Rousset:2008yq,Sheehan:2013bh,Brown:2011fk,Excoffier:2000yf,Raymond:1995kx,Nath:1996az,Meirmans:2011fk,Stephens:2003fj</string>
+		<string>Stephens:2003fj,Perez-Figueroa:2009ng,Lesnoff:2009uq,Currat:2004sf,Laval:2004sf,Lipson:2013qf,Labate:2000ux,Croissant:2008kx,Thompson:1995ft,Strand:2002gf,Balloux:2001wk,Kuhner:2006sf,Anderson:2005la,Kuo:2003kx,Hampe:1998ly,rcore:2011fk,Guillot:2009sf,Dettling:2003rm,Rousset:2008yq,Sheehan:2013bh,Brown:2011fk,Excoffier:2000yf,Raymond:1995kx,Nath:1996az,Meirmans:2011fk,Quardokus:2000zi</string>
 	</dict>
 	<dict>
 		<key>group name</key>
