@@ -2,7 +2,7 @@
 %% http://bibdesk.sourceforge.net/
 
 
-%% Created for Simon Aeschbacher at 2013-08-30 18:03:58 +0200 
+%% Created for Simon Aeschbacher at 2013-09-03 18:52:15 +0200 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,78 @@
 
 @string{macro = {definition}}
 
+
+@article{Paul:2011vn,
+	Abstract = {The sequentially Markov coalescent is a simplified genealogical process that aims to capture the essential features of the full coalescent model with recombination, while being scalable in the number of loci. In this article, the sequentially Markov framework is applied to the conditional sampling distribution (CSD), which is at the core of many statistical tools for population genetic analyses. Briefly, the CSD describes the probability that an additionally sampled DNA sequence is of a certain type, given that a collection of sequences has already been observed. A hidden Markov model (HMM) formulation of the sequentially Markov CSD is developed here, yielding an algorithm with time complexity linear in both the number of loci and the number of haplotypes. This work provides a highly accurate, practical approximation to a recently introduced CSD derived from the diffusion process associated with the coalescent with recombination. It is empirically demonstrated that the improvement in accuracy of the new CSD over previously proposed HMM-based CSDs increases substantially with the number of loci. The framework presented here can be adopted in a wide range of applications in population genetics, including imputing missing sequence data, estimating recombination rates, and inferring human colonization history.},
+	Author = {Paul, Joshua S. and Steinr{\"u}cken, Matthias and Song, Yun S.},
+	Date-Added = {2013-09-03 10:20:00 +0000},
+	Date-Modified = {2013-09-03 10:21:39 +0000},
+	Doi = {10.1534/genetics.110.125534},
+	Eprint = {http://www.genetics.org/content/187/4/1115.full.pdf+html},
+	Journal = Genetics,
+	Journal_Long = {Genetics},
+	Keywords = {sequentially Markovian coalescent, recombination, conditional sampling distribution, hidden Markov model},
+	Number = {4},
+	Pages = {1115-1128},
+	Title = {An Accurate Sequentially Markov Conditional Sampling Distribution for the Coalescent With Recombination},
+	Url = {http://www.genetics.org/content/187/4/1115.abstract},
+	Volume = {187},
+	Year = {2011},
+	Bdsk-Url-1 = {http://www.genetics.org/content/187/4/1115.abstract},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1534/genetics.110.125534}}
+
+@article{Paul:2010kx,
+	Abstract = {The multilocus conditional sampling distribution (CSD) describes the probability that an additionally sampled DNA sequence is of a certain type, given that a collection of sequences has already been observed. The CSD has a wide range of applications in both computational biology and population genomics analysis, including phasing genotype data into haplotype data, imputing missing data, estimating recombination rates, inferring local ancestry in admixed populations, and importance sampling of coalescent genealogies. Unfortunately, the true CSD under the coalescent with recombination is not known, so approximations, formulated as hidden Markov models, have been proposed in the past. These approximations have led to a number of useful statistical tools, but it is important to recognize that they were not derived from, though were certainly motivated by, principles underlying the coalescent process. The goal of this article is to develop a principled approach to derive improved CSDs directly from the underlying population genetics model. Our approach is based on the diffusion process approximation and the resulting mathematical expressions admit intuitive genealogical interpretations, which we utilize to introduce further approximations and make our method scalable in the number of loci. The general algorithm presented here applies to an arbitrary number of loci and an arbitrary finite-alleles recurrent mutation model. Empirical results are provided to demonstrate that our new CSDs are in general substantially more accurate than previously proposed approximations.},
+	Author = {Paul, Joshua S. and Song, Yun S.},
+	Date-Added = {2013-09-03 09:59:35 +0000},
+	Date-Modified = {2013-09-03 10:14:14 +0000},
+	Doi = {10.1534/genetics.110.117986},
+	Eprint = {http://www.genetics.org/content/186/1/321.full.pdf+html},
+	Journal = Genetics,
+	Journal_Long = {Genetics},
+	Keywords = {conditional sampling distribution, coalescent with recombination, hidden Markov model, diffusion process, finite-sites model, recurrent mutation},
+	Number = {1},
+	Pages = {321-338},
+	Title = {A Principled Approach to Deriving Approximate Conditional Sampling Distributions in Population Genetics Models with Recombination},
+	Url = {http://www.genetics.org/content/186/1/321.abstract},
+	Volume = {186},
+	Year = {2010},
+	Bdsk-Url-1 = {http://www.genetics.org/content/186/1/321.abstract},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1534/genetics.110.117986}}
+
+@article{Li:2003uq,
+	Abstract = {We introduce a new statistical model for patterns of linkage disequilibrium (LD) among multiple SNPs in a population sample. The model overcomes limitations of existing approaches to understanding, summarizing, and interpreting LD by (i) relating patterns of LD directly to the underlying recombination process; (ii) considering all loci simultaneously, rather than pairwise; (iii) avoiding the assumption that LD necessarily has a ``block-like'' structure; and (iv) being computationally tractable for huge genomic regions (up to complete chromosomes). We examine in detail one natural application of the model: estimation of underlying recombination rates from population data. Using simulation, we show that in the case where recombination is assumed constant across the region of interest, recombination rate estimates based on our model are competitive with the very best of current available methods. More importantly, we demonstrate, on real and simulated data, the potential of the model to help identify and quantify fine-scale variation in recombination rate from population data. We also outline how the model could be useful in other contexts, such as in the development of more efficient haplotype-based methods for LD mapping.},
+	Author = {Li, Na and Stephens, Matthew},
+	Date-Added = {2013-09-03 09:55:57 +0000},
+	Date-Modified = {2013-09-03 09:57:44 +0000},
+	Eprint = {http://www.genetics.org/content/165/4/2213.full.pdf+html},
+	Journal = Genetics,
+	Journal_Long = {Genetics},
+	Keywords = {linkage disequilibrium, SNP, recombination, recombination rate variation, inference},
+	Number = {4},
+	Pages = {2213-2233},
+	Title = {Modeling Linkage Disequilibrium and Identifying Recombination Hotspots Using Single-Nucleotide Polymorphism Data},
+	Url = {http://www.genetics.org/content/165/4/2213.abstract},
+	Volume = {165},
+	Year = {2003},
+	Bdsk-Url-1 = {http://www.genetics.org/content/165/4/2213.abstract}}
+
+@article{Fearnhead:2001fk,
+	Abstract = {We introduce a new method for estimating recombination rates from population genetic data. The method uses a computationally intensive statistical procedure (importance sampling) to calculate the likelihood under a coalescent-based model. Detailed comparisons of the new algorithm with two existing methods (the importance sampling method of Griffiths and Marjoram and the MCMC method of Kuhner and colleagues) show it to be substantially more efficient. (The improvement over the existing importance sampling scheme is typically by four orders of magnitude.) The existing approaches not infrequently led to misleading results on the problems we investigated. We also performed a simulation study to look at the properties of the maximum-likelihood estimator of the recombination rate and its robustness to misspecification of the demographic model.},
+	Author = {Fearnhead, Paul and Donnelly, Peter},
+	Date-Added = {2013-09-03 09:52:34 +0000},
+	Date-Modified = {2013-09-03 09:54:20 +0000},
+	Eprint = {http://www.genetics.org/content/159/3/1299.full.pdf+html},
+	Journal = Genetics,
+	Journal_Long = {Genetics},
+	Keywords = {recombination rate, estimation, importance sampling, coalescent, simulation, maximum-likelihood estimation},
+	Number = {3},
+	Pages = {1299-1318},
+	Title = {Estimating Recombination Rates From Population Genetic Data},
+	Url = {http://www.genetics.org/content/159/3/1299.abstract},
+	Volume = {159},
+	Year = {2001},
+	Bdsk-Url-1 = {http://www.genetics.org/content/159/3/1299.abstract}}
 
 @article{Marjoram:2006uq,
 	Abstract = {BACKGROUND:The amount of genome-wide molecular data is increasing rapidly, as is interest in developing methods appropriate for such data. There is a consequent increasing need for methods that are able to efficiently simulate such data. In this paper we implement the sequentially Markovian coalescent algorithm described by McVean and Cardin and present a further modification to that algorithm which slightly improves the closeness of the approximation to the full coalescent model. The algorithm ignores a class of recombination events known to affect the behavior of the genealogy of the sample, but which do not appear to affect the behavior of generated samples to any substantial degree.RESULTS:We show that our software is able to simulate large chromosomal regions, such as those appropriate in a consideration of genome-wide data, in a way that is several orders of magnitude faster than existing coalescent algorithms.CONCLUSION:This algorithm provides a useful resource for those needing to simulate large quantities of data for chromosomal-length regions using an approach that is much more efficient than traditional coalescent models.},
@@ -22257,7 +22329,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>AdaptiveDivergence</string>
 		<key>keys</key>
-		<string>White:2013vn,Fourcade:2013fk,Sanchez-Molano:2013vn,Turner:2008ve,Stolting:2013ys,Brachi:2013ve,Xing:2013uq,Hawthorne:2001bh,Rogers:2007qf,De-Wit:2013fk,Nadeau:2012vn,Keller:2013uq,Baack:2008ul,Bourret:2013fk,Wright:2010ly,Sousa:2013fk,Burke:2002pd,Joost:2013fk,Bierne:2013kx,Albert:2009gf,Nadeau:2013vn,Kim:1999lq</string>
+		<string>White:2013vn,Kim:1999lq,Sanchez-Molano:2013vn,Turner:2008ve,Stolting:2013ys,Brachi:2013ve,Xing:2013uq,Hawthorne:2001bh,Rogers:2007qf,De-Wit:2013fk,Nadeau:2012vn,Keller:2013uq,Baack:2008ul,Bourret:2013fk,Wright:2010ly,Sousa:2013fk,Burke:2002pd,Joost:2013fk,Fourcade:2013fk,Bierne:2013kx,Albert:2009gf,Nadeau:2013vn</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -22269,7 +22341,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>AlpineIbex</string>
 		<key>keys</key>
-		<string>Toigo:2002qf,Stuwe:1989oj,Slatkin:1995fk,Stuwe:1992eq,Loison:2002bh,Toigo:2007kx,Giacometti:2004fk,Stuwe:1987rw,Maudet:2002wt,Couturier:1962fk,Kemp:1995ys,Biebach:2009ly,Stuwe:1991qa,Luikart:1999vn,Willisch:2009uq,Scribner:1994cs,Grossen:2005vn,Nievergelt:1966fk,Stuwe:1986kl,Mainguy:2005fk,Willisch:2010fk,Aeschbacher:1978vn,Abderhalden:2004bh</string>
+		<string>Aeschbacher:1978vn,Abderhalden:2004bh,Slatkin:1995fk,Stuwe:1992eq,Loison:2002bh,Toigo:2007kx,Giacometti:2004fk,Stuwe:1987rw,Maudet:2002wt,Couturier:1962fk,Kemp:1995ys,Biebach:2009ly,Stuwe:1991qa,Luikart:1999vn,Willisch:2009uq,Scribner:1994cs,Grossen:2005vn,Nievergelt:1966fk,Stuwe:1986kl,Mainguy:2005fk,Willisch:2010fk,Toigo:2002qf,Stuwe:1989oj</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -22293,13 +22365,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>DemographicInference</string>
 		<key>keys</key>
-		<string>Gill:2013dq,Gautier:2013cr,Lipson:2013qf,Peery:2013ys,Hedrick:2013ys,McVean:2005fk,Rundel:2013zr,Li:2011uq,Steinruecken:2013fk,Hoban:2013vn,Sheehan:2013bh,Marjoram:2006uq,Simonsen:1995fk</string>
+		<string>Gill:2013dq,Gautier:2013cr,Lipson:2013qf,Peery:2013ys,Hedrick:2013ys,McVean:2005fk,Paul:2010kx,Rundel:2013zr,Li:2011uq,Steinruecken:2013fk,Hoban:2013vn,Sheehan:2013bh,Marjoram:2006uq,Paul:2011vn,Simonsen:1995fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>DistribFitnessEffects</string>
 		<key>keys</key>
-		<string>Eyre-Walker:2007fk,Cowperthwaite:2005vn,Sanjuan:2004ys,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Kassen:2006ly,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Rokyta:2005ve,Barrett:2006fk,Imhof:2001zr,Gillespie:1984uq</string>
+		<string>Imhof:2001zr,Gillespie:1984uq,Sanjuan:2004ys,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Kassen:2006ly,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Rokyta:2005ve,Barrett:2006fk,Eyre-Walker:2007fk,Cowperthwaite:2005vn</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -22341,7 +22413,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>LineageSorting</string>
 		<key>keys</key>
-		<string>Maddison:2006zl,Carstens:2007rz,Rannala:2008sf</string>
+		<string>Rannala:2008sf,Carstens:2007rz,Maddison:2006zl</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -22389,13 +22461,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>RareAlleles</string>
 		<key>keys</key>
-		<string>Barton:1986cr,Slatkin:2002dq,Slatkin:1989lh,Slatkin:1985nx,Rousset:2008yq</string>
+		<string>Rousset:2008yq,Slatkin:2002dq,Slatkin:1989lh,Barton:1986cr,Slatkin:1985nx</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>Reviews</string>
 		<key>keys</key>
-		<string>Rannala:2008sf,Renaut:2012kx,Charlesworth:2012fg,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Guerrero:2012qf,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Strasburg:2012uq,Feder:2012dq,Nunney:1994fk,Powell:2010fk,Hickerson:2010ec,Whitlock:2008uq,Otto:2011uq,Bachtrog:2011fk</string>
+		<string>Bachtrog:2011fk,Renaut:2012kx,Charlesworth:2012fg,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Guerrero:2012qf,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Strasburg:2012uq,Feder:2012dq,Nunney:1994fk,Powell:2010fk,Hickerson:2010ec,Rannala:2008sf,Whitlock:2008uq,Otto:2011uq</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -22407,13 +22479,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>SexChromosomes</string>
 		<key>keys</key>
-		<string>Bachtrog:2011fk,Charlesworth:2012fg,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Rice:1984vn,Otto:1997fk,Rice:1987rt,Otto:2011uq</string>
+		<string>Otto:2011uq,Charlesworth:2012fg,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Rice:1984vn,Otto:1997fk,Rice:1987rt,Bachtrog:2011fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>Software</string>
 		<key>keys</key>
-		<string>Meirmans:2011fk,Perez-Figueroa:2009ng,Lesnoff:2009uq,Currat:2004sf,Laval:2004sf,Lipson:2013qf,Labate:2000ux,Croissant:2008kx,Thompson:1995ft,Strand:2002gf,Balloux:2001wk,Kuhner:2006sf,Messer:2013kx,Anderson:2005la,Kuo:2003kx,Hampe:1998ly,rcore:2011fk,Guillot:2009sf,Dettling:2003rm,Rousset:2008yq,Sheehan:2013bh,Brown:2011fk,Excoffier:2000yf,Raymond:1995kx,Nath:1996az,Stephens:2003fj,Quardokus:2000zi</string>
+		<string>Quardokus:2000zi,Perez-Figueroa:2009ng,Lesnoff:2009uq,Currat:2004sf,Laval:2004sf,Lipson:2013qf,Labate:2000ux,Croissant:2008kx,Thompson:1995ft,Strand:2002gf,Balloux:2001wk,Kuhner:2006sf,Messer:2013kx,Anderson:2005la,Kuo:2003kx,Hampe:1998ly,rcore:2011fk,Guillot:2009sf,Dettling:2003rm,Rousset:2008yq,Sheehan:2013bh,Brown:2011fk,Excoffier:2000yf,Raymond:1995kx,Nath:1996az,Meirmans:2011fk,Stephens:2003fj</string>
 	</dict>
 	<dict>
 		<key>group name</key>
