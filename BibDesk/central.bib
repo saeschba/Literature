@@ -2,7 +2,7 @@
 %% http://bibdesk.sourceforge.net/
 
 
-%% Created for Simon Aeschbacher at 2013-10-25 12:11:54 +0200 
+%% Created for Simon Aeschbacher at 2013-10-25 18:16:13 +0200 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,23 @@
 
 @string{macro = {definition}}
 
+
+@article{Wilson:2003fk,
+	Abstract = {A new Bayesian method that uses individual multilocus genotypes to estimate rates of recent immigration (over the last several generations) among populations is presented. The method also estimates the posterior probability distributions of individual immigrant ancestries, population allele frequencies, population inbreeding coefficients, and other parameters of potential interest. The method is implemented in a computer program that relies on Markov chain Monte Carlo techniques to carry out the estimation of posterior probabilities. The program can be used with allozyme, microsatellite, RFLP, SNP, and other kinds of genotype data. We relax several assumptions of early methods for detecting recent immigrants, using genotype data; most significantly, we allow genotype frequencies to deviate from Hardy-Weinberg equilibrium proportions within populations. The program is demonstrated by applying it to two recently published microsatellite data sets for populations of the plant species Centaurea corymbosa and the gray wolf species Canis lupus. A computer simulation study suggests that the program can provide highly accurate estimates of migration rates and individual migrant ancestries, given sufficient genetic differentiation among populations and sufficient numbers of marker loci.},
+	Author = {Wilson, Gregory A. and Rannala, Bruce},
+	Date-Added = {2013-10-25 16:15:19 +0000},
+	Date-Modified = {2013-10-25 16:15:44 +0000},
+	Eprint = {http://www.genetics.org/content/163/3/1177.full.pdf+html},
+	Journal = Genetics,
+	Journal_Long = {Genetics},
+	Keywords = {inference, migration rates, Bayesian approach},
+	Number = {3},
+	Pages = {1177-1191},
+	Title = {Bayesian Inference of Recent Migration Rates Using Multilocus Genotypes},
+	Url = {http://www.genetics.org/content/163/3/1177.abstract},
+	Volume = {163},
+	Year = {2003},
+	Bdsk-Url-1 = {http://www.genetics.org/content/163/3/1177.abstract}}
 
 @article{Tyler:2013uq,
 	Abstract = {<p>Contemporary genetic studies are revealing the genetic complexity of many traits in humans and model organisms. Two hallmarks of this complexity are epistasis, meaning gene-gene interaction, and pleiotropy, in which one gene affects multiple phenotypes. Understanding the genetic architecture of complex traits requires addressing these phenomena, but interpreting the biological significance of epistasis and pleiotropy is often difficult. While epistasis reveals dependencies between genetic variants, it is often unclear how the activity of one variant is specifically modifying the other. Epistasis found in one phenotypic context may disappear in another context, rendering the genetic interaction ambiguous. Pleiotropy can suggest either redundant phenotype measures or gene variants that affect multiple biological processes. Here we present an R package, R/cape, which addresses these interpretation ambiguities by implementing a novel method to generate predictive and interpretable genetic networks that influence quantitative phenotypes. R/cape integrates information from multiple related phenotypes to constrain models of epistasis, thereby enhancing the detection of interactions that simultaneously describe all phenotypes. The networks inferred by R/cape are readily interpretable in terms of directed influences that indicate suppressive and enhancing effects of individual genetic variants on other variants, which in turn account for the variance in quantitative traits. We demonstrate the utility of R/cape by analyzing a mouse backcross, thereby discovering novel epistatic interactions influencing phenotypes related to obesity and diabetes. R/cape is an easy-to-use, platform-independent R package and can be applied to data from both genetic screens and a variety of segregating populations including backcrosses, intercrosses, and natural populations. The package is freely available under the GPL-3 license at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://cran.r-project.org/web/packages/cape" xlink:type="simple">http://cran.r-project.org/web/packages/cape</ext-link>.</p>},
@@ -2165,9 +2182,10 @@ ST
 The main purpose of the present paper is to show that linked gene systems own a remarkable property of rapidly settling to a state which I would like to call quasi linkage equilibrium This state is attained if gene frequencies are changing under loose linkage and relatively weak epistatic interactions. On the other hand, linkage disequilibrium may be built up indefinitely when linkage is tight, epistatic interactions are relatively strong and gene frequencies are changing toward fixation.
 I would like to show further that for a genetic system evolving under quasi linkage disequilibrium, both Wright's conception of an ``adaptive topography" and Fisher's fundamental theorem of natural selection indeed hold.
 Throughout this paper I will consider a very large random mating population and assume that the fitness of individual genotypes are constant, though not necessarily the same. Furthermore, I will restrict my consideration to the case of two linked loci, each with a pair of alleles, A1 and A2 in the first locus and B1 and B2 in the second, leaving more complex cases to future investigations.},
+	Annote = {According to Reinhard, this paper contains an error, which has been rectified by Nagylaki, Hofbauer and Brunovsky (1999) J Math Biol 38:103--133},
 	Author = {Kimura, Motoo},
 	Date-Added = {2013-06-24 09:17:58 +0000},
-	Date-Modified = {2013-06-24 09:33:01 +0000},
+	Date-Modified = {2013-10-25 13:43:09 +0000},
 	Eprint = {http://www.genetics.org/content/52/5/875.full.pdf+html},
 	Journal = Genetics,
 	Journal_Long = {Genetics},
@@ -23628,7 +23646,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>AdaptiveDivergence</string>
 		<key>keys</key>
-		<string>White:2013vn,Janssen:2013kx,Bierne:2013kx,Kim:1999lq,Sanchez-Molano:2013vn,Chavez-Galarza:2013fk,Charlesworth:1997vn,Barton:1979fk,Campo:2013kx,Bradbury:2013ys,Feder:2010fk,Turner:2008ve,Stolting:2013ys,Brachi:2013ve,Xing:2013uq,Hawthorne:2001bh,Rogers:2007qf,De-Wit:2013fk,Nadeau:2012vn,Keller:2013uq,Karlsen:2013vn,Baack:2008ul,Bourret:2013fk,Wright:2010ly,Sousa:2013fk,Burke:2002pd,Rong:2013fk,Joost:2013fk,Nadeau:2013vn,Fourcade:2013fk,Albert:2009gf,Kim:2011uq</string>
+		<string>White:2013vn,Kim:1999lq,Albert:2009gf,Kim:2011uq,Sanchez-Molano:2013vn,Chavez-Galarza:2013fk,Charlesworth:1997vn,Barton:1979fk,Campo:2013kx,Bradbury:2013ys,Feder:2010fk,Turner:2008ve,Stolting:2013ys,Brachi:2013ve,Xing:2013uq,Hawthorne:2001bh,Rogers:2007qf,De-Wit:2013fk,Nadeau:2012vn,Keller:2013uq,Karlsen:2013vn,Baack:2008ul,Bourret:2013fk,Wright:2010ly,Sousa:2013fk,Burke:2002pd,Rong:2013fk,Joost:2013fk,Bierne:2013kx,Nadeau:2013vn,Fourcade:2013fk,Janssen:2013kx</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23640,7 +23658,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>AlpineIbex</string>
 		<key>keys</key>
-		<string>Toigo:2002qf,Stuwe:1989oj,Slatkin:1995fk,Stuwe:1992eq,Loison:2002bh,Toigo:2007kx,Giacometti:2004fk,Stuwe:1987rw,Maudet:2002wt,Couturier:1962fk,Kemp:1995ys,Biebach:2009ly,Stuwe:1991qa,Luikart:1999vn,Willisch:2009uq,Scribner:1994cs,Grossen:2005vn,Nievergelt:1966fk,Stuwe:1986kl,Mainguy:2005fk,Willisch:2010fk,Aeschbacher:1978vn,Abderhalden:2004bh</string>
+		<string>Aeschbacher:1978vn,Abderhalden:2004bh,Slatkin:1995fk,Stuwe:1992eq,Loison:2002bh,Toigo:2007kx,Giacometti:2004fk,Stuwe:1987rw,Maudet:2002wt,Couturier:1962fk,Kemp:1995ys,Biebach:2009ly,Stuwe:1991qa,Luikart:1999vn,Willisch:2009uq,Scribner:1994cs,Grossen:2005vn,Nievergelt:1966fk,Stuwe:1986kl,Mainguy:2005fk,Willisch:2010fk,Toigo:2002qf,Stuwe:1989oj</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23664,13 +23682,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>DemographicInference</string>
 		<key>keys</key>
-		<string>Gautier:2013cr,Lipson:2013qf,Warmuth:2013vn,Marjoram:2006uq,Paul:2010kx,Rundel:2013zr,Steinruecken:2013fk,Bermond:2013ys,McVean:2005fk,Rooney:1999uq,Hoban:2013vn,Peery:2013ys,Martinkova:2013zr,Chiucchi:2010uq,Paul:2011vn,Gill:2013dq,Rong:2013fk,Hedrick:2013ys,Li:2011uq,Sheehan:2013bh,Simonsen:1995fk,Wang:2010mz</string>
+		<string>Gautier:2013cr,Lipson:2013qf,Warmuth:2013vn,Marjoram:2006uq,Paul:2010kx,Rundel:2013zr,Steinruecken:2013fk,Bermond:2013ys,McVean:2005fk,Rooney:1999uq,Hoban:2013vn,Peery:2013ys,Martinkova:2013zr,Wilson:2003fk,Chiucchi:2010uq,Paul:2011vn,Gill:2013dq,Rong:2013fk,Hedrick:2013ys,Li:2011uq,Sheehan:2013bh,Simonsen:1995fk,Wang:2010mz</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>DistribFitnessEffects</string>
 		<key>keys</key>
-		<string>Eyre-Walker:2007fk,Cowperthwaite:2005vn,Sanjuan:2004ys,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Kassen:2006ly,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Rokyta:2005ve,Barrett:2006fk,Imhof:2001zr,Gillespie:1984uq</string>
+		<string>Imhof:2001zr,Gillespie:1984uq,Sanjuan:2004ys,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Kassen:2006ly,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Rokyta:2005ve,Barrett:2006fk,Eyre-Walker:2007fk,Cowperthwaite:2005vn</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23700,13 +23718,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>GeneticArchitecture</string>
 		<key>keys</key>
-		<string>Yeaman:2013uq,Hemmer-Hansen:2013fk,Leinonen:2012fk,Hill:2013uq,Beleza:2013fk,Yang:2013fk,Daub:2013fk,Petry:1983uq,Powell:2013fk,Joost:2013fk,Parchman:2013fk,Kelly:2000vn,Akerman:2013fk,Sousa:2013fk,Barton:1986fk,Brothers:2013fk</string>
+		<string>Brothers:2013fk,Hemmer-Hansen:2013fk,Leinonen:2012fk,Hill:2013uq,Beleza:2013fk,Yang:2013fk,Daub:2013fk,Petry:1983uq,Powell:2013fk,Joost:2013fk,Parchman:2013fk,Kelly:2000vn,Yeaman:2013uq,Akerman:2013fk,Sousa:2013fk,Barton:1986fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>HumanEvolution</string>
 		<key>keys</key>
-		<string>Fu:1997ys,Qi:2013ly,Weiss:1998zr,Lipson:2013qf,Verdu:2009ly,Casals:2013fk,Itan:2009fk,Carlson:2013uq,Gronau:2011uq,Fagundes:2007rc,Coop:2009nx,Zahle:2005sf,Sabeti:2002cr,Rannala:2003fk,Schlotterer:2002kx,Sheehan:2013bh,Wiehe:1998vn,Wegmann:2009sf,Roberts:2013fk,Hernando-Herraez:2013fk</string>
+		<string>Fu:1997ys,Qi:2013ly,Hernando-Herraez:2013fk,Lipson:2013qf,Verdu:2009ly,Casals:2013fk,Itan:2009fk,Carlson:2013uq,Gronau:2011uq,Fagundes:2007rc,Coop:2009nx,Zahle:2005sf,Sabeti:2002cr,Rannala:2003fk,Schlotterer:2002kx,Sheehan:2013bh,Wiehe:1998vn,Wegmann:2009sf,Roberts:2013fk,Weiss:1998zr</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23724,7 +23742,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>LineageSorting</string>
 		<key>keys</key>
-		<string>Maddison:2006zl,Carstens:2007rz,Meraner:2013uq,Rannala:2008sf</string>
+		<string>Rannala:2008sf,Carstens:2007rz,Meraner:2013uq,Maddison:2006zl</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23736,7 +23754,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>LocalAdaptation</string>
 		<key>keys</key>
-		<string>Gharrett:2013fk,Charlesworth:1997vn,Xing:2013uq,Daub:2013fk,Vuilleumier:2008kx,Mikheyev:2013fk,Chavez-Galarza:2013fk,Joost:2013fk,DeFaveri:2013kx,Parchman:2013fk,Garroway:2013kx,Feder:2010fk,Qi:2013ly,Mitchell-Olds:2013fk</string>
+		<string>Mitchell-Olds:2013fk,Charlesworth:1997vn,Xing:2013uq,Daub:2013fk,Vuilleumier:2008kx,Mikheyev:2013fk,Chavez-Galarza:2013fk,Joost:2013fk,DeFaveri:2013kx,Parchman:2013fk,Garroway:2013kx,Feder:2010fk,Gharrett:2013fk,Qi:2013ly</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23760,7 +23778,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>Overdominance</string>
 		<key>keys</key>
-		<string>Haldane:1962ys,Ohta:1971ai,Ohta:1970ve,Ohta:1971rt,Pamilo:1998lq,Ohta:1972gf,Kelly:2000vn,Bierne:2000qy</string>
+		<string>Bierne:2000qy,Ohta:1971ai,Ohta:1970ve,Ohta:1971rt,Pamilo:1998lq,Ohta:1972gf,Kelly:2000vn,Haldane:1962ys</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23772,13 +23790,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>RareAlleles</string>
 		<key>keys</key>
-		<string>Slatkin:1985nx,Slatkin:1989lh,Slatkin:2002dq,Casals:2013fk,Barton:1986cr,Rousset:2008yq</string>
+		<string>Barton:1986cr,Rousset:2008yq,Slatkin:2002dq,Slatkin:1989lh,Slatkin:1985nx,Casals:2013fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>Reviews</string>
 		<key>keys</key>
-		<string>Whitlock:2008uq,Renaut:2012kx,Hernando-Herraez:2013fk,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Guerrero:2012qf,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Eyre-Walker:2013ly,Strasburg:2012uq,Feder:2012dq,Nunney:1994fk,Powell:2010fk,Pritchard:2010dq,Hickerson:2010ec,Rannala:2008sf,Otto:2011uq,Bachtrog:2011fk</string>
+		<string>Otto:2011uq,Renaut:2012kx,Bachtrog:2011fk,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Guerrero:2012qf,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Eyre-Walker:2013ly,Strasburg:2012uq,Feder:2012dq,Nunney:1994fk,Powell:2010fk,Pritchard:2010dq,Hickerson:2010ec,Whitlock:2008uq,Rannala:2008sf,Hernando-Herraez:2013fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -23790,13 +23808,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>SexChromosomes</string>
 		<key>keys</key>
-		<string>Bachtrog:2011fk,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Rice:1984vn,Otto:1997fk,Rice:1987rt,Otto:2011uq</string>
+		<string>Otto:2011uq,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Rice:1984vn,Otto:1997fk,Rice:1987rt,Bachtrog:2011fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>Software</string>
 		<key>keys</key>
-		<string>Meirmans:2011fk,Perez-Figueroa:2009ng,Lesnoff:2009uq,Currat:2004sf,Laval:2004sf,Lipson:2013qf,Labate:2000ux,Croissant:2008kx,Thompson:1995ft,Strand:2002gf,Balloux:2001wk,Kuhner:2006sf,Messer:2013kx,Anderson:2005la,Kuo:2003kx,Hampe:1998ly,rcore:2011fk,Guillot:2009sf,Dettling:2003rm,Rousset:2008yq,Sheehan:2013bh,Brown:2011fk,Excoffier:2000yf,Raymond:1995kx,Nath:1996az,Stephens:2003fj,Quardokus:2000zi</string>
+		<string>Quardokus:2000zi,Perez-Figueroa:2009ng,Lesnoff:2009uq,Currat:2004sf,Laval:2004sf,Lipson:2013qf,Labate:2000ux,Croissant:2008kx,Thompson:1995ft,Strand:2002gf,Balloux:2001wk,Kuhner:2006sf,Messer:2013kx,Anderson:2005la,Kuo:2003kx,Hampe:1998ly,rcore:2011fk,Wilson:2003fk,Guillot:2009sf,Dettling:2003rm,Rousset:2008yq,Sheehan:2013bh,Brown:2011fk,Excoffier:2000yf,Raymond:1995kx,Nath:1996az,Meirmans:2011fk,Stephens:2003fj</string>
 	</dict>
 	<dict>
 		<key>group name</key>
