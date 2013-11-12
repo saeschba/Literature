@@ -1,0 +1,273 @@
+\documentclass[11pt]{article}
+\usepackage[total={17cm, 24cm}]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[normalem]{ulem}
+\usepackage{natbib}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{color}
+\usepackage[
+	bookmarks = true,
+	bookmarksnumbered = false, 	% true means bookmarks in
+							% navigation window are numbered
+	bookmarksopen = false, 		% true means only level 1
+							% are displayed.
+	colorlinks = true,			% false for frames around links, true for color
+	linkcolor = myred,
+	citecolor = mygreen,
+	urlcolor = myblue
+	]{hyperref}
+	
+\definecolor{mygreen}{rgb}{0, 0.5, 0}	% less intense green
+\definecolor{myblue}{rgb}{0, 0, 0.75}		% less intense blue
+\definecolor{myred}{rgb}{0.75, 0, 0}		% less intense red
+\definecolor{myrev1}{rgb}{1, 0, 0}		% less intense red; after approval, simply turn into black
+\definecolor{temphidden}{rgb}{0, 0, 0}		% less intense red; to re-highlight items that finally need to be changed,
+									% but should be black temporarilly
+% \definecolor{myrev1}{rgb}{0, 0, 0}
+\definecolor{mycorr1}{rgb}{0, 0, 1}		% less intense red; after approval, simply turn into black
+
+
+
+% Define customised list environments.
+\newenvironment{my_description}
+{\begin{description}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{description}}
+
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{enumerate}}
+
+\newcommand{\ra}{$\rightarrow$\ }
+\newcommand{\C}{\textbf{C:}\ }
+\newcommand{\Q}{\textbf{Q:}\ }
+\newcommand{\R}{\textbf{R:}\ }
+\newcommand{\V}{\textbf{S:}\ }
+
+\newcommand{\fst}{$F_{\mathrm{ST}}\ $}
+\newcommand{\qst}{$Q_{\mathrm{ST}}\ $}
+
+
+\title{Reply to Roux \emph{et al.} ``Accounting for semi-permeability to gene flow using Approximate Bayesian Computation improves inference into the history of speciation: application to a mussel hybrid zone''}
+%\author{Simon Aeschbacher}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+\section{Summary}
+This paper addresses the important problem that effective rates of gene flow may vary across the genome and that this can interfere with demographic inference based on supposedly neutral markers. The authors claim that by allowing for genome-wide heterogeneity in geneflow, it becomes possible to differentiate alternative scenarios of population history. A hierarchical ABC approach is borrowed from an earlier publication this year (with the same first author) and applied to a pair of closely related mussel species. The authors conclude that, in their case, models allowing for heterogeneous gene flow have higher support than those with homogeneous gene flow. Among those with heterogeneous gene flow, the scenario with a long period of speration (allopatry) followed by a recent phase of secondary contact (SC), best explained the mussel data. The difference to the second model (isolation with migration and heterogeneous gene flow) seems small, but the authors give estimates of migration rates, split and contact times only for the SC model. The paper does not explicitly model the mechanistic causes for variation in gene flow (linked selection). I have concerns regarding the main focus of the paper, the methodological approach and the interpretation of the results, as well as a number of specific comments. 
+
+%\begin{itemize}
+%	\item What about assessing the genetic stability? Why not put a sentence in the Abstract?
+%	\item \emph{P. morrisonicola} suffers from overexploitation from logging. Conservational interest of the paper?
+%	\item Is there evidence for there being habitat suitable for conifers immediately after formation of Proto-Taiwan? In other words, does 4--8 mya sound like a realistic time for the split between \emph{P. morrisonicola} and \emph{P. wilsonii}?
+%	\item Are power and false positive rate of the ABC-type model comparison procedure appropriately assessed? Are they assessed with respect to sampling size only or also with respect to the choice of statistics?
+%	\item How do the authors deal with and discuss the main issues of ABC: i) choice of summary statistics, ii) choice of algorithm (rejection vs. ABC-MCMC), iii) choice of distance metric
+%	\item The relationship to climate change is speculative. There are no climatic data shown or referred to, and if so, the relationship proposed could be correlational, not causal.
+%	\item Why splitting the whole inference problem into so many chunks? If necessary, could at least the uncertainty in the estimate of $T$ be incorprotated in the `within-species' analysis?
+%	\item ...
+%	\end{itemize}
+%
+%Main goals of the study:
+%\begin{my_enumerate}
+%	\item Compare extant genetic diversity to that of other spruce species.
+%	\item Assess the impact of climate change on the trajectory of $N_e$. This uses ABC, comparing alternative demographic models.
+%	\item Estimate divergence time and rates of gene flow between \emph{P. morrisonicola} and four related spruce species found on mainland China. Two Bayesian approaches (ABC, MIMAR) are used and compared.
+%\end{my_enumerate}
+
+
+\section{General issues}
+
+\begin{my_enumerate}
+	\item It was not clear to me what the main focus of paper should be; either it is to i) make the point that genome-wide heterogeneity (GWH) in gene flow may affect demographic inference, or it is to ii) show how ABC can be used in this context. If i) applies, the relevance of this paper may be hampered by the fact that, as the authors mention, other recent studies have made the point \citep{Sousa:2013fk, Roux:2013fk}. While there is a clear methodological difference between this manuscript and \citet{Sousa:2013fk}, my concern is that the manuscript is to some extent redundant to \citet{Roux:2013fk}, both with respect to the approach (hierarchical ABC) and to the main conclusion (separation of potentially hybridising species, followed by secondary contact). This would argue against ii) being the main focus. In the end, it is an editorial question whether applying an existing approach to just another pair species is relevant enough for publication in \emph{Molecular Ecology}.
+	\item One of the main arguments seems to be that allowing for GWH in gene flow made it possible to discriminate alternative \emph{demographic} models. However, the authors mention that the mechanistic explanation of GWH in gene flow is variation in the degree of permeability due to selection at isolation/speciation genes (see l.86--94 of the ms). Hence, I wonder how a signal that is produced by linked selection becomes informative about demography. Isn't there some potential for confounding effects that could only be resolved by including into the comparison some models that explicitly incorporate linked selection? It was not clear to me what feature(s) of the data are relevant to distinguish the demographic models.
+	\item Performance and accuracy of ABC may depend on the model and parameter range, and on a number of choices to be made (summary statistics, rejection tolerance, distance metric). The paper lacks a proper discussion of these issues -- not to mention a couple of validation steps that should by now be standard for any ABC application. 1) I missed a check of the model specification by visualisation of the prior-predictive distribution. For instance, pairwise plots of simulated summary statistics, together with the observed point, could show that the observed point is covered by the cloud of simulated points. 2) The choice of summary statitstics, in particular in the context of ABC-type model comparison \citep{Robert:2011fk}, is problematic, but not further addressed nor validated (see a number of recent publications on this topic). 3) Only one rejection tolerance is used (l.205). A number of different values should be used and the robustness of the results tested. 4) ABC with a neural network requires additional choices for tuning parameters (see l.208--209, for instance).
+	\item Whereas the authors have validated their ABC-type model comparison following \cite{Fagundes:2007rc}, they have not validated parameter inference within chosen models. This should be standard by now (pick pseudo-observed data sets from simulations, perform ABC on them and report measures of accuracy). Related to this, the authors use a conditional two-step procedure for parameter inference (locus-independent parameters first, locus-specific parameters after), which has not been validated in the context of their models and parameter schemes. There are recent studies in the ABC literature that provide theoretical guidelines and suggest empirical procedures for validation of such two-step inference.
+	\item The support of the SC model with heterogeneous gene flow relative to the IM model with heterogeneous gene flow does not seem substantial to me (Table 2). I would like to see estimates of migration rates (and other parameters) inferred under the IM model, too. The data might be almost equally well explained by a long period of complete separation followed by secondary contact (SC model) and a long period of continuous genetic exchange at a low rate (IM). This is not appropriately discussed, although it could completely change the conclusion about the history of the two species of mussels. Similarly, the data might also be explained by an SC model in which gene flow was interrupted or resumed at different points in time at different barrier loci, rather than by different rates of gene flow.
+\end{my_enumerate}
+	
+
+\section{Specific comments}
+
+\subsection{Abbreviations used}
+\begin{my_description}
+	\item[Q] Question
+	\item[C] Comment
+	\item[S] Suggestion
+	\item[R] Re-formulation or change needed (usually followed by a suggestion)
+	\item[\ra] Suggested change/correction
+\end{my_description}
+
+\subsection{Title}
+
+\begin{my_description}
+	\item[l.1] \V Omit `using Approximate Bayesian Computation' (see comment to l.24--30 below).
+\end{my_description}
+
+\subsection{Abstract}
+
+\begin{my_description}
+	\item[l.21] \R `\dots between parapatric populations undergoing speciation with gene flow,\dots' \ra between populations undergoing speciation with gene flow
+	\item[l.24--30] \C Here is where I first struggled in identifying the main focus of the paper (see general issue 1 above). Is it to show that ABC does a better job than other approaches in model comparison and parameter estimation in the context of variable migration rates? Or is it to make a point for the importance of accounting for variation in (effective) rates of gene flow when fitting models. I presume the second one should be the main focus (see l.103--105 in the Introduction) and I suggest rephrasing the abstract accordingly. However, as the authors acknowledge, two recent publications already looked at this problem (see general issue 1). A third option would be to focus more on the pair of mussel species and learn about their history.
+	\item[l.32--33] \C I felt uneasy about this argument. The fact that when you allow for rates of gene flow to be different between loci you are able to distinguish alternative models, but when you constrain on homogeneous gene flow you are not, is not \emph{per se} evidence in favour of heterogeneous gene flow.
+\end{my_description}
+
+\subsection{Introduction}
+\begin{my_description}
+	\item[l.38] \R Delete `recent'. \R Delete `by evolutionary biologists'
+	\item[l.40] \V Either refer to review articles exclusively, or give a more representative list of references.
+	\item[l.40--42] \Q Isn't the main challenge that, as models become more complex, parameters and models may be confounded (the data may not be informative for resolving such conflicts)? Actually, models do not need to be very complex for this to happen.
+	\item[l.43--44] \C `parapatric populations' and `speciation with gene flow' reads redundant. See same comment to l.21 of the Abstract
+	\item[l.52--53] \R `\dots heterogeneity in genomic patterns of differentiation\dots' \ra \dots heterogeneity in genetic differentiation\dots.
+	\item[l.58--64] \C This part fails to distinguish between models and methods/approaches. I would classify IM as a model in this context (that comes with a set of assumptions), not a method; various approaches (explicitly likelihood-based ones, ABC,\dots) can be used to do inference under the IM model. You are concerned about the limiting assumptions, for instance, of homogeneous gene flow. (Unfortunately, the software is called IM, too. This causes the confusion).
+	\item[l.68] \R `method' \ra model
+	\item[l.76] \R `For example, the best supported scenario\dots' \ra For example, in the study by Roux et al. (2013), the best-supported scenario\dots.
+	\item[l.76--79] \V The formulation is not clear. How can one scenario (model?) be supported by another model? The data can support one or the other model in the sense that one model is more likely compared to the other one, given the data. Please clarify.
+	\item[l.102] \V `\dots for which the IM method\dots' \ra for which inference under the IM model\dots
+	\item[l.107--109] \Q What explicitly is new compared to \citet{Roux:2013fk} with respect to the method/approach?
+
+\end{my_description}
+
+
+
+\subsection{Materials and Methods}
+
+\begin{my_description}
+	\item[l.128--130] \C This sentence was not clear to me. What is meant by a `single allele per individual'?
+	\item[l.141] \R `\dots departure of site frequency spectrum from\dots' \ra \dots departure of the site frequency spectrum from\dots [or: \dots departure of site frequency spectra from\dots]
+	\item[l.142] \V Insert comma after `(Tajima 1989)' and 'using\dots'
+	\item[l.170] \V No hyphen in `scaled-Beta' (?)
+	\item[l.173] \V It might be good to remind the reader of what the mean and variance of the beta distribution are in terms of $\alpha$ and $\beta$. You could even give two numerical examples of combinations of $\alpha$ and $\beta$, for instance, one leading to a U-shaped distribution of migration rates across loci, and the other one to a bell- or L-shaped one.
+	\item[l.174] \R `large' \ra wide
+	\item[l.175] \V I suggest placing the definitions of the various $\theta$s first.
+	\item[l.174--190] \C Please justify the choice of the priors. \V Use a standard way of specifying an interval, \emph{e.g.} $[a, b]$ instead of a-b.
+	\item[l.181] \C It is a matter of taste, but I suggest not to start a sentence with a symbol or abbreviation (this applies to other places in the ms, too).
+	\item[l.182--183] \R `We sampled $T_\mathrm{split}/4 N_\mathrm{ref}$' from the interval of 0--25 generations, 0--$10^{7}$ generations in demographic units' \ra We sampled $T_\mathrm{split}/(4 N_\mathrm{ref})$ from the interval $[0,25]$, which corresponds to $[0,10^{7}]$ generations.
+	\item[l.187] \Q Is the interval of 0-30 correct here? Compare to 0-20 in l.185.
+	\item[l.187--190] \Q What was assumed about the scalar $c$ (see l.171)?
+	\item[l.198--202] \Q How is this two-step procedure for model choice justified? I can see the practical reason for doing so -- avoiding too many models to be compared at once, which would force you to relax the rejection tolerance ($n$). But it could be that the homogeneous and heterogeneous version of a given model, say the IM, both explain the data far better than the homogeneous and heterogeneous version of, say, the AM model. In that case, your two-step procedure would keep one of the AM models and throw out one of the IM models. However, it would seem justified to keep both IM models and omit both AM models. It should be straightforward to empirically check if a deviation from the two-step procedure changes the main conclusion (the ranking of the various models). PS: Your results suggest that this is not an issue (l.260--262); perhaps state this early on so that the reader does not worry.
+	\item[l.205] \C The rejection tolerance is known to have an impact on ABC inference \citep{Beaumont:2010uq}. I would therefore like to see a comparison for a (reasonable) set of values.
+	\item[l.216--218] \C It is a matter of taste whether one wants to bring up $p$-values in a Bayesian setting.
+	\item[l.221--222] \R I see the practical advantage of this two-step estimation procedure, but it is by no means theoretically valid in general. It needs to be justified for each model separately, which involves showing at least empirically that parameter estimates obtained this way are not significantly worse than those obtained by joint inference \cite[for a detailed treatment of conditional ABC inference, see][]{Bazin:2010mz,Aeschbacher:2013vn}.
+	\item[l.223] \R Please say why you transformed the parameters. Was it to avoid projection of posterior density out of the prior range? Was this an issue at all?
+	\item[l.230] \R `Hence,\dots' \ra Specifically,\dots
+	\item[l.232] \C Again, this procedure is not valid in general (see comment to l.221--222 above), but needs to be justified. It depends on (approximate) sufficiency and ancillarity of summary statistics used for the different sets of parameters.
+\end{my_description}
+
+
+\subsection{Results}
+As a general point, I am worried that the observed data might also be explained by differential onset of reduced gene flow at various speciation/isolation loci, rather than heterogeneity in rates of gene flow among loci. All of the models considered here assume that the temporal parameters are identical among loci.
+\begin{my_description}
+	\item[l.239] \C I stumbled over `mulitply captured', as it might mean several things. Please make sure it is properly described in the Methods, and then it can be omitted here.
+	\item[l.249--252] \Q Although intuitively clear, is there a reference you could cite?
+	\item[l.291] \V Omit `and that we explored the correct parameter space'. See point 1) in general issue 3 above.
+	\item[l.292] \R Please introduce the abbreviation `HPD95' here.
+	\item[l.295] \R Remove `, but not significantly,', as it is not clear what `significant' means here.
+	\item[l.298] \C The formulation is unfortunate, because a scenario as such cannot be informative. Information is in the data, and a model/scenario can be more or less likely given the information in the data.
+	\item[l.306] \R `\dots the estimated joint shape parameters\dots' \ra the jointly estimated shape paremters (?)
+	\item[l.309] \C The goodness-of-fit procedure is not described and potential references are missing. \R `joint-posterior' \ra joint posterior
+	\item[l.308--312] \C This is only a partial check. Other models might have been misspecified (see point 1) in general issue 3 above). \Q How can the underestimation of $F_\mathrm{ST}$ be explained?
+	\item[l.311] \R Delete `by the scenario'.
+	\item[l.314] \C I suggest avoiding the phrase of an `informative (posterior) distribution' without further specification. A flat posterior is also informative in a sense.
+	
+\end{my_description}
+
+
+\subsection{Discussion}
+Parts of the discussion are redundant (first and last paragraph), whereas a series of methodological issues and interpretational uncertainties are not appropriately discussed (see detailed comments above). I suggest shortening the existing content and adding a subsection on these limitations.
+\begin{my_description}
+	\item[l.341--344] \C Strictly speaking, it is not clear what is meant by `efficiency'. Efficiency in terms of computation time at the cost of strongly reduced accuracy would not necessarily be desirable. In that sense, efficiency that does not take into account accuracy is not a good criterion. Please clarify what is meant here.
+	\item[l.354] \C A former comment seems pending here.
+	\item[l.362--363] \C The sentence `It may also miss information provided by the model itself.' is not clear to me. Do you mean that the model might make invalid/restrictive assumptions?
+	\item[l.375--377] \C This sentence could give the wrong impression that using a hierarchical design is the only way of obtaining the distribution of migration rates across loci. However, it is a compromise between specifying one prior for all loci (which does not provide the desired distribution) and specifying individual priors for each locus (which would of course provide the desired distribution).
+	\item[l.382--383] \C `loosely permeable' was not clear to me. I think you mean relatively resistant to introgression (or similar).
+	\item[l.398] \R Delete the second `both'.
+	\item[l.400] \R `\dots will now be confirm this\dots' \ra \dots will now be to confirm this\dots
+	\item[l.406] \V Insert a comma after `among loci'.
+	\item[l.426--427] \Q If neglecting GWH in gene flow can lead to statistical support for an incorrect model, can enforcing GWH in gene flow not do so as well? Does it not depend on the broader context of assumptions? What criterion is used to do a `fair' comparison, taking into account the additional degrees of freedom for more complex models (which tend to increase likelihoods)?
+\end{my_description}
+	
+\section{References}
+The formatting of the references does not come up to the specifications of \emph{Molecular Ecology}.
+\begin{my_description}
+	\item[l.457] \R Give full journal name.
+	\item[l.459] \R Give full journal name.
+	\item[l.463--464] \R Change species names to italic. Give correct journal name
+	\item[l.466] \R Give correct journal name.
+	\item[l.468] \R Change species names to italic. Give full journal name.
+	\item[l.470] \R Change species names to italic.
+	\item[l.477] \R Change species names to italic. Give full journal name.
+	\item[l.479] \R Give correct journal name.
+	\item[l.482] \R Give full journal name.
+	\item[l.491] \R Give full journal name.
+	\item[l.496] \R Change first letters to upper-case in journal name.
+	\item[l.502] \R Change species name to italic.
+	\item[l.505] \R Change first letters to upper-case in journal name.
+	\item[l.5012] \R Change first letters to upper-case in journal name.
+	\item[l.517] \R Give full journal name.
+	\item[l.531] \V Please check journal name.
+	\item[l.542] \R Give full journal name.
+	\item[l.543--544] \R Change title to lower-case.
+	\item[l.545] \R Give full journal name.
+	\item[l.557] \C Journal name, issue number and page range are missing.
+	\item[l.560] \R Please check journal name.
+	\item[l.565] \R Give full journal name.
+	\item[l.569] \R Change first letters to upper-case in journal name.
+	\item[l.577] \R Please check name of publisher and add address/city.
+	\item[l.580] \R Give full journal name.
+	
+\end{my_description}
+
+
+\subsection{Figures and tables}
+\begin{my_description}
+	\item[l.602] \R `nascent' \ra derived
+	\item[l.604--605] \R Please make this clearer; $N$ and $m$ are not the same for $M_1$ and $M_2$, are they? Use another formulation than `are expressed in x units'.
+	\item[l.607ff.] \Q Further caption missing? Explain the x-axis (including a reference to Kimura?)
+	\item[l.609--610] \V I suggest using `homogeneous' and `heterogeneous' instead of `homo' and `hetero'. This applies to several places later in the figure and table captions.
+	\item[l.661] \R `best-support' \ra best-supported
+	\item[l.622--623] \V `\dots for the two homo and hetero alternative SC models.' \ra \dots for the homogeneous and heterogeneous version of the SC model.
+	\item[l.629--630] \C This was not clear to me.
+	\item[Table 1] \R 3rd line of caption: `silent' \ra Silent
+	\item[Table 2] \R Caption: `mode' \ra model; Add a fullstop at the very end. \Q Is the differences between the the posterior probabilities for the AM/homogeneous (0.3206) and AM/heterogeneous (0.6794) substantial enough for omission of AM/homogeneous? Similarly, is the difference between IM/heterogeneous (0.4016) and SC/heterogeneous (0.5194) substantial (see general issue 5) above)?
+	\item[Table 3] \V Please remind the reader of the unit of the time parameters. I think it is generations here, but in the literature, uppercase letters are often used to describe time on the scale of $2N$ generations.
+	\item[Figure 1] \R Please make clear that in the SC model, migration is also allowed to be asymmetric (add $M_1$ and $M_2$ to the bottom-right panel). That is at least how I understood it.
+	\item[Figures 4--7] \R Please add labels to the y-axes.
+\end{my_description}
+
+
+\section{Supporting Information}
+
+\subsection{Supporting figures}
+
+\begin{my_description}
+	\item[Suppl. Fig. 1] \R Please use unambiguous formal expressions for the conditional probabilities and define them properly. Avoid `model-A' (the hyphen). The label of the x-axis is not consistent with the expressions used in the caption.
+	\item[Suppl. Fig. 2] \Q Should the first line be bold face? l.650: `\dots of the four models at the SC posterior probability $=0.5194$\dots' \ra \dots of the four models at an SC posterior probability of 0.5194\dots. \Q Why was the cut-off chosen to be 0.5194 exactly? \C The y-axis has no label.
+\end{my_description}
+
+\subsection{Supporting table}
+
+\begin{my_description}
+	\item[Suppl. Tab. 1]  \R Please unify the style of citation according to the citation style of \emph{Molecular Ecology} (volume and issue, or volume only; spaces; full or abbreviated journal names)
+	\item[Suppl. Table 4 and 5] \R Please define in the caption what exactly is meant by 2.5\% and 95\%. Are these the limits of the 95\% HPD interval?
+\end{my_description}
+
+
+
+\bibliographystyle{genetics}
+\bibliography{/Users/Simon/Documents/Literature/BibDesk/Jshort_dot,/Users/Simon/Documents/Literature/BibDesk/central}
+\end{document}  

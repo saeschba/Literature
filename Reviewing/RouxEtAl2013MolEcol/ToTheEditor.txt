@@ -1,0 +1,10 @@
+Dear Nick,
+
+thanks for the opportunity of reviewing this manuscript by Roux and coauthors. While the paper addresses a potentially important problem, I am concerned about the lack of validation of the approach used here. An inherent problem is that a pattern produced by linked selection is argued to be informative for demographic inference. Selection is not explicitly modeled, though. Therefore, the inferential link between a mechanistic explanation and the pattern in the data is missing. Moreover, I am uneasy about potential overlap with a recent publication by a subset of the authors (Roux et al. 2013 Mol. Biol. Evol.). This might hamper the originality of the manuscript and limit its justification to the fact that another set of species is analysed compared to the one in Roux et al. 2013 (Mol. Biol. Evol.). The main focus of the paper is not worked out clear enough. There are several minor flaws that, in summary, contribute to the impression that various steps and arguments have not been thought through well enough. I therefore think this paper cannot be accepted for publication in its current form. At certain points, it is an editorial decision whether the authors should just discuss potential problems, or whether they should conduct the necessary complementary analyses. Finally, some figure and table captions and the references seemed sloppily written. I am not in the position of judging in detail the procedures for molecular analyses described in l.112--130 of the manuscript.
+
+DNA sequences and alignments are not yet accessible, and can therefore not be ckeched (see l.585-587).
+
+Please find detailed comments in a separate PDF (reply to the authors).
+
+Best wishes,
+Simon
