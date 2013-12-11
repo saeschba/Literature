@@ -1,0 +1,44 @@
+\begin{thebibliography}{7}
+
+\bibitem[{\sc Aeschbacher {\em et~al.\/}}(2013){\sc Aeschbacher, Futschik, {\rm
+  and} Beaumont}]{Aeschbacher:2013vn}
+{\sc Aeschbacher, S., A.~Futschik, {\rm and} M.~A. Beaumont}, 2013 Approximate
+  bayesian computation for modular inference problems with many parameters: the
+  example of migration rates. Mol. Ecol. {\bf 22}: 987--1002.
+
+\bibitem[{\sc Bazin {\em et~al.\/}}(2010){\sc Bazin, Dawson, {\rm and}
+  Beaumont}]{Bazin:2010mz}
+{\sc Bazin, E., K.~J. Dawson, {\rm and} M.~A. Beaumont}, 2010 Likelihood-free
+  inference of population structure and local adaptation in a {B}ayesian
+  hierarchical model. Genetics {\bf 185}: 587--602.
+
+\bibitem[{\sc Beaumont}(2010)]{Beaumont:2010uq}
+{\sc Beaumont, M.~A.}, 2010 Approximate {B}ayesian computation in evolution and
+  ecology. Annu. Rev. Ecol. Evol. Syst. {\bf 41}: 379--406.
+
+\bibitem[{\sc Fagundes {\em et~al.\/}}(2007){\sc Fagundes, Ray, Beaumont,
+  Neuenschwander, Salzano, Bonatto, {\rm and} Excoffier}]{Fagundes:2007rc}
+{\sc Fagundes, N. J.~R., N.~Ray, M.~Beaumont, S.~Neuenschwander, F.~M. Salzano,
+  S.~L. Bonatto, {\rm and} L.~Excoffier}, 2007 Statistical evaluation of
+  alternative models of human evolution. Proc. Natl. Acad. Sci. U.S.A. {\bf
+  104}: 17614--17619.
+
+\bibitem[{\sc Robert {\em et~al.\/}}(2011){\sc Robert, Cornuet, Marin, {\rm
+  and} Pillai}]{Robert:2011fk}
+{\sc Robert, C.~P., J.-M. Cornuet, J.-M. Marin, {\rm and} N.~S. Pillai}, 2011
+  Lack of confidence in approximate bayesian computation model choice. Proc.
+  Natl. Acad. Sci. U.S.A. {\bf 108}: 15112--15117.
+
+\bibitem[{\sc Roux {\em et~al.\/}}(2013){\sc Roux, Tsagkogeorga, Bierne, {\rm
+  and} Galtier}]{Roux:2013fk}
+{\sc Roux, C., G.~Tsagkogeorga, N.~Bierne, {\rm and} N.~Galtier}, 2013 Crossing
+  the species barrier: Genomic hotspots of introgression between two highly
+  divergent ciona intestinalis species. Mol. Biol. Evol. {\bf 30}: 1574--1587.
+
+\bibitem[{\sc Sousa {\em et~al.\/}}(2013){\sc Sousa, Carneiro, Ferrand, {\rm
+  and} Hey}]{Sousa:2013fk}
+{\sc Sousa, V.~C., M.~Carneiro, N.~Ferrand, {\rm and} J.~Hey}, 2013 Identifying
+  loci under selection against gene flow in isolation-with-migration models.
+  Genetics {\bf 194}: 211--233.
+
+\end{thebibliography}
