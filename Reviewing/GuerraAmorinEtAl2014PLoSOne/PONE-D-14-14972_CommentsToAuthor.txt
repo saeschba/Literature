@@ -1,0 +1,37 @@
+Comments to the Authors
+=======================
+
+1. Is the manuscript technically sound, and do the data support the conclusions?
+
+The manuscript must describe a technically sound piece of scientific research with data that supports the conclusions. Experiments must have been conducted rigorously, with appropriate controls, replication, and sample sizes. The conclusions must be drawn appropriately based on the data presented.
+
+[Yes, No, Partly]
+
+2. Has the statistical analysis been performed appropriately and rigorously? 
+
+[Yes, No, I do not know, NA]
+
+3. Does the manuscript adhere to the PLOS Data Policy?
+
+Authors must follow the PLOS Data policy, which requires authors to make all data underlying the findings described in their manuscript fully available without restriction. Please refer to the author’s Data Availability Statement in the manuscript. All data and related metadata must be deposited in an appropriate public repository, unless already provided as part of the submitted article or supporting information. If there are restrictions on the ability of authors to publicly share data—e.g. privacy or use of data from a third party— these reasons must be specified. 
+
+[Yes, No]
+
+4. Is the manuscript presented in an intelligible fashion and written in standard English?
+
+PLOS ONE does not copyedit accepted manuscripts, so the language in submitted articles must be clear, correct, and unambiguous. Any typographical or grammatical errors should be corrected at revision, so please note any specific errors here.
+
+[Yes, No]
+
+5. Review Comments to the Authors
+
+5.1 Major Concerns
+
+a) It seems that the four scenarios of selection described on p. X-Y do not include cases where alpha < 0 in at least one comparison of forest vs. control population.
+
+b) I would have liked to see a distinction between coding and non-coding SNPs, as well as between synonymous and non-synonymous SNPs. The authors suggest that several of there candidate SNPs could be directly or indirectly affected by selection. Their analysis also suggests that multiple sets of gene ontologies are enriched for candidates. It would be of high interest to know whether these candidates are potential causal variants, linked to causal variants, or structural/regulatory variants. Even though a conclusive answer to these questions seems beyond the scope of this paper, a distinction between above-mentioned classes of SNPs could give initial hints.
+
+c) Concern regarding the permutation tests performed to test for significant enrichment with candidate SNPs of gene ontologies / annotations.
+
+5.2 Minor Comments
+
