@@ -1,0 +1,258 @@
+\documentclass[11pt]{article}
+\usepackage[total={17cm, 24cm}]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[normalem]{ulem}
+\usepackage{natbib}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{color}
+\usepackage[
+	bookmarks = true,
+	bookmarksnumbered = false, 	% true means bookmarks in
+							% navigation window are numbered
+	bookmarksopen = false, 		% true means only level 1
+							% are displayed.
+	colorlinks = true,			% false for frames around links, true for color
+	linkcolor = myred,
+	citecolor = mygreen,
+	urlcolor = myblue
+	]{hyperref}
+	
+\definecolor{mygreen}{rgb}{0, 0.5, 0}	% less intense green
+\definecolor{myblue}{rgb}{0, 0, 0.75}		% less intense blue
+\definecolor{myred}{rgb}{0.75, 0, 0}		% less intense red
+\definecolor{myrev1}{rgb}{1, 0, 0}		% less intense red; after approval, simply turn into black
+\definecolor{temphidden}{rgb}{0, 0, 0}		% less intense red; to re-highlight items that finally need to be changed,
+									% but should be black temporarilly
+% \definecolor{myrev1}{rgb}{0, 0, 0}
+\definecolor{mycorr1}{rgb}{0, 0, 1}		% less intense red; after approval, simply turn into black
+
+
+
+% Define customised list environments.
+\newenvironment{my_description}
+{\begin{description}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{description}}
+
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{enumerate}}
+
+\newcommand{\ra}{$\rightarrow$\ }
+\newcommand{\C}{\textbf{C:}\ }
+\newcommand{\Q}{\textbf{Q:}\ }
+\newcommand{\R}{\textbf{R:}\ }
+\newcommand{\V}{\textbf{S:}\ }
+
+\newcommand{\fst}{$F_{\mathrm{ST}}\ $}
+\newcommand{\qst}{$Q_{\mathrm{ST}}\ $}
+
+
+\title{Reply to Sandoval--Castellanos ``Kernel-beta: A novel non-parametric method for model choice in approximate Bayesian computation''}
+%\author{Simon Aeschbacher}
+\date{10 November 2013}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+\section{Summary}
+This paper addresses the important challenge of model selection in settings where likelihoods are difficult to obtain directly. It proposes a modification to existing regression-type ABC procedures for model comparison. The core ideas are to i) weight the accepted simulated data points before regression according to a kernel, and to ii) consider the estimated model likelihoods as realisations of a multinomial sampling. Point i) is a direct and obvious analogy to what has been standard for a long time in ABC parameter estimation. Point ii) is intended to provide an idea of the statistical error associated to the point estimate of the ABC-type Bayes factor. While there is some appeal in the idea behind point ii), the paper fails to provide even moderate evidence in favour of the proposed approach. It also lacks a theoretical justification for the chosen implementation of point ii). Based on the current description of the analyses and results, I could not establish if this is just a matter of sub-optimal presentation and writing, or of a deeper methodological flaw. For several reasons explained below, this paper does not seem appropriate for publication at its current stage.
+
+\section{General issues}
+
+\begin{my_enumerate}
+	\item To my understanding, the differentiation between the `migrant pool' and the `propagule pool' model of colonization goes back to a question that \citet{Wade:1988fk} phrased as ``Is colonization a behavior distinct from migration?". Clearly, the migrant pool model assumes that colonization follows the same rules as migration, where in this context migration is assumed to be according to the island model. The propagule model is to say that colonization is different from migration. Here, the authors on the one hand seem to imply that migration among extant refugia is almost absent. I conclude this from their scenarios in Figure 1, where migration is not explicitly modeled between the present and times $t_2$ and $t_3$. On the other hand, going back in time beyond $t_2$ ($t_3$), the whole metapopulation is modeled as one panmictic Wright-Fischer population. This assumes at least some exchange between refugia, either via migration or colonization. If there were no migration at all (but only colonization), then I am not sure if the long-term behavior of the metapopulation can be summarized by just one effective size $N_s$.
+	\item I am worried that scenario 1 (migrant pool model) might be misspecified (Figure S5). It received substantially less support in the ABC-type model comparison. However, I it was not obvious to me if this is a consequence of prior choice. In particular, could it be possible that scenario 1 is much better compatible with the data if the prior for $N_s$ allowed for much smaller values?
+	\item The view of this study proving that ABC can easily distinguish between alternative metapopulation scenarios is problematic. First, the scenarios shown in Figure 1 are highly simplified and do not explicitly model any feature specific to a metapopulation (namely extinction and colonization dynamics). Rather, the scenarios are those of static structured populations. ABC has been (supposedly successfully) applied in much more complicated models of structured populations. Second, a point that this study \emph{could} aim at making, but currently does not, is that the perhaps more complicated metapopulation dynamics can be reduced to the simpler versions analyzed so far. However, this would imply implementing the more complicated scenarios explicitly and compare them to the simpler ones. I do not think this would allow for a statement about applicability of ABC, but it might allow for a (much more interesting?) statement about identifiability and reducibility of metapopulation models to simpler models. One way this could be achieved is by comparing the current setting to a scenario in which the panmictic phase (where the metapopulation is represented by $N_s * u$) is omitted. Instead, the colonization and extinction process of individual refugia would be modeled explicitly over longer periods of time. This could shed light on whether or not the more complicated dynamics on the metapopulation level can be represented in a single value of $N_s$ or not.
+	\item Both scenarios assume that colonists come from within the metapopulation (i.e.\ infestation). What about introductions from other infestations, e.g.\ from the London area? Could available data be used to randomly draw colonists from the other London refugia?
+	\item Given that several approaches for choosing summary statistics in ABC have recently been proposed, I think one should make use of them. It is reasonably well established that no single method will perform best in all scenarios \citep{Blum:2012fk}, but this cannot serve as an argument against using any of them at all (see comments to l.274--279).
+\end{my_enumerate}
+	
+
+\section{Specific comments}
+
+\subsection{Abbreviations used}
+\begin{my_description}
+	\item[Q] Question
+	\item[C] Comment
+	\item[S] Suggestion
+	\item[R] Re-formulation or change needed (usually followed by a suggestion)
+	\item[\ra] Suggested change/correction
+\end{my_description}
+
+\subsection{Title}
+
+\begin{my_description}
+	\item[l.1] \V `Human facilitated\dots' \ra Human-facilitated\dots
+\end{my_description}
+
+\subsection{Abstract}
+
+\begin{my_description}
+	\item[l.29] \V Insert comma after `metapopulation framework'
+	\item[l.37] \R `\dots within-infestations\dots' \ra \dots within infestations,\dots
+	\item[l.38--39] \V `\dots origin of founders and that\dots' \ra \dots origin of all founders of a given sub-population, and that\dots
+	\item[l.39] \V Split the sentence between `were low;' and `implying that': \dots were long. This implies that\dots
+	\item[l.42] \C Again, it should be clear that this means `all founders of a given sub-population', as opposed to all founders of any sub-population. Compare e.g. to l.68--69, where this is made clear.
+	\item[l.43--44] \C I missed the conclusions/suggestions for targeted control that are promised here. If this is seen as a future step, I would not necessarily mention it in the Abstract, but only in the Discussion.
+\end{my_description}
+
+\subsection{Introduction}
+\begin{my_description}
+	\item[l.67--79] \C I wonder to what extent these predictions -- derived under the assumption of the infinite-alleles model and applicable to the infinite-sites model -- carry over to the (generalized) stepwise model of mutation assumed in this study. Also, if any refuge would be founded by essentially one fertilized female, isn't it that the propagule and migrant pool models coincide? In that case, I would expect a problem of identifiability if founder numbers are very small. \Q Related to this, I missed a mentioning of traumatic insemination being typical for bed bugs, and potential implications for this study. Is it known whether females have control over sperm-egg allocation after multiple matings? Could it be that, even though mated by multiple males, females select sperm essentially from one male only? This would lead to a difference between ecological and effective genetic colonization dynamics and should at least be mentioned.
+	\item[l.105--106] \Q Why is this expected? What exactly is meant by `limited'?
+\end{my_description}
+
+
+
+\subsection{Materials and Methods}
+
+\begin{my_description}
+	\item[l.147--149] \C I did not understand this sentence. There should be a concise and explicit definition of terms like property, refuge, infestation, and sub-population at some point.
+	\item[l.174] \V Insert comma after `For each dataset' \C Please be consistent and either use `dataset' or `data set' throughout the whole manuscript.
+	\item[l.181--182] \R `\dots to allow for multiple tests\dots' \ra \dots to account for multiple testing\dots. \C What would less stringent methods of correction suggest, e.g., based on false discovery rates as suggested by \citet{Benjamini:2001uq} or \citet{Benjamini:1995fk}. Later in the paper, such alternatives are used.
+	\item[l.188] \V `\dots errors and were bootstrapped \dots' \ra \dots errors, and bootstrapped\dots
+	\item[l.192--194] \C I did not understand this sentence. Where the intervals chosen such that each interval is comprised of the same number of samples (sample locations)?
+	\item[l.200--203] \C From the results section (e.g.\ Table 3), I got the impression that there was no significant deviation from Hardy-Weinberg equilibrium. Therefore, I wonder why the authors did not complement their analysis by running a clustering and assignment method like STRUCTURE. In particular, an assignment test could give important hints regarding the pattern of colonization. I might corroborate the support for the propagule model.
+	\item[l.204] \V Delete `subsequent'
+	\item[l.208] \Q Is `proportion of successful observed discriminations' really what is meant here?
+	\item[l.211] \Q Does `group' mean `infestation' in the context of dataset one, and `refuge' in the context of dataset two? Does the issue of small numbers of samples really apply to both levels? Table S1 suggests that at least the infestations in London and Australia were sampled at considerable depth.
+	\item[l.212] \V `\dots principal components (PCs) but in both cases the\dots' \ra \dots principal components (PCs), but for both datasets, the\dots
+	\item[l.218] \R `ABC allows likelihood-free inference in complex scenarios with many parameters, by comparing\dots' \ra ABC allows inference without explicit calculation of likelihoods in complex scenarios with many parameters. It compares\dots \C Likelihoods are present implicitly in ABC, which is why the term `likelihood-free' is misleading.
+	\item[l.221--222] \V `\dots of historical population models,\dots' \ra of models of population history, \dots
+	\item[l.222] \C ABC is not restricted to coalescent simulations. \R `\dots simulation of many data sets using a coalescent approach and \dots' \ra \dots simulation of many data sets (e.g.\ using a coalescent approach) and \dots \C See earlier comment about using `dataset' or `data set' throughout.
+	\item[l.224] \C I have some reservation against `rigorous' here, as there is a lot of non-automated tuning and uncertainty involved in ABC.
+	\item[l.234] \R `\dots such that colonists all come\dots' \ra \dots such that colonists founding a particular infestation all come\dots
+	\item[l.242--257] \C I think that $t_2$ and $t_3$ should be allowed to vary among refugia, unless it is possible to show that variation in $t_2$ and $t_3$ is sufficiently captured in $N_e$ and $N_b$. But, on top of that, refugia might also vary in $N_e$ and $N_b$. This could be modeled using a hierarchical approach, with hyper parameters describing the distribution of, say $t_2$, among refugia, and each individual $t_2$ being drawn from this distribution. Check recent ABC literature for examples.
+	\item[l.259] \C Please avoid `uninformative priors', as there is strictly speaking no uninformative prior. In this particular case, for instance, it makes a huge difference whether one chooses a uniform or a log-uniform prior, without there being any plausible confidence in one or the other being more uninformative.
+	\item[l.274--276] \C This is no argument against applying at least one of the methods proposed over the last five years. For some of these methods \citep[e.g.][]{Wegmann:2010uq, Aeschbacher:2011fk}, there exists software and it should not be too hard to apply them.
+	\item[l.276--279] \C I don't think this is a valid argument neither. The above-mentioned methods do not only pick summary statistics from a set of candidates, but may also help reducing the dimensionality of the problem, and hence improve the robustness of the inference.
+	\item[l.291] \V Insert comma after `scenarios'. \Q Is the polychromous weighted regression here the same as a weighted logistic regression?
+	\item[l.292] \Q How robust are the results to alternative choices of the rejection tolerance?
+	\item[l.293--295] \V Without going too much into detail, could the authors summarize describe the idea of this approach?
+	\item[l.298--299] \C Importance of assessing goodness of fit is not specific to ABC, but to any model-based approach to inference.
+	\item[l.302--304] \R In spite of the risk of over fitting, I would like to see the fit with the original summary statistics, just for comparison.
+	\item[l.314] \S I suggest adding a sentence saying that ABC was run on each POD.
+\end{my_description}
+
+
+\subsection{Results}
+\begin{my_description}
+	\item[l.324] \Q Were 154 or 156 samples genotyped? Compare l.324 to Table 2.
+	\item[l.325--326] \Q How was this test for deviation of HWE done? How many loci showed significant deviation from HWE, i.e.\ was the overall signal a consequence of a few outlier loci or was it a general trend?
+	\item[l.330-334] \Q What impact could the mating system have on low/variable $F_{\mathrm{IS}}$, as opposed to the actual number of colonizing individuals? See also comment to l.67--79 above.
+	\item[l.335--337] \Q Was there a correction for multiple testing here? Which one?
+	\item[l.342] \Q Are these now infestations with one refuge only?
+	\item[l.350--351] \R I would be interested in seeing results of an assignment method such as STRUCTURE.
+	\item[l.354] \C Remind the reader of what original data the PCA was based on.
+	\item[l.355] \C But Figure S4 also shows that scenario 1 was misspecified. It is then no surprise that only scenario 2 obtains support. However, Figure S4 also shows that there might be scope for models fitting the data even better than scenario 2. See general issues 1 to 3 above.
+	\item[l.361] \V Insert comma after `\dots low (5.2\%)'
+	\item[l.366--374] \C I missed a comment on $t_3$, for which information seems limited, too. Yet, this is \emph{the} parameter making scenario 2 different from 1.
+	
+\end{my_description}
+
+
+\subsection{Discussion}
+\begin{my_description}
+	\item[l.379--381] Related to general issues 1 to 3, I am irritated about there being no explicit modeling of extinction and colonization. Hence, I think this study was not within a metapopulation framework. The models were stripped down to classical models of structured populations. Therefore, I think this is an overstatement here.
+	\item[l.381--382] \Q But did LON2 not show significant $F_{\mathrm{ST}}$? \V Insert comma after `within-infestation diversity'
+	\item[l.385--387] \C A single founding event can also occur under the migrant pool model (scenario 1).
+	\item[l.386] \C Another term (`dwelling') that was not properly defined and can lead to confusion.
+	\item[l.388--392] \C If passive dispersal is only via colonization (not migration between existing sub-populations), then modeling the migrant pool as being panmictic is wrong and the meaning of $N_s$ questionable. See general issues 1 to 3.
+	\item[l.397--398] \C As mentioned in general issue 3, this is an overstatement. The models (scenarios) compared here are not necessarily equivalent to those analyzed by \citet{Wade:1988fk} and \cite{Pannell:1999uq}.
+	\item[l.400] \V Insert comma after `problematic'
+	\item[l.406--408] \C As mentioned above, I think the choice of summary statistics should be done using one of the semi-automated approaches that have been proposed before.
+	\item[l.408--410] \C As mentioned above (l.242--257), variation in ages and sizes among sub-populations has been ignored, although this represents an important feature of metapopulations.
+	\item[l.412--415] \C This is an appreciable extension. However, I worry that the two bottlenecks following each other end up being confounded and lead to what is described as a loss of information here. It also raises the question of whether ABC is giving the right answer to the wrong model when it favors scenario 2.
+	\item[l.425] \V Omit `the information loss caused by'
+	\item[l.430] \V Insert comma after `that' and `analysis'.
+	\item[l.431--433] \C I don't think this conclusion is valid in its generality. Conclusions from ABC studies should be made for the specific models and case studies, and for a set of parameters for which thorough tests of performance have been done. The RMAE values in Table 1 say something about the performance of ABC in this particular case, but should not be extrapolated to potential other scenarios.
+	\item[l.438] \R Delete comma after `study'
+	\item[l.445] \V Insert comma after `studies'
+	\item[l.449--453] \Q In view of traumatic insemination, could it be that effective mating with one male is due to other reasons than all males being related? Can females select sperm from particular matings to fertilise all their eggs? See also previous comments (l.67--79).
+	\item[l.453--454] \Q Did the mode have a higher or lower RMAE than the median? \R I would like to see RMAEs for all point estimators in Table 1.
+	\item[l.458--461] \Q Could this also be partially due to small per-refuge sample sizes?
+	\item[l.472--478] \C The difference between the migrant and propagule model is not in the number of founder individuals per se, but in their origin and diversity. This should be accounted for in the formulation of this paragraph.
+	\item[l.478] \V New paragraph after `of multiple founders.'	
+	\item[l.478--479] \Q What exactly is meant by `stochastic distribution of genetic diversity'?
+	\item[l.482] \V Insert commas after `distance', `detect it' and `and'.
+	\item[l.491] \V Insert `temporal variation in the environment,' after `discontinuous habitat'
+	\item[l.505--506] \C I find this an overstatement, because the favored model did not include \emph{repeated} bottlenecks explicitly, and because it is unclear whether a history of repeated earlier bottlenecks can be appropriately represented by a panmictic population of size $N_s$.
+	\item[l.509] \V New paragraph after `levels of differentiation'.
+	\item[l.510--511] \C This sentence did not seem well-embedded into a context to me.
+	\item[l.517] \V Insert comma after `In combination'
+	\item[l.528--530] \C I found this sentence too complicated. \Q Should it say `repeated' instead of `repeat'? Same question applies to l.532.
+	\item[l.530--534] \C This sentence seemed very long and hence difficult to understand.
+	\item[l.539--541] \V `These markers, \dots' \ra The markers developed here,\dots. \C But this requires LD between markers and selected genes. In other words: Is the map of markers available now dense enough for such an undertaking?
+\end{my_description}
+	
+\section{References}
+\begin{my_description}
+	\item[l.567--569] \R The article by \citet{Blum:2012fk} has been published by now.
+	\item[l.576] \R Adjust style (format of volume, number and page range).
+	\item[l.592] \R Check page range.
+	\item[l.600] \R Add volume number and check page range.
+	\item[l.640] \R Adjust style (format of volume, number and page range).
+	\item[l.654] \R Adjust style (format of volume, number and page range).
+	\item[l.666] \R Adjust style (format of volume, number and page range).
+	\item[l.668] \R Adjust style (format of volume, number and page range).
+	\item[l.674] \R Adjust style (format of volume, number and page range).
+	\item[l.682] \R Adjust style (format of volume, number and page range).
+	\item[l.686--687] \R Adjust style (format of volume, number and page range).
+	\item[l.712] \R Adjust style (format of volume, number and page range).
+	\item[l.749] \R Adjust style (format of volume, number and page range).
+\end{my_description}
+
+
+\subsection{Figures and tables}
+\begin{my_description}
+	\item[l.781--791] \V I suggest using subscripts, e.g. $N_s$ instead of $Ns$.
+	\item[l.819] \R In Table 1, please give RMAE for all point estimators.
+	\item[l.828--830] \C There is some confusion about refuge and locality being the same or not.
+	\item[l.830--832] \C Only overall values of $H_e$ and $H_o$ are shown. Therefore, it is difficult to interpret $F_{\mathrm{ST}}$.
+	\item[l.838--839] \Q Just to be sure: Was the sampling scheme in the ABC simulations using the same low sample sizes as those given in Table 3?
+	\item[Fig. 3] \R I would like to see plots of $t_3 - t_2$ to see if $t_3$ is high just because $t_2$ is high, or if $t_2$ and $t_3$ actually balance each other. I would also like to see posteriors for $N_s$ and $N_b$ under scenario 1 (migrant pool model).
+\end{my_description}
+
+
+\section{Supporting Information}
+
+\subsection{Supporting text}
+\begin{my_description}
+	\item[Microsatellite isolation] \Q Where did the individuals used for isolation of micro satellites come from? What is known about global diversity and substructure in \emph{C. lectularius}, and could this have implications for microsatellite isolation (ascertainment)?
+	\item[Microsatellite characterisation] \C I think Table 4 should be Table S2. Regarding heterozygosity: I thought high rather than low observed heterozygosity would be an indication of a recent bottleneck. This is actually correctly stated in the main text.
+\end{my_description}
+
+
+\subsection{Supporting figures}
+
+\begin{my_description}
+	\item[Suppl. Fig. 1] \R `between infestation' \ra between-infestation. \V I would not start a sentence with abbreviations ($h$ in this case). \R Please add a scale and a windrose to the map. Also, correctly refer to the source of the cartographic material.
+	\item[Suppl. Fig. 2] \Q Should there be a full stop rather than a comma after `analysis' in the last sentence of the caption?
+\end{my_description}
+
+\subsection{Supporting table}
+
+\begin{my_description}
+	\item[Suppl. Tab. 2]  \R Mention $N_A$ explicitly in the caption (at least treat $T_a$ and $N_A$ consistently).
+	\item[Suppl. Tab. 5]  \C I wonder if a visual representation could be given in the SI. This might make it easier for the reader to extract the relevant information.
+\end{my_description}
+
+
+
+\bibliographystyle{genetics}
+\bibliography{/Users/Simon/Documents/Literature/BibDesk/Jshort_dot,/Users/Simon/Documents/Literature/BibDesk/central}
+\end{document}  
