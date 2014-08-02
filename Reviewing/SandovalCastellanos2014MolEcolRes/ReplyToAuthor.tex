@@ -61,7 +61,7 @@
 
 \title{Reply to Sandoval--Castellanos ``Kernel-beta: A novel non-parametric method for model choice in approximate Bayesian computation''}
 %\author{Simon Aeschbacher}
-\date{10 November 2013}                                           % Activate to display a given date or no date
+\date{1 August 2014}                                           % Activate to display a given date or no date
 
 \begin{document}
 \maketitle
@@ -69,16 +69,17 @@
 %\subsection{}
 
 \section{Summary}
-This paper addresses the important challenge of model selection in settings where likelihoods are difficult to obtain directly. It proposes a modification to existing regression-type ABC procedures for model comparison. The core ideas are to i) weight the accepted simulated data points before regression according to a kernel, and to ii) consider the estimated model likelihoods as realisations of a multinomial sampling. Point i) is a direct and obvious analogy to what has been standard for a long time in ABC parameter estimation. Point ii) is intended to provide an idea of the statistical error associated to the point estimate of the ABC-type Bayes factor. While there is some appeal in the idea behind point ii), the paper fails to provide even moderate evidence in favour of the proposed approach. It also lacks a theoretical justification for the chosen implementation of point ii). Based on the current description of the analyses and results, I could not establish if this is just a matter of sub-optimal presentation and writing, or of a deeper methodological flaw. For several reasons explained below, this paper does not seem appropriate for publication at its current stage.
+This paper addresses the important challenge of model selection in settings where likelihoods are difficult or impossible to compute directly. It proposes a modification to existing regression-type ABC procedures. The core ideas are to i) weight the accepted simulated data points before regression according to a kernel, and to ii) consider the estimated model likelihoods as realisations of a multinomial sampling. Point i) is a direct and obvious analogy to what has been standard for a long time in ABC parameter estimation. Point ii) is intended to provide an idea of the statistical error associated with the point estimate of the ABC-type Bayes factor. While there is some appeal in the idea behind point ii), the paper fails to provide convincing evidence in favour of the proposed approach. It also lacks a theoretical justification for the chosen implementation of point ii). Based on the current description of the analyses and results, I could not establish if this is just a matter of sub-optimal presentation and writing, or of a deeper methodological flaw. For several reasons explained below, this paper does not seem appropriate for publication at its current stage.
 
 \section{General issues}
 
 \begin{my_enumerate}
-	\item To my understanding, the differentiation between the `migrant pool' and the `propagule pool' model of colonization goes back to a question that \citet{Wade:1988fk} phrased as ``Is colonization a behavior distinct from migration?". Clearly, the migrant pool model assumes that colonization follows the same rules as migration, where in this context migration is assumed to be according to the island model. The propagule model is to say that colonization is different from migration. Here, the authors on the one hand seem to imply that migration among extant refugia is almost absent. I conclude this from their scenarios in Figure 1, where migration is not explicitly modeled between the present and times $t_2$ and $t_3$. On the other hand, going back in time beyond $t_2$ ($t_3$), the whole metapopulation is modeled as one panmictic Wright-Fischer population. This assumes at least some exchange between refugia, either via migration or colonization. If there were no migration at all (but only colonization), then I am not sure if the long-term behavior of the metapopulation can be summarized by just one effective size $N_s$.
-	\item I am worried that scenario 1 (migrant pool model) might be misspecified (Figure S5). It received substantially less support in the ABC-type model comparison. However, I it was not obvious to me if this is a consequence of prior choice. In particular, could it be possible that scenario 1 is much better compatible with the data if the prior for $N_s$ allowed for much smaller values?
-	\item The view of this study proving that ABC can easily distinguish between alternative metapopulation scenarios is problematic. First, the scenarios shown in Figure 1 are highly simplified and do not explicitly model any feature specific to a metapopulation (namely extinction and colonization dynamics). Rather, the scenarios are those of static structured populations. ABC has been (supposedly successfully) applied in much more complicated models of structured populations. Second, a point that this study \emph{could} aim at making, but currently does not, is that the perhaps more complicated metapopulation dynamics can be reduced to the simpler versions analyzed so far. However, this would imply implementing the more complicated scenarios explicitly and compare them to the simpler ones. I do not think this would allow for a statement about applicability of ABC, but it might allow for a (much more interesting?) statement about identifiability and reducibility of metapopulation models to simpler models. One way this could be achieved is by comparing the current setting to a scenario in which the panmictic phase (where the metapopulation is represented by $N_s * u$) is omitted. Instead, the colonization and extinction process of individual refugia would be modeled explicitly over longer periods of time. This could shed light on whether or not the more complicated dynamics on the metapopulation level can be represented in a single value of $N_s$ or not.
-	\item Both scenarios assume that colonists come from within the metapopulation (i.e.\ infestation). What about introductions from other infestations, e.g.\ from the London area? Could available data be used to randomly draw colonists from the other London refugia?
-	\item Given that several approaches for choosing summary statistics in ABC have recently been proposed, I think one should make use of them. It is reasonably well established that no single method will perform best in all scenarios \citep{Blum:2012fk}, but this cannot serve as an argument against using any of them at all (see comments to l.274--279).
+	\item The paper suffers from poor English writing. Oftentimes, it is not clear whether a sentence describes a fact, a hypothesis, or a speculation. Parts of the introduction and discussion seem tangential to the actual problem.
+	\item The core problem with ABC-type model comparison is the lack of sufficient summary statistics. This topic is ignored here, though \cite[e.g.][]{Robert:2011fk}. I realise that this is not the main subject of the article, but am worried that it is much more important than the contribution this paper tries to make.
+	\item This being a methodological paper, the description of the rationale and procedure would profit from a more formal, mathematical presentation. For instance, phrases like ``the posterior probability function of the model likelihoods vector'' are correct, but potentially confusing.
+	\item It was not clear to me what exactly the values in Tables 1 and 3 meant. In Table 3, how can statistical power and error rates be larger than 1?
+	\item The proposed kernel-beta method is called ``assumption-free'' several times. Yet, the choice of a kernel, the use of the Euclidean distance as metric, and a multinomial error model imply potentially strong assumptions.
+	\item I am worried that the `numerical issues' encountered in the context of the logistic-regression ABC procedure were due to a flawed implementation. Unfortunately, it was not possible to me to verify this given the material provided.
 \end{my_enumerate}
 	
 
@@ -86,34 +87,51 @@ This paper addresses the important challenge of model selection in settings wher
 
 \subsection{Abbreviations used}
 \begin{my_description}
-	\item[Q] Question
-	\item[C] Comment
-	\item[S] Suggestion
-	\item[R] Re-formulation or change needed (usually followed by a suggestion)
+	\item[Q] Question % \Q
+	\item[C] Comment % \C
+	\item[S] Suggestion % \V
+	\item[R] Re-formulation or change needed (usually followed by a suggestion) % \R
 	\item[\ra] Suggested change/correction
-\end{my_description}
-
-\subsection{Title}
-
-\begin{my_description}
-	\item[l.1] \V `Human facilitated\dots' \ra Human-facilitated\dots
 \end{my_description}
 
 \subsection{Abstract}
 
 \begin{my_description}
-	\item[l.29] \V Insert comma after `metapopulation framework'
-	\item[l.37] \R `\dots within-infestations\dots' \ra \dots within infestations,\dots
-	\item[l.38--39] \V `\dots origin of founders and that\dots' \ra \dots origin of all founders of a given sub-population, and that\dots
-	\item[l.39] \V Split the sentence between `were low;' and `implying that': \dots were long. This implies that\dots
-	\item[l.42] \C Again, it should be clear that this means `all founders of a given sub-population', as opposed to all founders of any sub-population. Compare e.g. to l.68--69, where this is made clear.
-	\item[l.43--44] \C I missed the conclusions/suggestions for targeted control that are promised here. If this is seen as a future step, I would not necessarily mention it in the Abstract, but only in the Discussion.
+	\item[l.22] ``The model choice\dots'' \ra Model choice\dots
+	\item[l.22--23] \C ``It is performed\dots'' It is not clear what this sentence is meant to say.
+	\item[l.23] ``The model choice\dots'' \ra Model choice\dots
+	\item[l.24] \C ``due to" repeated after l.23. \C Strictly speaking, ``absence of likelihood estimation" in ABC is not correct. While explicit computation of likelihoods is avoided, likelihoods are implicitly computed by the ABC algorithm and can in principle be retrieved from the prior and posterior distributions up to a constant.
+	\item[l.25] \R ``However, the available\dots are few." \ra However, few methods are available for performing model choice by ABC.
+	\item[l.26] \V ``Here I suggest\dots" \ra Here, I suggest\dots
+	\item[l.29--30] \R ``This kernel-beta method altogether with\dots one real dataset." \ra This kernel-based method was compared to  a direct approach and a logistic regression using five simulated and one real dataset.
+	\item[l.31] ``loses" \ra losses
+	\item[l.34] ``whit" \ra with
+	\item[l.36--37] This last sentence seems tangential to the main focus (see points i and ii in the Summary above), given that no specific recommendations are given in the paper.
 \end{my_description}
 
 \subsection{Introduction}
 \begin{my_description}
-	\item[l.67--79] \C I wonder to what extent these predictions -- derived under the assumption of the infinite-alleles model and applicable to the infinite-sites model -- carry over to the (generalized) stepwise model of mutation assumed in this study. Also, if any refuge would be founded by essentially one fertilized female, isn't it that the propagule and migrant pool models coincide? In that case, I would expect a problem of identifiability if founder numbers are very small. \Q Related to this, I missed a mentioning of traumatic insemination being typical for bed bugs, and potential implications for this study. Is it known whether females have control over sperm-egg allocation after multiple matings? Could it be that, even though mated by multiple males, females select sperm essentially from one male only? This would lead to a difference between ecological and effective genetic colonization dynamics and should at least be mentioned.
-	\item[l.105--106] \Q Why is this expected? What exactly is meant by `limited'?
+	\item[l.43] ``The model choice, the adoption of\dots'' \ra Model choice, i.e.\ the adoption of\dots
+	\item[l.49] \R Delete ``, also known as likelihood-free inference,". I know that this term is present in the literature, but it should not (see comment to l.24 above). \V ``one of the most successful family\dots" \ra one of the most widely used families\dots
+	\item[l.50] \V ``absence of likelihood estimation steps" \ra absence of explicit likelihood-estimation steps. \C This sentence is at risk of glossing over the practical and conceptual challenges that ABC comes with.
+	\item[l.52--57]  \C The references here seem selective and incomplete.
+	\item[l.54] \V ``pathogens spread rates" \ra rates of pathogen spread
+	\item[l.58] ``ABC consists in performing\dots" \ra ABC performs
+	\item[l.62] ``conditional to\dots" \ra conditional on\dots
+	\item[l.63] \V Delete ``analyses"
+	\item[l.65] ``conditioned to\dots" \ra conditional on\dots. \V ``They are also approached from\dots" \ra Bayes factors are also computed based on\dots
+	\item[l.70] \V Use correct dashes consistently (here, the en dash surrounded by spaces is appropriate). \C References to choice of summary statistics in ABC are incomplete \cite[e.g.][]{Wegmann:2009sf,Nunes:2010fk,Fearnhead:2011uq,Aeschbacher:2011fk,Blum:2012fk}
+	\item[l.73--78] \C This sentence is too long.
+	\item[l.74] ``alternatives" \ra methods. \C The ``direct approach'' has not yet been defined. \V ``a direct approach, where acceptance proportions are taken at face value as model likelihoods"
+	\item[l.78] ``right" \ra correct
+	\item[l.80--82] \C A problem here is that the correct metric for measuring this distance in unknown.
+	\item[l.83] ``conditioned to" \ra conditioned on
+	\item[83--85] This idea is not new and has been standard in ABC for a long time \cite[][]{Beaumont:2002bh}. The innovation proposed here is to apply this principle to model comparison, rather than just to parameter estimation.
+	\item[91--94] \C This sentence is too long.
+	\item[l.92] ``leading" \ra lead
+	\item[l.96] \C ``It could be robust to high dimensionality problems\dots" is a statement that does not sound convincing to me.
+	\item[l.97] \V Insert a comma after ``assumptions".
+	\item[l.98] ``also put on test by\dots" \ra tested against
 \end{my_description}
 
 
@@ -121,138 +139,134 @@ This paper addresses the important challenge of model selection in settings wher
 \subsection{Materials and Methods}
 
 \begin{my_description}
-	\item[l.147--149] \C I did not understand this sentence. There should be a concise and explicit definition of terms like property, refuge, infestation, and sub-population at some point.
-	\item[l.174] \V Insert comma after `For each dataset' \C Please be consistent and either use `dataset' or `data set' throughout the whole manuscript.
-	\item[l.181--182] \R `\dots to allow for multiple tests\dots' \ra \dots to account for multiple testing\dots. \C What would less stringent methods of correction suggest, e.g., based on false discovery rates as suggested by \citet{Benjamini:2001uq} or \citet{Benjamini:1995fk}. Later in the paper, such alternatives are used.
-	\item[l.188] \V `\dots errors and were bootstrapped \dots' \ra \dots errors, and bootstrapped\dots
-	\item[l.192--194] \C I did not understand this sentence. Where the intervals chosen such that each interval is comprised of the same number of samples (sample locations)?
-	\item[l.200--203] \C From the results section (e.g.\ Table 3), I got the impression that there was no significant deviation from Hardy-Weinberg equilibrium. Therefore, I wonder why the authors did not complement their analysis by running a clustering and assignment method like STRUCTURE. In particular, an assignment test could give important hints regarding the pattern of colonization. I might corroborate the support for the propagule model.
-	\item[l.204] \V Delete `subsequent'
-	\item[l.208] \Q Is `proportion of successful observed discriminations' really what is meant here?
-	\item[l.211] \Q Does `group' mean `infestation' in the context of dataset one, and `refuge' in the context of dataset two? Does the issue of small numbers of samples really apply to both levels? Table S1 suggests that at least the infestations in London and Australia were sampled at considerable depth.
-	\item[l.212] \V `\dots principal components (PCs) but in both cases the\dots' \ra \dots principal components (PCs), but for both datasets, the\dots
-	\item[l.218] \R `ABC allows likelihood-free inference in complex scenarios with many parameters, by comparing\dots' \ra ABC allows inference without explicit calculation of likelihoods in complex scenarios with many parameters. It compares\dots \C Likelihoods are present implicitly in ABC, which is why the term `likelihood-free' is misleading.
-	\item[l.221--222] \V `\dots of historical population models,\dots' \ra of models of population history, \dots
-	\item[l.222] \C ABC is not restricted to coalescent simulations. \R `\dots simulation of many data sets using a coalescent approach and \dots' \ra \dots simulation of many data sets (e.g.\ using a coalescent approach) and \dots \C See earlier comment about using `dataset' or `data set' throughout.
-	\item[l.224] \C I have some reservation against `rigorous' here, as there is a lot of non-automated tuning and uncertainty involved in ABC.
-	\item[l.234] \R `\dots such that colonists all come\dots' \ra \dots such that colonists founding a particular infestation all come\dots
-	\item[l.242--257] \C I think that $t_2$ and $t_3$ should be allowed to vary among refugia, unless it is possible to show that variation in $t_2$ and $t_3$ is sufficiently captured in $N_e$ and $N_b$. But, on top of that, refugia might also vary in $N_e$ and $N_b$. This could be modeled using a hierarchical approach, with hyper parameters describing the distribution of, say $t_2$, among refugia, and each individual $t_2$ being drawn from this distribution. Check recent ABC literature for examples.
-	\item[l.259] \C Please avoid `uninformative priors', as there is strictly speaking no uninformative prior. In this particular case, for instance, it makes a huge difference whether one chooses a uniform or a log-uniform prior, without there being any plausible confidence in one or the other being more uninformative.
-	\item[l.274--276] \C This is no argument against applying at least one of the methods proposed over the last five years. For some of these methods \citep[e.g.][]{Wegmann:2010uq, Aeschbacher:2011fk}, there exists software and it should not be too hard to apply them.
-	\item[l.276--279] \C I don't think this is a valid argument neither. The above-mentioned methods do not only pick summary statistics from a set of candidates, but may also help reducing the dimensionality of the problem, and hence improve the robustness of the inference.
-	\item[l.291] \V Insert comma after `scenarios'. \Q Is the polychromous weighted regression here the same as a weighted logistic regression?
-	\item[l.292] \Q How robust are the results to alternative choices of the rejection tolerance?
-	\item[l.293--295] \V Without going too much into detail, could the authors summarize describe the idea of this approach?
-	\item[l.298--299] \C Importance of assessing goodness of fit is not specific to ABC, but to any model-based approach to inference.
-	\item[l.302--304] \R In spite of the risk of over fitting, I would like to see the fit with the original summary statistics, just for comparison.
-	\item[l.314] \S I suggest adding a sentence saying that ABC was run on each POD.
+	\item[l.103] ``of the parameters estimation'' \ra of parameter estimation
+	\item[l.104--105] ``So, in first instance I pursuit\dots" \ra Here, I first pursue\dots
+	\item[l.105] The approach is not free of assumptions (see general comment above).
+	\item[l.106] \V ``Secondly,\dots" \ra Second,\dots
+	\item[l.108] \V Delete ``possible".
+	\item[l.109---110] Delete ``of which the model choice analysis is part".
+	\item[l.111] \V ``So, the method described below\dots" \ra ``The method described below\dots"
+	\item[l.112] \C Taking the Euclidean distance corresponds to the assumption of multidimensional Gaussian distribution of data points.
+	\item[l.117] \R ``As a Bayesian method, ABC addresses a model choice problem by\dots" \ra Approximate Bayesian computation addresses model choice by\dots
+	\item[l.118] ``gets respect another\dots" \ra ``has with respect to another\dots"
+	\item[l.119] \V ``\dots the observed data, and is given\dots" \ra \dots the observed data. It is given\dots
+	\item[l.127] \C ``Mixture'' instead of ``admixture"?
+	\item[l.132] \V Insert comma after ``proposed here".
+	\item[l.133] ``evaluated in" \ra evaluated at. \C As mentioned before, this idea is not new. It has been widely used in ABC parameter estimation. I am not sure if it has been used in ABC-type model choice, though. Please clarify.
+	\item[l.135] ``So, the\dots" \ra "The\dots"
+	\item[l.136] \V Delete the colon after ``by".
+	\item[l.137] ``which values is" \ra evaluating to
+	\item[l.139] ``evaluated in\dots" \ra evaluated at
+	\item[l.141] ``sensitive" \ra crucial; ``done" \ra made
+	\item[l.141--142] These three points refute the claim of an `assumption-free' approach
+	\item[l.144] ``already some predilection" \ra been used before
+	\item[l.147--148] \C But how to choose the rejection distance first of all?
+	\item[l.148--149] \C The mere fact that the Euclidean distance has been widely used before does not guarantee that it ``could be safely used here". \V Insert comma after ``ABC".
+	\item[l.152] Delete ``of".
+	\item[l.154] ``So this problem is a Bayesian estimation\dots" \ra This amounts to a Bayesian estimation\dots
+	\item[l.157--158] This sentence is redundant to the previous one.
+	\item[l.158] \V Insert comma after ``sampling".
+	\item[l.158--161] This sentence is too long.
+	\item[l.159] Insert comma after ``sampling size".
+	\item[l.160] \V ``\dots categories, so the larger\dots" \ra \dots categories. Therefore, the larger\dots
+	\item[l.161] Insert comma after ``numbers". \Q What do you mean by ``righteously"?
+	\item[l.162] ``equaling" \ra equating
+	\item[l.163] Insert comma after ``estimations".
+	\item[l.163--166] This sentence is too long. \V ``kernel function, which\dots" \ra ``kernel function. This\dots".
+	\item[l.163--167] The relevance of ``would" and ``should" as compared to ``is" and ``are" is unclear. Are these speculations or facts?
+	\item[l.166] \V Insert comma after ``distances".
+	\item[l.167] ``not weighted, multinomial sample" \ra unweighted multinomial sample.
+	\item[l.158--169] \C The purpose of these lines is not clear to me.
+	\item[l.170] ``Now, since the BF are\dots" \ra Since the BFs are\dots. Insert comma after ``likelihoods". \Q Why ``could"? Is the statement justified or not?
+	\item[l.171--172] Insert commas after ``case" and ``distribution".
+	\item[l.172--175] ``Notice that this procedure\dots weighted by their probabilities:" \ra Notice that this procedure yields a posterior distribution of model likelihoods, not a point estimate. To obtain a point estimate, we may target the expected ratio of likelihoods as\dots. \C In the equation, why is there a ratio of beta pdfs? The rightmost expression is not equal to the preceding one. \R Put the comma at the end of the equation, not at the start of the following line of text (l.178).
+	\item[l.176] $\beta_1$ \ra $\beta_{i1}$
+	\item[l.177] Replace semi-colon by comma, and delete space after $\beta_{i1}$.
+	\item[l.178] ``the Epanechnikov kernel\dots summary statistics ($s^{\prime}$)." \ra as defined above.
+	\item[l.180] \C Although I presume the answer $\beta_{i1}/\beta_{j1}$ is correct, this is not what I obtained by evaluating the equation after l.175. Please verify this.
+	\item[l.188] ``the way" \ra how
+	\item[l.190] ``The algorithm where the simulations\dots consist in the next steps:" \ra The algorithm for independent simulations of each model consist of the following steps:
+	\item[l.191--210] \C Use of index $i$ do denote association to model $i$ is inconsistent. Add it everywhere or tell the user that you omit it for simplicity.
+	\item[l.191] \C A ``reference table" has not been defined.
+	\item[l.198] \C Estimating a quantity by defining it seems strange to me. \V Use proper minus signs consistently (en dash instead of hyphen).
+	\item[l.202] ``punctual estimate" \ra point estimate. \C This mistake occurs several times, and I am not going to repeat myself. \Q Given that $\beta_{2} = 1 - \beta_{1}$, isn't $p$ just equal to $\beta_1$? \R Insert comma before `` while".
+	\item[l.204] Delete ``(simulation of random deviates from a beta pdf is trivial)". \R ``estimations" \ra estimates \C This mistake occurs multiple times and I am not going to repeat myself.
+	\item[l.212] ``In such case, the sample would be\dots" \ra In this case, the sample is\dots
+	\item[l.213] ``conjugate posterior of a Dirichlet pdf were the $m$ parameters would be estimated\dots" \ra conjugate posterior a Dirichlet pdf. The $m$ parameters are estimated\dots
+	\item[l.214] ``could" \ra are
+	\item[l.218] Insert comma after ``software".
+	\item[l.225] \C ``parameter $D$ of one model as the sum\dots" \ra parameter $D_i$ of model $i$ as the sum. \C Please use the index $i$ consistently (see previous comment).
+	\item[l.228] ``the $D$ parameters\dots" \ra the parameters $D_i$\dots
+	\item[l.230] ``parameters being the (unnormalized) $D$ parameters of the model." \ra parameters equal to the $D_i$ on their original scale. \C I was confused by the brackets around ``unnormalized". Is normalisation now essential or not?
+	\item[l.231] ``is $D_i^{\ast}$ while joint or\dots" \ra is $D_i^{\ast}$. Joint or\dots
+	\item[l.233] ``pdf's respectively" \ra pdfs, respectively
+	\item[l.237] ``getting" \ra obtaining
+	\item[l.243] ``consisted in" \ra consisted of. \C This mistake occurs several time and I am not going to repeat myself.
+	\item[l.245] ``instrumental" \ra auxiliary (?)
+	\item[l.248] ``See Figure 1 for a schematic\dots" \ra Figure 1 gives a schematic\dots
+	\item[l.249--250] ``with the specifics of the priors employed" \ra for the priors used
+	\item[l.254] ``closest simulations to the\dots" \ra simulations closest to the\dots
+	\item[l.255] ``perform a model choice" \ra ``perform model choice"
+	\item[l.262] ``In it, the regression parameters were simulated\dots" \ra Regression parameters were simulated\dots
+	\item[l.265] ``used to get" \ra used to obtain
+	\item[l.273] \V Insert comma after ``analyses".
+	\item[l.284] \Q What exactly is meant by a ``statistical group"?
 \end{my_description}
 
 
 \subsection{Results}
 \begin{my_description}
-	\item[l.324] \Q Were 154 or 156 samples genotyped? Compare l.324 to Table 2.
-	\item[l.325--326] \Q How was this test for deviation of HWE done? How many loci showed significant deviation from HWE, i.e.\ was the overall signal a consequence of a few outlier loci or was it a general trend?
-	\item[l.330-334] \Q What impact could the mating system have on low/variable $F_{\mathrm{IS}}$, as opposed to the actual number of colonizing individuals? See also comment to l.67--79 above.
-	\item[l.335--337] \Q Was there a correction for multiple testing here? Which one?
-	\item[l.342] \Q Are these now infestations with one refuge only?
-	\item[l.350--351] \R I would be interested in seeing results of an assignment method such as STRUCTURE.
-	\item[l.354] \C Remind the reader of what original data the PCA was based on.
-	\item[l.355] \C But Figure S4 also shows that scenario 1 was misspecified. It is then no surprise that only scenario 2 obtains support. However, Figure S4 also shows that there might be scope for models fitting the data even better than scenario 2. See general issues 1 to 3 above.
-	\item[l.361] \V Insert comma after `\dots low (5.2\%)'
-	\item[l.366--374] \C I missed a comment on $t_3$, for which information seems limited, too. Yet, this is \emph{the} parameter making scenario 2 different from 1.
-	
+	\item[l.297--304] \R Please revise this paragraph to improve the formulation.
+	\item[l.300] ``did not showed\dots" \ra did not show; ``respect each other" \ra ``with respect to each other"
+	\item[l.301] ``were more similar between them than with the logistic regression" \ra were more similar among each other than to the logistic regression\dots
+	\item[l.302] \C Use either singular or plural in ``the differences was more than subtle"
+	\item[l.305] \V Delete ``estimations of the". \R ``also showed differences" \ra also produced different results.
+	\item[l.306] ``picking" \ra choosing
+	\item[l.307--308] ``Regarding the rates of\dots were observed." \ra Error rates and statistical power were similar among the three methods, but the following tendencies were observed. \Q What exactly is meant by ``rates of error"? Is it the proportion of cases where the true model did not have the strongest support? How exactly was power defined?
+	\item[l.309] \V ``rates of error" \ra error rates
+	\item[l.313] ``Noticeably" \ra Notably
+	\item[l.314] \Q What exactly do you mean by ``failed estimations"?
+	\item[l.317--324] \C I am very concerned that the numerical issues described here might be a consequence of a flawed implementation. Was this checked against a standard routine, e.g.\ the glm package in R? Since one of the main conclusions of this paper hinges on the apparently weak performance of the logistic regression, I consider this check essential.
+	\item[l.320] Delete ``developed for being error proof".
 \end{my_description}
 
 
 \subsection{Discussion}
 \begin{my_description}
-	\item[l.379--381] Related to general issues 1 to 3, I am irritated about there being no explicit modeling of extinction and colonization. Hence, I think this study was not within a metapopulation framework. The models were stripped down to classical models of structured populations. Therefore, I think this is an overstatement here.
-	\item[l.381--382] \Q But did LON2 not show significant $F_{\mathrm{ST}}$? \V Insert comma after `within-infestation diversity'
-	\item[l.385--387] \C A single founding event can also occur under the migrant pool model (scenario 1).
-	\item[l.386] \C Another term (`dwelling') that was not properly defined and can lead to confusion.
-	\item[l.388--392] \C If passive dispersal is only via colonization (not migration between existing sub-populations), then modeling the migrant pool as being panmictic is wrong and the meaning of $N_s$ questionable. See general issues 1 to 3.
-	\item[l.397--398] \C As mentioned in general issue 3, this is an overstatement. The models (scenarios) compared here are not necessarily equivalent to those analyzed by \citet{Wade:1988fk} and \cite{Pannell:1999uq}.
-	\item[l.400] \V Insert comma after `problematic'
-	\item[l.406--408] \C As mentioned above, I think the choice of summary statistics should be done using one of the semi-automated approaches that have been proposed before.
-	\item[l.408--410] \C As mentioned above (l.242--257), variation in ages and sizes among sub-populations has been ignored, although this represents an important feature of metapopulations.
-	\item[l.412--415] \C This is an appreciable extension. However, I worry that the two bottlenecks following each other end up being confounded and lead to what is described as a loss of information here. It also raises the question of whether ABC is giving the right answer to the wrong model when it favors scenario 2.
-	\item[l.425] \V Omit `the information loss caused by'
-	\item[l.430] \V Insert comma after `that' and `analysis'.
-	\item[l.431--433] \C I don't think this conclusion is valid in its generality. Conclusions from ABC studies should be made for the specific models and case studies, and for a set of parameters for which thorough tests of performance have been done. The RMAE values in Table 1 say something about the performance of ABC in this particular case, but should not be extrapolated to potential other scenarios.
-	\item[l.438] \R Delete comma after `study'
-	\item[l.445] \V Insert comma after `studies'
-	\item[l.449--453] \Q In view of traumatic insemination, could it be that effective mating with one male is due to other reasons than all males being related? Can females select sperm from particular matings to fertilise all their eggs? See also previous comments (l.67--79).
-	\item[l.453--454] \Q Did the mode have a higher or lower RMAE than the median? \R I would like to see RMAEs for all point estimators in Table 1.
-	\item[l.458--461] \Q Could this also be partially due to small per-refuge sample sizes?
-	\item[l.472--478] \C The difference between the migrant and propagule model is not in the number of founder individuals per se, but in their origin and diversity. This should be accounted for in the formulation of this paragraph.
-	\item[l.478] \V New paragraph after `of multiple founders.'	
-	\item[l.478--479] \Q What exactly is meant by `stochastic distribution of genetic diversity'?
-	\item[l.482] \V Insert commas after `distance', `detect it' and `and'.
-	\item[l.491] \V Insert `temporal variation in the environment,' after `discontinuous habitat'
-	\item[l.505--506] \C I find this an overstatement, because the favored model did not include \emph{repeated} bottlenecks explicitly, and because it is unclear whether a history of repeated earlier bottlenecks can be appropriately represented by a panmictic population of size $N_s$.
-	\item[l.509] \V New paragraph after `levels of differentiation'.
-	\item[l.510--511] \C This sentence did not seem well-embedded into a context to me.
-	\item[l.517] \V Insert comma after `In combination'
-	\item[l.528--530] \C I found this sentence too complicated. \Q Should it say `repeated' instead of `repeat'? Same question applies to l.532.
-	\item[l.530--534] \C This sentence seemed very long and hence difficult to understand.
-	\item[l.539--541] \V `These markers, \dots' \ra The markers developed here,\dots. \C But this requires LD between markers and selected genes. In other words: Is the map of markers available now dense enough for such an undertaking?
+	\item[l.327--329] \C I do not think this follows from the paper, and am not able to verify this, given the lack of a thorough description of the analyses (see comments to tables below and to the apparent numerical issues with the logistic regression).
+	\item[l.330] ``Direct approach\dots" \ra The direct approach\dots
+	\item[l.331--332] ``accompanied of marginal loses of\dots" \ra accompanied by marginal losses of\dots
+	\item[l.333] \C ``demise'' does not seem appropriate here.
+	\item[l.333-347] \Q These two paragraphs seems tangential to the main focus of the paper, and are far too long. The observation of a trade-off between type-I error and statistical power is well established, so is the fact that it depends on the specific question whether low error or high power is more desirable.
+	\item[l.348--351] \R Please provide evidence for the reason for the observed numerical issues with the logistic regression. Then revise this paragraph accordingly.
+	\item[l.355--356] ``lack of assumption fulfillment" \ra ``violation of assumptions". \C Again, the kernel-beta approach is not free of assumptions.
+	\item[l.356--357] See previous comments on the numerical issues.
+	\item[l.360] \Q What is meant by ``the approaching error"?
+	\item[l.361] ``full Bayesian" \ra fully Bayesian
+	\item[l.362] \V ``\dots error estimates, but also its\dots \ra \dots error estimates. Moreover, its\dots
+	\item[l.364] \Q See previous comments about the lack of assumptions.
+	\item[l.369] ``potential of greatly improve\dots" \ra potential of greatly improving\dots; ``right" \ra appropriate
+	\item[l.374] \R ``Francois" \ra Fran\c{c}ois (this also applies to the list of references)
+	\item[l.375] ``focussing in\dots" \ra focussing on\dots
+	\item[l.378] ``keep an eye in" \dots keep an eye on. \C What do you mean by ``computer efficiency of new developments"?
 \end{my_description}
 	
 \section{References}
+Please revise the formatting. Check abbreviations of journal names for correctness and consistency. Replace ``Francois" by ``Fran\c{c}ois", and be consistent with usage of lower- and uppercase letters in titles of articles.
+
+\section{Data Accessibility}
+Please improve the formulation. The current description reads as if the contribution is insignificant.
+
+\section{Figures and tables}
 \begin{my_description}
-	\item[l.567--569] \R The article by \citet{Blum:2012fk} has been published by now.
-	\item[l.576] \R Adjust style (format of volume, number and page range).
-	\item[l.592] \R Check page range.
-	\item[l.600] \R Add volume number and check page range.
-	\item[l.640] \R Adjust style (format of volume, number and page range).
-	\item[l.654] \R Adjust style (format of volume, number and page range).
-	\item[l.666] \R Adjust style (format of volume, number and page range).
-	\item[l.668] \R Adjust style (format of volume, number and page range).
-	\item[l.674] \R Adjust style (format of volume, number and page range).
-	\item[l.682] \R Adjust style (format of volume, number and page range).
-	\item[l.686--687] \R Adjust style (format of volume, number and page range).
-	\item[l.712] \R Adjust style (format of volume, number and page range).
-	\item[l.749] \R Adjust style (format of volume, number and page range).
+	\item[l.472--476] \C This sentence is too long. \R ``instead" \ra instead of.
+	\item[l.477--478] \Q I was wondering why you did not include the full models given in panels H--K in your testing procedure. This would give an idea of the performance under the real-world application.
+	\item[Figure 1] \Q In the main text, there should be a short verbal description and motivation of the models. Why were they chosen? Have they been previously studied? What are the challenges (e.g.\ which parameters are particularly hard to estimate)? \C In panel G, what does it mean when a population does not reach the present? Has it gone extinct? Has it been sampled or not? When?
+	\item[Table 1] Caption: ``among every iteration" \ra across iterations; ``also among the different" \ra across different. \C It is unclear whether the values in the table are absolute or relative differences. Please also state that they are on the natural scale (not on a logarithmic one) if appropriate.
+	\item[Table 3] Caption: \Q Why type I/II error rate? Please clarify. \R ``the naked number while error appears in" \ra accompanied by the error in. ``the total number simulations" \ra the total number of simulations; ``estimation --i.e.\ without numerical errors-)" \ra estimation, i.e. without numerical errors). \C It was not clear to me what the values in the table actually meant. How can error rates and statistical power be larger than 1? Also, is the first column the true model?
 \end{my_description}
 
 
-\subsection{Figures and tables}
-\begin{my_description}
-	\item[l.781--791] \V I suggest using subscripts, e.g. $N_s$ instead of $Ns$.
-	\item[l.819] \R In Table 1, please give RMAE for all point estimators.
-	\item[l.828--830] \C There is some confusion about refuge and locality being the same or not.
-	\item[l.830--832] \C Only overall values of $H_e$ and $H_o$ are shown. Therefore, it is difficult to interpret $F_{\mathrm{ST}}$.
-	\item[l.838--839] \Q Just to be sure: Was the sampling scheme in the ABC simulations using the same low sample sizes as those given in Table 3?
-	\item[Fig. 3] \R I would like to see plots of $t_3 - t_2$ to see if $t_3$ is high just because $t_2$ is high, or if $t_2$ and $t_3$ actually balance each other. I would also like to see posteriors for $N_s$ and $N_b$ under scenario 1 (migrant pool model).
-\end{my_description}
-
-
-\section{Supporting Information}
-
-\subsection{Supporting text}
-\begin{my_description}
-	\item[Microsatellite isolation] \Q Where did the individuals used for isolation of micro satellites come from? What is known about global diversity and substructure in \emph{C. lectularius}, and could this have implications for microsatellite isolation (ascertainment)?
-	\item[Microsatellite characterisation] \C I think Table 4 should be Table S2. Regarding heterozygosity: I thought high rather than low observed heterozygosity would be an indication of a recent bottleneck. This is actually correctly stated in the main text.
-\end{my_description}
-
-
-\subsection{Supporting figures}
-
-\begin{my_description}
-	\item[Suppl. Fig. 1] \R `between infestation' \ra between-infestation. \V I would not start a sentence with abbreviations ($h$ in this case). \R Please add a scale and a windrose to the map. Also, correctly refer to the source of the cartographic material.
-	\item[Suppl. Fig. 2] \Q Should there be a full stop rather than a comma after `analysis' in the last sentence of the caption?
-\end{my_description}
-
-\subsection{Supporting table}
-
-\begin{my_description}
-	\item[Suppl. Tab. 2]  \R Mention $N_A$ explicitly in the caption (at least treat $T_a$ and $N_A$ consistently).
-	\item[Suppl. Tab. 5]  \C I wonder if a visual representation could be given in the SI. This might make it easier for the reader to extract the relevant information.
-\end{my_description}
-
-
-
-\bibliographystyle{genetics}
+\bibliographystyle{/Users/Simon/Documents/Literature/Reviewing/FountainEtAl2013MolEcol/genetics}
 \bibliography{/Users/Simon/Documents/Literature/BibDesk/Jshort_dot,/Users/Simon/Documents/Literature/BibDesk/central}
 \end{document}  
