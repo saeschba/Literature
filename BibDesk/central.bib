@@ -2,7 +2,7 @@
 %% http://bibdesk.sourceforge.net/
 
 
-%% Created for Simon Aeschbacher at 2014-09-13 21:36:42 -0700 
+%% Created for Simon Aeschbacher at 2014-09-18 08:27:51 -0700 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,44 @@
 
 @string{macro = {definition}}
 
+
+@article{Szpiech:2014mz,
+	Abstract = {Haplotype-based scans to detect natural selection are useful to identify recent or ongoing positive selection in genomes. As both real and simulated genomic data sets grow larger, spanning thousands of samples and millions of markers, there is a need for a fast and efficient implementation of these scans for general use. Here, we present selscan, an efficient multithreaded application that implements Extended Haplotype Homozygosity (EHH), Integrated Haplotype Score (iHS), and Cross-population EHH (XPEHH). selscan accepts phased genotypes in multiple formats, including TPED, and performs extremely well on both simulated and real data and over an order of magnitude faster than existing available implementations. It calculates iHS on chromosome 22 (22,147 loci) across 204 CEU haplotypes in 353 s on one thread (33 s on 16 threads) and calculates XPEHH for the same data relative to 210 YRI haplotypes in 578 s on one thread (52 s on 16 threads). Source code and binaries (Windows, OSX, and Linux) are available at https://github.com/szpiech/selscan.},
+	Author = {Szpiech, Zachary A. and Hernandez, Ryan D.},
+	Date-Added = {2014-09-18 15:05:03 +0000},
+	Date-Modified = {2014-09-18 15:06:27 +0000},
+	Doi = {10.1093/molbev/msu211},
+	Eprint = {http://mbe.oxfordjournals.org/content/31/10/2824.full.pdf+html},
+	Journal = MolBiolEvol,
+	Journal_Long = {Molecular Biology and Evolution},
+	Keywords = {extended haplotype homozygosity, positive selection, software},
+	Number = {10},
+	Pages = {2824-2827},
+	Title = {selscan: An Efficient Multithreaded Program to Perform EHH-Based Scans for Positive Selection},
+	Url = {http://mbe.oxfordjournals.org/content/31/10/2824.abstract},
+	Volume = {31},
+	Year = {2014},
+	Bdsk-Url-1 = {http://mbe.oxfordjournals.org/content/31/10/2824.abstract},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1093/molbev/msu211}}
+
+@article{Leblois:2014kq,
+	Abstract = {Understanding the demographic history of populations and species is a central issue in evolutionary biology and molecular ecology. In this work, we develop a maximum-likelihood method for the inference of past changes in population size from microsatellite allelic data. Our method is based on importance sampling of gene genealogies, extended for new mutation models, notably the generalized stepwise mutation model (GSM). Using simulations, we test its performance to detect and characterize past reductions in population size. First, we test the estimation precision and confidence intervals coverage properties under ideal conditions, then we compare the accuracy of the estimation with another available method (MSVAR) and we finally test its robustness to misspecification of the mutational model and population structure. We show that our method is very competitive compared with alternative ones. Moreover, our implementation of a GSM allows more accurate analysis of microsatellite data, as we show that the violations of a single step mutation assumption induce very high bias toward false contraction detection rates. However, our simulation tests also showed some limits, which most importantly are large computation times for strong disequilibrium scenarios and a strong influence of some form of unaccounted population structure. This inference method is available in the latest implementation of the MIGRAINE software package.},
+	Author = {Leblois, Rapha{\"e}l and Pudlo, Pierre and N{\'e}ron, Joseph and Bertaux, Fran{\c c}ois and Reddy Beeravolu, Champak and Vitalis, Renaud and Rousset, Fran{\c c}ois},
+	Date-Added = {2014-09-18 15:03:17 +0000},
+	Date-Modified = {2014-09-18 15:04:04 +0000},
+	Doi = {10.1093/molbev/msu212},
+	Eprint = {http://mbe.oxfordjournals.org/content/31/10/2805.full.pdf+html},
+	Journal = MolBiolEvol,
+	Journal_Long = {Molecular Biology and Evolution},
+	Keywords = {microsatellites, population size, population size contraction, maximum likelihood, population history, inference},
+	Number = {10},
+	Pages = {2805-2823},
+	Title = {Maximum-Likelihood Inference of Population Size Contractions from Microsatellite Data},
+	Url = {http://mbe.oxfordjournals.org/content/31/10/2805.abstract},
+	Volume = {31},
+	Year = {2014},
+	Bdsk-Url-1 = {http://mbe.oxfordjournals.org/content/31/10/2805.abstract},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1093/molbev/msu212}}
 
 @article{Rougier:2014fk,
 	Author = {Rougier, Nicolas P. and Droettboom, Michael and Bourne, Philip E.},
@@ -23,7 +61,7 @@
 	M3 = {doi:10.1371/journal.pcbi.1003833},
 	Month = {09},
 	Number = {9},
-	Pages = {e1003833 EP  -},
+	Pages = {e1003833 EP -},
 	Publisher = {Public Library of Science},
 	Title = {Ten Simple Rules for Better Figures},
 	Ty = {JOUR},
@@ -29326,19 +29364,19 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>ConservationGenetics</string>
 		<key>keys</key>
-		<string>Caballero:2000bf,Wang:1999tx,Perez-Figueroa:2009ng,Toro:2009kk,Stockwell:2003uq,Cara:2013ff,Brzeski:2014ys,Toro:2005ud,Fernandez:2008zp,Feulner:2013ly,Rooney:1999uq,Meraner:2013uq,Pinsky:2014ve,Lemer:2012bs,Liu:2013uq,Willi:2006fk,Casas-Marce:2013ud,Chiucchi:2010uq,Waples:2005ve,Caballero:2002sf,Rong:2013fk,Hammerly:2013kx,Palstra:2009ly,Mills:1996ly,Nunney:1994fk,Wang:2004yf,Moritz:2013ly,Moritz:2013fu,Wang:2004bq,Beier:2006fk</string>
+		<string>Moritz:2013fu,Wang:1999tx,Perez-Figueroa:2009ng,Toro:2009kk,Stockwell:2003uq,Cara:2013ff,Brzeski:2014ys,Toro:2005ud,Fernandez:2008zp,Feulner:2013ly,Rooney:1999uq,Meraner:2013uq,Pinsky:2014ve,Lemer:2012bs,Liu:2013uq,Willi:2006fk,Casas-Marce:2013ud,Chiucchi:2010uq,Wang:2004bq,Waples:2005ve,Caballero:2002sf,Rong:2013fk,Hammerly:2013kx,Palstra:2009ly,Mills:1996ly,Nunney:1994fk,Beier:2006fk,Wang:2004yf,Moritz:2013ly,Caballero:2000bf</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>DemographicInference</string>
 		<key>keys</key>
-		<string>Wang:2010mz,Pinsky:2014ve,Nadachowska-Brzyska:2013ij,Nielsen:2005fk,Warmuth:2013vn,Chan:2014db,Wilson:2003fk,Hoban:2013vn,Lipson:2013qf,Wang:2013tg,Martinkova:2013zr,Nadachowska-Brzyska:2013vn,Torda:2013cq,Lao:2014fk,Verdu:2014xe,Gill:2013dq,Gilbert:2012ly,Marks:2012bh,Paul:2011vn,Hellenthal:2014cr,Peery:2013ys,Hearn:2014cr,Rooney:1999uq,Moreno-Estrada:2013hc,Simonsen:1995fk,Marjoram:2006uq,Monzon:2014dq,Theunert:2012uq,Maruki:2012fk,Excoffier:2013uq,Li:2011uq,Li:2013kx,Bryc:2013uq,Skoglund:2014kq,Chiucchi:2010uq,Excoffier:2013fv,Crawford:2013lh,Hedrick:2013ys,Rong:2013fk,Sheehan:2013bh,Steinruecken:2013fk,Gravel:2013kx,Palamara:2012fk,Rundel:2013zr,McCoy:2014bh,Paul:2010kx,Bermond:2013ys,Gautier:2013cr,Robinson:2013gb,Aime:2013il,Mathieson:2014eu,McVean:2005fk</string>
+		<string>Gravel:2013kx,Pinsky:2014ve,Rong:2013fk,Chiucchi:2010uq,Chan:2014db,Paul:2011vn,Hearn:2014cr,Wilson:2003fk,Gilbert:2012ly,Torda:2013cq,Lao:2014fk,Sheehan:2013bh,Steinruecken:2013fk,Palamara:2012fk,Mathieson:2014eu,Marks:2012bh,Gautier:2013cr,Bermond:2013ys,Wang:2013tg,Li:2013kx,Excoffier:2013uq,Skoglund:2014kq,Warmuth:2013vn,Nielsen:2005fk,Rundel:2013zr,Wang:2010mz,Theunert:2012uq,Nadachowska-Brzyska:2013ij,Li:2011uq,Robinson:2013gb,Bryc:2013uq,Crawford:2013lh,McVean:2005fk,Leblois:2014kq,Hoban:2013vn,Moreno-Estrada:2013hc,Gill:2013dq,Peery:2013ys,Rooney:1999uq,Monzon:2014dq,Hedrick:2013ys,Martinkova:2013zr,Nadachowska-Brzyska:2013vn,Simonsen:1995fk,Verdu:2014xe,Maruki:2012fk,Paul:2010kx,Aime:2013il,Hellenthal:2014cr,Excoffier:2013fv,Lipson:2013qf,Marjoram:2006uq,McCoy:2014bh</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>DistribFitnessEffects</string>
 		<key>keys</key>
-		<string>Orr:2010fk,Eyre-Walker:2007fk,Sanjuan:2004ys,Cowperthwaite:2005vn,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Gusev:2013uq,Kassen:2006ly,Martin:2008fk,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Imhof:2001zr,Gillespie:1984uq,Rokyta:2005ve,Barrett:2006fk</string>
+		<string>Orr:2010fk,Eyre-Walker:2007fk,Sanjuan:2004ys,Cowperthwaite:2005vn,Rozen:2002mz,Kimura:1979lq,Orr:2002gf,Gusev:2013uq,Kassen:2006ly,Martin:2008fk,Gillespie:1983pd,Orr:2003kx,Orr:1998ul,Rokyta:2005ve,Barrett:2006fk,Imhof:2001zr,Gillespie:1984uq</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29362,7 +29400,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>EffectivePopSize</string>
 		<key>keys</key>
-		<string>Wilkins:2004fj,Pannell:2003db,Pinsky:2014ve,Palstra:2008ek,Felsenstein:1971uq,Crow:1984kx,Rannala:2003fk,Markovtsova:2000hl,Wang:2004bq,Caballero:2000bf,Caballero:1994uq,Keith-A.-Crandall:1999ve,Charlesworth:2009fk,Nunney:1994fk,Hanski:2003wy,Pamilo:1998lq,Whitlock:1997qf,Beerli:2001ud,Maruyama:1970kx,Waples:2002zr,Vucetich:1997uq,Waples:2005ve,Wilson:1998ri,Kuhner:1998ys,Kuhner:1995sw,Rousset:2003oq,Frankham:1995kx,Estoup:2002hb,Ovaskainen:2002fy,Anderson:2005rt,Waples:2007kx,Ohta:1970ve,Hill:1979kx,Wang:2013tg,Buri:1956fk,Nunney:1991uq,Wang:1995kx,Estoup:1998kx,Husband:1995uq,Theunert:2012uq,Kuhner:2000rt,Neigel:1997rw,Kuo:2003kx,Kuhner:2000vn,Barton:1993fj,Palstra:2009ly,Slatkin:1989lh,Nunney:1993vn,Laporte:2002fk,Whitlock:2003rz,Scribner:1994cs,Pannell:2000dk,Wakeley:2001rz,Harris:1989vn,Hedrick:2013ys,Pennings:2014ys,Legrand:2009vn,Estoup:1995rm,Emigh:1979qy,Nunney:1993ys,Caballero:2002sf,Nei:1977rw,Wang:2004yf,Wang:1999tx,Kimura:1978eu,Wang:2005uq,Beerli:1999fx,Whitlock:1999dp,McCoy:2014bh</string>
+		<string>Wilkins:2004fj,Pannell:2003db,Pinsky:2014ve,Whitlock:1999dp,Felsenstein:1971uq,Crow:1984kx,Rannala:2003fk,Markovtsova:2000hl,Wang:2004bq,Caballero:2000bf,Caballero:1994uq,Keith-A.-Crandall:1999ve,Charlesworth:2009fk,Nunney:1994fk,Hanski:2003wy,Pamilo:1998lq,Whitlock:1997qf,Beerli:2001ud,Maruyama:1970kx,Waples:2002zr,Vucetich:1997uq,Waples:2005ve,Wilson:1998ri,Kuhner:1998ys,Kuhner:1995sw,Rousset:2003oq,Frankham:1995kx,Estoup:2002hb,Ovaskainen:2002fy,Anderson:2005rt,Waples:2007kx,Ohta:1970ve,Hill:1979kx,Wang:2013tg,Buri:1956fk,Nunney:1991uq,Wang:1995kx,Estoup:1998kx,Husband:1995uq,Theunert:2012uq,Kuhner:2000rt,Neigel:1997rw,Kuo:2003kx,Kuhner:2000vn,Barton:1993fj,Palstra:2009ly,Slatkin:1989lh,Nunney:1993vn,Laporte:2002fk,Whitlock:2003rz,Scribner:1994cs,Pannell:2000dk,Wakeley:2001rz,Harris:1989vn,Hedrick:2013ys,Pennings:2014ys,Legrand:2009vn,Estoup:1995rm,Emigh:1979qy,Nunney:1993ys,Caballero:2002sf,Nei:1977rw,Wang:2004yf,Wang:1999tx,Kimura:1978eu,Wang:2005uq,Beerli:1999fx,McCoy:2014bh,Palstra:2008ek</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29392,7 +29430,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>InferringSelection</string>
 		<key>keys</key>
-		<string>Chen:2010fk,Beaumont:2004kx,Nielsen:2005fk,Latta:2009bh,Latta:2009qf,Foll:2014vn,Vitalis:2014fk,Friedman:1981fk,Roux:2014ly,Wiehe:1993kx,Alberto:2013fk,Bonin:2006uq,Lande:1983fk,Veeramah:2014dk,Schluter:1994fk,Mathieson:2014eu,Pennings:2014ys,Hermisson:2009fk,Fagny:2014zr,Qanbari:2014kx,Maruki:2012fk,Charlesworth:2006fk,Ovaskainen:2011fk,Rafajlovic:2014fk,Foll:2008uq,Excoffier:2009fk,DeGiorgio:2014kq</string>
+		<string>Chen:2010fk,Beaumont:2004kx,Nielsen:2005fk,Latta:2009bh,Latta:2009qf,Foll:2014vn,Vitalis:2014fk,Friedman:1981fk,Roux:2014ly,Wiehe:1993kx,Alberto:2013fk,Bonin:2006uq,Lande:1983fk,Veeramah:2014dk,Schluter:1994fk,Mathieson:2014eu,Pennings:2014ys,Szpiech:2014mz,Hermisson:2009fk,Fagny:2014zr,Qanbari:2014kx,Maruki:2012fk,Charlesworth:2006fk,Ovaskainen:2011fk,Rafajlovic:2014fk,Foll:2008uq,Excoffier:2009fk,DeGiorgio:2014kq</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29404,7 +29442,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>LineageSorting</string>
 		<key>keys</key>
-		<string>Maddison:2006zl,Carstens:2007rz,Rannala:2008sf,Meraner:2013uq,DeBiasse:2014nx</string>
+		<string>DeBiasse:2014nx,Carstens:2007rz,Maddison:2006zl,Meraner:2013uq,Rannala:2008sf</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29458,7 +29496,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>QuantGenet</string>
 		<key>keys</key>
-		<string>Frank:1990fk,Powell:2013fk,Brachi:2010fk,Berg:2014ff,Lande:1983fk,Dittmar:2014fk,Chevin:2008ve,Ovaskainen:2011fk,Qanbari:2014kx</string>
+		<string>Frank:1990fk,Powell:2013fk,Brachi:2010fk,Berg:2014ff,Lande:1983fk,Qanbari:2014kx,Dittmar:2014fk,Chevin:2008ve,Ovaskainen:2011fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29470,13 +29508,13 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>RareAlleles</string>
 		<key>keys</key>
-		<string>Slatkin:1985nx,Moore:2013fk,Rousset:2008yq,Slatkin:2002dq,Gusev:2013uq,Mathieson:2014eu,Slatkin:1989lh,Casals:2013fk,Barton:1986cr</string>
+		<string>Casals:2013fk,Moore:2013fk,Rousset:2008yq,Slatkin:2002dq,Gusev:2013uq,Mathieson:2014eu,Slatkin:1985nx,Slatkin:1989lh,Barton:1986cr</string>
 	</dict>
 	<dict>
 		<key>group name</key>
 		<string>Reviews</string>
 		<key>keys</key>
-		<string>Rannala:2008sf,Renaut:2012kx,Feder:2012qf,Hernando-Herraez:2013fk,Pool:2010fk,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Savolainen:2013fk,Strasburg:2012uq,Feder:2012dq,Guerrero:2012uq,Nunney:1994fk,Powell:2010fk,Pritchard:2010dq,Hickerson:2010ec,Whitlock:2008uq,Otto:2011uq,Bachtrog:2011fk</string>
+		<string>Whitlock:2008uq,Renaut:2012kx,Feder:2012qf,Hernando-Herraez:2013fk,Pool:2010fk,Toro:2009kk,Charlesworth:2012fk,Jabot:2009lh,Nachman:2012ly,Fan:2012ys,McGaugh:2012ve,Hoban:2012fk,Toro:2005ud,Via:2012bh,Kuhner:2009vn,Hohenlohe:2012zr,Frankham:1995kx,Nadeau:2012vn,Meirmans:2012fk,Nosil:2012fk,Thompson:2013ve,Savolainen:2013fk,Strasburg:2012uq,Feder:2012dq,Guerrero:2012uq,Nunney:1994fk,Powell:2010fk,Pritchard:2010dq,Hickerson:2010ec,Rannala:2008sf,Otto:2011uq,Bachtrog:2011fk</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29488,7 +29526,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>SexChromosomes</string>
 		<key>keys</key>
-		<string>Bachtrog:2011fk,Evans:2014ai,Veeramah:2014dk,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Zhou:2013fk,Wilson-Sayres:2014bh,Pala:2012ys,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Wilson-Sayres:2014fk,Rice:1984vn,Otto:1997fk,Otto:2011uq,Rice:1987rt</string>
+		<string>Bachtrog:2011fk,Evans:2014ai,Veeramah:2014dk,Singh:2013ly,Roesti:2013kx,Lenormand:2003fr,Bengtsson:1987lq,Roze:2006uq,Natri:2013fk,Jordan:2012fk,Campos:2013qy,Qiu:2013dq,Bergero:2013cr,Nei:1969fj,Fry:2010gf,Zhou:2013fk,Wilson-Sayres:2014bh,Pala:2012ys,Patten:2009mz,Charlesworth:1978ul,Clark:1988qy,Adolfsson:2013rt,Wilson-Sayres:2014fk,Rice:1984vn,Otto:1997fk,Rice:1987rt,Otto:2011uq</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29500,7 +29538,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>Software</string>
 		<key>keys</key>
-		<string>Balloux:2001wk,Strand:2002gf,Croissant:2008kx,Nath:1996az,Currat:2004sf,Raymond:1995kx,Wilson:2003fk,Quardokus:2000zi,Lesnoff:2009uq,Lipson:2013qf,rcore:2011fk,Brown:2011fk,Bouckaert:2014fk,Kuhner:2006sf,Labate:2000ux,Messer:2013kx,Gilbert:2012ly,Anderson:2005la,Perez-Figueroa:2009ng,Kuo:2003kx,Guillot:2009sf,Excoffier:2000yf,Stephens:2003fj,Thompson:1995ft,Wilson:2014ve,Laval:2004sf,Sheehan:2013bh,Hoban:2014kx,Vaughan:2014kq,Meirmans:2011fk,Rousset:2008yq,Hampe:1998ly,Dettling:2003rm</string>
+		<string>Balloux:2001wk,Strand:2002gf,Croissant:2008kx,Nath:1996az,Currat:2004sf,Raymond:1995kx,Wilson:2003fk,Quardokus:2000zi,Lesnoff:2009uq,Lipson:2013qf,rcore:2011fk,Brown:2011fk,Bouckaert:2014fk,Kuhner:2006sf,Labate:2000ux,Messer:2013kx,Gilbert:2012ly,Anderson:2005la,Perez-Figueroa:2009ng,Kuo:2003kx,Guillot:2009sf,Excoffier:2000yf,Stephens:2003fj,Thompson:1995ft,Wilson:2014ve,Szpiech:2014mz,Laval:2004sf,Sheehan:2013bh,Hoban:2014kx,Vaughan:2014kq,Meirmans:2011fk,Rousset:2008yq,Hampe:1998ly,Dettling:2003rm</string>
 	</dict>
 	<dict>
 		<key>group name</key>
@@ -29530,7 +29568,7 @@ from a sample of N identified diploids as from N identified haploid types, where
 		<key>group name</key>
 		<string>WorkFlow</string>
 		<key>keys</key>
-		<string>Rougier:2014fk,Alexandrov:2013ly,Sandve:2013fk,Wilson:2014ve,Noble:2009fk,Pavelin:2014uq</string>
+		<string>Noble:2009fk,Alexandrov:2013ly,Pavelin:2014uq,Sandve:2013fk,Wilson:2014ve,Rougier:2014fk</string>
 	</dict>
 </array>
 </plist>
