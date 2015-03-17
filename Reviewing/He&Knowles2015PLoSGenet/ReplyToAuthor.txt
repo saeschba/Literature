@@ -1,11 +1,11 @@
 Summary
 =======
 
-In this manuscript, the authors propose a procedure to detect the signature of selection in genomic regions that potentially have a different demographic history compared to the rest of the genome. The genomic regions of interest here are inversions. After inferring region-specific demographic histories, from which they obtain region-specific neutral null models, the authors train a discriminant function based on simulated data. Simulations are done both under the neutral null models, and under specific scenarios of selection. The discriminant function is trained on the principal components of a set of summary statistics. Its task is to distinguish between the neutral vs. selection models, but not to infer parameter values. To account for the variation in effective recombination rate between the inversion breakpoints, the authors use an ad-hoc method to break down the region-wide estimates of gene flow to smaller physical units. The approach is designed to cope with elevated background divergence in regions of low recombination, which makes it challenging to detect candidates of selection based on patterns of increased divergence. Two variants of the approach are presented.
+In this manuscript, the authors propose a procedure to detect the signature of selection in genomic regions that potentially have a different demographic history compared to the rest of the genome. The genomic regions of interest here are inversions. After inferring region-specific demographic histories, the authors train a discriminant function based on simulated data. Simulations are done both under the neutral null models, and under specific scenarios of selection. The discriminant function is trained on the principal components of a set of summary statistics. Its task is to distinguish between the neutral vs. selection models. To account for the variation in effective recombination rate between the inversion breakpoints, the authors use an ad hoc method to break down the region-wide estimates of gene flow to smaller physical units. The approach is designed to cope with elevated background divergence in regions of low recombination, which makes it challenging to detect candidates of selection based on patterns of increased divergence. 
 The authors conduct a simulation study with a single locus under selection to compare the performance of their approach to a classical Fst-outlier scan in terms of false positive and false discovery rate, and in terms of detection power. The approach based on discriminant functions performs best, but only if the signature from mulitple neutral SNPs in the neighbourhood of the site under selection is integrated. If only one neutral SNP is probed, the performance is more similar to the Fst-outlier approach.
 The novel approach is then applied to RADseq data from the Anopheles gambiae/arabiensis species complex. Two inversions on chromosome 2 are compared to the rest of the genome. For each inversion, the standard (S) and inverted (I) arrangements have been associated with wet and dry habitats in previous studies. Moroever, previous work seems to suggest that the I arrangements have introgressed from A. arab. into A. gam. The authors infer that one of the inversions is older than the split of the two species, and that selection has acted on the standard, rather than on the introgressing inverted arrangement. Conclusions about these inversions being involved in adaptation to both wet and dry conditions are made, although evidence for this seems far from compelling to me.
 
-While the manuscript presents an interesting idea and tackles a very important issue, a combination of three concerns lead to my recommendation for a rejection: 1) Neither the extent of methodological innovation nor the biological insight gained from an application to A. gambiae seem to keep up with what I would consider appropriate for publication in PLoS Genetics; 2) There is a lack of understanding of the statistical and biological mechanistics behind some of the results, and a potential confusion of the signatures of selection and demography; 3) The manuscript needs substantial editorial revision; it contains redundant parts and the writing is often overly wordy or grammatically incorrect.
+While the manuscript presents an interesting idea and tackles a very important issue, a combination of three concerns lead to my conclusion that the paper cannot be accepted in its current form: 1) Neither the extent of methodological innovation nor the biological insight gained from an application to A. gambiae seem to keep up with what I would consider appropriate for publication in PLoS Genetics; 2) There is a lack of understanding of the statistical and biological mechanisms behind some of the results, and a potential confusion of the signatures of selection and demography; 3) The manuscript needs substantial editorial revision; it contains redundant parts and the writing is often overly wordy or grammatically incorrect.
 
 
 General comments
@@ -19,7 +19,7 @@ General comments
 
 - If I understood correctly, only the DAPC part for inference of selection was tested in a simulation study. Although it is very important to know that this part seems to 'work', there is a lack of understanding of what creates the differences in performance between the Fst-outlier approach and DAPC (see next point). More fundamentally for this paper, however, I think that the performance (in terms of false discovery rate, false positive rate, and detection power) of the *entire* pipeline should be assessed, not only of the DAPC vs. Fst-outlier part.
 
-- I missed an explanation for why the "DAPC-region" method had a much better detection power than the Fst-outlier approach. Is it because of the nature of DAPC per se? Or because Fst-outlier tests per definition are using Fst, whereas you allow the DAPC to also use pi (heterozygosity)? How would DAPC perform if you allowed it to use Fst only? On the other hand, would a pi-outlier scan perform better than an Fst-outlier scan? Similarly, why did the DAPC-region method outperform the DAPC-locus method in terms of detection power? It is very interesting that the DAPC-region method had higher detection power at the same time as having lower false discovery rate. The partial explanation in the Discussion that the DAPC-region method is more robust in the face of noisy data would, if I understood correctly, explain a lower false-positive rate, but not necessarily a higher detection power.
+- I missed an explanation for why the "DAPC-region" method had a much better detection power than the Fst-outlier approach. Is it because of the nature of DAPC per se? Or because Fst-outlier tests per definition are using Fst, whereas you allow the DAPC to also use pi (heterozygosity)? How would DAPC perform if you allowed it to use Fst only? On the other hand, would a heterozygosity-outlier scan perform better than an Fst-outlier scan? Similarly, why did the DAPC-region method outperform the DAPC-locus method in terms of detection power? It is very interesting that the DAPC-region method had higher detection power at the same time as having lower false discovery rate. The partial explanation in the Discussion that the DAPC-region method is more robust in the face of noisy data would, if I understood correctly, explain a lower false-positive rate, but not necessarily a higher detection power.
 
 - The test of performance for the detection of selection was only done with a single locus under selection. Given that the applications to real data detect multiple potential targets of selection, I think the method should also be tested against simulations with multiple selected sites. This might not be possible using msms, but it seems crucial to me, given that low recombination rates have a strong impact on the interplay of multiple loci under weak selection, and hence their joint signature on diversity.
 
@@ -191,15 +191,67 @@ p4.l4-5: This seems important, and I would like to see a visualisation of the in
 
 p4.l5: "of the variance" -> "to the variance"
 
+p4.l6: "...statistics were transformed into..." -> "statistics had been transformed (in)to"
+
+p4.l7 "assigned into" -> "assigned to"
+
+p4.l8 Please check if a reference to "Fig 3a" is really intended here. Please label panels (a) and (b) in Fig. 3.
+
+p4.l11-12: The number of significant SNPs seems very large, and it is hard to imagine that all of these are individual targets of selection.
+
+
 
 Discussion
 ----------
 
+- p1.l13–14: "decipher" -> identify; Why can the new approach identify the branch where selection occurred, but Fst-outlier scans cannot? Is it because within-population (within-arrangement) diversity is reduced only in one population (arrangement type), but not in the other? In this case, Fst would not be expected to identify directionality, but a comparison of diversities (heterozygosities) would. That could give an advantage to the DAPC method, because it uses different information. Please report a summary of the simulated summary statistics used to train your discriminant classification function for each scenario of selection and each selection coefficient. For instance, you could plot each summary statistic as a function of the selection coefficient, for the different scenarios of selection.
 
+- p1.l2-3: "selection signature" -> "a signature of selection". It was not quite clear to me what part of this sentence really describes the novelty. Is the emphasis on "inversion-specific coalescent expectations"?
 
-px.lx: The list of references shold be comlemented by recent theoretical work on the interplay of gene flow, recombination and selection (e.g. Bürger and coauthors).
+- p1.l16-17: "has involved" -> "has been involved" (?). Delete ", respectively". "highlighted" -> "highlights". Again, I doubt that the results shown here allow for the interpretation that the inversion has been involved in adaptation to both wet and dry habitats.
+
+- p1.l17-19: Given that selection seems to favour the S arrangement over the introgressing I arrangement, I do not think that the results highlight the importance of *adaptive* introgression. Rather, they ask for an explanation for why a deleterious introverting variant is still segregating in A. gam.
+
+- p1.l22-24: Delete "in genomic scan". I do not fully agree with this statement, because Fst (and, to some extent, D_XY) can be confounded by different modes of selection, as well as demography. Hence, they are not necessarily the "most effective way to detect targets of divergent selection in most cases".
+
+- p1.l26-29: This sentence needs to be revised. Please avoid too many non-standard compound nouns.
+
+- p2.l5: Not all ABC approaches apply a PC transformation to summary statistics. This step is not a defining property of ABC.
+
+- p2.l6-8: ABC model choice has been done, too. Model choice/comparison with both ABC and DAPC suffers from a lack of sufficient summary statistics. This remains a major issue and should be mentioned. See the ABC literature on this topic.
+
+- p2.l8-13: This part creates the impression that using information from multiple summary statistics jointly is novel. However, this strategy has been widely used in the context of ABC, and the benefits and problems discussed in the relevant literature.
+
+- p2.l16: Please revise this sentence.
+
+- p2.l16-20: If I understand this correctly, the averaging strategy would reduce statistical noise, but that is not necessarily the main factor increasing detection power; it may contribute to a lower false positive rate, however.
+
+- p2.l21-22: "1Kb" -> "1kb". Does this refer to regions outside the inversions? Please clarify.
+
+- p3.l7-9: Surely, this must depend on the strength and mode of selection, the amount of gene flow, and the information extracted from the data.
+
+- p3.l10: Insert "the" after "limited power in"
+
+- p3.l11: "rise from the fact" -> "be"
+
+- p3.l12: "origin time" -> "time of origin"
+
+- p3.l13-15: It was not clear to me where this statement follows from.
+
+- p3.l19: "given 2La's origin history" -> "given the inferred demographic history of 2La".
+
+- p3.l30: The word "given" appears twice in the same line
+
+- p3.l31: "Radtag" -> "RADtag" (?)
+
+- p4.l10-15: I found this a bare overstatement / speculation, with little support by the results reported.
+
+- p4.l16: The word "that" appears three times in the same line
+
+- p4.l17: What is meant by "linkage between co-adapted and maladapted genotypes"?
 
 
 Material and Methods
 --------------------
 
+p1.l
