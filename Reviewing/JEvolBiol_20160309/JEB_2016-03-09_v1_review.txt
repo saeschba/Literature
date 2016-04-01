@@ -1,0 +1,50 @@
+Summary
+-------
+
+The authors propose a model of parallel genetic evolution in response to environmental differences between the habitats of a common ancestral and multiple descendent populations. For the theoretical part, a single quantitative trait subject to directional selection is assumed, whereby the fitness of an individual is a linear function of the trait value; low trait values are favoured in the ancestral habitat, whereas high trait values are adaptive in the novel environment. The trait is determined by additive contributions by the underlying loci. A simple and straightforward expressions is derived for the probability of fixation of the same derived allele in an arbitrary number of descendent populations from an initially low frequency in the ancestral population. The authors can easily extend this expression to multiple loci thanks to the assumption of weak selection and quasi-linkage equilibrium. As expected, the results show that parallel genetic evolution at a single locus is facilitated by strong phenotypic selection, a large effect on the trait, and a high initial frequency of the adaptive allele. With multiple loci, the probability of complete parallel evolution decreases, unless selection is very strong. The distribution of allelic effect sizes seems to have a minor effect unless selection is very strong.
+
+Through their analytical work, the authors show that, for given initial allele frequency and allelic effect size, the probability of parallel evolution depends on a compound parameter defined by the product of the ratio of the slope an the intercept of the linear fitness function, times the effective population size. This parameter makes intuitive sense and serves as a means of quantifying the relative importance of adaptive forces underlying parallel genetic evolution, as opposed to genetic drift.
+
+Nice: consider three schemes used in practice to identify candidate genes undergoing parallel evolution and compare them
+
+This article is relevant as it addresses the inherent difficulty of distinguishing between parallel adaptive evolution and coincidential establishment of the same alleles in multiple populations. This challenge must be addressed in view of emerging multilocus data sets from multiple derived populations potentially undergoing adaptation to similar novel environments.
+
+A second important link is made between the probability of parallel genetic evolution and the genetic architecture of the trait subject to selection. While the paper makes the strong and potentially limiting assumption of quasi-linkage equilibrium, it does show that complete parallel genetic evolution at all affected loci is unlikely unless phenotypic evolution is very strong.
+
+Development of a Bayesian inference procedure making use of a standard Metropolis-Hastings Markov chain Monte Carlo procedure.
+
+Relaxation of assumptions (say which ones) in simulations.
+
+Well written, clean and without major flaws.
+
+
+Concerns
+--------
+
+results seem almost trivial, assumptions are relatively strong; I suggest investigating the role of gene flow among descendent populations (not only from ancestral to descendent ones), and a better investigation of the effect of the distribution of fitness effects (DFE). The latter is currently under-discussed.
+
+Results are currently presented in multiple tables and it is hard to figure out trends and differences. It would be nice if the authors could work these out a bit more verbally, or even come up with a way of presenting them graphically. In particular, the meaning of the intercept (and strong differences between various settings) are not motivated and can lead to confusion.
+
+The link to previous works by XY and Chevin et al (XXXX) is made in the Introduction, but I missed some more details. Also, it would be nice if the authors could come back to these articles in the Discussion and summarise what we learn from this novel analysis. I also missed a mentioning of Ralph and Coop (2015) who studied the same problem in a spatially more complex setting, allowing for gene flow as well as explicitly incorporating the effect of recurrent mutation.
+
+For highly quantitative traits, a substantial level of adaptation may be reached even when not every single underlying locus is fixed for the favoured allele. Yet, the authors apply a strict definition of parallel genetic adaptation as the situation where all underlying alleles are fixed. I wonder how the conclusions would be affected by two relaxations, namely that i) fixation does not need to occur at all, but only a proportion, of underlying loci, and ii) fixation does not need to be complete - which would be the case if there were gene flow from the ancestral population or other sources.
+
+
+Minor comments
+--------------
+
+l. 476/478: Remind the reader of the meaning of GC and GG.
+
+l. 483: The non-linear increase of the probability of parallel evolution is not surprising given the logistic form of Eq. (6).
+
+l. 487: Delete comma after "n loci".
+
+l. 488: Insert commas after "n = 50" and after "frequency".
+
+l. 490: "dipicted" -> depicted
+
+Figure 3: Please make clear that the first panel shows the three effect-size distributions that are considered. Please provide an interpretation of the pattern in the bottom-right panel (eta = 500, p_0 = 0.1). Why do the curves for different input distributions look the way they do?
+
+Figure 5: It is not clear what the difference between panels A and B is in terms of parameters. Please specify the values of eta, b and p_0 in the caption.
+
+
