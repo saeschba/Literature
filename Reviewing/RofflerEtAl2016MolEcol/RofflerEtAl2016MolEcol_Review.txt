@@ -1,0 +1,28 @@
+Summary
+-------
+
+
+
+Main concerns
+-------------
+
+
+Minor comments
+--------------
+
+l. 26: "Most research on natural selection, gene flow, and effective population sizeinteractions ..." -> "Most research on the interaction of natural selection, gene flow, and effective population size..."
+
+l. 35: The symbols N_m and N_e have not been introduced. It may be better to spell out their meaning in the abstract.
+
+l. 35-36: "highest" -> "higher"; "and lowest" -> "than"
+
+l. 37: "Alternatively" -> "However"
+
+l. 39-40: "in a selection gradient" -> "with a selection gradient (as opposed to XY)" [it should be clear what the alternative is to a selection gradient in your analyses]
+
+l. 43: Remove spaces surrounding the dashes that indicate ranges. "in comparison to population-based methods 0.7 - 1.0" -> "in comparison to 0.7-1.0 for population-based methods"
+
+l. 43-45 Replace by "We suggest using both population- and individual-based approaches in order to limit false positives and negatives.
+
+l. 51: Insert "the" before "identification".
+
