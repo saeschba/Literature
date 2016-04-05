@@ -1,10 +1,25 @@
 Summary
 -------
 
+Goal: Increase our understanding of the interplay of gene flow, natural selection, and genetic drift in shaping observable patterns of neutral and adaptive variation across space and among loci.
+Comparison of population- vs. individual-based approaches (explain / briefly define) and in-depth quantification of strengths and weaknesses of commonly-used methods.
+Assess the combined effects of varying dispersal distance and population size.
+
+Strength: This article investigates complexities of this topic that are hard to deal with by means of analytical treatment, and instead uses comprehensive simulations. This is a welcome complementation of previous work.
+
+Three selection regimes: a) discrete, b) gradient, c) neutrality.
+
 
 
 Main concerns
 -------------
+
+*) I was missing a discussion of the concept of Wright's (1943) neighbourhood size, both in the Introduction and with respect to the results. Under admittedly idealised settings, this concept links dispersal distance with population density. In particular, it suggests that dispersal distance (or its variance) and local population density form a compound parameter. The authors of the present study are also interested in the relation between dispersal distance and population size, albeit in a spatially more complex context and including selection. It would therefore be of interest to know what can be learnt in addition to Wright's concept, and how robust it is. In the same context, how do your findings relate to Shirk and Cushman (2014; Front. Ecol. Evol.)? They propose a way of inferring spatial variation in Wright's neighbourhood size, e.g. as a consequence of variation in resistance to gene flow. I wonder if this could be of use when trying to detect selection, as it acts as a resistance to gene flow. At least, please try to translate your parameter combinations under neutrality into Wright's neighbourhood size for reference.
+
+*) In the Introduction, there is a lack of references to theoretical papers. Please also make sure you are citing the original papers for observations you summarise. Overall, the references seemed to be biased towards a landscape-genetic perspective, with a lack of population-genetic literature.
+
+*) Please make an effort to reduce the length of the Introduction. I suggest shortening the parts where you highlight the advantages of simulation-based approaches.
+
 
 
 Minor comments
@@ -25,4 +40,66 @@ l. 43: Remove spaces surrounding the dashes that indicate ranges. "in comparison
 l. 43-45 Replace by "We suggest using both population- and individual-based approaches in order to limit false positives and negatives.
 
 l. 51: Insert "the" before "identification".
+
+l. 55: Please include more recent references.
+
+l. 62-63: Please include reference to theoretical papers.
+
+l. 72;74-75;76: Please include references to theoretical and/or original papers.
+
+l. 77-80: I am not sure if I would call this a 'debate'. It seems established that both outcomes are plausible (i.e. spatial correlation of neutral and adaptive markers vs. different spatial distributions), but it is very difficult make statistical inference about processes from these patterns. This is partly because we are still learning to understand what we should expect under different modes of selection, extents of linkage, and strength of genetic drift.
+
+l. 80: Insert "that" after "predicts".
+
+l. 80-81: Large population size and limited gene flow will, per se, not guarantee strong adaptive divergence among populations. Selection must be spatially heterogeneous for this to occur. Without selection, we would expect small populations to show the strongest differentiation (due to genetic drift).
+
+l. 91: Insert a space after "Matala et al. 2014;".
+
+l. 93-94: "To understand the roles and interaction between gene flow, population size, and natural selection..." -> "To understand the roles of gene flow, population size, natural selection, and their interactions..."
+
+
+l. 94: "these" -> "the following"
+
+l. 101-104: This was not very clear to me. Also, you might want to mention that candidate loci found via genome scans can inform functional studies and experiments directly testing the effect of selective agents.
+
+l. 105: Delete "role and".
+
+l. 107-108: It is not clear how you differentiate between 'selective gradients' and 'spatially distinct environments'. Do you refer to heterogeneous selection in continuous vs. discrete space? This differentiation is important, but you should make it more explicit. You could refer to Fig. 1 earlier on.
+
+l. 108: "discrete, population-based models under ideal" -> "models of discrete populations combined with idealizing"
+
+l. 109: Replace the hyphen in "Wright-Fisher" by an en-dash.
+
+l. 110: "equivocal" -> "difficult"
+
+l. 122-123: Please define what you mean by "population-based" vs. "correlation-based" early on. Is "correlation-based" equivalent to what you are later on calling "individual-based"? These distinctions seem crucial.
+
+l. 127: ">1" -> "more than"
+
+l. 140-144: I was again missing the specification that selection must be spatially heterogeneous for these predictions to make sense.
+
+
+l. 156: 'Dispersal distance' is not appropriately defined. Does it refer to the mean or standard deviation of a dispersal kernel? Please clarify.
+
+l. 155-160: Please start subsentences with a lowercase letter.
+
+l. 157: Remove brackets around "s" (i.e. around the symbol for the selection coefficient).
+
+l. 162: Insert comma before "which".
+
+l. 162: Replace ", a computationally challenging and time-consuming endeavor" by a sentence explicitly stating the (approximate) computation time needed and the hardware used.
+
+l. 164: Please also specify the population size (1000) of these initial simulations in the main text.
+
+l. 168: Was Fst exactly or approximately equal to 0.02?
+
+l. 171: What exactly to you mean by 'polygynous mating system'? E.g. random mating where both sexes can mate several times per breeding episode? What is the offspring distribution?
+
+l. 172: Do you mean an inverse-chi-squared distribution? Otherwise, I do not understand what dispersal kernel you used.
+
+l. 173: Are these loci unlinked? If so, pleas specify.
+
+l. 174: You seem to be referring to mutation rates in humans (or at least mammals). How important is the exact value of the mutation rate? Could you speed up your simulations by increasing the mutation rate without loosing power to detect the signals you are interested in?
+
+l. 177-179: On l. 158 you introduced selection in terms of reduced survival (which implied viability selection of the individual whose fitness is considered). Here, however, the fitness of an individual is defined in terms of the survival of its offspring, which to me implies fertility selection on the focal individual; yet, survival of the offspring depends on their genotype. Hence, fitness of the offspring is a function of their parental genotypes. Because of this, strictly speaking, you are not portraying the fitness of a single parent, but of a mating pair. In principle, this is feasible, but please make sure your specifications are consistent.
 
