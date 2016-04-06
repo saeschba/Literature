@@ -7,7 +7,7 @@ Assess the combined effects of varying dispersal distance and population size.
 
 Strength: This article investigates complexities of this topic that are hard to deal with by means of analytical treatment, and instead uses comprehensive simulations. This is a welcome complementation of previous work.
 
-Three selection regimes: a) discrete, b) gradient, c) neutrality.
+Three selection regimes: a) two discrete adjacent environments, b) a linear selection gradient from north to south, and c) neutrality.
 
 
 
@@ -20,6 +20,13 @@ Main concerns
 
 *) Please make an effort to reduce the length of the Introduction. I suggest shortening the parts where you highlight the advantages of simulation-based approaches.
 
+*) There is an extensive literature on the evolution and maintenance of allele-frequency clines in scenarios similar to those considered in this paper (but under simplifying assumptions about demography). How do the results here relate to the classical literature? What is the novel insight?
+
+*) I was puzzled to see that the number of migrants is estimated from simulated Fst, rather than estimated directly from the simulations, given that the latter are individual-based. In addition, in scenario b) ("gradient scenario") it is not clear what geogrphic units Fst (and other measures of divergence, e.g. D_est) would refer to; is it still the northern and southern portion of the entire range? Using Fst to estimate the number of migrants assumes an island model of migration and comes with several other problems (reviewed in Whitlock & McCauley 1999).
+
+*) On the one hand, the authors claim to relax arguably constraining idealising assumptions made in classical population-genetic analyses (e.g. about demography and migration) using a simulation-based approach. This seems fine. But then they resort to measures of genetic divergence (e.g. Fst) and statistical tests (e.g. the Mantel test) that are based on these simplifying population-genetic models or otherwise potentially problematic assumptions (e.g. Guillot & Rousset 2013, Meth Ecol Evol) without further discussion. It may be fine to use Fst as a statistic in the current context, but I would discourage using it to infer the number of migrants. Similarly, the Mantel test may be appropriate here, but please do justify its use, in particular with respect to potential autocorrelation in both variables (genetic and geographic distances).
+
+*) It was not clear to me whether the LOSITAN simulations used to generate the null-distribution of Fst were based on exactly the same demographic model as is assumed here by the authors. This important point should be clarified, and potential deviations discussed.
 
 
 Minor comments
@@ -102,4 +109,48 @@ l. 173: Are these loci unlinked? If so, pleas specify.
 l. 174: You seem to be referring to mutation rates in humans (or at least mammals). How important is the exact value of the mutation rate? Could you speed up your simulations by increasing the mutation rate without loosing power to detect the signals you are interested in?
 
 l. 177-179: On l. 158 you introduced selection in terms of reduced survival (which implied viability selection of the individual whose fitness is considered). Here, however, the fitness of an individual is defined in terms of the survival of its offspring, which to me implies fertility selection on the focal individual; yet, survival of the offspring depends on their genotype. Hence, fitness of the offspring is a function of their parental genotypes. Because of this, strictly speaking, you are not portraying the fitness of a single parent, but of a mating pair. In principle, this is feasible, but please make sure your specifications are consistent.
+
+l. 180-183: Perhaps use a), b), and c) throughout instead of (a), (b), and (c), and then replace "a", "b", and "c" later on by a), b), and c), respectively (e.g. in l. 184, 189,...). Currently, the notation is inconsistent (cf. caption of Figure 1). Moreover, I find the term "present/absent" misleading, because selection is present if there is a difference in fitness between the two environments, not because it is present in the north but not in the south or vice versa. How about calling it "step-wise scenario" or similar?
+
+l. 182: "a gradient with the strength of selection continuously distributed from..." -> "a linear gradient of selection strength from...".
+
+l. 188: Adjust the font for the "aa" genotype to italic. Insert ", i.e. A allele is fully recessive" after "of 1.0". [Actually, this sentence is redundant to the one on l. 191-192 and could be omitted; but please add the remark about full recessivity of A there.] What is the reason for assuming full recessivity of the A allele (dominance of the deleterious allele "a")? Please motivate. Please remind the reader that you also consider a "strong" selection regime under a).
+
+l. 194-196: "linkage disequilibrium method" -> "linkage-disequilibrium method". It is not clear if the references given at the end of the sentence refer to both the linkage-disequilibrium method and the jack-knife approach or only to the latter. Please add a sentence or two summarising the idea behind the linkage-disequilibrium method.
+
+l. 197-198: Insert "the" before "number". I was puzzled to see that you use the Fst-based formula to estimate the number of migrants, rather than esimating it directly from your simulations. See major concerns above. Please replace the hyphen in the equation by a proper minus sign.
+
+l. 203: Please give the formula for D_est for completeness.
+
+l. 204: "the 1 loci" -> "the one locus"
+
+l. 206: Insert "it" after "because".
+
+l. 207: Set the "F" italic in "Fst". You say that D_est "scales linearly" but not with what. 
+
+l. 209: You use "landscape genetics approach" here, probably to mean the same as "individual-based approache(s)" mentioned earlier (e.g. l. 44, l. 221, l. 258). Please use a minimum number of terms and be consistent for clarity.
+
+l. 211: "only adaptive loci" -> "only the adaptive locus"
+
+l. 212: Please justify the choice of using Dps and give the formula.
+
+l. 212-213: "For each scenario, selection strength, and selection surface..." -> "For each scenario (i.e. combination of selection strength and selection regime), ..."; "the10" -> "ten" (?).
+
+l. 212 ff: You seem to describe specifics that apply to both the population-based and individual-based approach from here on. Please start a new paragraph with "For each scenario". Did you also generate a time series of Dps? Please specify.
+
+l. 220: I suggest introduting the various statistical tests before the description of how you computed the type I and II errors.
+
+l. 224: Please adjust names of scenarios as appropriate (cf. previous comments; this applies to other places in the manuscript, too, but I will not mention it anymore).
+
+l. 228: "1 locus" -> "one locus"
+
+l. 230-231: Please correct position of "implemented in" and adjust the format of the citation.
+
+l. 232: Do the assumptions underlying the LOSITAN software correspond exactly to the demographic model that you used in your neutral scenario? Please clarify / specify deviations.
+
+l. 237-238: Please motivate what you use the FDR for, and mention how you computed confidence intervals (e.g. based on empirical percentiles?).
+
+l. 241: Again, it is not clear what "population-specific" (as opposed to "global") means in the context of the "gradient scenario"; does it still refer to north vs. south?
+
+Figure 1: Please correct the "c.)", "a.)", and "b.)" to be consistent in the caption; set genotypes italic; fix the last sentence of the caption.
 
