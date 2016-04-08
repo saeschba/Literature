@@ -9,7 +9,7 @@ Strength: This article investigates complexities of this topic that are hard to 
 
 Three selection regimes: a) two discrete adjacent environments, b) a linear selection gradient from north to south, and c) neutrality.
 
-
+The study assumes a k-allele mutation model 
 
 Main concerns
 -------------
@@ -26,7 +26,7 @@ Main concerns
 
 *) On the one hand, the authors claim to relax arguably constraining idealising assumptions made in classical population-genetic analyses (e.g. about demography and migration) using a simulation-based approach. This seems fine. But then they resort to measures of genetic divergence (e.g. Fst) and statistical tests (e.g. the Mantel test) that are based on these simplifying population-genetic models or otherwise potentially problematic assumptions (e.g. Guillot & Rousset 2013, Meth Ecol Evol) without further discussion. It may be fine to use Fst as a statistic in the current context, but I would discourage using it to infer the number of migrants. Similarly, the Mantel test may be appropriate here, but please do justify its use, in particular with respect to potential autocorrelation in both variables (genetic and geographic distances).
 
-*) It was not clear to me whether the LOSITAN simulations used to generate the null-distribution of Fst were based on exactly the same demographic model as is assumed here by the authors. This important point should be clarified, and potential deviations discussed.
+*) It was not clear to me whether the LOSITAN simulations used to generate the null-distribution of Fst were based on exactly the same demographic model as is assumed here by the authors. This important point should be clarified, and potential deviations discussed. It seems as if an island model (or a related version) is being used, but it is not clear.
 
 
 Minor comments
@@ -106,7 +106,7 @@ l. 172: Do you mean an inverse-chi-squared distribution? Otherwise, I do not und
 
 l. 173: Are these loci unlinked? If so, pleas specify.
 
-l. 174: You seem to be referring to mutation rates in humans (or at least mammals). How important is the exact value of the mutation rate? Could you speed up your simulations by increasing the mutation rate without loosing power to detect the signals you are interested in?
+l. 174: You seem to be referring to mutation rates in humans (or at least mammals). How important is the exact value of the mutation rate? Could you speed up your simulations by increasing the mutation rate without loosing power to detect the signals you are interested in? Please specify what k you used. Or does k emerge from the simulation algorithm? Please clarify.
 
 l. 177-179: On l. 158 you introduced selection in terms of reduced survival (which implied viability selection of the individual whose fitness is considered). Here, however, the fitness of an individual is defined in terms of the survival of its offspring, which to me implies fertility selection on the focal individual; yet, survival of the offspring depends on their genotype. Hence, fitness of the offspring is a function of their parental genotypes. Because of this, strictly speaking, you are not portraying the fitness of a single parent, but of a mating pair. In principle, this is feasible, but please make sure your specifications are consistent.
 
@@ -148,9 +148,21 @@ l. 230-231: Please correct position of "implemented in" and adjust the format of
 
 l. 232: Do the assumptions underlying the LOSITAN software correspond exactly to the demographic model that you used in your neutral scenario? Please clarify / specify deviations.
 
-l. 237-238: Please motivate what you use the FDR for, and mention how you computed confidence intervals (e.g. based on empirical percentiles?).
+l. 237-238: Please motivate what you use the FDR for, and mention how you computed confidence intervals (e.g. based on empirical percentiles?). You give more background on your use of FDR values to approximate p-values on l. 253-257, so I wonder if you could present this earlier on.
 
-l. 241: Again, it is not clear what "population-specific" (as opposed to "global") means in the context of the "gradient scenario"; does it still refer to north vs. south?
+l. 239-248: As for the LOSITAN/Fdist approach above, it would be good to explain a bit more what assumptions are made by BayeScan about the underlying demographic model and how robust the method is to these. BayeScan assumes a "fission model" (Falush et al. 2003), which is close to Wright's (1931) island model, except that islands share a common ancestral population before becoming isolated. Foll & Gaggiotti (2006) tested the robustness of such types of methods to some deviations. It may be good to remind the reader of their main findings.
+
+l. 241: It is not clear what "population-specific" (as opposed to "global") means in the context of the "gradient scenario"; does it still refer to north vs. south?
+
+l. 245-248: My understanding was that Foll and Gaggiotti's BayeScan would only provide an advantage in the context of more than two populations, and unequal rates of gene flow and effective sizes among these. Since it is not clear to me with respect to which units you define Fst and migration (see previous comments), I cannot judge if BayeScan is really expected to be better than Fdist in your context. Essentially, the demographic models assumed by Beaumont and Nichols (1996) and Foll and Gaggiotti (2008) are the same. Beaumont and Nichols (1996) showed that their Fdist approach is quite robust to violations.
+
+l. 251: Insert a space after "odds value to".
+
+l. 251-253: Please improve the formulation of this sentence. I did not quite understand its meaning.
+
+l. 259-260: It was unclear to me what you mean by "the probability of the presence of an allele given the sampling site environmental characteristics".
+
+l. 262-266: I got confused about whether environmental variables are response or predictor variables. Please clarify. You seem to use latitude as a predictor, but say it is a response. Also, is it appropriate to use latitude as environmental variable in the "present/absent" scenario? Should you not use a Boolean variable instead that differentiates between "north" and "south"?
 
 Figure 1: Please correct the "c.)", "a.)", and "b.)" to be consistent in the caption; set genotypes italic; fix the last sentence of the caption.
 
