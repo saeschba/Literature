@@ -22,11 +22,17 @@ Main concerns
 
 *) There is an extensive literature on the evolution and maintenance of allele-frequency clines in scenarios similar to those considered in this paper (but under simplifying assumptions about demography). How do the results here relate to the classical literature? What is the novel insight?
 
-*) I was puzzled to see that the number of migrants is estimated from simulated Fst, rather than estimated directly from the simulations, given that the latter are individual-based. In addition, in scenario b) ("gradient scenario") it is not clear what geogrphic units Fst (and other measures of divergence, e.g. D_est) would refer to; is it still the northern and southern portion of the entire range? Using Fst to estimate the number of migrants assumes an island model of migration and comes with several other problems (reviewed in Whitlock & McCauley 1999).
+*) In scenario b) ("gradient scenario") it is not clear what geographic units Fst (and other measures of divergence, e.g. D_est) would refer to; is it still the northern and southern portion of the entire range? Using Fst to estimate the number of migrants assumes an island model of migration and comes with several other problems (reviewed in Whitlock & McCauley 1999). It would be good to briefly mention this.
 
 *) On the one hand, the authors claim to relax arguably constraining idealising assumptions made in classical population-genetic analyses (e.g. about demography and migration) using a simulation-based approach. This seems fine. But then they resort to measures of genetic divergence (e.g. Fst) and statistical tests (e.g. the Mantel test) that are based on these simplifying population-genetic models or otherwise potentially problematic assumptions (e.g. Guillot & Rousset 2013, Meth Ecol Evol) without further discussion. It may be fine to use Fst as a statistic in the current context, but I would discourage using it to infer the number of migrants. Similarly, the Mantel test may be appropriate here, but please do justify its use, in particular with respect to potential autocorrelation in both variables (genetic and geographic distances).
 
 *) It was not clear to me whether the LOSITAN simulations used to generate the null-distribution of Fst were based on exactly the same demographic model as is assumed here by the authors. This important point should be clarified, and potential deviations discussed. It seems as if an island model (or a related version) is being used, but it is not clear.
+
+*) Study shows qualitative patterns that would be expected based on currently known theory. The quantitative results are difficult to interpret, though, for three reasons. First, the parameters of interes are estimated by methods that make strong assumptions about the underlying model, which are not met in this case (and also not discussed well enough by the authors). Second, it is not clear with respect to which demographic/spactial unit statistics such as Fst are calculated. Third, oen of the principal processes considered here, gene flow, is not specified well enough. In particular, the dispersal kernel and mechanism is unclear. For these reasons, I do not think that the study reveals much novel insight, but simply reinforces previous knowledge in a relatively unspectacular way.
+
+*) I think that the selection regime called "weak" is not actually weak, as the selection coefficient is s = 0.1 and the smalles population size 1000, such that N*s = 100, which is still large compared to the typical threshold of around 10 below which selection could be truly called "weak". I suggest calling the regime with s = 0.1 "moderate", and introducing a third regime with truly weak selection. There is also some confusion about the actual value of s used (s = 0.1 vs. s = 0.01; see e.g. l. 158 vs. Table 1).
+
+*) The contrast between Figure 2 and Appendix S2 is impressive, but it is currently unclear if this is a biologically relevant difference or a consequence of a misspecification of demographic units with respect to which Fst and D_est were measured.
 
 
 Minor comments
@@ -90,7 +96,7 @@ l. 156: 'Dispersal distance' is not appropriately defined. Does it refer to the 
 
 l. 155-160: Please start subsentences with a lowercase letter.
 
-l. 157: Remove brackets around "s" (i.e. around the symbol for the selection coefficient).
+l. 157-158: Remove brackets around "s" (i.e. around the symbol for the selection coefficient). When selection is "weak", was s set to 0.1 or 0.01? Here, it says 0.01, but Table 1 suggests 0.1.
 
 l. 162: Insert comma before "which".
 
@@ -116,9 +122,9 @@ l. 182: "a gradient with the strength of selection continuously distributed from
 
 l. 188: Adjust the font for the "aa" genotype to italic. Insert ", i.e. A allele is fully recessive" after "of 1.0". [Actually, this sentence is redundant to the one on l. 191-192 and could be omitted; but please add the remark about full recessivity of A there.] What is the reason for assuming full recessivity of the A allele (dominance of the deleterious allele "a")? Please motivate. Please remind the reader that you also consider a "strong" selection regime under a).
 
-l. 194-196: "linkage disequilibrium method" -> "linkage-disequilibrium method". It is not clear if the references given at the end of the sentence refer to both the linkage-disequilibrium method and the jack-knife approach or only to the latter. Please add a sentence or two summarising the idea behind the linkage-disequilibrium method.
+l. 194-196: It is not clear if the references given at the end of the sentence refer to both the linkage-disequilibrium method and the jack-knife approach or only to the latter. Please add a sentence or two summarising the idea behind the linkage-disequilibrium method.
 
-l. 197-198: Insert "the" before "number". I was puzzled to see that you use the Fst-based formula to estimate the number of migrants, rather than esimating it directly from your simulations. See major concerns above. Please replace the hyphen in the equation by a proper minus sign.
+l. 197-198: Insert "the" before "number". Replace "calculated" by "estimated". Please replace the hyphen in the equation by a proper minus sign. I was a bit puzzled to see this estimate of Nm being used, as I do not think that the model considered here is well approximated by the island model that underlies this estimate.
 
 l. 203: Please give the formula for D_est for completeness.
 
@@ -160,9 +166,63 @@ l. 251: Insert a space after "odds value to".
 
 l. 251-253: Please improve the formulation of this sentence. I did not quite understand its meaning.
 
-l. 259-260: It was unclear to me what you mean by "the probability of the presence of an allele given the sampling site environmental characteristics".
+l. 259-260: Should it say "sampling sites's environmental characteristics"?
 
 l. 262-266: I got confused about whether environmental variables are response or predictor variables. Please clarify. You seem to use latitude as a predictor, but say it is a response. Also, is it appropriate to use latitude as environmental variable in the "present/absent" scenario? Should you not use a Boolean variable instead that differentiates between "north" and "south"?
 
+l. 269-273: Please describe the GLM you used in some more detail. What link function did you use? Did you also consider using the allele frequency (rather than the binary variable presence/absence) as a response? If so, how did that affect the error rates?
+
+l. 278: Replace "10–1,741" by "10 to 1,741".
+
+l. 292: "differentiation..." whithout further specification may be misleading. Perhaps: "difference between neutral and selected loci in terms of D_est..."
+
+l. 295: "D_est values increased..." -> "D_est values for the locus under selection increased...". It appears as if this initial increase and temporary peak are a consequence of the initial conditions. Did you try other initial conditions, and if so, did the D_est value for the selected locus converge to the same plateau after 500 generations?
+
+l. 297-300: Please carefully revise this sentence. The references to the figure panels did not seem to agree with the text, and the values of D_est = 0.62 and 0.57 do not seem to correspond to high and low drift, but low and high dispersal. See further comments to Figure 2 below.
+
+l. 301-307: It is hard to imagine why, all esle being equal, weak selection should lead to stronger differentiation at the locus under selection than strong selection (panels a.i vs. b.i in Appendix S2). Without further explanation, it is also difficult to understand why lower dirft should lead to more genetic structure.
+
+l. 311: "Mantel r" -> "Mantel's r" (?) This occurs at other places and I will not repeat myself.
+
+l. 315 Delete "Adaptive".
+
+l. 317-320: I do not understand why the differentially selected locus would be less differentiated than the neutral and the combined set of loci. Is this, in the end, an artefact of different numbers of alleles segregating at the neutral vs. selected locus? The selected locus is bound to have two alleles, whereas the neutral loci seem to be simulated under a k-allele model of mutation.
+
+l. 323: Based on Table 3, should it not say "(N_m > 17)" instead of "(N_m > 19)"?
+
+l. 334: Insert comma after "generations". Set "Type" to lowercase.
+
+l. 334-336: Please remind the reader that you are only referring to the "present/absent" selection regime here.
+
+l. 336: "Bayescan" -> "BayeScan".
+
+l. 736: "length the entire..." -> "length of the entire..."
+
+l. 337: Insert reference to Appendix S4 after "generiations".
+
+l. 338: Should it not say ">= 60%" here, as the type II error rate is 0.6 for a confidence level of 99% (Table 4)?
+
+l. 339-341: Are you referring only to the columns in Table 5 that refer to 4 or more identified loci? Otherwise, the number in brackets (<= 0.1) seems wrong.
+
+l. 747-748: Without specification of the dispersal kernel, it is not clear how the "rate of dispersal among populations" and the "dispersal distance parameter" are related. Related to this, I suggest replacing "low N_m" and "high N_m" in the header by "low dispersal" and "high dispersal" (see other comments, too).
+
+l. 753: The selection coefficient "s" should be italic.
+
 Figure 1: Please correct the "c.)", "a.)", and "b.)" to be consistent in the caption; set genotypes italic; fix the last sentence of the caption.
 
+Table 1: Selection coefficients "s" should be italic.
+
+Table 3: Replace "a.)" by "a)" (similar for "b.)"). [This applies to other places as well, e.g. Table 4] In the header, please replace "low N_m" and "high N_m" by "low dispersal" and "high dispersal". It is not clear whether longer dispersal distances (which is what characterises "high dispersal") would necessarily result in hither N_m. In the caption, please specify whether you are considering all loci or only the neutral ones here. At some place (either in Table 2 or Table 3), please also give the actual values of N_m, not only the "maximum percentage dispersal rate" (Table 2).
+
+Table 5: In the first line of the caption, what is meant by?
+
+With repsect to multiple figures: Do the curves show averages across the 10 simulation runs? If so, it would be nice to have an idea of the variation around these means, as 10 seems to be a low number (but understandable given the computational costs). In several figures, it would help to have additional labels on top of panel columns and to the left of panel rows that give details that are currently only in the caption (e.g. "low dispersal" or "high drift"). Please increase the contrast between line types of "Neutral" and "Selection-driven" lines. Sometimes it is hard to see if the line is dashed or dot-dashed (e.g. Figure 3 a.iii).
+
+Figure 2: Please increase the font size in the legends. Again, I suggest using "low dispersal" and "high dispersal" instead of "low N_m" and "high N_m". Please correct the references to what I think should be "Table 1" and "Table 2". This occurs at other places, too, but I am not going to repeat myself. I found panels b.iii and b.iv surprising, as I would have expected the inverse pattern, i.e. stronger differentiation between the selected and neutral loci in the case of low dispersal (iii) than in the case of high dispersal (iv). Could you please provide an explanation? I might be missing a point.
+For the supporting figures and tables, please check the specifications of the journal with respect to how individual items should be labeled. Please adjust in-text references accordingly. In the caption, replace "with selection strong (a) and weak (b)" -> "with strong (a) and weak (b) selection".
+
+Figure 3: In the caption, replace "with selection strong [weak]" by "with strong [weak] selection".
+
+Appendix S2: The contrast between this figure and Figure 2 is striking. I wonder if this is a biologically relevant difference, or perhaps due to the way you measured D_est in the "presence/absence" vs. "gradient" regime (see comments above about the demographic/spatial unit with respect you defined gene flow and measured Fst and D_est). As this is a point that is not yet clear from the current text, I suggest you update the interpretation of this contrast later on accordingly. At present, it is very difficult to make sense of Appendix S2.
+
+With respect to both Figures 2 and Appendix S2, I wonder if it would be better to show the D_est axis on a log-scale, so that differences between curves become better visible when absolute values are small on the natural scale. 
