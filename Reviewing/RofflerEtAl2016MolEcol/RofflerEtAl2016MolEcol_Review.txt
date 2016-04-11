@@ -1,15 +1,26 @@
 Summary
 -------
 
-Goal: Increase our understanding of the interplay of gene flow, natural selection, and genetic drift in shaping observable patterns of neutral and adaptive variation across space and among loci.
-Comparison of population- vs. individual-based approaches (explain / briefly define) and in-depth quantification of strengths and weaknesses of commonly-used methods.
-Assess the combined effects of varying dispersal distance and population size.
+This paper aims at increasing our our understanding of the interplay of gene flow, natural selection, and genetic drift in shaping observable patterns of neutral and adaptive variation across space and among loci. The authors perform a simulation study to assess the consequences of variable amounts of dispersal, genetic drift, and selection on population structure and correlationb between genetic and geographic distance. They then compare population- vs. individual-based statistcal approaches in their ability to identify a locus under selection, as compared to a background of neutral loci. The strengths and weaknesses of these commonly-used methods are discussed. The principle goal of this study is to assess the combined effects of varying dispersal distance and population size.
+
+Go on here.
 
 Strength: This article investigates complexities of this topic that are hard to deal with by means of analytical treatment, and instead uses comprehensive simulations. This is a welcome complementation of previous work.
 
 Three selection regimes: a) two discrete adjacent environments, b) a linear selection gradient from north to south, and c) neutrality.
 
-The study assumes a k-allele mutation model 
+The study assumes a k-allele mutation model at neutral sites, and a biallelic site under selection. Loci appear to be unlinked, but since simulations are individual-based, statistical assocications (linkage disequilibrium) does arise among loci.
+
+How the study works.
+
+In principle, the idea of assessing existing population- and individual-based methods for the detection of candidate loci under selection is of very high interest. This is especially true with respect to violations of commonly made assumptions about the underlying demographic model. This study might therefore be highly relevant, but it needs to be improved. There are currently too many open questions with respect to the statistical analysis and simulations. The observed patterns need to be interpreted much more clearly and a greater effort must be taken to make sense of the results. If the sometimes high error rates associated with e.g. BayeScan and LOSITAN are indeed true, that would raise concerns about the fact that these methods are widely used in situations where they might perform badly.
+
+Novel aspect of this study, e.g. as compared to Jones et al (2013): variation in the extent of dispersal. Low dispersal seems to increase type I error rates of methods that try to detect loci under selection. But this seems to be pretty much the only new result compared to previous work (e.g. by De Mitta et al. 2013; Jones et al. 2013; Forester et al. 2015).
+
+The Discussion is well-written and compensates to some extent for a lack of clarity in the previous parts of the manuscript. These other parts must be improved, and it must become much more comprehensive how the conclusions follow from the simulation experiments and results.
+
+I have a number of main concerns and a long list of minor to moderate issues.
+
 
 Main concerns
 -------------
@@ -33,6 +44,7 @@ Main concerns
 *) I think that the selection regime called "weak" is not actually weak, as the selection coefficient is s = 0.1 and the smalles population size 1000, such that N*s = 100, which is still large compared to the typical threshold of around 10 below which selection could be truly called "weak". I suggest calling the regime with s = 0.1 "moderate", and introducing a third regime with truly weak selection. There is also some confusion about the actual value of s used (s = 0.1 vs. s = 0.01; see e.g. l. 158 vs. Table 1).
 
 *) The contrast between Figure 2 and Appendix S2 is impressive, but it is currently unclear if this is a biologically relevant difference or a consequence of a misspecification of demographic units with respect to which Fst and D_est were measured.
+
 
 
 Minor comments
@@ -204,6 +216,56 @@ l. 338: Should it not say ">= 60%" here, as the type II error rate is 0.6 for a 
 
 l. 339-341: Are you referring only to the columns in Table 5 that refer to 4 or more identified loci? Otherwise, the number in brackets (<= 0.1) seems wrong.
 
+l. 349: I was surprised to read that type II error rates dropped when you use 99% CIs instead of 95% CIs. I'd have expected the opposite.
+
+l. 357-359: Please improve the formulation "failed to reject the false null hypothesis (that an adaptive locus was present)". To my understanding, the null hypothesis is that there is no adaptive locus present. The type II error rate measures how often you fail to reject this null hypothesis in cases where it actually should be rejected. "When a selection gradient was present" -> "Under the selection-gradient regime, however," (to make it clearer that you are now contrasting the two selection regimes). Insert "the" before "error rate increased".
+
+l. 360: It is counterintuitive that type II error rates would increase over time in the gradient regime. How can this be explained?
+
+l. 364: But this does not seem to apply to the low dispersal, low drift regime, where GLM has a lower type II error rate than Samβada, i.e. the GLM detects the adaptive locus more often.
+
+l. 369-374: These results would indicate that the type of demography that you consider is prone to causing a lot of false-positive signal of selection. While this would indeed be an important finding, I find it hard to understand why exactly your relatively simple demographic regime (essentially creating a pattern of isolation by distance) would create this strong effect, i.e. a differentiation between north and south. I could imagine that local clustering of certain alleles would occur, and that this might create a correlation of space and allelic identity that could be misinterpreted by individual-based methods trying to detect selection. However, if this were the case, it would be good to visualise this effect, e.g. by creating a two-dimensional plot with individuals coloured by genotype at the times of sampling. The contrast between neutral and selected sites that you seem to be observing even in the purely neutral case could be a consequence of different mutation models assumed for these two types of loci (see also my comment to Appendix S3). Clearly, a better understanding of what causes these findings seems necessary.
+
+l. 379-380: Please improve the formulation in "to refine understanding of our capacity to quantify and avoid large type I and II error in...". I don't think refining the understanding of how to quandify error rates was a primary goal.
+
+l. 387-390: Please split the sentence. Give an example of what types of "corroborating results" you imagine. Also, combining with empirical data sounds redundant, as you would in general already start by using empirical data. An article seems to be missing before "with empirical.
+
+l. 394: I would not overemphasise the examination of the dyanmics (i.e. "temporal trends"), as you did not explore a wide enough range of initial conditions. These could have a strong impact on the dynamics, potentially also on the stationary distribution of allele frequencies at the neutral sites, but not on the outcome at the site under selection. It would be interesting to explore this more as type I error rates might be affected, but I am not asking for this in this paper. I would suggest adding a comment about the lack of exploration of a wide range of initial conditions, though.
+
+l. 396: Given that a large part of population genetic research is concerned with the effect of genetic drift as a limit to adaptation, and that many previous studies (e.g. Beaumont and Nichols 1996; Foll and Gaggiotti 2006, 2008) have assessed the effect of drift on our ability to detect adaptive variation, I wonder if you want to back away from the claim of this study being "unique" in that respect.
+
+l. 398-400: Do you mean that low dispersal and low drift created the *largest* or the *smallest* difference between neutral and adaptive differentiation? I found it hard to conclude either of these statements unambiguously from the results you show.
+
+l. 408: What do you mean by "measuring genetic differentiation separately"? In practice, one does often not know the difference between neutral and selective loci a priori, so that statement did not make sense to me.
+
+l. 410: Does this also apply to panel b.iii in Figure 3? I was not able to determine whether the non-solid line was dashed (selection-driven locus) or dot-dashed (neutral sites).
+
+l. 411-418: This part sounded contradicting to me. On the one hand, you imply that neutral and selected sites behaved equally in terms of IBD, but then you say that removing the selected locus would improve inference of population structure and gene flow. Please clarify.
+
+l. 423-425: This conclusion is hampered by the fact that even the "present/absent" regime of selection will cause a clinal genetic pattern at the selected site because of gene flow.
+
+l. 429: "selection would be stronger" -> "selection would be more effective".
+
+l. 431: "outlier loci detection methods" -> "methods for detecting outlier loci".
+
+l. 433: "in fact" -> "indeed".
+
+l. 440: See previous comments about N*s and the confusion about whether you used s = 0.1 or s = 0.01. This seems crucial.
+
+l. 451: Please rethink the formulation "present versus absent selection".
+
+l. 455: "with the exception of in populations..." -> "except for populations..."
+
+l. 457: "was" -> "were".
+
+l. 486: "and" -> "which".
+
+l. 498: "choice of methods" -> "choosing methods".
+
+l. 519-529: Relatively strong claims about the impact of this study are made here, which I find are currently not justified given the lack of clarity. Also, to justify the claims, much more specific recommendations for future empirical studies should be stated.
+
+l. 533: Delete the hyphen in "locally-adapted".
+
 l. 747-748: Without specification of the dispersal kernel, it is not clear how the "rate of dispersal among populations" and the "dispersal distance parameter" are related. Related to this, I suggest replacing "low N_m" and "high N_m" in the header by "low dispersal" and "high dispersal" (see other comments, too).
 
 l. 753: The selection coefficient "s" should be italic.
@@ -224,5 +286,7 @@ For the supporting figures and tables, please check the specifications of the jo
 Figure 3: In the caption, replace "with selection strong [weak]" by "with strong [weak] selection".
 
 Appendix S2: The contrast between this figure and Figure 2 is striking. I wonder if this is a biologically relevant difference, or perhaps due to the way you measured D_est in the "presence/absence" vs. "gradient" regime (see comments above about the demographic/spatial unit with respect you defined gene flow and measured Fst and D_est). As this is a point that is not yet clear from the current text, I suggest you update the interpretation of this contrast later on accordingly. At present, it is very difficult to make sense of Appendix S2.
+
+Appendix S3: What causes the difference between neutral and seleceted sites in the panels where the solid and dashed lines are so different? Since there is no selection, I find it very difficult, for instance, to interpret panel b.i. In the caption, it should say "drift" after "low" on the last line.
 
 With respect to both Figures 2 and Appendix S2, I wonder if it would be better to show the D_est axis on a log-scale, so that differences between curves become better visible when absolute values are small on the natural scale. 
