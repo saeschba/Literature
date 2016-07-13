@@ -1,0 +1,63 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;}
+\margl1440\margr1440\vieww11940\viewh7800\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Comments\
+--------\
+\
+Supplementary Material\
+\
+Section A\
+\
+- In general, punctuation marks should be added immediately after the equation, on the same line as the equation. I would suggest replacing colons (:) immediately before equations by commas. This is a matter of style, but also not consistent at the moment.\
+\
+- On the first line, it says "parallel phenotypic evolution", but given point 1) of reviewer 1 and the authors' response to it, I think it should now read "parallel genetic evolution (from standing genetic variation)". "Parallel phenotypic evolution" still appears multiple times at other places in the Supplementary Material. Please adjust as appropriate.\
+\
+- Immediately before the unnumbered equation between Eq. (S2) and Eq. (S3) there should be a comma. Then, add a full stop immediately after the "alpha" of the equation.\
+\
+- I suggest that a comma be added after equations that are followed by descriptive clauses starting with "where..." or similar. This applies, for instance, to the unnumbered equation between Eq. (S2) and Eq. (S3), or to Eq. (S2). I am not going to repeat myself, but there are a number of places where the formatting/punctuation around equations eventually needs to be improved and made consistent.\
+\
+- Referring to the sentence "Where \\bar\{z\} is the average phenotype... as defined in equation (S1)": Strictly speaking, \\bar\{z\} is not defined in Eq. (S1); Eq. (S1) is merely a function of \\bar\{z\}, and \\bar\{z\} is only given a verbal definition throughout.\
+\
+- Between Eq. (S4) and Eq. (S5), there should be a comma before "which gives a general expression...".\
+\
+- After Eq. (S7), "Where" must be lower-case. The issue of what happens if p_i (1 - p_i) is of the same order as D_\{ij\} is still not addressed (see \cf2 point X\cf0  of reviewer 1).\
+\
+- After Eq. (S10), replace "which is equation (4) and (5)..." by "which corresponds to equations (4) and (5)...".\
+\
+- Middle of p. 4: "equation 6 and 7..." -> "equations (6) and (7)...".\
+\
+- The new equation for P|| on p. 4 is not the probability of "at least" x fixations, but of *exactly* x fixations! The probabilit of *at least* x fixations is the sum of the probabilities of x, x+1, ..., m fixations:\
+\
+	P|| = sum_\{i=x\}^\{m\} choose(m, i) P_fix^\{i\} (1 - P_fix)^\{m-i\}.\
+\
+Please rectify. Immediately after the new equation for P||, there must be a comma, and the "Where" thereafter must be lower-case.\
+\
+\
+Section B\
+\
+- I still think an introductory sentence before "At the conclusion of the individual based simulations..." is missing, and that the sentecne "One important feature of teh MCMC sampling... in describing the posterior" is unnecessary (see my previous comments to that paragraph). If you omit it, please adjust the sentence right after that one accordingly. Please replace "we will simulate m = 5 sequences..." by "We simulated M = 5 sequences..." (m -> M).\
+\
+- It is, in principle, still not clear whether J(eta, eta*) is the probability of jumping from eta to eta*, or of jumping from eta* to eta. If one knows the MH algorithm, one can figure it out from the equation for h in step 3 of the algorithm, but you cannot assume that from an average JEB reader. In practice, it does not matter because you use a uniform distribution.\
+\
+- Replace "m" by "M" after point 4 of the algorithm.\
+\
+- In step 5, please correct the sentence "Calculate the following expression weighting of the variances...". The formulation did not make sense to me. Delete the colon after "where" and add a full stop immediately after the equation for W.\
+\
+- In step 6, perhaps replace "of the peak of the posterior distribution" by "of the posterior mode" to be more accurate.\
+\
+\
+Section C\
+\
+- Because the parameter m is reserved to the number of populations, you should use a different symbol for the migration rate! Please replace consistently. Please remove the comma after Nm = 2 in the last sentence. \cf2 TODO: Check if the overestimation of the strength of selection is really slight when Nm = 2.\cf0 \
+\
+\
+Section E\
+\
+- Remove brackets around "Table S7" in the last sentence.\
+\
+I still think there is an overuse of "Bayesian Estimator" (upper-case spelling) as a name of your estimator. At other places, "estimator" is lower-case, but you still add "Bayesian" in front. It's not consistent.\
+\
+}
