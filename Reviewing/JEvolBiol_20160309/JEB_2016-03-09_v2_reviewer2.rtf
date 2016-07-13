@@ -1,11 +1,28 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;\red255\green0\blue0;}
-\margl1440\margr1440\vieww11940\viewh7800\viewkind0
+\margl1440\margr1440\vieww10380\viewh19060\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 Comments\
 --------\
+\
+\cf2 TODO:\cf0 \
+\
+- Is the effect of gene flow among descendent populations discussed enough in the main text?\
+\
+\
+l. 104: The space might be missing between b_i and "is".\
+\
+l. 116-123: You introduce O(epsilon) without definition of epsilon, so the paragraph is strictly speaking meaningless. You still do not seem to be addressing reviewer 1's point about what happens if p_i (1 - p_i) is of the same order of magnitude (i.e. as small) as the sum over the D_ij terms (cf. Eq. S7).\
+\
+l. 135-149: I still think it is misleading that you introduce a population-index i to p_0 here without mentioning why. A population-specific index would make sense if initial allele frequencies in the m populations were different (see my question to section E of the Supplementary Material below). Otherwise, it does not make sense to me. Please clarify and adjust accordingly.\
+\
+l. 184: "...other words is most likely..." -> "other words, parallel evolution at a large number of loci is most likely..." The question remains *why* the shape and rate parameters only start playing a role when both the initial frequency and the number of QTLs becomes large.\
+\
+l. 296-302: "be averaging" -> "by averaging". Insert comma after "Cov(z,w)/Var(z).\
+\
+Thanks for introducing Figure S1. I suggest improving the colour scheme and reducing the size of the symbols. It is currently hard to distinguish points based on features other than colour. E.g., sometimes the red square, circle, and triangle overlap in such a way that it is hard to discern them.\
 \
 Supplementary Material\
 \
@@ -58,6 +75,8 @@ Section E\
 \
 - Remove brackets around "Table S7" in the last sentence.\
 \
-I still think there is an overuse of "Bayesian Estimator" (upper-case spelling) as a name of your estimator. At other places, "estimator" is lower-case, but you still add "Bayesian" in front. It's not consistent.\
+- Please make clear whether the two populations still share the same initial allele frequency (even after addition of an error) or if you now draw two random frequencies, one for each population.\
+\
+I still think there is an overuse of "Bayesian Estimator" (upper-case spelling) as a name of your estimator. At other places, "estimator" is lower-case, but you still add "Bayesian" in front. It's not consistent. There's no need to repeat "Bayesian" that often, as your estimate is essentially the same likelihood-based estimator whether interpreted as Bayesian or not, because you are using a uniform prior.\
 \
 }
