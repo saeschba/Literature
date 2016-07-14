@@ -1,28 +1,65 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;\red255\green0\blue0;}
-\margl1440\margr1440\vieww10380\viewh19060\viewkind0
+\margl1440\margr1440\vieww11940\viewh13640\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 Comments\
 --------\
 \
+TODO: Go on with l. 220-222.\
+\
 \cf2 TODO:\cf0 \
 \
 - Is the effect of gene flow among descendent populations discussed enough in the main text?\
+- Looking at the previous and current versions of Figure 4, results seem to have changed quite a bit in terms of the variance explained (R^2) and slopes and intercepts. Why is that? Did changing the prior for eta have that much of an impact?\
+- How exactly was the prior range for eta changed?\
+- Does Figure S1 really support the major claims being made?\
 \
+l. 65: "effect of" -> "effect on".\
 \
-l. 104: The space might be missing between b_i and "is".\
+l. 69-71: I suggest you mention the assumption of the quasi-linkage equilibrium here to more accurately describe the scope of the paper. \
+\
+l. 72: "routinely" read strange to me.\
+\
+l. 90: Suggestion: replace "candidate gene test" by "candidate gene method" and surround it with quotes (as for QTL method on l. 95).\
+\
+l. 104-105: Spaces seems to be missing between "b_i" and "is", and between "p_i" and "and".\
 \
 l. 116-123: You introduce O(epsilon) without definition of epsilon, so the paragraph is strictly speaking meaningless. You still do not seem to be addressing reviewer 1's point about what happens if p_i (1 - p_i) is of the same order of magnitude (i.e. as small) as the sum over the D_ij terms (cf. Eq. S7).\
 \
-l. 135-149: I still think it is misleading that you introduce a population-index i to p_0 here without mentioning why. A population-specific index would make sense if initial allele frequencies in the m populations were different (see my question to section E of the Supplementary Material below). Otherwise, it does not make sense to me. Please clarify and adjust accordingly.\
+l. 135-149: Thanks for pointing out that i is for the loci. I was wrong. I still think it is misleading that you introduce an index i to p_0 here. Does the initial frequency vary among loci in a systematic way? I know it does in your simulations, but do you account for that in your theoretical predictions, too?\
+\
+l. 144: I still think Eq. (6) should be simplified by using P_fix(i) rather than repeating the expression from Eq. (5). This is the whole point of defining expressions and is makes it more transparent how you define parallel evolution.\
+\
+l. 176: I'd avoid "surprising".\
 \
 l. 184: "...other words is most likely..." -> "other words, parallel evolution at a large number of loci is most likely..." The question remains *why* the shape and rate parameters only start playing a role when both the initial frequency and the number of QTLs becomes large.\
 \
+l. 186: I did not like "surprising" in this sentence. Could you be more specific?\
+\
+l. 250: The prior range for eta does not seem to have changed (-60 to 60), although you are saying you did change it in your response to point 4) of reviewer 1.\
+\
 l. 296-302: "be averaging" -> "by averaging". Insert comma after "Cov(z,w)/Var(z).\
 \
-Thanks for introducing Figure S1. I suggest improving the colour scheme and reducing the size of the symbols. It is currently hard to distinguish points based on features other than colour. E.g., sometimes the red square, circle, and triangle overlap in such a way that it is hard to discern them.\
+l. 360: Should "all-be-it" be "albeit"?\
+\
+l. 437: "Plos Biology" -> "PLOS Biology" or "PLoS Biology"?. Please revise if necessary. Applies to all references to papers in PLoS journals!\
+\
+l. 523: "candidate genet method" -> "candidate gene method\
+\
+Thanks for introducing Figure S1. I suggest improving the colour scheme and reducing the size of the symbols. It is currently hard to distinguish points based on features other than colour. Sometimes the red square, circle, and triangle overlap in such a way that it is hard to discern them. I suggest using a graphical legend. Caption: "method" missing after "candidate gene"? "Explincations" -> "Explanations". "suplimentary" -> "suplementary". Please improve the language/grammar in the last sentence of the caption (e.g. repetition of "as well"). Why does introducing 10% error in p_0 and b result in higher R^2 than introducing 10% error in only one of p_0 or b? Please increase the font size for text on top and at the bottom of the figure.\
+\
+I wonder if it could help to add a similar figure showing the slope, rather than the R^2. This is because I find it hard to see why R^2 alone should be the statistic of choice to judge the performance of your method. You could have a very shallow slope, but still explain a decent proportion of the variance, and the other way round. Figure 4 illustrates this problem to some extent.\
+\
+In Figure 4, please revise the blue text below the panel in the middle row in the column for 2 loci: check if intercept and slope are in the correct order and that the order is consistent with the other panels. It seems as if the former is correct, but the latter needs to be rectified. Perhaps: "Closed points" -> "Filled points"?\
+\
+Table S5: For 8 loci and 2 migrants per generation, the slopes appear to be considerably larger than 1. Is this due to an underestimation of eta when the true eta is low, or due to an overestimation when it is high? Or both?\
+\
+There was no answer to my previous point 5), but I acknowledge that you now make clear that the focus is not on recurrent mutations.\
+\
+Figure 5: What do the grey parts of the bars mean? Please describe.\
+\
 \
 Supplementary Material\
 \
@@ -79,4 +116,5 @@ Section E\
 \
 I still think there is an overuse of "Bayesian Estimator" (upper-case spelling) as a name of your estimator. At other places, "estimator" is lower-case, but you still add "Bayesian" in front. It's not consistent. There's no need to repeat "Bayesian" that often, as your estimate is essentially the same likelihood-based estimator whether interpreted as Bayesian or not, because you are using a uniform prior.\
 \
+All my other comments and questions have been addressed.\
 }
