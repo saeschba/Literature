@@ -10,7 +10,7 @@ Thank you very much for the opportunity to review this resubmitted manuscript. I
 \
 I have a number of further comments, mostly trying to increase clarity in those sections that have been added or amended by the authors for this revised version. Some comments also relate to a consistent typesetting (e.g. header format, punctuation around display equations) and will need another round of careful editing.\
 \
-Some remaining major concerns relate to the graphical representation of the new Figure S1 (which I like!), to the new equation at the bottom of p. 4 in the Supplementary Material, which I think is wrong, to a lack of clarity about the altered prior for eta and its consequences on Figure 4. \cf2 TODO: Complete this paragraph.\cf0 \
+Some remaining major concerns relate to the graphical representation of the new Figure S1 (which I like!), to the new equation at the bottom of p. 4 in the Supplementary Material, which I think is wrong, to a lack of clarity about the altered prior for eta and its consequences on Figure 4, and to an apparent disagreement between Figure 4 and Table S2.\
 \
 I think that the authors should be able to address these concerns without too much work.\
 \
@@ -21,15 +21,6 @@ Simon Aeschbacher\
 \
 Comments\
 --------\
-\
-TODO: Go on with the Discussion.\
-\
-\cf2 TODO:\cf0 \
-\
-- Is the effect of gene flow among descendent populations discussed enough in the main text?\
-- Looking at the previous and current versions of Figure 4, results seem to have changed quite a bit in terms of the variance explained (R^2) and slopes and intercepts. Why is that? Did changing the prior for eta have that much of an impact?\
-- How exactly was the prior range for eta changed?\
-- Does Figure S1 really support the major claims being made?\
 \
 I wonder if, in the abstract, you wanted to add a sentence on your conclusion on l. 411-413 in the Discussion.\
 \
@@ -55,7 +46,7 @@ l. 69-71: I suggest you mention the assumption of the quasi-linkage equilibrium 
 \
 l. 72: "routinely" reads strange to me; "historical strength of parallel selection" -> "average strength of parallel selection over time"\
 \
-l. 75 vs l. 98: Please be consistent in using or not ":" at the end of paragraph headings. This conflic occurs at other places in the manuscript.\
+l. 75 vs l. 98: Please be consistent in using or not ":" at the end of paragraph headings. This conflict occurs at other places in the manuscript.\
 \
 l. 76-77: I think the reference to Figure A1 should be at the end of the sentence for better reading flow.\
 \
@@ -89,7 +80,7 @@ l. 165: Add a comma immediately after Eq. (7). Again, I think this equation shou
 \
 l. 176: I'd avoid "surprising".\
 \
-l. 181-186: I still think the impact of the effect size distribution is poorely explored and motivated. An additional explanatory sentence on line 185 might be appropriate.\
+l. 181-186: I still think the impact of the effect size distribution is poorly explored and motivated. An additional explanatory sentence on line 185 might be appropriate.\
 \
 l. 184: "...other words is most likely..." -> "other words, parallel evolution at a large number of loci is most likely..." The question remains *why* the shape and rate parameters only start playing a role when both the initial frequency and the number of QTLs becomes large.\
 \
@@ -127,13 +118,23 @@ l. 317: Insert a comma before "when gene flow occurs among...".\
 \
 l. 321: I think some more details would be appropriate here about the effects of the different violations to your assumptions. You should discuss the qualitative effects of gene flow, as well as of different selection gradients in the two populations, as these may lead to a strong reduction in the percentage of variance explained, as seen in Figure S1.\
 \
+l. 341: "...or population sizes small..." -> "...or population sizes are small..."\
+\
+l. Suggestion: "...interesting" -> "...beyond what would be expected by chance under neutrality" ("interesting" does not feel specific enough to me).\
+\
 l. 360: Should "all-be-it" be "albeit"?\
 \
-l. 437: "Plos Biology" -> "PLOS Biology" or "PLoS Biology"?. Please revise if necessary. Applies to all references to papers in PLoS journals!\
+l. 377: Delete "rigorously" ("rigorously" already appears in the preceding sentence).\
+\
+l. 384: I did not spend much time thinking about this: But is it proven that it does not matter for the accuracy and efficiency of the estimator whether the data comprise few loci in many populations or vice versa? Without a proof, I suggest backing away from this point. You assessed the performance of the estimator only for two populations. I am fine with a statement about the number of loci, but not with a statement about the number of populations, as far as the performance of the estimator is concerned. I suspect that the effect of the number of populations will strongly depend on how you define parallel evolution. Since you use the most restrictive definition possible (fixation in all m populations), any conclusion from this would not necessarily be very generic.\
+\
+l. 409-410: As mentioned above, I think you should be more precise and specific in your conclusions about the effect of gene flow. Please indicate the approximate amount of gene flow up to which your estimator performs well.\
+\
+l. 437: "Plos Biology" -> "PLOS Biology" or "PLoS Biology"?. Please revise if necessary. Applies to all references to papers in PLoS journals.\
 \
 l. 523: "candidate genet method" -> "candidate gene method\
 \
-Thanks for introducing Figure S1. I suggest improving the colour scheme and reducing the size of the symbols. It is currently hard to distinguish points based on features other than colour. Sometimes the red square, circle, and triangle overlap in such a way that it is hard to discern them. I suggest using a graphical legend. Caption: "method" missing after "candidate gene"? "Explincations" -> "Explanations". "suplimentary" -> "suplementary". Please improve the language/grammar in the last sentence of the caption (e.g. repetition of "as well"). Why does introducing 10% error in p_0 and b result in higher R^2 than introducing 10% error in only one of p_0 or b? Please increase the font size for text on top and at the bottom of the figure.\
+Thanks for introducing Figure S1. I suggest improving the colour scheme and reducing the size of the symbols. It is currently hard to distinguish points based on features other than colour. Sometimes the red square, circle, and triangle overlap in such a way that it is hard to discern them. I suggest using a graphical legend. Caption: "method" missing after "candidate gene"? "Explinations" -> "Explanations". "supplimentary" -> "supplementary". Please improve the language/grammar in the last sentence of the caption (e.g. repetition of "as well"). Why does introducing 10% error in p_0 and b result in higher R^2 than introducing 10% error in only one of p_0 or b? Please increase the font size for text on top and at the bottom of the figure.\
 \
 I wonder if it could help to add a similar figure showing the slope, rather than the R^2. This is because I find it hard to see why R^2 alone should be the statistic of choice to judge the performance of your method. You could have a very shallow slope, but still explain a decent proportion of the variance, and the other way round. Figure 4 illustrates this problem to some extent.\
 \
@@ -170,7 +171,7 @@ Section A\
 \
 - Middle of p. 4: "equation 6 and 7..." -> "equations (6) and (7)...".\
 \
-- The new equation for P|| on p. 4 is not the probability of "at least" x fixations, but of *exactly* x fixations! The probabilit of *at least* x fixations is the sum of the probabilities of x, x+1, ..., m fixations:\
+- The new equation for P|| on p. 4 is not the probability of "at least" x fixations, but of *exactly* x fixations! The probability of *at least* x fixations is the sum of the probabilities of x, x+1, ..., m fixations:\
 \
 	P|| = sum_\{i=x\}^\{m\} choose(m, i) P_fix^\{i\} (1 - P_fix)^\{m-i\}.\
 \
@@ -179,7 +180,7 @@ Please rectify. Immediately after the new equation for P||, there must be a comm
 \
 Section B\
 \
-- I still think an introductory sentence before "At the conclusion of the individual based simulations..." is missing, and that the sentecne "One important feature of teh MCMC sampling... in describing the posterior" is unnecessary (see my previous comments to that paragraph). If you omit it, please adjust the sentence right after that one accordingly. Please replace "we will simulate m = 5 sequences..." by "We simulated M = 5 sequences..." (m -> M).\
+- I still think an introductory sentence before "At the conclusion of the individual based simulations..." is missing, and that the sentence "One important feature of the MCMC sampling... in describing the posterior" is unnecessary (see my previous comments to that paragraph). If you omit it, please adjust the sentence right after that one accordingly. Please replace "we will simulate m = 5 sequences..." by "We simulated M = 5 sequences..." (m -> M).\
 \
 - It is, in principle, still not clear whether J(eta, eta*) is the probability of jumping from eta to eta*, or of jumping from eta* to eta. If one knows the MH algorithm, one can figure it out from the equation for h in step 3 of the algorithm, but you cannot assume that from an average JEB reader. In practice, it does not matter because you use a uniform distribution.\
 \
@@ -192,7 +193,7 @@ Section B\
 \
 Section C\
 \
-- Because the parameter m is reserved to the number of populations, you should use a different symbol for the migration rate! Please replace consistently. Please remove the comma after Nm = 2 in the last sentence. \cf2 TODO: Check if the overestimation of the strength of selection is really slight when Nm = 2.\cf0 \
+- Because the parameter m is reserved to the number of populations, you should use a different symbol for the migration rate! Please replace consistently. Please remove the comma after Nm = 2 in the last sentence.\
 \
 \
 Section E\
@@ -203,5 +204,5 @@ Section E\
 \
 I still think there is an overuse of "Bayesian Estimator" (upper-case spelling) as a name of your estimator. At other places, "estimator" is lower-case, but you still add "Bayesian" in front. It's not consistent. There's no need to repeat "Bayesian" that often, as your estimate is essentially the same likelihood-based estimator whether interpreted as Bayesian or not, because you are using a uniform prior.\
 \
-All my other comments and questions have been addressed.\
+All my other previous comments and questions have been addressed.\
 }
