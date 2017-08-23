@@ -1,0 +1,50 @@
+Summary
+-------
+
+
+Major issues
+------------
+
+1) I wonder if the manuscript title could be more specific, e.g. "The impact of DNA marker quantity, quality, and phasing on demographic inference performed with approximate Bayesian computation". The current title is very broad and could result in the paper being misclassified as "another one reiterating known issues with ABC".
+
+2) From the abstract, it is not clear what the main focus of the paper is: studying the impact on ABC performance of i) marker number, quality, and phasing; ii) the complexity of the demographic model; or iii) both. Later it becomes clear that iii) applies.
+
+3) What summary statistics are used? If the same set of summary statistics is used for phased and unphased data, then the limitation of this study is that by design it may not be able to extract the additional information present in phased vs. unphased data. For a meaningful comparison, the set of summary statistics should be chosen with best-quality phased data and a given demographic scenario in mind. Then, omitting phasing, one could ask if the performance decreases for that given demograhpis scenario. This comparison could then be repeated for other demograhpic scenarios.
+
+4) To what extent is LD taken into account (summary statistics)?
+
+5) Assuming that 'good' (i.e. close to statistically sufficient) summary statistics for unphased data have been used, it is not surprising that methods based on the SFS yield similar results. Vice versa, the fact that the two methods agree could be used to argue that the chosen summary statistics are almost sufficient, since the SFS represents the full information (barring LD information; see the previous point). [TODO: Check if the one- or two-dimensional SFS is being used].
+
+
+Minor comments
+--------------
+
+Abstract
+
+l. 31: For clarity, I suggest to mention what the three parameters are in the 3-parameter model.
+
+
+Introduction
+
+l. 49-50: It would seem appropriate to cite more review papers than just Schraiber & Akey (2015), given the growing number of such articles that reach beyond demographic inference in humans. For instance, for ABC alone, several aspects discussed in the current manuscript have been reviewed before (). [TODO: Give a few examples.]
+
+
+Demographic inference in natural populations of non-model organisims
+
+l. 59: The field has moved to inference under even more complex scenarios then the ones described in Harris & Nielsen (2013). For instance, see Excoffier (2013), Gravel (2013), or Jouganous et al. (2017).
+
+l. 61-62: It would be good to mention why state-of-the-art statistical inference methods applied to human data are currently out of reach for non-human natural populations.
+
+l. 67: "The good news is the genomic revolution has..." -> "The good news is that the genomic revolution has..." (?)
+
+l. 73-74: It does not become clear here that the PSMC does not only require whole-genome sequences, but also phasing non-haploid organisms (in contrast to ABC). The need for phasing is a further limitation worth mentioning here.
+
+l. 81: It would seem good to mention explicitly that inference based on RRL sequencing methods assumes that individual markers are independent. That is, linkage information is ignored.
+
+
+
+
+
+
+
+
