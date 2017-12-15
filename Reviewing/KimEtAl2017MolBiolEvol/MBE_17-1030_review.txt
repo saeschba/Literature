@@ -1,0 +1,52 @@
+Summary
+=======
+
+
+
+Major comments
+==============
+
+X) Important parameters have been fixed, even though variation in these is expected to lead to quantitative, if not qualitative, differences. Among the fixed parameters, the deleterious mutation rate should affect the load accumulated prior to admixture. More importantly, the admixture proportion has been fixed, although it is not clear if the effect of this parameter on the observed quantities (population mean fitness, proxies of mutational burden) is monotonic. A detailed exploration of the effect of the admixture proportion might be beyond the scope of this paper, but it should be mentioned as a direction for future work. Similarly, only recessivity and additivity, but no intermediate dominance, have been studied. In Model 2, the opposite effects of admixture on the frequency of introgression-derived ancestry (p_I) under recessivity vs. additivity suggests that there is an intermediate degree of dominance at which selection should have no effect on p_I. This particular degree of dominance should depend on the recombination rate. The fact that this study is entirely based on simulations under a restricted range of biological scenarios therefore limits the insight about the role of important parameters. There is no immediate problem with that, but the limitations should be more clearly addressed in the Discussion.
+
+X) In light of the on-going debate about the usefulness of proxies measuring the burden of deleterious mutations, it is noteworthy that the number of deleterious variants per individual seems to be much less sensitive to changes in mean fitness than the number of homozygous derived genotypes. This applies in particular to the case of recessive delterious mutations. Conversely, the number of derived variants does seem to track -- at least qualitatively -- the reduction in fitness relatively well in the case of additive deleterious mutations. It might strengthen the Discussion if the observed patterns were related more extensively to the ones found in previous recent literature that ignored admixture (e.g. Lohmueller et al. 2008; Lohmueller 2014; Do et al. 2015, Simons et al. 2014; Simons and Sella 2016).
+
+X) Introgression-derived ancestry was tracked here based on neutral marker mutations introduced at the very beginning into the source population only. There were no mutations at these marker sites, nor were other neutral mutations simulated. Yet, the dynamics of the frequency of introgression-derived ancestry (p_I) were then related to the findings of studies that modelled the effect of selection at linked sites on diversity at neutral sites without restrictions on neutral mutation rate (but see Juric et al. 2016). While I do not expect that the conclusions of this study are affected qualitatively, it seems appropriate to discuss this point.
+
+X) The distribution of fitness effects (DFE) used here was inferred by Kim et al. (2016) under the assumption of additivity. Yet, the same DFE is used in this study here for both additive and recessive deleterious mutations. Since theory and emppirical studies suggest that more deleterious mutations tend to be more recessive, I am concerned that the combinations of selection coefficients and dominance coefficients simulated here may not be representative of real populations. It is therefore difficult to assess the relevance of the results. If the authors could convincingly show/argue how a negative correlation between dominance and selection coefficients would affect p_I, fitness, and proxies of mutation load, this would strengthen the manuscript a lot. The problem is touched on l.514-523 and l.562-656 in the Discussion, but the main issue remains not fully addressed.
+
+X) What Fig. 5 and the related analyses seem to ignore is that recombination rate and gene density *jointly* determine the impact of selection on p_I. Therefore, the results shown depend on the specific recombination map and gene locations and, in particular, the correlation between recombination and gene density. While this does reflect the part of the human chromosome 1 under consideration, it is not clear whether one can draw general conclusions. It is therefore hard to judge how generic the predictions in Table 2 are, as long as qualitatively different correlations between gene density and recombination are not explicitly investigated. Specifically, what are the outcomes if one recombination OR gene denisty, but not both, are varied along the genome? What are the outcomes if gene density and recombination rate are positively vs. negatively correlated? If I am not mistaken, gene density and recombination rate are slighlty positively correlated along the human genome. Hence, in scenarios where increasing recombination is predicted to decrease p_I under uniform gene density (e.g. in Model 4), an actual positive correlation between recombination and gene density could reverse -- or at least confound -- this expected pattern in reality. My suspicion is that the correlation between recombination and gene density is not strong enough in humans to lead to such an inversion. But this potential issue seems worth being discussed. 
+
+
+
+
+Minor issues
+============
+
+l.200: Please check if the references to Fig. 2 and S1 are needed.
+
+l.339: "has increases to" -> "increases to"
+
+l.355: I think it should say "are analogous to Models 0, 1, and 4" instead of "are analogous to Models 0 and 4". However, reading the paragraph starting on l.358, it was not clear to me why Model 1 was invoked here at all.
+
+l.359: "for these models" -> "for Models 0 and 4".
+
+l.377-378: Aeschbacher et al. (2017) explicitly accounted for the confounding effect of selection on deleterious variation (i.e. background selection in their case). This comment also applies to l.476-481.
+
+l.505-513: I was confused by this paragraph. Isn't a positive correlation between recombination and the frequency of introgressed ancestry predicted by Model 2 under additivity? Model 2 therefore would not only seem to explain the situation in swordtail fish, but also observed patterns of Neanderthal introgression into modern humans.
+
+l.532-547: For Model 3 (introgression from a large source into a small recipient population), the statement that the fitness in the admixed population increases the most for the lowest recombination rate (l.537-538) seems to be appropriate only immediately after the admixture (Fig. 2) if deleterious mutations are recessive. Interestingly, on l.540 this scenario is used to explain why recombination is apparently found to be more effective in removing deleterious mutations in regions of low recombination (as opposed to the prediction under Hill-Robertson interference). From Fig. 2, Model 3, left-hand panel, it seems as if fairly soon after admixture, the prediction of the Hill-Roberstson interference does apply. Please clarify.
+
+l.562: Aeschbacher et al. (2017) include background selection in their null model.
+
+Fig. 2: The caption mentions both mean and median fitness without clarifying why different terms are used.
+
+Fig. 5: It would be great to see the recombination rate along the genome, superimposing the existing plot on an appropriate scale, or in a separate panel on top.
+
+Fig. 5: I was a bit puzzled by an apparant lack of parallelism in the loess curves for the recessive mutations under Models 0, 2, and 4. Specifically, I would have expected to see the red curves peak more consistently across all Models in regions of high exonic density. Instead, local peaks are not shared very consistently among Models. Is this just a consequence of a moderate number of replications, insufficient to smooth out variation induced by the sampling of selection coefficients from the DFE? If so, this might be worth a comment.
+
+Fig. S1: The y-axis label says "median fitness" is shown; the caption mentions both "mean fitness" and "median fitness". Please clarify.
+
+Figs. S1, S2, S3, and Fig. 3: Please consider providing additional versions of these figures in which the range of the y axis is identical between different rows within the same figure. Currently, the scales are different, which emphasises the qualitative patterns, but distracts from the quantitative differences among Models.
+
+
+
