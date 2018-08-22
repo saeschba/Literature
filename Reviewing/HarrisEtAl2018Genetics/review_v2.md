@@ -1,0 +1,23 @@
+The authors have carefully addressed all the concerns that I had, and I am very satisfied with the revised version of the manuscript. I think it will make a substantial contribution to the evolutionary genetics community.
+
+I have read the manuscript and the supporting information again, and I have found no additional concerns except for a few minor ones listed below. I am sure the authors will have no problem in addressing these. The paper, including the revisions, is excellently written and reads very well.
+
+I think it was a good move to omit the experiments on balancing selection from the current manuscript. However, this topic would deserve being treated more carefully in the future.
+
+Besides a few minor comments (see below), I have one remaining issue related to the use of the term "expected homozygosity method/statistic". Since the G statistics are clearly not expected homozygosity statistics, but likely quite sensitive to the most frequent heterozygous haplotype combination (e.g. page 5, lines 5-6), I would argue for a more careful use of "expected homozygosity method/statistic" throughout the manuscript. It appears to me that the authors have introduced this term at multiple occasions during their revisions. I think it would make sense to maintain the terms "(expected) homozygosity statistic method/statistics" vs. "multilocus genotype method/statistics" clearly distinct. Good examples of how the distinction could be maintained are on page 11, lines 7-8 or page 12 throughout.
+
+Examples of where I find the term "(expected) homozygosity method/statistics" problematic are:  Page 9, lines 26-27 and 32; page 10, lines 2-3, 11, 15, 20; page 16, lines 1, 10 and 22; page 17, lines 1 and 22; page 22, lines 6, 7; page 23, lines 6 and 21; captions of Fig 1, . The use of "MLG homozygosity" is also problematic at the following positions, especially in the context of soft sweeps: Page 8, line 16; page 9, line 1; page 16, line 7. In many cases, the problematic terms might be replaced by "MLG genotype statistics/method" or similar.
+
+I must admit that I have overlooked some of these occurrences in the first round of review, and my focus on this issue has been motivated by the comments of the other reviewers and the answers to these by the authors. Overall, the strong emphasis on homozygosity seems odd given the new sentence on page 5, lines 5-6, and the mentioning of the XY genotype as contributing to the signal there. The new sentence "...our approach assumes elevated MLG homozygosity derives from elevated haplotye homozygosity" may actually also be problematic, because this assumption does not actually seem to be present in Eqs. (2) and (3). The empirical data (Fig. 7) also seem to show that the most frequent heterozygous MLG constributes substantially to G12, especially in YRI and GIH.
+
+Some minor comments:
+
+p. 5, l. 3: The phrase "The presence of multiple unique frequent haplotypes under a soft sweep..." is a bit unfortunate, although I believer to know what you mean. How about "The presence of multiple qunique haplotypes at high frequency under a soft sweep..."
+
+p. 6, l. 5: For consistency in usage of tense, I suggest saying "...then used an approximate..." rather than "...then use an approximate...". I did not catch this in the first round of review.
+
+p. 9, l. 10: I found the introduction of "haplotype" here confusing, because G123 is likely not responding to the third-most frequent haplotype, but likely to the two most frequent haplotypes (see also point 1.ii) by the second reviewer). I realise that "haplotype" makes sense if referring to H123 in this sentence, but not to G123 - unless I am missing something here. See my general concern above.
+
+Figure 2S: Should it not say H123 and G123 instead of H12 and G12 in the caption?
+
+Figure S3: Same comment as for Figure S2.
