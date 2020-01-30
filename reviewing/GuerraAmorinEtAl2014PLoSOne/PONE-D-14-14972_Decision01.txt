@@ -1,0 +1,316 @@
+From: PLOS ONE <no-reply@editorialmanager.com>
+Subject: A decision has been made on PONE-D-14-14972 - [EMID:7f889848d910c77d]
+Date: 19 May 2014 06:02:55 PDT
+To: Simon Aeschbacher <saeschbacher@mac.com>
+Reply-To: PLOS ONE <plosone@plos.org>
+
+Ref.: Ms. No. PONE-D-14-14972
+Detecting Genome-wide Signals of Human Adaptation to Tropical Forests in a Convergent Evolution Framework
+PLOS ONE
+
+Dear Dr. Aeschbacher,
+
+Thank you for your review of this manuscript. The Editor has made a decision on this paper and has asked the Author to revise the submission. You may be asked to review the revision of this paper in the future.
+
+A copy of the decision letter can be found below.
+
+You can also access your review comments and the decision letter by logging onto the Editorial Manager as a Reviewer.
+
+To: ********
+From: "PLOS ONE" plosone@plos.org
+Subject: PLOS ONE Decision: Revise [PONE-D-14-14972]
+PONE-D-14-14972
+Detecting Genome-wide Signals of Human Adaptation to Tropical Forests in a Convergent Evolution Framework
+PLOS ONE
+
+Dear ******** ********,
+
+Thank you for submitting your manuscript to PLOS ONE. After careful consideration, we feel that it has merit, but is not suitable for publication as it currently stands. Therefore, my decision is "Major Revision." 
+
+We invite you to submit a revised version of the manuscript that addresses the points below: 
+
+All points should be addressed, but it would be interesting that you could add additional reference populations, as well as delve further into the functionality of the SNPs showing signals of selection.
+
+We encourage you to submit your revision within forty-five days of the date of this decision. 
+
+When your files are ready, please submit your revision by logging on to http://pone.edmgr.com/ and following the Submissions Needing Revision link. Do not submit a revised manuscript as a new submission. Before uploading, you should proofread your manuscript very closely for mistakes and grammatical errors. Should your manuscript be accepted for publication, you may not have another chance to make corrections as we do not offer pre-publication proofs.
+
+If you would like to make changes to your financial disclosure, please include your updated statement in your cover letter. 
+
+In addition, when submitting your revision please include the following items: 
+	•	
+	•	A rebuttal letter that responds to each point brought up by the academic editor and reviewer(s). This letter should be uploaded as a 'Response to Reviewers' file.
+	•	
+	•	A clean revised manuscript as your 'Manuscript' file.
+	•	
+	•	A marked-up copy of the changes made from the previous article file as a 'Revised Manuscript with Track Changes' file. This can be done using 'track changes' in programs such as MS Word and/or highlighting any changes in the new document.
+	•	
+
+For more information on how to upload your revised submission, see our video: http://blogs.plos.org/everyone/2011/05/10/how-to-submit-your-revised-manuscript/
+
+If you choose not to submit a revision, please notify us. 
+
+Yours sincerely, 
+
+Francesc Calafell
+Academic Editor
+PLOS ONE
+
+Additional Editor Comments (optional):
+
+Besides all the major points raised by the reviewers, which should be taken into account, I would like to see some discussion on which effect gene diversity may have in the power to detect natural selection, since you are putting side by side populations with the most diversity in humans, as Africans are, with Native Americans, which are notorious for their relative lack on internal diversity.
+
+[Note: HTML markup is below. Please do not edit.]
+
+Reviewers' comments:
+
+Reviewer's Responses to Questions
+
+Comments to the Author
+
+1. Is the manuscript technically sound, and do the data support the conclusions?
+
+The manuscript must describe a technically sound piece of scientific research with data that supports the conclusions. Experiments must have been conducted rigorously, with appropriate controls, replication, and sample sizes. The conclusions must be drawn appropriately based on the data presented. 
+
+Reviewer #1: Partly
+
+Reviewer #2: Yes
+
+Reviewer #3: Partly
+
+
+
+2. Has the statistical analysis been performed appropriately and rigorously? 
+
+Reviewer #1: I Don't Know
+
+Reviewer #2: Yes
+
+Reviewer #3: Yes
+
+
+
+3. Does the manuscript adhere to the PLOS Data Policy?
+
+Authors must follow the PLOS Data policy, which requires authors to make all data underlying the findings described in their manuscript fully available without restriction. Please refer to the author’s Data Availability Statement in the manuscript. All data and related metadata must be deposited in an appropriate public repository, unless already provided as part of the submitted article or supporting information. If there are restrictions on the ability of authors to publicly share data—e.g. privacy or use of data from a third party— these reasons must be specified.
+
+Reviewer #1: Yes
+
+Reviewer #2: Yes
+
+Reviewer #3: Yes
+
+
+
+4. Is the manuscript presented in an intelligible fashion and written in standard English?
+
+PLOS ONE does not copyedit accepted manuscripts, so the language in submitted articles must be clear, correct, and unambiguous. Any typographical or grammatical errors should be corrected at revision, so please note any specific errors here.
+
+Reviewer #1: Yes
+
+Reviewer #2: Yes
+
+Reviewer #3: Yes
+
+
+
+5. Review Comments to the Author
+
+Please use the space provided to explain your answers to the questions above. You may also include additional comments for the author, including concerns about dual publication, research ethics, or publication ethics. (Please upload your review as an attachment if it exceeds 20,000 characters)
+
+Reviewer #1: A major concern was raised on the selection of the control populations, which is the key to the results that support the conclusion. 
+
+The aim of the authors is to “look for outlier markers with overly large extent of differentiation between populations living in a tropical forest, as compared to genetically related populations living outside the forest”. This means that, on my opinion, the selection of the appropriate non-tropical populations is key for the performed analysis. I am concerned on the effect of the low number of non-tropical populations selected in the results, which support the conclusion. Two non-tropical African populations were chosen which were later combined; and only one American non-tropical population was included – the Pima. Under this scenario, would not a Pima specific selection event reflected on a significant deviation of the allele frequency from those observed within the Karitiana and Surui (but also other south/central American populations which were not tested in this study) be interpreted as a “tropical selection event”? On my opinion, this is the reason why methods that are able to consider more control populations (Alkorta-Aranburu et al., 2012) are more appropriate. Indeed, in the method section the authors do mention “ the rationale behind the use of different population sets is to look for congruent signals of adaptation across data sets, and thus to eliminate signals potentially due to particular tropical forest populations, which have been shown to present high rates of genetic drift due to their small effective population size”. I completely agree with the statement, so I will argue that more than one or two non-tropical populations are also required to avoid selection signals of non-tropical populations to be considered as tropical population signals. 
+
+In addition, I do have some comments related with data QC/analysis, which some of them may be due to not being an statistician, so I apologize in advance if they do not seem sound comments/suggestions.
+
+• The SNP QC process performed seems sound; however, I do not have a clear understanding of the removal of the SNPs whose MAF< 5% at all populations joined in the comparison. Are not the authors interested on, for example, SNP whose MAF is 5-6% in Karitiana, Surui, Mbuti and Biaka; but 0.1% in Pima and the West African Mandenka and Yoruba populations? 
+
+• During the detection of the clusters of outlier SNPs, it is acknowledged that even though 500kb-wide windows were chosen, the number of SNPs within them can significantly vary; thus “those windows with less than one fifth of average SNP density per chromosome, were set as non-significant”. Still, among the windows that are left, those with highest density will still have a higher 95% quantile score. Thus, I was wondering if the following approach would be more adequate to account the observed density differences: (1) bin all windows based on the number/density of the SNPs [~ 10 windows]; (2) within each bin, order windows according to their 95% value; and get an empirical p-value for each window; and (3) combine all windows that belong to all bins and rank them based on the empirical P-value that each was given in step 2. I do not think that windows should be automatically excluded because they contain lower number of SNPs. 
+
+• Similarly, during the gene set analysis, a score has been given to each gene. It is stated that: “For each gene and each selection model, we took the highest selection score of all SNPs assigned to this gene”. It is even highlighted that “1922 genes with no SNPs assigned were removed”. This clearly reflects on the differences on the number of SNP per gene (i.e., given their length, as well as the SNP genotype density of the chip that was used to genotype those samples) – similar to the windows. I was wondering if a similar approach suggested above for the window analysis could also be incorporated in this analysis. Indeed, during the gene enrichment analysis, it is acknowledged that genes with more SNPs have a higher chance of having extreme values assigned. Based on that, authors do place genes in bins of similar SNP densities and construct the null distribution from random gene sets with the same bin distribution as the gene set being tested. This does try to correct the potential bias due to gene with more SNPs to have higher values, would not be a better approach/strategy to try to correct/avoid this bias when the significance of each gene is assessed; rather than later during the enrichment step? 
+
+• In the FST-based Bayesian approach, 75 SNP and 57 genes are shown to be outliers in 4 comparisons; which is statistically higher than expected. I wonder how the permutations to assess the significance of the enrichment were done. 
+
+• What was the rationale for genes that are present in more than a pathway to be only included in those pathways/gene sets that have a higher overall score?
+
+Reviewer #2: In the present manuscript Guerra Amorim et al. aim to detect footprints of convergent adaptation to tropical forests in humans from America and Africa. By comparing genome-wide SNP data of peoples from tropical forests to genetically similar populations not sharing the environment, the authors identify genomic regions that have putatively evolved under selective regimes. The Bayesian method applied is based on population differentiation measure FST and is implemented in the publicly available program BayeScan. 
+
+This study presents the results of primary and original scientific research. The study is well designed and the statistical analyses have been performed rigorously. Overall, the findings are clearly reported in the manuscript (see below for points that deserve further definition). Finally, I think the study covers an interesting topic that is relevant in the field.
+
+Minor revisions:
+
+Samples and Methods
+
+Sample sizes should be indicated. The authors should also discuss sample sizes regarding the statistical power of the method.
+
+Geographical/ethnical description of the origin of the studied populations is currently missing. 
+
+The array used to generate the genotypes could also be cited.
+
+
+Results and Discussion
+
+The authors show that the sharing between outlier SNPs among different population sets is higher than expected (p-value <2e-4). It would be informative to present the actual enrichment value too.
+
+Similarly, the gene and DNaseI signals in the vicinity of outlier SNPs should be reported with an empirical p-value contrasting to non-outlier SNPs.
+
+The sliding-window filtering and subsequent cluster definition are not sufficiently well described. The description of those two steps must be improved.
+
+The genomic characteristics of clusters are not clearly presented. A table with start and end coordinates, size, genes and number of outlier SNPs could be illustrative. 
+
+Figure 1 is very informative but the font is too small. The plot could be too wide for the main paper (may consider putting it vertically?)
+
+Authors should discuss the choice of filtering outlier SNPs in (500kb size) windows. It is known that the extent of LD is substantially different between American and African populations. In addition, the time since the putative selective events (and hence the time for recombination to break the linkage generated by selective sweeps) may also vary among populations. These methodological limitations could be further acknowledged. 
+
+Finally, some discussion comparing this approach to other studies i.e. those based on extended haplotype homozygosity (EHH, iHS) or Bayenv would be worth including in the text.
+
+Reviewer #3: 5.1 Major Concerns, and Comments Relating to Answers 1 to 4
+
+@1: In general, it seems that experiments have been conducted rigorously and the necessary controls have been conducted. Methods are very well written and choices and assumptions made are stated. However, I missed a discussion of the sensitivity to several choices that had to be made. It would be desirable to know how sensitive the final results are to these choices. Examples are the false discovery rates, the nature of permutation tests to judge significance in enrichment analyses, or the width and overlap of windows in the sliding-window approach for defining significant clusters of candidate SNPs. See specific comments below.
+
+@4: The paper is generally very well written, and procedures, results and potential issues are clearly described. However, there was a tendency for long sentences. See specific minor comments below.
+
+a) It seems that the four scenarios of selection described on p.6, §2, do not include cases where alpha < 0 in at least one comparison of forest vs. control population. On p.7, §2, it is stated that "...convergent selection occurred when selection presents a higher probability than neutrality and model 4 has a higher posterior probability than models 2 and 3". This should be clarified. I was worried that a case of alpha_America < 0 and alpha_Africa > 0 could be classified as "convergent", although it is not. In the Discussion (§1), you mention that you looked for SNPs with overly large or low differentiation between populations. In the rest of the paper (in particular in Results), I got the impression that overly low differentiation is not referred to at all.
+
+b) I would have liked to see a distinction between synonymous and non-synonymous SNPs. The authors suggest that several of there candidate SNPs could be directly or indirectly affected by selection. Their analysis also suggests that multiple sets of gene ontologies are enriched for candidates. It would be of high interest to know whether these candidates are potential causal variants, linked to causal variants, or structural/regulatory variants. Even though a conclusive answer to these questions seems beyond the scope of this paper, a distinction between above-mentioned classes of SNPs could give initial hints. See respective comment below.
+
+c) I was uneasy about whether the permutation tests performed to assess significant enrichment with candidate SNPs or genes did control well enough for potential biases. First, in the test for enrichment of genic versus non-genic SNPs, clusters of closely linked candidate SNPs could introduce a bias and it might be better to pick one representative SNP per cluster. Second, in the test for enrichment of certain gene ontology classes, I missed control for, or at least discussion of, the impact of gene length. Even though only one candidate SNP was chosen per gene, isn't it that long genes per se have a higher chance of containing an outlier SNP even if being an outlier SNP was uncorrelated to gene ontology class? See specific comments below.
+
+5.2 Minor, and More Specific Comments
+
+p.: page, followed by number
+§: paragraph, followed by number
+l.: line, followed by (range of) number(s); negative values are counted from the end of the paragraph
+If there is no page and/or paragraph number, these are identical as in the most recent comment where these numbers were given.
+
+p.1 | Title: I did not particularly like the phrase "convergent evolution framework". I agree that you are answering intriguing questions about convergent evolution in human adaptation to tropical forests. However, I do not think that the approach used here needs to be termed "convergent evolution framework". The idea of comparing levels of population differentiation (as measured in terms of F_ST or related quantities) at various levels of hierarchy is not restricted to applications in the context of convergence, but could equally well be used in the context of divergence. How about "Detecting Signals of (Convergent) Human Adaptation to Tropical Forests Using a Stratified [or: Hierarchical] Outlier Approach"?.
+
+p.2 | Abstract: It would be good to state earlier that you are studying both African and American populations. This is mentioned in the last two sentences of the Abstract, but could be made more clear.
+
+p.2 | Abstract | l.6: "with overly" -> "with an overly"
+
+p.2 | Abstract | l.13-14: I was hoping that "pygmy phenotype" would be defined in more detail (e.g. w.r.t. body size, habitat, continents) in the Introduction, but then did not find this. I think there could be potential confusion as to whether the term "pygmy" refers to African tropical forest populations exclusively, or includes those of the Americas. Even if the literature is ambiguous, it should be clear what you are referring to in this study. I realise that Perry and Dominy (2009) explicitly include South American populations. For a general readership, clarification / an explicit definition might be useful.
+
+p.3 | §2 | l.3: "higher pathogen diversity" -> "higher human pathogen diversity"
+
+p.5 | §3 | l.2-6: It was not clear to me why the Y chromosome was excluded, but the X chromosome included. It may be good to add a justification.
+
+p.5 | §3 | l.6: "After selecting the different PSs as described above,..." -> "Within each PS as defined above,..."
+
+l.-3: "at all" -> "in all"
+
+l.-2: Replace short dash by en-dash
+
+p.5 | §4 | l.2: "implemented with this software" -> "in BayeScan" [avoid repeating "implemented"]
+
+p.6 | §1 | l.1: "algorithm [20] and uses" -> "algorithm [20]. The approach assumes"
+
+l.3: "population specific" -> "population-specific"
+
+§2 | l.2: "relative closer" -> "relatively closer"
+
+l.3: "the case of populations" -> "the case for populations"
+
+l.-4: "In this regard,..." -> "Thus,..."
+
+l.-3: "two different continents..." -> "two different continents,..."
+
+p.7 | §2 | l.1-2: How sensitive are the results to the choice of a FDR = 0.1?
+
+§3 | l.1-3: I was missing a distinction between synonymous and non-synonymous sites, especially in the analysis and interpretation of candidate SNPs (see major comment above).
+
+l.5: "<50kb": insert spaces before and after "50"
+
+l.7: "ahead" -> "above"
+
+l.7-10: I presume it was assumed that SNPs are unlinked in the permutation test. However, this might introduce a bias when candidate SNPs occurred in clusters, which might be a consequence of linkage disequilibrium. Then, would it not be better to summarise a cluster of candidate SNPs just by one representative SNP? The SNPs of that cluster might not be independent.
+
+p. 8 | §1 | l.-2: How far apart were the various positions? Are these most likely gene duplications?
+
+§3 | l.3: "500 kb-wide" -> "500 kb wide"
+
+l.4: The 95% quantile of what? Of the distribution of individual q-values?
+
+l.5: "the average SNP density per chromosome" -> "the average SNP density per 500 kb for the given chromosome"
+
+l.1-6: How sensitive is the analysis to these choices?
+
+p. 9 | §1 | l.1: "distribution of the SNPs" -> "physical position of the SNPs" (It seemed to me that "distribution" was often used to mean "physical position", which is potentially confounding).
+
+§2 | l.1-4: It was not clear to me why, a priori, a significant SNP in a region of low SNP density should be of less interest. Please clarify.
+
+§3 | l.5-6: The term and definition of "any selection" is potentially confounding, as it is not clear whether cases of alpha < 0 are ignored or included. See previous related comments.
+
+l.-4: Insert space between "50" and "kb".
+
+p.10 | §2 | l.1-2: I missed a justification / rationale for the SUMSTAT enrichment score. It seems to me that SUMSTAT overrates gene sets for which there is evidence of enrichment in at least two selection models, as then the value of p_co and/or p_sl will naturally also be high.
+
+l.1: "For all selection models, we..." -> "We..."
+
+p.11 | §2 | l.2: It would be nice to have the percentage of identified SNPs relative to the original number of SNPs given in brackets, for each PS.
+
+§3 | l.1-3: It was unclear whether alpha < 0 never occurred only in the sliding-window procedure, or also for the SNP-based analysis, i.e. before identification of 'significant clusters'. If there were no negative alphas at all, this should be stated before the definition of 'convergent evolution' on p.7. This would anticipate a result there, but it is necessary to understand your choices.
+
+p.12 | §2 | l.1-2: Again, it would be great to know how many and which of these candidate SNPs were non-synonymous. I am aware of the fact that synonymous SNPs could be tightly linked to non-synonymous ones, and so a distinction between synonymous and non-synonymous would only be partial confirmation.
+
+§3 | l.1: "distribution" -> "physical position"
+l.1-2: "...in the genome for the different PSs and their estimated q-value, as well as..." -> "...in the genome and their estimated q-values for the different PS, as well as..."
+
+l.3: "into the sliding..." -> "in the sliding..."
+
+p.14 | §1 | l.-4: "nervous system-related" -> "nervous-system related"
+
+p.15 | §2 | l.3: "Native American" -> "Native Americans"
+
+p.16 | §1 | l.6-7: "Two of these pathways remain significant after pruning for..." -> "After pruning, two of these pathways remain significant for...".
+
+l.8: "...events, indicating..." -> "...events. This indicates..."
+
+p.18 | §1 | l.1: "...pathways, what..." -> "...pathways. This..."
+
+l.1-4: Could this be tested by screening for elevated divergence between African and American non-forest populations? These could be representative of different genetic backgrounds and/or population history.
+
+l.-4: "among others SNPs" -> "among other SNPs" 
+
+§2 | l.2: "...with positive selection signals suggesting..." -> "...with signals of positive selection, suggesting..."
+
+l.5. "signal" vs. "they": Should both be either singular or plural?
+
+p.19-25 | References: Page ranges should be given using en-dashes instead of shorter dashes.
+
+p.20 | Reference 8: Omit spaces in "U S A" (cf. reference 42)
+
+p.22 | Reference 25: Insert space before "URL".
+
+p.26 | Figure Legends | Fig. 1: "distribution for SNPs" -> "physical position of SNPs"; if appropriate, say that q-values are on the log10 scale
+
+p.28-29 | Figure Legends | Suppl. Figs. 1--6: "distribution of SNPs" -> "physical position of SNPs"
+
+Suppl. Fig. 7: "selection signals" -> "signals of selection"
+
+Figure 1: I suggest increasing the font size for axis labels, chromosome labels and cluster labels. It would also be great if you could report estimates of alpha and beta in a supplementary table, at least for 'significant' SNPs. Does this figure only show SNPs kept after the sliding-window smoothing / filtering? Comparison to Figures S1--S6 suggests so. Please clarify in the caption of Figure 1.
+
+Figure 2: Why is there not always a shaded area for "any selection" if there is a coloured area in any of the other sectors? Again, does "any selection" include or ignore cases where at least one out of alpha_Africa and alpha_America was smaller than 0?
+
+
+
+6. If you would like your identity to be revealed to the authors, please include your name here (optional).
+
+Your name and review will not be published with the manuscript. 
+
+Reviewer #1: (No Response)
+
+Reviewer #2: (No Response)
+
+Reviewer #3: (No Response)
+
+
+
+[NOTE: If reviewer comments were submitted as an attachment file, they will be attached to this email and accessible via the submission site. Please log into your account, locate the manuscript record, and check for the action link "View Attachments". If this link does not appear, there are no attachment files to be viewed.]
+
+Kind regards,
+
+Rachel Grigg
+Staff EO
+PLOS ONE

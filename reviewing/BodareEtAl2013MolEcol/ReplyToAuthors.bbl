@@ -1,0 +1,45 @@
+\begin{thebibliography}{8}
+
+\bibitem[{\sc Aeschbacher {\em et~al.\/}}(2012){\sc Aeschbacher, Beaumont, {\rm
+  and} Futschik}]{Aeschbacher:2011fk}
+{\sc Aeschbacher, S., M.~A. Beaumont, {\rm and} A.~Futschik}, 2012 A novel
+  approach for choosing summary statistics in approximate {B}ayesian
+  computation. Genetics {\bf 192}: 1027--1047.
+
+\bibitem[{\sc Beaumont}(2010)]{Beaumont:2010uq}
+{\sc Beaumont, M.~A.}, 2010 Approximate {B}ayesian computation in evolution and
+  ecology. Annu. Rev. Ecol. Evol. Syst. {\bf 41}: 379--406.
+
+\bibitem[{\sc Falush {\em et~al.\/}}(2003){\sc Falush, Stephens, {\rm and}
+  Pritchard}]{Falush:2003fk}
+{\sc Falush, D., M.~Stephens, {\rm and} J.~K. Pritchard}, 2003 Inference of
+  population structure using multilocus genotype data: Linked loci and
+  correlated allele frequencies. Genetics {\bf 164}: 1567--1587.
+
+\bibitem[{\sc Fearnhead {\rm and} Prangle}(2012)]{Fearnhead:2011uq}
+{\sc Fearnhead, P. {\rm and} D.~Prangle}, 2012 {Constructing summary statistics
+  for approximate Bayesian computation: semi-automatic approximate Bayesian
+  computation}. J. R. Stat. Soc. Ser. B Stat. Methodol. {\bf 74}: 419--474.
+
+\bibitem[{\sc Joyce {\rm and} Marjoram}(2008)]{Joyce:2008sf}
+{\sc Joyce, P. {\rm and} P.~Marjoram}, 2008 {Approximately sufficient
+  statistics and Bayesian computation}. Stat. Appl. Genet. Mol. Biol. {\bf 7}.
+
+\bibitem[{\sc Nunes {\rm and} Balding}(2010)]{Nunes:2010fk}
+{\sc Nunes, M.~A. {\rm and} D.~J. Balding}, 2010 On optimal selection of
+  summary statistics for approximate {B}ayesian computation. Stat. Appl. Genet.
+  Mol. Biol. {\bf 9}.
+
+\bibitem[{\sc Robert {\em et~al.\/}}(2011){\sc Robert, Cornuet, Marin, {\rm
+  and} Pillai}]{Robert:2011fk}
+{\sc Robert, C.~P., J.-M. Cornuet, J.-M. Marin, {\rm and} N.~S. Pillai}, 2011
+  Lack of confidence in approximate bayesian computation model choice. Proc.
+  Natl. Acad. Sci. U.S.A. {\bf 108}: 15112--15117.
+
+\bibitem[{\sc Wegmann {\em et~al.\/}}(2009){\sc Wegmann, Leuenberger, {\rm and}
+  Excoffier}]{Wegmann:2009sf}
+{\sc Wegmann, D., C.~Leuenberger, {\rm and} L.~Excoffier}, 2009 Efficient
+  approximate {B}ayesian computation coupled with {M}arkov chain {M}onte
+  {C}arlo without likelihood. Genetics {\bf 182}: 1207--1218.
+
+\end{thebibliography}

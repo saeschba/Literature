@@ -1,0 +1,173 @@
+From: "PLOS Genetics" <em@editorialmanager.com>
+To: "Simon Aeschbacher" <saeschbacher@ucdavis.edu>
+Reply-To: "PLOS Genetics" <plosgenetics@plos.org>
+Date: 25 March 2015 21:55:29 GMT-7
+Subject: A decision has been made on PGENETICS-D-15-00120 - [EMID:1abe3c6486328c67]
+
+Dear Dr Aeschbacher,
+
+Thanks again for reviewing the manuscript entitled 'Demography-informed selection signatures reveal different roles of two polymorphic inversions in local adaptation of Anopheles gambiae' (PGENETICS-D-15-00120), submitted to PLOS Genetics.
+
+Your review was very helpful in the editors' evaluation. Please find below the decision letter to the corresponding author, along with any other review comments.
+
+Any review attachments should be available using the following link: 
+
+
+
+Thanks for your support and we hope that you will submit your own papers to PLOS Genetics in the future.
+
+Best wishes,
+
+Felicity
+
+Felicity Davies | Publications Assistant | PLOS Genetics
+Carlyle House, Carlyle Road, Cambridge CB4 3DN | UK
+plosgenetics@plos.org | +44 (0) 1223-442823
+plosgenetics.org | Twitter: @PLOSGenetics
+
+Email Alerts: http://register.plos.org
+RSS: http://www.plosgenetics/article/feed
+
+To: ********
+cc: ********
+From: "PLOS Genetics" plosgenetics@plos.org
+Subject: Decision on your article submitted to PLOS Genetics (PGENETICS-D-15-00120)
+CC: ********
+
+Dear Dr He, 
+
+Thank you very much for submitting your Research Article entitled 'Demography-informed selection signatures reveal different roles of two polymorphic inversions in local adaptation of Anopheles gambiae' for review at PLOS Genetics. Your manuscript has been evaluated by the journal's senior editors, by an Associate Editor, and in this case your manuscript has also been evaluated by independent peer reviewers. The reviewers appreciated the attention to an important topic, but they raised substantial concerns about the paper. Based on the reviews, we regret to say that we will not be able to accept this manuscript for publication in PLOS Genetics. 
+
+The reviews are copied below and we hope that they may help you should you decide to revise the manuscript for submission elsewhere. If present, accompanying reviewer attachments are included with this email; please notify the journal office if any appear to be missing. They will also be available for download from the link below.
+
+******** 
+
+We are sorry that we cannot be more positive on this occasion, but hope that you appreciate the reasons for this decision and that you will consider PLOS Genetics for other submissions in future.
+
+While we cannot consider your manuscript for publication in PLOS Genetics, we do want to alert you to an alternative open-access journal that you may find attractive. PLOS ONE, which is editorially independent from PLOS Genetics, is a swift, efficient, and economical system for the publication of peer-reviewed research in all areas of science and medicine. PLOS ONE (www.plosone.org) aims to exploit the full potential of the web to make the most of every piece of research. If you would like to submit your work to PLOS ONE, we can transfer your files: simply email their publication staff at transfers@editorialoffice.co.uk, citing your manuscript tracking number, PGENETICS-D-15-00120, and they will be pleased to arrange this. 
+
+Thank you again for your support of PLOS Genetics and open-access publishing. Please do not hesitate to contact us if we can provide further assistance. 
+
+Yours sincerely, 
+
+Graham Coop 
+Associate Editor 
+PLOS Genetics
+
+Hopi Hoekstra
+Section Editor: Evolution
+PLOS Genetics
+
+
+All of the reviewers appreciated the attention paid to the important topic of resolving the history of inversions. However, the reviewers (particular 2 & 3) raise substantial concerns about the approach taken by the paper, and the conclusions reached about one of the inversions. I'm rejecting the paper because I view the amount of work that would be required to address these concerns to be very substantial, as it would require a lot of reworking of the method to address the reviewers concerns. I hope that these comments help you in preparing the manuscript for submission elsewhere.
+
+Best wishes,
+Graham Coop
+
+Reviewer's Responses to Questions
+
+Comments to the Authors: 
+Please note here if the review is uploaded as an attachment.
+
+Reviewer #1: In this paper, He and Knowles propose a new approach to identifying the targets of selection in chromosomal inversions or other mosaic regions, with application to the well-studied Anopheles gambiae. Their approach does not involve the development of a new method, but rather applies existing methods in a novel way to classify summary statistics in multidimensional space. Overall the paper is well-written, clearly presented, and moderately accessible to a reader who is not an expert on the evolutionary history of A gambiae. 
+
+The main claims of the approach is that the new approach (i) is "able to detect putative regions subject to selection within both chromosomal inversions" and (ii) can provide insight into the lineage that has undergone adaptive change, and (iii) "can be widely applied for chromosomal regions with different histories" in non model species. As their approach attempts to move beyond traditional Fst outlier analyses and use multiple summary statistics, it could be of wide interest to people working to identify targets of selection in genomes with inversions or other mosaic regions. Overall I have a few concerns about the approach and it's general applicability, but these might be easily addressed by the authors. Despite strong claims by the authors, they fail to address sensitivity and sources of bias, and fail to discuss some of the limitations of using this approach in other species.
+
+
+1) Sensitivity to uncertain history/parameters
+
+While I think the approach is clever, I am concerned about two issues related to sensitivity. The first is sensitivity of the method to inference and simulation of an incorrect demographic history. Often in non-model species the history of an inversion is not known as well as it is in A. gambiae, and demographic inference based on the site frequency spectrum can be limited because different histories can result in a similar spectrum:
+
+Myers S1, Fefferman C, Patterson N. Can one learn history from the allelic spectrum? (2008) Theor Popul Biol.73(3):342-8. doi: 10.1016/j.tpb.2008.01.001. 
+
+In addition, power and error rates of the method may vary substantially with different histories in other species. These limitations are not discussed in the manuscript. 
+
+The second issue is in their implementation: it is unclear how uncertainty in the estimated parameters on the history affects sensitivity of the method and of the resulting distribution of summary statistics. As noted by the authors, age of inversion and the introgression time will greatly affect power to detect selection. Was uncertainty in the timing of these events incorporated into the simulations for neutral expectations, or were just point estimates used? It seems that uncertainty should be incorporated, as this could greatly affect power and potential bias.
+
+2) Summary statistics used 
+
+The authors state that 9 summary statistics were used, but only list three of them. Comparison to Fst isn't really that interesting because it is basically uniform across the region - which statistics is the discriminate function drawing power from? If a particular statistic plays a major role in the discriminate function, it would be more useful to compare the method to that statistic in addition to Fst.
+
+3) Potential bias in the DAPC 
+
+DAPC is used in two ways in the paper, first as used on SNPs to identify the number of genetic clusters (which it performs well at, Figure S4), and secondly to discriminate selected from neutral loci with summary statistics (a few figures here would be more helpful than Table S2, which only shows the case for strong selection). This was a bit confusing on first read. Here I address potential bias in the DAPC used to classify loci from the simulations.
+
+Another major concern is the the high false positive rates (FPR) and high false discovery rates (FDR) of the method - there is only higher power and lower FDR than Fst in the strongest selection scenarios. A false positive rate of 5% is very high for a genome scan in which 10000s of loci are being tested. Sure, the method is better than Fst but high FDR will still limit the ability of a genome scan to find the targets of selection.
+In the weaker selection scenarios, the method doesn't appear to do much better than Fst (Supp Figs S5 S6). line 16 and 20 pg 15: "true positive rate is ~0.8" and "rates are above 90%" are deceiving because this is only under strong selection. In addition, can the discriminant function distinguish between the strong and weak selection scenarios? This could be an equally exciting application of the approach.
+
+More importantly is the potential for false positives from asymmetrical assignments - particularly for neutral loci to be mis-classified in the S lineage (such that the pattern in the paper would be produced). In Table S2, there appears to be no such bias, but this is in the case when selection is the strongest and thus the function can discriminate the best. To support their conclusion that selection is more prevalent with S rather than I, the authors should show that the discriminate function is relatively unbiased for weaker values of selection. The exciting aspect of this method is the ability to get support for the lineage which has undergone adaptive change (which would be impossible with Fst), and the potential source of bias in the discriminant function should be emphasized more in the analysis and the manuscript. 
+
+
+
+Specific comments:
+
+line 27 pg 8: close parentheses missing
+line 16 pg 10: within "an" inversion
+line 26 pg 14: close parentheses missing
+Table S2 caption: please clarify whether it is 50kb or 5kb
+
+Reviewer #2: Demography-informed selection signatures reveal different roles of two polymorphic inversions in local adaptation of Anopheles gambiae
+
+The manuscript addresses an important problem in evolutionary biology: The detection of sites under selection in inverted regions. Polymorphic inversions are believed to play an important role in local adaptation. The detection of selected loci is in inverted regions is, however, difficult, mainly because we lack the computational and statistical methods to determine neutral expectations for patterns of diversity in inverted regions. Furthermore, it is difficult to use outlier-methods, such as FST scans, because divergence is generally high between (old) inversions, which reduces the power of FST scans. Finally, demographic history of inversions strongly impacts the expected patterns of FST and therefore need to be taken into account in scans for selected sites. The authors attempt to work around these problems by treating karyotypes as different subpopulations, and model gene-flux between karyotypes (e.g., caused by gene conversion or double-recombination events) as migration between these subpopulations. This allows them to use existing estimation procedures (fastsimcoal2) to estimate the demographic history of the inverted regions and collinear regions separately. To adjust for the fact that gene-flux is more common in the interior of the inversion, the authors modify their baseline gene-flux rate using the observed FST values in the inverted regions. Using this method, the authors identified the demographic history of two polymorphic inversions in Anopheles gambiae and then proceed to use the inferred demographic history to perform (i) an outlier analysis based on FST values, and (ii) a discrimination analysis based on Discriminant analysis of Principal Components. 
+
+While I like the idea of treating the inversion as subpopulations, I is not clear to me how reliable this approach is in practice. For instance, the analogy of a polymorphic inversion and a structured populations is not complete insofar as gene flux varies within the inverted region and sites located close to breakpoints have a lower chance to “migrate” between chromosome classes than sites in the interior of the inversion. This affects pattern of diversity within the inversion as well as patterns of LD between sites within the inversion. Even though the authors try to correct for this by adjusting the estimated “migration rate” between karyotype classes, it is not clear to me how well this approach works in practice. This could have been tested using existing coalescent simulators for inversions (e.g., Guerrero et al. 2012, which includes the possibility to simulate up to 2 selected sites within the inverted region and provides expectations for FST patterns in inverted regions under a variety of scenarios). Such simulators could have been used to assess the reliability of the method proposed by the authors but also to determine the demographic history of the inversion itself (e.g., using an ABC approach). What is the advantage of using fastsimcoal2 rather than a coalescent simulator for inversions? This should be clarified. Finally, several key aspects of the methods used in the paper are opaque. For instance, there are no details on how posterior probabilities are calculated, there are virtually no details on the selection model that is used in the power analysis (apart from one line saying that selection coefficients are ranging between 0.01 and 0.0001, and a reference to Figure 2C, which shows FST distributions), and the discriminant analysis should be described better. The lack of a proper description of the methods used in the manuscript, the lack of a goodness of fit test of the estimated model, and the lack of comparison against existing methods for the simulation of genetic diversity in inversions makes it difficult to assess the quality of the results. I therefore suggest rejecting the manuscript in its current form, but encourage the re-submission of a new manuscript. 
+
+Specific points:
+How well does the estimated model fit the data? For instance in Figure 2 a) and b), could you add lines showing the quantiles of the observed FST distribution (obtained by a sliding window approach) to see if they match the simulated values? This would also be good for other summary statistics used in the discriminant analysis.
+
+Why didn’t you use LD information in your analysis? This should be highly informative. For instance, we expected that locally adapted alleles should be in strong LD with the inversion. It should be easy to calculate LD between markers in the inverted region and the inversion itself (e.g. as in Kennington et al. 2006). It would be interesting to compare the distribution of LD for all sites within the inversion and the predicted selected sites. 
+
+The results in Figure 2a are a bit difficult to believe. It seems as if the entire inverted region is under selection. It would help if the authors demonstrated the reliability of their method better (see above points). 
+Could you relate your results on the demographic history of the inversions to previous work? Are there estimates for the age of the inversion? How well do your results agree with them?
+We would expect selected sites to be in strong LD with each other but also with the inversion. One could compare LD between the inversion and neutral sites, and the inversion and predicted selected sites. 
+
+Please be more explicit about the selection model. In the current form it is difficult to understand what you did exactly. 
+
+Did you also estimate selection strengths? Could you do that with your method?
+
+Provide more details on (and/or a reference to) the discriminant analysis. 
+
+Figures: The clarity of some Figures could be improved with little effort:
+
+Figure S2: Can you explain the blue outliers? It would be helpful to have a label showing which color corresponds to which population. Please label the axes.
+
+Figure S3: Please add a legend, and label axes. Ditto Figure S4 a and b. 
+
+Minor points:
+Please add page numbers!
+Abstract, line 4: heterokarytypes -> karyotypes?
+Author summary, line 27: is evidence really common? We expect that this is the case based on theory, and there are some good, suggestive examples about the role of inversions in local facilitating local adaptation. But I wouldn’t say that evidence is now common. 
+
+Introduction, line 9: spectrum -> spectra
+Line 16, 17: can you provide reference for empirical evidence for this?
+
+Line 21: maybe add that divergence between karyotypes depends on age of inversion, and demographic history of inversion (e.g. Navarro et al . 1997).
+Line 22ff: this could be made a bit more clear, e.g., in terms of recombination and linkage disequilibrium.
+
+Introduction, page 2:
+Line 26: I am not sure that your analysis actually demonstrates that you are able to detect genomic areas harboring targets of selection.
+
+Results page 1, line 11ff:
+Again, I am not convinced that you “demonstrate the promise of the approach” 
+
+Line 18: using site frequency spectrum sounds odd, please rephrase
+
+Line 26: the word analyses is redundant
+
+Page 2, line 23: remove “an” or rephrase
+
+Signature of selection within inversion: 
+
+Line 4: versus -> as compared to ?
+
+Line 21: locus -> loci
+
+Line 24: please provide reference for DAPC and/or explain better
+
+Line 29: “a selected locus”
+
+Population genetic structure of collinear and inverted region:
+
+Line 25: not sure what you mean here. Did you remove SNPs with more than 20% of missing data? Pleas clarify.
+
+Reviewer #3: Please find my response in the PDF attached.

@@ -1,0 +1,142 @@
+To the editor
+=============
+
+Dear Dr. Drummond
+
+Thanks for the opportunity to review this interesting article. I have chosen to suggest "Minor revision", although in case my major issue a) is not a trivial one, I presume major revision will be needed.
+
+Further, in case of resubmission, I would prefer not to review the ms again, due to temporal constraints.
+
+Kind regards,
+Simon Aeschbacher 
+
+To the authors
+==============
+
+This is a nice study, showing a novel approach and providing further support for the dependence on calibration times of rates of evolution. The authors present an approach that uses non-genetic information to condition inference from genetic data; such approaches will become more important, as models are more complex and need some justification and calibration. I agree with the previous reviewer 2 that this paper is of importance to the broader field. I have a couple of conceptual issues -- four of them major --, and some editorial suggestions. Later, I refer to the concerns raised by two previous reviewers and the author's replies thereupon.
+
+
+Major issues
+============
+
+a)
+In the footnote to table 2, the authors give the formula according to which the lineage mutation rate mu [mutations per year per site per million years] was obtained as mu = (tau/b)/2c), where tau is time measured in mutations per sequence [mutations/sequence], b is the number of sites per sequence [sites/sequence], c is one of the two calibration times [years]. First, there is a bracket missing -- it should read mu = (tau/b)/(2c). The units work out correctly: [mutationn/sequence]*1/[sites/sequence]*1/[years] = [mutations/(sites*year)]. However, numerically, I was not able to reproduce the lineage mutation rates mu given in table 2 for the mismatch distribution approach. For instance, with T. crocea and for t = 19,600 years, we have tau/2 = 1.2*10^-2 mutations/sequence, and b = 485 sites/sequence (according to table 1). Multiplying by 10^6 to obtain the rate per million years, this results in 1.2*10^-2 * 1/485 * 1/19,600 * 10^6 = 0.00126 = 0.126% [mutations per site per million years]. This is not the same as 61.14% as given in table 2. Some clarification is needed.
+
+b)
+The authors first infer Bayesian skyline plots (BSP) from genetic data; those provide an estimated trajectory of Ne across time. This trajectory is then used to devise an appropriate model of demography. The authors find that a two-epoch model -- a period of constant Ne_1 followed by logistic growth -- is appropriate. This model is then employed, together with coalescent theory, to establish the mutational depth (i.e. the time in number of mutations) at which population growth started (transition time t_transition). It is not clear to me, if the BSP analysis assumes constant or variable mutation rate u across time. If it does, isn't there a circularity in the procedure of inference? One first uses genetic data to infer a trajectory of Ne. Then one uses the same data to infer mutational depths. On the other hand, if constant substitution rates were not assumed in the BSP analysis (which, as I understand Drummond et al. 2005, is feasible), why do the authors not infer the substitution rates directly and jointly with the trajectory of Ne? Some more clarification would be helpful.
+
+c)
+The effect of rate variation across sites is not mentioned, although this could have an impact on the inference conducted in this paper (e.g. Arbogast et al. 2002). At least in the Discussion, this should be mentioned.
+
+d)
+Fu's F_s statistic (table 1), a bimodal observed mismatch distribution (figure 2) as well as the model comparison in table 2 suggest that the model of constant size cannot be rejected for T. crocea. E.g. on page 13, lines 1-2, it says that "none of the datasets rejected a sudden expansion model". However, it should also be mentioned here that the constant-size model could not be rejected for T. crocea. The point is made later in the Results, but, to my impression, not emphasized enough. In the Discussion, it is mentioned appropriately (page 17, lines 8-10).
+
+
+
+Minor issues
+============
+a)
+Avoid jargon in the Abstract, such as "mutational depth" (use e.g. time measured in number of mutations?) or "mismatch distribution" (use distribution of the number of pairwise distributions?). Then, early in the introduction, define these terms (e.g. on page 2, line 15, or on page 6, line 17).
+
+b)
+Early on in the Introduction, a short listing of potential reasons for rate variation as a function of calibration time would be helpful. Several reasons are discussed throughout the paper, but a concise description early on would help (e.g. distinction between substitution and mutation, change in Ne, s, actual changes in mu (per site mutation rate), etc.).
+
+c)
+Page 4, lines 2-4: If population divergence is overestimated, does this not lead to *underestimation* of the molecular substitution rate? At least, I could not find the direct conclusion as stated by the authors in the reference they give (Arbogast et al. 2002).
+
+d)
+Page 4, lines 20-21: To avoid misunderstandings, I would rephrase the sentence to "In addition to avoiding -- through coalescent models -- the problem of ancestral polymorphism, their analysis suggests that...". Otherwise, it is not clear whether the lineage sorting issue is *due* to the coalescent (which it is not) OR whether the coalescent helps to account for it (which it does).
+
+e)
+Page 5, lines 21-23: Perhaps avoid using "use" twice in the same sentence? E.g. "We demonstrate the method for a recent....". OR: "We apply the method to a recent..."
+
+f)
+Page 6, lines 19-23: Reformulate that sentence; it is too long and potentially confusing. Yet, it contains the main idea of your approach! So, it should really be well understood.
+
+g)
+Page 9, lines 1-7: Here, you address concern 3 by reviewer 1 -- which is fine. However, shouldn't you mention that your estimate is an approximation, since you do not account for the projection error (the slope of the shelf)? Maybe your ArcMap tool does it? It would be good to comment on it, at least. If you have not accounted for the slope, then I would presume that the true surface that became available to marine species was larger. The dashed curve in figure 1 would then be steeper, I suppose.
+
+h)
+Page 9, line 23: To avoid misunderstandings, write mu = tau/(2c) instead of mu = tau/2c.
+
+i)
+Page 10, lines 1-2: Make the scaling *explicit*, i.e. say that you *divide* by b (see footnote to table 2).
+
+j)
+Page 10, line 3: Perhaps avoid the term "demographic history information"? E.g. "To assess the information available in each genetic dataset on demographic history, ..."
+
+k)
+Page 10, line 12: There is no *uninformative* prior; even a uniform or Jeffery prior imply information, e.g. due to the choice of the boundaries and/or the scale. I would avoid using "uniform"; just state what you choose and, if possible, justify.
+
+l)
+Page 12, line 7: Perhaps remind the reader of the definition of LGM.
+
+m)
+Page 12, line 15: Shouldn't it read "ModelTest" instead of "Modeltest"?
+
+o)
+Page 12, line 21: A bimodal mismatch distribution is expected under constant size; you should state this here, and give a reference (e.g. to Hein et al. 2005, chapter 4).
+
+p)
+Page 13, lines 1-2: BUT: The constant-size model could also not be rejected for T. crocea! (see Major issue d) above)
+
+q)
+Page 16, line 6: *conservative* w.r.t. what? To the hypothesis that rates of evolution increase with more recent calibration times. You could make this clearer.
+
+r)
+Page 39, line 29: No starred values present in figure 2?
+
+s)
+Page 40, lines 4-6: Lower prior boundaries for t_transition and t_50 missing? Or not visible? You should comment on it.
+
+t)
+Page 44, label to y-axis in figure 4: Shouldn't it read "million years" or "million generations"? See reply to 2nd major concern by reviewer 1.
+
+
+Issues raised by previous reviewer 1
+====================================
+
+1)
+Reviewer 1 doubted whether the article would take the debate about time dependency of substitution rates any further. I agree with the authors that this is a matter of editorial opinion. It is true, however, that the authors not only present a novel approach, but they do present support in favour of time-dependent rates of evolution (figure 4), accounting for uncertainty (error bars).
+
+2) 
+The misunderstanding related to *divergence rates* versus *per lineage rages* have been clarified by the authors. However, the authors claim to have corrected the label of the y-axis in figure 4, which I could not verify (see minor concern t) above). In their reply to the 2nd major concern by reviewer 1, the authors say they have changed the label of the y-axis to "changes/site/million *years*". However, the actual label now reads "changes/site/million *generations*". What is correct? I suspect "generations", but the authors should clarify.
+Reviewer 1 also argued that the authors had cherry-picked previous results to support their evidence. The authors have convincingly explained that this was not the case -- their choice is conservative w.r.t. to the suggestion they make. The 'minor changes' made to figure 4 to correct for new insight on generation time of the alpheid snapping-shrimp (points C and D) are not visible to me; I cannot judge if the changes have been made.
+
+3)
+Reviewer 1 asked the authors to better convince the reader that the genetic variation they were sampling postdates the low-level sea stand of the LGM. The authors explain that there approach accounts for variation before the expansion. Reviewver 1 suggests to perform ABC simulations to test more complex demographic scenarios. I do not thinks this is necessary, unless clear-cut alternative hypotheses can be justified.
+The authors have added a better description of the habitat ranges that became available to the organisms studied as a function of time (but see minor issue g) above).
+
+The minor points raised by reviewer 1 have been addressed, except for the contradicting replies by the authors to the 3rd major issue versus the 7th minor issue raised by reviewer 1. (*generations* versus *years* in y-axis of figure 4). Whether or not to include the supplementary figure is a matter of editorial opinion.
+
+
+Issues raised by previous reviewer 2
+====================================
+
+1)
+Reviewer 2 raised the concern that much of the signal in the data could have been caused by purifying selection. There are potentially confounding effects of selection and demography. I agree to this concern.
+
+The authors have included analyses and results on further, simpler demographic models, and shown that these have less support than the two-stage models originally proposed. The idea is that purifying selection would lead to a more gradual profile of "growth" (effective change in Ne), and if such simpler models can be rejected, purifying selection seems less likely. This addresses the concern to some degree, but to fully account for purifying selection, that process needs to be explicitly included into the models. That, however, makes (coalescent) simulations and analyses much more demanding; tools for inference/simulation are only just becoming available. Given that the authors are aware of the problem and discuss it at length, I think that the issue should not be a reason why not to publish the article.
+
+2)
+Reviewer 2 asked for more details about the habitat and distribution of the organisms studied. This is essential, because changes in sea level and the topology of the shelf are used to infer the demographic past of the species. The authors do now provide more details (see comments above and the GIS analysis described on page 9), supporting their approach.
+
+3)
+Reviewer 2 asked if there are alternative explanations for the demographic expansion than the the flooding of the Sunda Shelf. The authors admit that there are other potential reasons, but that they are confident that the rise of sea level was the most important one. I think this is fine, but the alterative explanations should at least be mentioned in the Discussion.
+
+4)
+Reviewer 2 asked if earlier marine transgressions than the one related to the LGM could have generated the proposed population expansion. The authors refer to Tager et al. 2010, who show that sea levels stayed between -100 and -20 meters below current levels between 144 kya and the LGM (18 kya). They make the point that, even if earlier geological events caused a population expansion, one would need to explain why the more recent geological changes did not leave a signal. The authors provide enough information to support their approach and assumptions.
+
+5)
+Reviewer 2 correctly states that the mismatch distribution was originally given in terms of mutations per lineage per *generation*, not *year* (Rogers and Harpending 1992). Therefore, in table 2, the corresponding rates should be corrected by generation time. Nevertheless, the authors decided to keep the rates per *year* for better comparison to the two-epoch rates shown below in table 2. Since the authors state this in the main text and in the footnote, it is a matter of editorial opinion. However, it is confusing that, while the rates in table 2 are in terms of *years*, those in figure 4 are in terms of *generations* (at least as claimed by the authors in their reply to a minor concern by reviewer 1; see above). I suggest that the same unit per time is used throughout the paper; for consistency with Rogers and Harpending 1992, I would use per *generations*. The authors need to clarify units and calculations in table 2 and in figure 4 anyway.
+
+6)
+No further comments.
+
+7)
+Since I could not reconstruct the substitution rates obtained for the mismatch distribution in table 2 (see my major concern a) above), I am not able to further comment on this issue.
+
+Additional comments to minor suggestions by reviewer 2:
+- Re-formulate the sentence on page 4, lines 20-23 (see minor issue d) above).
+- A "1/x prior" is a Jeffrey prior. Why not state this?
+- I also don't understand the second part of the question in the 6th comment

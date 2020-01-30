@@ -1,0 +1,230 @@
+\documentclass[11pt]{article}
+\usepackage[total={17cm, 24cm}]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[normalem]{ulem}
+\usepackage{natbib}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{color}
+\usepackage[
+	bookmarks = true,
+	bookmarksnumbered = false, 	% true means bookmarks in
+							% navigation window are numbered
+	bookmarksopen = false, 		% true means only level 1
+							% are displayed.
+	colorlinks = true,			% false for frames around links, true for color
+	linkcolor = myred,
+	citecolor = mygreen,
+	urlcolor = myblue
+	]{hyperref}
+	
+\definecolor{mygreen}{rgb}{0, 0.5, 0}	% less intense green
+\definecolor{myblue}{rgb}{0, 0, 0.75}		% less intense blue
+\definecolor{myred}{rgb}{0.75, 0, 0}		% less intense red
+\definecolor{myrev1}{rgb}{1, 0, 0}		% less intense red; after approval, simply turn into black
+\definecolor{temphidden}{rgb}{0, 0, 0}		% less intense red; to re-highlight items that finally need to be changed,
+									% but should be black temporarilly
+% \definecolor{myrev1}{rgb}{0, 0, 0}
+\definecolor{mycorr1}{rgb}{0, 0, 1}		% less intense red; after approval, simply turn into black
+
+
+
+% Define customised list environments.
+\newenvironment{my_description}
+{\begin{description}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{description}}
+
+\newenvironment{my_enumerate}
+{\begin{enumerate}
+  \setlength{\itemsep}{2pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{enumerate}}
+
+\newcommand{\ra}{$\rightarrow$\ }
+\newcommand{\C}{\textbf{C:}\ }
+\newcommand{\Q}{\textbf{Q:}\ }
+\newcommand{\R}{\textbf{R:}\ }
+\newcommand{\V}{\textbf{S:}\ }
+
+\newcommand{\fst}{$F_{\mathrm{ST}}\ $}
+\newcommand{\qst}{$Q_{\mathrm{ST}}\ $}
+
+
+\title{Reply to Bodare \emph{et al.} ``Origin and demographic history of the endemic Taiwanese spruce (\emph{Picea morrisonicola})''}
+%\author{Simon Aeschbacher}
+\date{12 April 2013}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+\section{Summary}
+This study aims at measuring and explaining contemporary genetic variation and assessing long-term genetic stability of Taiwan spruce (\emph{Picea morrisonicola}) endemic to the island of Taiwan. Approximate Bayesian computation (ABC) is applied to compare alternative models for the demographic history of the species and to infer parameters (effective population size and its variation over time, population subdivision / migration). Between-species analyses are complemented by applying MIMAR. Using previously published sequences of four closely related species (including \emph{P. wilsonii}), the authors employ \textsc{Structure} to establish the phylogenetic origin of \emph{P. morrisonicola}, suggesting closest relationship to \emph{P. wilsonii}. When ignoring variation in $N_{e}$ (see above), the authors date the split to 4--8 million years ago (mya), which coincides with the formation of the island of Taiwan. When accounting for variation in $N_e$, the split between \emph{P. morrisonicola} and \emph{P. wilsonii} is dated to a much more recent point in time (1.1 to 2.2 mya, depending on the generation time assumed).
+
+The study is concerned at least partly with conservation of the focal species. The authors want to establish a connection between climate change, increased competition through shifting ranges of other tree species, and a supposed reduction in effective population size of \emph{P. morrisonicola}. As outlined later, there is some confusion about when this reduction is expected to have happened; it seems that the results suggest a much earlier date compared to the initial expectations of the authors.
+
+The manuscript is written carefully and there are no obvious flaws in the analyses done. However, I have several concerns about the scope of the analyses, the interpretation of some results and the discussion of potential methodological limitations. I missed methodological details at some points and supporting information mentioned in the main text. The potentially confounding effect of selection (at linked sites) on the inference of demography is not accounted for enough, especially in the light of the small number of loci used. Last, I suggest changing the order of some subsections for consistency. I am confident that the authors can address these issues and hope that the comments help to strenghten the article.
+
+%\begin{itemize}
+%	\item What about assessing the genetic stability? Why not put a sentence in the Abstract?
+%	\item \emph{P. morrisonicola} suffers from overexploitation from logging. Conservational interest of the paper?
+%	\item Is there evidence for there being habitat suitable for conifers immediately after formation of Proto-Taiwan? In other words, does 4--8 mya sound like a realistic time for the split between \emph{P. morrisonicola} and \emph{P. wilsonii}?
+%	\item Are power and false positive rate of the ABC-type model comparison procedure appropriately assessed? Are they assessed with respect to sampling size only or also with respect to the choice of statistics?
+%	\item How do the authors deal with and discuss the main issues of ABC: i) choice of summary statistics, ii) choice of algorithm (rejection vs. ABC-MCMC), iii) choice of distance metric
+%	\item The relationship to climate change is speculative. There are no climatic data shown or referred to, and if so, the relationship proposed could be correlational, not causal.
+%	\item Why splitting the whole inference problem into so many chunks? If necessary, could at least the uncertainty in the estimate of $T$ be incorprotated in the `within-species' analysis?
+%	\item ...
+%	\end{itemize}
+%
+%Main goals of the study:
+%\begin{my_enumerate}
+%	\item Compare extant genetic diversity to that of other spruce species.
+%	\item Assess the impact of climate change on the trajectory of $N_e$. This uses ABC, comparing alternative demographic models.
+%	\item Estimate divergence time and rates of gene flow between \emph{P. morrisonicola} and four related spruce species found on mainland China. Two Bayesian approaches (ABC, MIMAR) are used and compared.
+%\end{my_enumerate}
+
+
+\section{General issues}
+
+\begin{my_enumerate}
+	\item Judging from a map of Taiwan, it is not obvious if the sampling locations used in this study cover the whole distributional area of \emph{P. morrisonicola} or only a small percentage of it (\emph{cf.}\ Figure 1). Incomplete sampling of the species range could lead to artefacts that are not discussed. Although conifer species usually show little population substructure, I would like to have some support for or against the idea that the samples used by the authors are representative of the whole island. Moreover, as the samples are confined to a small area, micro rather than macro climatic conditions might have played just as big a role. In the lack of a `control' location, it is not possible to disentangle potential effects and interactions.
+	\item The supporting data (sample locations, DNA sequences and input files for \textsc{MIMAR} and \textsc{Structure}, as well as simulation code if appropriate) should have been available to the reviewers. Judging from the intention of the authors to make these data available on DRYAD, I suggest the data be made available for a potential second round of review.
+	\item The choice of summary statistics in known to be crucial in ABC, but the authors do not mention this. Given that several approaches for choosing them have recently been published \citep[][]{Joyce:2008sf, Wegmann:2009sf, Nunes:2010fk, Fearnhead:2011uq,Aeschbacher:2011fk}, it would seem appropriate that studies applying ABC should at least properly discuss their choice, if not apply at least one of these approaches.
+	\item Related to the previous point, ABC-based model comparison suffers from the lack of sufficient statistics, even more so than ABC-based inference of parameters for a specific model. Although the authors have performed a simulateion-based power analysis (which is much appreciated), they should explicitly mention the issue and refer to the respective literature \cite[\emph{e.g.}][]{Robert:2011fk}. See l.266--271.
+	\item I have a reservation against the interpration (l.301--309) of the results presented in Table 1. Although it is true that the average across loci of Tajima's $D$ is (weakly?) positive (0.281), two out of eight loci show negative $D$ and the only significant value is also a negative one (locus SE1427). Given that (linkage to sites under) positive/purifying (balancing) selection could also cause negative (positive) Tajima's $D$ for some loci, I think the authors should be more careful in taking their data as evidence for population decline. Considering Fay \& Wu's $H$ and Zeng's $Z$, the pattern is even more against the author's interpretation: more than half of the loci show negative values (two of them significant for $H$), which is suggestive of positive or purifying selection (local adaptation?) and/or population expansion. To summarise, as the number of loci is small and the distribution of neither of the `neutrality' statistics is univoqually in favour of population decrease, I think there is little support for a reduction in population size.
+	\item Large parts of the analyses conducted seem sound and correct within their scope, but i) the interpretation of some of the results is questionnable and ii) it is a pity that the link from between-species to within-speeces analyses was not made more tight. For instance, comparing the MIMAR between-species analysis and the ABC within-species analysis, there is a gap between roughly 160,000 and 11,000 generations ago, during which the effective population size, according to the estimates presented, must have increased from $\sim$5,000 to $\sim$124,000. Unfortunately, this is neither modeled nor discussed. Regarding the ABC within- and between-species analyses, I think the split is even more artificial and I wonder why the whole process (between- and within-species events) was not modelled in one entity and analysed using ABC. This would still allow for various scenarios to be compared, but avoid the artificial split into two phases that seem difficult to link \emph{a posteriori}. Along these lines, I am uneasy about the difference between the estimates of $N_1$ in Table 5 for the within- and between-species ABC analysis (123,841 \emph{vs.} 43,737, an almost threefold difference). Last, if more extensive ABC analyses were to be done in the future, I suggest incorporating asymmetric/unidirectional gene flow between \emph{P. morrisonicola} and \emph{P. wilsonii} into the models (see comment to l.187 below).
+	\item I found the listing/ordering of the main aims given in the first paragraph of the Discussion slightly inconsistent with the one in the Introduction (l.79--103).\\
+	Introduction:
+	\begin{my_enumerate}
+		\item[(i)] Investigate if Taiwan spruce has levels of genetic diversity similar to those of other spruce species with restricted distributions
+		\item[(ii)] Quantify the impact of climate change on trajectories of $N_e$. This includes assessing the performance of ABC-type model comparison with small sample sizes
+		\item[(iii)] Establish the phylogenetic relationship of \emph{P. morrisonicola} with four related spruce species
+	\end{my_enumerate} 
+	Discussion:
+	\begin{my_enumerate}
+		\item[(a)] Use patterns of sequency diversity to look for historical changes in $N_e$
+		\item[(b)] Identify the most likely ancestor to \emph{P. morrisonicola} and estimate the divergence time
+		\item[(c)] Assess whether small samples can give reliable estimates of past demographics
+	\end{my_enumerate} 
+	In particular, assessment of whether small sample sizes give reliable results (c) was not stated as one of the main goals at the beginning of the paper, but rather as an aside to (ii). Moreover, it is not fully clear whether genetic data should be used to infer unknown demographic events (a), or whether the goal was to find genetic signatures of past events that the authors think must have happened (i). This way, directions of causality and inference are blurred. Along these lines, from the Introduction I got the impression that the authors were mainly interested in finding a genetic signature of climate warming that started about 60,000 years ago, leading to a shift of species ranges and hence a push of \emph{P. morrisonicola} into higher altitudes (l.49--62). However, the results seem to suggest a population decrease much earlier (0.37--0.74 mya, \emph{e.g.} l.495) and the authors associate this with the advance and retreat of glaciers in the Pleistocene. This discrepancy should be addressed.
+\end{my_enumerate}
+	
+
+\section{Specific comments}
+
+\subsection{Abbreviations used}
+\begin{my_description}
+	\item[Q] Question
+	\item[C] Comment
+	\item[S] Suggestion (mostly style)
+	\item[R] Re-formulation or change needed (usually followed by a suggestion)
+	\item[\ra] Suggested change/correction
+\end{my_description}
+
+
+\subsection{Abstract}
+
+\begin{my_description}
+	\item[l.1] \Q Are both `Taiwan' and `Taiwanese' Spruce correct species names? There is inconsistent use of these terms between the title and the main text. 
+\end{my_description}
+
+\subsection{Introduction}
+
+\begin{my_description}
+	\item[l.39] \V Comma after `In the face of global warming'
+	\item[l.40] \V Ditto after `For some species'
+	\item[l.50--51] `\dots is subjected to very different climatic pressures than its mainland or boreal relatives' \ra \dots is subject to climatic conditions very different from those experienced by its mainland or boreal relatives. \V In brackets, give examples (in terms of temperature, humidity\dots).
+	\item[l.51] \Q I guess `boreal' is an established term. If so, why do you quote it? If no, please define it. Is there a difference between `cool-temperature species' and `boreal species' (\emph{cf.} l.55--56)?
+	\item[l.90--92] \C It was not clear to me what was meant to be said in this sentence. A population genetic approach does not \emph{per se} justify the use of more independent loci compared to increasing the number of sampled individuals. This depends on the question of interest (\emph{e.g.}\ fine-scale study of population structure \emph{vs.}\ medium- to long-term study of population history/admixture/growth). I guess the authors want to make sure that the relatively small sample size (actually, both in terms if individuals and loci) is not a major limitation to the study. Analysis of power and false positive rate are done, which is fine. It's just that this one sentence reads confusing. Why not directly state that sample sizes are rather small for a relatively large area? In orther to really `profit' from a large number of independent loci, the number of loci might have to be well beyond 15 (actually, seven out of them turned out to be monomorphic in the focal species).
+	\item[l.112--113] `This method [ABC] is approximate and assumes\dots relevant to the model'. \R Either drop `approximate and' because `approximate' is already part of the method name and hence redundant, or make sure that the reader does not get the impression that the use (and choice) of summary statistics is the only approximation involved. The others being i) the use of a non-zero rejection tolerance and ii) the fact that a finite number of simulation is used, whereas convergence to the true ABC posterior would only be reached with an infinite number of simulations \citep[see one of the recent ABC reviews, \emph{e.g.}][]{Beaumont:2010uq}.
+	\item[l.116] No comma after `Although'.
+	\item[l.120] `supplement' \ra complement (?)
+
+\end{my_description}
+
+
+
+\subsection{Materials and Methods}
+As a more general comment, I suggest inverting the order of subsections `Within-species ABC models' and `Between-species ABC models' (and accordingly of Figures 2 and 3). This would avoid switching forth and back between the `within' and `between' species context (see the \textsc{MIMAR} section before).
+
+\begin{my_description}
+	\item[l.130--136] \C As the primers for all 15 sequences were developed in species other than \emph{P. morrisonicola}, some of them not very closely related to \emph{P. morrisonicola}, I missed a justificiation for why the authors think that the markers they used are appropriate (\emph{e.g.}\ no ascertainment bias, putative neutrality, map distances / physical linkage structure). The assumption of no physical linkage seems particularly important (\emph{cf.} l.161) and should be stated and justified.
+	\item[l.138] \Q What is the maximum number of copies tolerated? Is copy number variation for a given gene comparable across the range of spruce species considered here?
+	\item[l.163--165] \C A potentially considerable amount of information is thrown out here (62 out of 192 SNPs are kept) in order to have putatively low physical linkage (or background LD) between markders. This is not a criticism of the paper, but rather represents the state of current inference methods and shows the need for methods that can account for between-locus physical linkage (or, from another perspective, within-locus recombination). \C Nevertheless, you might want to justify the choice of 50bp for the minimum distance between retained SNPs. In their Discussion, \citet[][]{Falush:2003fk}  suggest two ways of doing so: i) combining historical information about likely admixture times and knowledge of between-locus recombination rates or ii) post-hoc inspection of \textsc{Structure} output with, in this case, varying choices of between-marker distance. I suppose ii) is more appropriate in this case. Strictly speaking, the choice of the minimum distance between retained SNPs is expected to influence the inference of admixture proportions, and so a sensitivity analysis would seem appropriate.
+	\item[l.174--175] \C `average estimated poterior probabilities of data' is a slightly puzzling term, as posterior probabilities are usually used in connection with parameters or models, not with data. Do you mean `likelihoods' (\emph{cf.}\ caption to Figure 4)?
+	\item[l.187] \Q Is it justified to assume symmetric gene flow between \emph{P. morrisonicola} and \emph{P. wilsonii}? Would it not seem more likely that gene flow was directional, from \emph{morrisonicola} to \emph{wilsonii}? In any case, you should discuss and if possible justify the assumption.
+	\item[l.202--204] \C The argumentation here seems somewhat circular. Not only do estimates of divergence time depend on mutation rates, but estimates of population mutation rates / substitution rates are themselves dependent on (non-genetic) estimates of divergence time.
+	\item[l.227--228] \R For consistency between main text and figures: `\dots at $t$ coalescent units\dots' \ra at $t_0 = t$ coalescent units\dots; `\dots that persist for 0.2 coalescent time units\dots' \ra \dots that persist for $t_1 = 0.2$ coalescent time units\dots \R In this context, make sure that `coalescent time unit' ($=4N_e$ generations) is defined at the right place. Currently, it is not defined until l.249, which would be fine if the order of the within- and between-species subsections were inverted, as suggested above.
+	\item[l.229--230] \V `choose' \ra chose (?).
+	\item[l.234--235] \V `\dots against a `null' constant effective population size model\dots' \ra \dots against a null model with constant effective population size\dots
+	\item[l.235--237] \R I suggest using a different formulation for the priors: `The priors for the model parameters were chosen to be uniform as follows: $\theta \sim U(0, 0.01)$, $\rho \sim U(0, 0.02)$, $t \sim U(0, 1.5)$, \dots' \R The prior for $\alpha$,  $U(1,1.5)$, did not make sense to me, at least when following Figure 2, where it says that the size of the bottlenecked population is $\alpha N$. I would thus expect $\alpha < 1$ throughout if one wants to consider bottlenecks only. From l.272 it seems, however, that the lower bound should be 0 instead of 1 and that the authors would like to include the potential of population growth, too (upper bound of 1.5).
+	\item[l.237--238] \R The choice of summary statistics should be appropriately discussed (see general issues 3 and 4 above).
+	\item[l.247] \V Comma after `In the simplest scenario'
+	\item[l.269--271] See general issue 4 above.
+	\item[l.271--272] \R Again, I suggest using standard notation for the priors (see comment to l.235--237 above).
+	\item[l.275ff.] \R Please state which software was used for simulation and, if you wrote your own code, make it available.
+	\item[l.277] \Q ABC is sensitive to the choice of the rejection tolerance. Did you try other values and what was the outcome?
+\end{my_description}
+
+
+\subsection{Results}
+In analogy to `Materials and Methods', I suggest inverting the order of the subsections on within- \emph{vs.} between-species ABC.
+\begin{my_description}
+	\item[l.301--309] See general issue 5 above.
+	\item[l.325] \C Figure 6 seems to be missing.
+	\item[l.327--328] \Q Are these really confidence intervals? I suspect these are highest posterior density (HPD) intervals. Please check and correct if necessary.
+	\item[l.328] \R According to Table 2, the lover bound of the $90\%$ confidence (or HPD?) interval should be 5.5 mya, not 5.6.
+	\item[l.329--330] \C It is hard to imagine that the founder population of \emph{P. morrisonicola} was of effective size $N_e = 5000$. Strictly speaking, this is an effect of the model assumption that $N_e$ was constant after the split. Yet, an estimate of $N_e$ in this context may at most be interpreted as a long-term effective population size, certainly not as the effective number of founders. I strongly recommend a reformulation of this.
+	\item[l.334--336] \C `\dots that whilst the retained model fits the data well, it does not accommodate all aspects on the demography of the species.' This reads contradictory (either the model fits the data well or not). In accordance with general issue 5 above, could the deviation between observation and model output be explained by (some) loci being (linked to sites) under selection?
+	\item[l.360--361] \C Again, this could be a hint towards (linkage to sites under) positive selection / local adaptation to conditions on the island. See general issue 5.
+	\item[l.381--385] \C Similar to the previous comment, I wonder whether the poor coverage of observed values of $D$ in Supplementary Figure 2 could be indicative of signals of selection. I therefore find the conclusion in l.384--385 premature.
+	\item[l.389--392] Low sample size is not the only reason for why power and false positive rate should be analysed: the lack of suffuciency of summary statistics for model comparison with ABC is also important and should be mentioned (see general issue 4 above).
+	\item[l.493] \V Comma after `In the Pleistocene'
+	\item[l.524] `be lost to genetic drift' \ra be lost due to genetic drift (?)
+\end{my_description}
+
+
+\subsection{Discussion}
+
+\begin{my_description}
+	\item[l.417--420] \C If I interpret the estimates of effective population sizes correctly, it cannot be excluded that there was actually a period of substantial expansion between the split from \emph{P. wilsonii} and the start of the bottleneck putatively caused by climatic changes (\emph{cf.}\ general issue 6 above).
+	\item[l.432] \V Comma after `In this species'
+	\item[l.444] \Q As mentioned above, are eight loci enough to provide the effect the authors decribe here?
+	\item[l.463--466] \V Add explicit references to the respective figures.
+	\item[481--484] \C This raises the question of why (directional) gene flow was not included as a factor in the models analysed using ABC (see earlier comment to Material and Methods above).
+\end{my_description}
+	
+
+\subsection{Figures and tables}
+As a general comment, I suggest denoting parameter estimates in tables with a $\hat{\phantom{t}}$ to distinguish them from parameters.
+\begin{my_description}
+\item[l.713] \C Figure 1 definitely needs a more comprehensive caption, with a delineation of the species range and a code mapping colors to altitudes. It would also be desirable to have a distinction between woodland and open areas, if applicaple. I further missed a declaration of the cartographic source in the caption (rather than the main text, see l.131--130). The figure needs a compass rose, a scale and, ideally, an inset figure showing the larger geographic context including parts of mainland China.
+	\item[l.715--719] \C I suggest using the same symbol for the effective population size in main text and figures. Specifically, I suggest replacing $N$ in Figures 2 and 3 by $N_e$.
+	\item[Table 2] Caption: \R `Mode, $5\%$ and $95\%$ condence [confidence?] intervals of\dots' \ra Mode, $5\%$ and $95\%$ quantiles of\dots; \V `population mutation rate' \ra the population mutation rate; `symmetrical migration rate' \ra the symmetrical migration rate; `split time' \ra the split time.
+	\item[Table 2]  \Q Is it correct that averages across the 8 polymorphic loci are shown (\emph{cf}. Table 1)? If so, please state this in the captions.
+	\item[Tables 4 and 5] \R Please remind the reader that lower-case $t$ is used for time on the coalescent time unit and upper-case $T$ for corresponding times in years or generations. I missed an explicit definition of $N_0$ and $N_1$. It seems that the mode was used as a point estimator of $\theta$ when using the values in Supplementary Tables 4 and 5 to compute $\hat{N}_1$ in the first and second row of Table 5, respectively. Please state this. Please also indicate that the mean and mode of the $\theta$ posterior reported in Supplementary Table 4 differed by almost a factor of 2.  Last, I suggest providing Supplementary Figures showing the full posterior distributions for all parameters, including the prior distribution. I would like to see their shape.
+\end{my_description}
+
+
+\section{Supporting Information}
+Some supporting material mentioned in the main text was missing for review (see general issue 2 above).
+\subsection{Supporting figures}
+
+\begin{my_description}
+	\item[Suppl. Fig. 3]  \Q Same comment as to Table 2 above.
+	\item[Suppl. Table 4 and 5] \R Please define in the caption what exactly is meant by 2.5\% and 95\%. Are these the limits of the 95\% HPD interval?
+\end{my_description}
+
+\bibliographystyle{genetics}
+\bibliography{/Users/Simon/Documents/Literature/BibDesk/Jshort_dot,/Users/Simon/Documents/Literature/BibDesk/central}
+\end{document}  

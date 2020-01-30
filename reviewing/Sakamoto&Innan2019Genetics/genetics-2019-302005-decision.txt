@@ -1,0 +1,108 @@
+From: genetics-gsa@msubmit.net
+Subject: GENETICS/2019/302005 - Reviewer Thank You
+Date: 2 April 2019 at 06:41:58 CEST
+To: saeschbacher@mac.com
+Reply-To: genetics-gsa@thegsajournals.org
+
+April 2, 2019 
+4624
+
+Dear Dr. Aeschbacher: 
+
+Thank you for reviewing this manuscript for GENETICS. 
+
+Peer review of research reports is an essential part of science, and the Editors appreciate the time and effort you devoted to this important job. Your efforts are well-invested in GENETICS because all decisions on manuscripts are made, based on your recommendation, by editors who are practicing scientists — peers of you and the authors (see Editorial Principles and Practices: http://www.genetics.org/content/192/3/761.full).
+
+We are pleased that the average time it takes us to make a first decision on a manuscript submitted to GENETICS is now only about 30 days. Thanks for helping us improve the journal's turnaround time. 
+
+Thanks for your service to our community!
+
+Sincerely, 
+
+Graham Coop
+Associate Editor
+GENETICS
+
+-----------------------------------------------------------------------------
+Decision: 
+Reconsider Pending Revision
+Subject: GENETICS/2019/302005 - Editorial Decision
+
+April 1, 2019 
+
+GENETICS/2019/302005 
+Theoretical Expression for the Evolution of Genomic Island of Speciation: From Its Birth to Preservation 
+
+Dear Hideki: 
+
+Three experts in the field have reviewed your manuscript, and I have read it as well, and I am pleased to tell you that it is potentially suitable for publication in GENETICS. However, both reviewers have comments and concerns that need to be addressed in a revised manuscript. You can read their reviews at the end of this email. 
+
+If you submit a revised manuscript please include a response to each of the reviewers' comments. All the comments seem relatively straight forward to address. Please let me know if you cannot find any of the pdf files from the reviewers. I do agree with reviewer 2 that "island of speciation" is an unhelpful phrase, and a more process-neutral name like "island of divergence" should be used. This also reflects the fact that empirical the field has moved toward using the latter term. 
+
+I look forward to receiving a revised manuscript. I expect it could be submitted within 90 days, but please let me know if you think you will need more time to complete the revision. A revised manuscript will be considered a resubmission, and may be sent out for review. 
+
+Follow this link to submit the revised manuscript: Link Not Available 
+
+If you have questions about the reviews or this message, please contact me. 
+
+
+Sincerely, 
+
+Graham Coop 
+Associate Editor 
+GENETICS 
+
+
+Nicholas Barton 
+Senior Editor 
+GENETICS 
+
+-------------------------------------------------------------------- 
+
+
+Reviewer #1 (Comments for the Authors (Required)): 
+
+Summary and Overall Critique 
+In their paper, "Theoretical Expression for the Evolution of Genomic Island of Speciation: From Its Birth to Preservation," the authors describe a new mathematical framework for considering how alleles change around the region of a selective sweep. Although, as the authors discuss, a great deal of work has already gone into trying to understand how the forces of evolution are written on a species' chromosomes, each of these efforts is necessarily limited to certain aspects of the problem. What makes the authors' work unique is the consideration of two neighboring subpopulations with bidirectional migration, in which a mutation beneficial only to one subpopulation arises. The authors then develop formulae which describe the changes to the genomic region around the mutation in both the adaptive and maladaptive populations over both short and long periods of time. The authors do an excellent job of contextualizing how their work builds on what has come before. Thus, this work would be beneficial to the fields of population and quantitative genetics as well as to researchers in ecology and evolution, as it provides a creative approach to an important biological problem. 
+
+Major Points 
+While the work presented in this paper appears to be sound, I have two major issues that I think should be addressed prior to publication. 
+1. Language: I often found throughout the paper occasional grammar errors which, as a whole, interfere with the readability of this paper. I have included a marked-up PDF with this review to indicate some problem spots that I found. In particular, the sentence on Page 3, Lines 1-3 was difficult to understand. 
+2. Graphs: The authors often used "closed circles" on their graphs to indicate results from their simulations. Unfortunately, the circles are always very tiny and the authors also often use dotted or dashed lines to indicate different sets of calculations. It would be helpful for readers, I think, to make the closed circles larger so that they are more visible and more distinct from the dots and dashes of the broken lines that are also used. 
+
+Minor Points 
+As indicated above, there were several minor linguistic errors that, cumulatively, amount to a major point. However, there are some specific instances that are worth pointing out specifically. 
+1. In Figure 3, the authors include "Yeaman and Otto (2011)" in their figure key, under 𝑢(0, 1⁄2𝑁2), but the relevant line, a broken green line, was not present in any of the graphs. In fact, the authors state in the text that Yeaman and Otto did not provide this calculation. Since this is the case, I believe that the broken green line and the associated reference should be removed from the key so that readers who look at the figures first will not be confused by the absence of a line indicated in the key. 
+2. On Page 7, Line 14, the authors refer to "where alleles A and a coexisted," but the phrasing of his sentence could result in readers confusing the "a" with the article, 'a'. Often the use of the lowercase 'a' can result in such confusion, but the authors do a good job of phrasing their references to the alleles in ways that prevent this confusion. Page 7, Line 14 was the only place I found such an issue, and it can be fixed with a simple rephrasing: "...where the A and a alleles coexisted..." 
+While addressing these points could prevent confusion for some readers, leaving them as they are would not be harmful for most readers to fully understand the text. 
+
+
+
+Reviewer #2 (Comments for the Authors (Required)): 
+
+Please see the separate PDF file. 
+
+
+
+Reviewer #3 (Comments for the Authors (Required)): 
+
+Genomic islands of high divergence are frequently found between diverging species. The authors propose a 2-locus model of two populations with divergent selection in both populations and migration between them. Strong selection within and weak migration between populations is assumed. The analysis of this model is based on diffusion theory and simulations. I find this paper timely and appropriate for Genetics. However, I have some concerns. 
+
+Comments/questions: 
+
+1. Concerning eqs. 6 and 8: The diffusion approach used by Otha and Kimura (1974) and later modified by Stephan et al. (1992) is extended to two populations. In this approach, due to strong selection (2Ns >> 1) the frequency trajectory of the beneficial allele is approximated by a deterministic ODE for a frequency above a certain threshold at which the beneficial allele is established in the population (see e.g. Kaplan et al 1989). Then the 3-dimensional diffusion problem reduces to a 2-dimensional one. This should be clearly explained. 
+
+2. Eqs. 9 and 10 and text between these equations: The sentence below eq. 9 sounds tentative, if not strange. The approximation leading to eq. 9 is based on the strong selection assumption mentioned above. It is not clear to me how genetic drift affecting the beneficial allele could be included after the assumption of strong selection has been made. The calculation below eq. 9 is not valid because it models the benefical allele deterministically. If you want to model the beneficial allele stochastically, you need to use the well-known result for the expected fixation time, which is 2 log(4Ns)/s (van Herwaarden and van der Wal, TPB 2002). The combination of the expected fixation time with eq. 9 may result in an equation that is theoretically more convincing than eq. 10. 
+
+3. Eqs. 13-15: The terms in eq. 13 should be better described in comparison to the case of no migration. Eq. 14 is not understandable without a better verbal description. The same holds for eqs. 15. 
+
+4. Fig. 4: This figure should be simplified. All dashed lines are nearly 1. I would remove them. The only interesting aspect of this figure is that the reduction of heterozygosity is nearly independent of migration. This should be discussed. 
+
+5. Eq. 18: Please explain the terms in this equation. 
+
+6. Fig. 5: Please describe verbally what this figure shows (left panel, right panel). 
+
+
+
+
+Associate Editor Comments:
