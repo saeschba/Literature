@@ -46,7 +46,8 @@ Main concerns
 Minor comments
 --------------
 
-l. 26: "Most research on natural selection, gene flow, and effective population sizeinteractions ..." -> "Most research on the interaction of natural selection, gene flow, and effective population size..."
+l. 26: "Most research on natural selection, gene flow, and effective population size
+interactions ..." -> "Most research on the interaction of natural selection, gene flow, and effective population size..."
 
 l. 35: The symbols N_m and N_e have not been introduced. It may be better to spell out their meaning in the abstract.
 
