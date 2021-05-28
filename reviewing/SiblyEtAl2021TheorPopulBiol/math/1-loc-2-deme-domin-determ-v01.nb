@@ -1,0 +1,465 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15935,        457]
+NotebookOptionsPosition[     13423,        408]
+NotebookOutlinePosition[     13813,        424]
+CellTagsIndexPosition[     13770,        421]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+One-locus two-deme model of migration and selection with deme-independent \
+dominance\
+\>", "Title",
+ CellChangeTimes->{{3.831164432667716*^9, 3.831164471798664*^9}, {
+  3.8311647033321867`*^9, 
+  3.831164707477775*^9}},ExpressionUUID->"46328be4-6447-4f69-b904-\
+9ff5f44fe4eb"],
+
+Cell[CellGroupData[{
+
+Cell["Life cycle", "Section",
+ CellChangeTimes->{{3.831164767720983*^9, 
+  3.831164769154818*^9}},ExpressionUUID->"7344431e-fbf4-4792-a665-\
+b9fb112cc300"],
+
+Cell["\<\
+Random mating \[Rule] viability selection \[Rule] population regulation \
+\[Rule] migration\
+\>", "Text",
+ CellChangeTimes->{{3.83116479337363*^9, 3.831164801778764*^9}, {
+  3.831164836958601*^9, 
+  3.831164882720894*^9}},ExpressionUUID->"292a1407-d507-4b79-93f5-\
+031252a57e7d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Model and nomenclature", "Section",
+ CellChangeTimes->{{3.831164920244461*^9, 3.831164921843368*^9}, {
+  3.831165179355032*^9, 
+  3.831165181266555*^9}},ExpressionUUID->"1c088728-c024-49be-886f-\
+57920911a702"],
+
+Cell[TextData[{
+ "We consider a single locus with two alleles ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["A", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "545d2bf3-0e70-47ac-a8d3-51d817305dc0"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["A", "2"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d21dab11-8293-445a-8a51-ec57a6ffff01"],
+ " and denote the frequencies of these two alleles in deme 1 and 2 by ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4f0ea052-8851-4420-a7a9-e9c0f637df40"],
+ " , ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["q", "1"], "=", 
+    RowBox[{"1", "-", 
+     SubscriptBox["p", "1"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "120b039f-95f5-4b8e-a4d7-465e28235d70"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "2"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b8630bc3-93d1-4af3-b9f9-a292092422a9"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["q", "2"], "=", 
+    RowBox[{"1", "-", 
+     SubscriptBox["p", "2"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "88dffc9e-a74c-486b-8d5c-b5529c141088"],
+ ", respectively. Each generation after population regulation and before \
+random mating, a proportion ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", 
+    StyleBox["ij",
+     FontSlant->"Italic"]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d6626308-e445-41f1-87ca-7761b7c1a3bc"],
+ " of individuals in deme ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "24a051ae-31eb-4bd2-a453-b02ea90231a6"],
+ " is replaced by immigrants from deme ",
+ Cell[BoxData[
+  FormBox["j", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d12cd4bf-4de9-43b8-8a06-1fb4fea41913"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.831164923654449*^9, 3.831164962730558*^9}, {
+  3.8311650000791187`*^9, 3.831165090643908*^9}, {3.831165123922306*^9, 
+  3.831165126679142*^9}, {3.831165183347054*^9, 
+  3.831165249756488*^9}},ExpressionUUID->"6aa74bf1-eccf-4b74-95ef-\
+4bee870cecfa"],
+
+Cell[TextData[{
+ "We denote the relative fitness of genotype ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["A", "k"], 
+    SubscriptBox["A", "l"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5770250f-4e4e-477f-986e-9b4d76fc7655"],
+ " in deme ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "dbdbe715-9a58-4b12-9746-08bbf3e94fa1"],
+ " by ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", 
+    StyleBox["ikl",
+     FontSlant->"Italic"]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "23110a2e-8fe2-4b54-883c-4c95c3e1f669"],
+ " and parameterise these fitnesses as follows: "
+}], "Text",
+ CellChangeTimes->{{3.8311652981593637`*^9, 3.8311653002786283`*^9}, {
+  3.83116538932362*^9, 3.831165425019826*^9}, {3.831165456237587*^9, 
+  3.8311656144855623`*^9}},ExpressionUUID->"1509db5f-5293-4035-bfc1-\
+6f4db5850816"],
+
+Cell[BoxData[{
+ RowBox[{
+  SubscriptBox["w", "111"], "=", "1"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["w", "112"], "=", 
+  RowBox[{
+   SubscriptBox["w", "121"], "=", 
+   RowBox[{"1", "-", 
+    RowBox[{"h", " ", 
+     SubscriptBox["s", "1"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["w", "122"], "=", 
+  RowBox[{"1", "-", 
+   SubscriptBox["s", "1"]}]}]}], "DisplayFormula",
+ CellChangeTimes->{{3.8311656500470467`*^9, 3.83116565181362*^9}, {
+  3.831165686863929*^9, 3.83116569438369*^9}, {3.831166169236476*^9, 
+  3.8311662500684967`*^9}, {3.831166749494026*^9, 
+  3.831166754356942*^9}},ExpressionUUID->"eed6c67a-d71f-4e71-8927-\
+e66e2d3b0182"],
+
+Cell[BoxData[{
+ RowBox[{
+  SubscriptBox["w", "211"], "=", 
+  RowBox[{"1", "-", 
+   SubscriptBox["s", "2"]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["w", "212"], "=", 
+  RowBox[{
+   SubscriptBox["w", "221"], "=", 
+   RowBox[{"1", "-", 
+    RowBox[{"h", " ", 
+     SubscriptBox["s", "2"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["w", "222"], "=", "1"}]}], "DisplayFormula",
+ CellChangeTimes->{{3.8311656500470467`*^9, 3.83116565181362*^9}, {
+  3.831165686863929*^9, 3.83116569438369*^9}, {3.831166169236476*^9, 
+  3.8311662692745647`*^9}, {3.831166468668276*^9, 3.831166478439539*^9}, {
+  3.831166759390168*^9, 
+  3.831166763345179*^9}},ExpressionUUID->"e70c83d3-2bed-471b-a5b2-\
+23f7bfead0b3"],
+
+Cell[TextData[{
+ "The fitness parameterisation above is fully symmetrical with respect to the \
+two demes and assumes that dominance is independent of the deme. Because \
+relative fitnesses are bound to be positive, selection coefficients are \
+constrained to be ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", 
+    SubscriptBox["s", "i"], "\[LessEqual]", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0ee2025a-935a-490b-bf5e-f1c74cd42baa"],
+ ". Moreover, we assume that there is no underdominance nor overdominance, \
+i.e. that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "h", "\[LessEqual]", "1"}], TraditionalForm]],
+  
+  FormatType->TraditionalForm,ExpressionUUID->
+  "47e7ecc9-ef52-4952-9a1d-67afd3ad551b"],
+ ". As a consequence, if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["s", "i"], ">", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7a3781ad-e66e-49b6-8aec-541110b3c02b"],
+ ", then ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["A", "i"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a15f45b3-c6d9-456e-bdae-5fb6fba9aa21"],
+ " confers a selective advantage in deme ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cf190ad0-32f2-4663-822c-ce988c02fc8d"],
+ " and a disadvantage in deme ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"j", "\[NotEqual]", "i"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "157d3fca-bae1-44f6-801b-2c1354877ef4"],
+ ". Note that ",
+ Cell[BoxData[
+  FormBox["h", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cee77385-fbdd-4930-81b0-51bb6aa17231"],
+ " here reflects the dominance of the locally maladaptive allele, i.e. of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["A", "i"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b7abf8b8-67be-433d-a5ec-33586cf27505"],
+ " in deme ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"j", "\[NotEqual]", "i"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fe1c5647-a111-48fc-86fb-4a0a37543ae4"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.831165715691416*^9, 3.8311658130339403`*^9}, {
+  3.83116584477238*^9, 3.831165871532968*^9}, {3.83116590640797*^9, 
+  3.831166005769989*^9}, {3.831166044728655*^9, 3.8311661640356903`*^9}, {
+  3.831166591950653*^9, 3.831166697688633*^9}, {3.8311667331897087`*^9, 
+  3.8311667432908783`*^9}},ExpressionUUID->"346cc661-d258-4d4e-abfa-\
+5fcee4277bca"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Assumptions", "Section",
+ CellChangeTimes->{{3.8311651297170763`*^9, 
+  3.831165131056981*^9}},ExpressionUUID->"15f3a498-f180-484f-8f35-\
+a4c0cfb376cb"],
+
+Cell["Deterministic dynamics", "Item",
+ CellChangeTimes->{{3.831165142372457*^9, 
+  3.831165151037808*^9}},ExpressionUUID->"f8191497-991c-48db-89e3-\
+c5761d2c9b2b"],
+
+Cell["Infinite population sizes", "Item",
+ CellChangeTimes->{{3.831165142372457*^9, 
+  3.831165160249189*^9}},ExpressionUUID->"e2effd54-a624-4572-bd79-\
+a212e08fcd7e"],
+
+Cell["Deme-independent dominance", "Item",
+ CellChangeTimes->{{3.831165142372457*^9, 3.831165159781617*^9}, {
+  3.8311662740775337`*^9, 
+  3.831166293800248*^9}},ExpressionUUID->"61429981-8cf7-4231-9699-\
+c3eafde70fcd"],
+
+Cell["No underdominance nor overdominance", "Item",
+ CellChangeTimes->{{3.831165142372457*^9, 3.831165159781617*^9}, {
+  3.8311662740775337`*^9, 3.831166299609057*^9}, {3.83116676781178*^9, 
+  3.831166767811928*^9}},ExpressionUUID->"c9fd44c5-fbe3-49c3-bf7d-\
+02ca28c60467"],
+
+Cell[TextData[{
+ "We assume no parental effect on the fitness of heterozygotes, i.e. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["w", 
+     StyleBox["kij",
+      FontSlant->"Italic"]], "=", 
+    SubscriptBox["w", 
+     StyleBox["kji",
+      FontSlant->"Italic"]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4c1faff0-4c66-4803-a572-05bdae506e99"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"i", "\[NotEqual]", "j"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "530500df-fcb6-49fb-b64f-dc61eb7ba2f5"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.831165142372457*^9, 3.831165159781617*^9}, {
+  3.8311662740775337`*^9, 3.831166299609057*^9}, {3.831166780860729*^9, 
+  3.8311668311367073`*^9}},ExpressionUUID->"86294b4f-be20-41f4-8b27-\
+f9a08e248609"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fitness functions and rules", "Section",
+ CellChangeTimes->{{3.831164734891211*^9, 3.831164737082287*^9}, {
+  3.831166899639234*^9, 
+  3.831166904336619*^9}},ExpressionUUID->"43b0081a-a26c-41bd-abb3-\
+fd37ac0ef7c6"],
+
+Cell[BoxData[
+ RowBox[{"wMat", ":=", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"w111", ",", "w112"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"w121", ",", "w122"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"w211", ",", "w212"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"w221", ",", "w222"}], "}"}]}], "}"}], ","}], 
+   "\[IndentingNewLine]", "}"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.831166997305488*^9, 3.831167112745121*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"dd3e623c-ccb9-4e9c-8344-73288d4846f7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"w", "[", 
+   RowBox[{"k_", ",", "i_", ",", "j_"}], "]"}], ":=", 
+  RowBox[{"wMat", "\[LeftDoubleBracket]", 
+   RowBox[{"k", ",", "i", ",", "j"}], "\[RightDoubleBracket]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.831166971881914*^9, 3.831167002850108*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"125ec10d-ba9d-495f-b5e2-f8e576fb5fef"],
+
+Cell[BoxData[
+ RowBox[{"fitnRulAdditDomin", ":=", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"w111", " ", "\[Rule]", "1"}], ",", 
+    RowBox[{"w112", "\[Rule]", 
+     RowBox[{"1", "-", 
+      RowBox[{"h", " ", "s1"}]}]}], ",", 
+    RowBox[{"w121", "\[Rule]", 
+     RowBox[{"1", "-", 
+      RowBox[{"h", " ", "s1"}]}]}], ",", 
+    RowBox[{"w122", "\[Rule]", 
+     RowBox[{"1", "-", "s1"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"w211", " ", "\[Rule]", 
+     RowBox[{"1", "-", "s2"}]}], ",", 
+    RowBox[{"w212", "\[Rule]", 
+     RowBox[{"1", "-", 
+      RowBox[{"h", " ", "s2"}]}]}], ",", 
+    RowBox[{"w221", "\[Rule]", 
+     RowBox[{"1", "-", 
+      RowBox[{"h", " ", "s2"}]}]}], ",", 
+    RowBox[{"w222", "\[Rule]", "1"}]}], "\[IndentingNewLine]", 
+   "}"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.831167137201495*^9, 3.831167300023843*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"8c8dec1b-542b-4530-9b6d-8de5713ed1ed"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"w", "[", 
+   RowBox[{"1", ",", "2", ",", "1"}], "]"}], "/.", 
+  "fitnRulAdditDomin"}]], "Input",
+ CellChangeTimes->{{3.831167307180455*^9, 3.8311673328329906`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"4754c5fe-3001-4e7a-8a49-ab09b88897a0"],
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{"h", " ", "s1"}]}]], "Output",
+ CellChangeTimes->{{3.831167317626048*^9, 3.8311673331628323`*^9}},
+ CellLabel->"Out[8]=",ExpressionUUID->"fcd9bcf9-841f-4dfc-bcf0-3faa756835cc"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 594},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.3 for Mac OS X x86 (64-bit) (May 11, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6fc9da46-767b-4639-8bb7-a008c0e303fb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 287, 7, 222, "Title",ExpressionUUID->"46328be4-6447-4f69-b904-9ff5f44fe4eb"],
+Cell[CellGroupData[{
+Cell[892, 33, 155, 3, 67, "Section",ExpressionUUID->"7344431e-fbf4-4792-a665-b9fb112cc300"],
+Cell[1050, 38, 289, 7, 35, "Text",ExpressionUUID->"292a1407-d507-4b79-93f5-031252a57e7d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1376, 50, 216, 4, 67, "Section",ExpressionUUID->"1c088728-c024-49be-886f-57920911a702"],
+Cell[1595, 56, 2242, 68, 84, "Text",ExpressionUUID->"6aa74bf1-eccf-4b74-95ef-4bee870cecfa"],
+Cell[3840, 126, 924, 27, 35, "Text",ExpressionUUID->"1509db5f-5293-4035-bfc1-6f4db5850816"],
+Cell[4767, 155, 672, 18, 72, "DisplayFormula",ExpressionUUID->"eed6c67a-d71f-4e71-8927-e66e2d3b0182"],
+Cell[5442, 175, 721, 19, 72, "DisplayFormula",ExpressionUUID->"e70c83d3-2bed-471b-a5b2-23f7bfead0b3"],
+Cell[6166, 196, 2520, 67, 150, "Text",ExpressionUUID->"346cc661-d258-4d4e-abfa-5fcee4277bca"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8723, 268, 158, 3, 67, "Section",ExpressionUUID->"15f3a498-f180-484f-8f35-a4c0cfb376cb"],
+Cell[8884, 273, 164, 3, 32, "Item",ExpressionUUID->"f8191497-991c-48db-89e3-c5761d2c9b2b"],
+Cell[9051, 278, 167, 3, 32, "Item",ExpressionUUID->"e2effd54-a624-4572-bd79-a212e08fcd7e"],
+Cell[9221, 283, 219, 4, 32, "Item",ExpressionUUID->"61429981-8cf7-4231-9699-c3eafde70fcd"],
+Cell[9443, 289, 273, 4, 32, "Item",ExpressionUUID->"c9fd44c5-fbe3-49c3-bf7d-02ca28c60467"],
+Cell[9719, 295, 813, 24, 35, "Item",ExpressionUUID->"86294b4f-be20-41f4-8b27-f9a08e248609"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10569, 324, 221, 4, 67, "Section",ExpressionUUID->"43b0081a-a26c-41bd-abb3-fd37ac0ef7c6"],
+Cell[10793, 330, 700, 20, 110, "Input",ExpressionUUID->"dd3e623c-ccb9-4e9c-8344-73288d4846f7",
+ InitializationCell->True],
+Cell[11496, 352, 390, 8, 46, "Input",ExpressionUUID->"125ec10d-ba9d-495f-b5e2-f8e576fb5fef",
+ InitializationCell->True],
+Cell[11889, 362, 969, 25, 110, "Input",ExpressionUUID->"8c8dec1b-542b-4530-9b6d-8de5713ed1ed",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[12883, 391, 277, 6, 30, "Input",ExpressionUUID->"4754c5fe-3001-4e7a-8a49-ab09b88897a0"],
+Cell[13163, 399, 220, 4, 34, "Output",ExpressionUUID->"fcd9bcf9-841f-4dfc-bcf0-3faa756835cc"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
