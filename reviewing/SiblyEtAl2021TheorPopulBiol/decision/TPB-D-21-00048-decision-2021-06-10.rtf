@@ -1,0 +1,135 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\cname textColor;\cssrgb\c0\c0\c0;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 From: "Theoretical Population Biology" <em@editorialmanager.com>\
+Subject: Review for Theoretical Population Biology - manuscript rejected\
+Date: 10 June 2021 at 00:28:05 CEST\
+To: "Simon Aeschbacher" <simon.aeschbacher@ieu.uzh.ch>\
+Reply-To: "Theoretical Population Biology" <tpb@elsevier.com>\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Manuscript Number: TPB-D-21-00048\
+How single-locus FST varies with migration and selection for two populations in migration-selection balance\
+Richard Sibly; Robert Curnow\
+\
+Dear \'a0Aeschbacher,\
+\
+Thank you for reviewing the above referenced manuscript. With your help, I have reached a reject decision on this manuscript .\
+\
+The anonymised comments to author, from all reviewers, are included below. You can also access this information by logging into Editorial Manager as a reviewer.\
+\
+Thank you for your contribution and time in reviewing this manuscript, which not only assisted me in reaching my decision, but also enables the author(s) to disseminate their work at the highest possible quality.\
+\
+I am grateful to you for your assistance as a reviewer for Theoretical Population Biology.\
+\
+Kind regards,\
+\
+Noah Rosenberg\
+Editor-in-Chief\
+Theoretical Population Biology\
+\
+Comments to author:\
+Reviewer #1: The paper studies the migration-selection balance in a two-population one-locus model, with different selection coefficients in the two populations. The authors derive the relationship between Fst and the other parameters (selection coefficients, gene flow rates, and dominance). The main suggestion of the paper is to use this relation to infer the selection coefficients from Fst data. \
+\
+The investigation in this paper is interesting, but in my opinion falls short of reaching the scope of a research paper. The analysis of of the simple model presented is very limited, and the results amount to deriving the equation of Fst and plotting for some parameter values. To broaden the scope of the investigation I would suggest further analysis such as (1) application to real data (Fst data from selection studies), (2) extending the model to include genetic drift, (3) studying the statistical properties of the suggested inference method. \
+\
+One main caveat to using the presented formulation for inference of selection is that it requires knowledge of gene flow rates, and these are most often not easy to estimate (knowledge of the dominance in the locus in question is also required). The authors should address this caveat.\
+\
+The Introduction too long, na\'efve, and with irrelevant details (e.g. number papers in a review of tests for selection, details of results from a paper on an LCT gene in Europe and one on mc1r in mice, direct quotes from various papers, ect.)\
+\
+The figure quality can also be improved. \
+\
+Other comments\
+\
+Since the manuscript did not include line numbers, it was difficult to provide specific comments, but below I provide several places where improvements could be made.\
+\
+The role of the simulations in the context of the paper is unclear (section "Finding evolutionary outcomes by simulation of the evolutionary process"). The equilibrium solution can be solved from the equations, so it was unclear what he simulations are used for. \
+\
+Suggesting measuring parent-offspring genotypes in field studies to determine parameters - this is actually very difficult and unrealistic in most field studies.\
+\
+\
+\
+Reviewer #2: This paper analyses a 1 locus 2 alleles model of the balance between selection and migration when the two forces have reached a stable equilibrium. The analytical results for Fst in terms of allelic frequencies, selection strenght, dominance and migration are given, ignoring the effects of drift. The biological question will be of interest to many empiricists.\
+\
+The model used is a straightforward generalisation to 2 populations with migration of the text book model of selection on survival. \'a0The paper is clearly written.\
+\
+\
+The tricky part here is to identify when in the life cycle migration and population size regulation is occuring. The authors chose to have migration occuring after selection, and population size to be regulated both after selection and after migration. \'a0Changing in which order these life cycle events are occuring can have a dramatic effect on the outcome. As an illustration, if migration takes place at the juvenile stage (a common feature of many species) and before selection occurs, when m12=m21=0.5, s1=-1, s2=99, equilibrium FST is 0.245 instead of 0 when selection precedes migration (see R code below for an illustration). This is a dramatic difference. I suspect similar effects might be seen if population regulation is occuring once only in the life cycle, or if it takes place at the metapopulation rather than the deme level. \
+\
+\
+\
+\
+-----------------------------------------\
+\
+tpb1<-function(p10,p20,s1,s2,h,m12,m21,ngen=100)\{\
+p1s<-numeric(ngen)\
+p2s<-numeric(ngen)\
+p1s[1]<-p10\
+p2s[1]<-p20\
+for (ig in 2:ngen)\{\
+\'a0p1<-p1s[ig-1];p2<-p2s[ig-1]\
+\'a0q1<-1-p1;q2<-1-p2\
+\'a0pp1<-(p1^2+p1*q1*(1+h*s1))/(1+2*p1*q1*h*s1+q1^2*s1)\
+\'a0pp2<-(p2^2+p2*q2*(1+h*s2))/(1+2*p2*q2*h*s2+q2^2*s2)\
+\'a0p1s[ig]<-((1-m12)*pp1+m21*pp2)/(1+m21-m12)\
+\'a0p2s[ig]<-((1-m21)*pp2+m12*pp1)/(1+m12-m21)\
+\}\
+return(cbind(p1s,p2s, 1-(p1s*(1-p1s)+p2s*(1-p2s))/2/((p1s+p2s)/2*(1-(p1s+p2s)/2))))\
+\}\
+\
+\
+tpb2<-function(p10,p20,s1,s2,h,m12,m21,ngen=100)\{\
+\'a0p1s<-numeric(ngen)\
+\'a0p2s<-numeric(ngen)\
+\'a0p1s[1]<-p10\
+\'a0p2s[1]<-p20\
+\'a0for (ig in 2:ngen)\{\
+\'a0\'a0\'a0p1<-(p1s[ig-1]*(1-m12)+m21*p2s[ig-1])/(1-m12+m21)\
+\'a0\'a0\'a0p2<-(p2s[ig-1]*(1-m21)+m12*p1s[ig-1])/(1-m21+m12)\
+\'a0\'a0\'a0q1<-1-p1;q2<-1-p2\
+\'a0\'a0\'a0p1s[ig]<-(p1^2+p1*q1*(1+h*s1))/(1+2*p1*q1*h*s1+q1^2*s1)\
+\'a0\'a0\'a0p2s[ig]<-(p2^2+p2*q2*(1+h*s2))/(1+2*p2*q2*h*s2+q2^2*s2)\
+# \'a0\'a0\'a0p1s[ig]<-((1-m12)*pp1+m21*pp2)/(1+m21-m12)\
+# \'a0\'a0\'a0p2s[ig]<-((1-m21)*pp2+m12*pp1)/(1+m12-m21)\
+\'a0\}\
+\'a0return(cbind(p1s,p2s, 1-(p1s*(1-p1s)+p2s*(1-p2s))/2/((p1s+p2s)/2*(1-(p1s+p2s)/2))))\
+\}\
+\
+\
+\
+a<-tpb1(0.5,0.5,-1,99,0.5,0.5,0.5)\
+b<-tpb2(0.5,0.5,-1,99,0.5,0.5,0.5)\
+\
+plot(1:100,a[,1],ylim=c(0,1),xlab="gen",ylab="p/Fst",type="l",col="red",lwd=2)\
+lines(1:100,b[,1],lwd=2,lty=2,col="red")\
+lines(1:100,a[,2],col="blue",lwd=2)\
+lines(1:100,b[,2],col="blue",lwd=2,lty=2)\
+lines(1:100,a[,3],col="orange",lwd=2)\
+lines(1:100,b[,3],col="orange",lwd=2,lty=2)\
+\
+\
+\
+\
+\
+\
+\
+Reviewer #3: Please find my comments in a separate PDF.\
+\
+\
+\
+\
+More information and support\
+You will find guidance and support on reviewing, as well as information including details of how Elsevier recognizes reviewers, on Elsevier\'92s Reviewer Hub: https://www.elsevier.com/reviewers\'a0\
+FAQ: How can I reset a forgotten password? \
+https://service.elsevier.com/app/answers/detail/a_id/28452/supporthub/publishing/ \
+For further assistance, please visit our customer service site: https://service.elsevier.com/app/home/supporthub/publishing/\
+Here you can search for solutions on a range of topics, find answers to frequently asked questions, and learn more about Editorial Manager via interactive tutorials. You can also talk 24/7 to our customer support team by phone and 24/7 by live chat and email\
+\
+__________________________________________________\
+In compliance with data protection regulations, you may request that we remove your personal registration details at any time. \'a0(Use the following URL: https://www.editorialmanager.com/tpb/login.asp?a=r). Please contact the publication office if you have any questions.}
