@@ -114,3 +114,29 @@ Page 30
 - l.1–6 **S:** I suggest multiple changes in this sentence as follows: "...and deleterious mutations which leads to different levels of neutral heterozygosity at a linked site due to beneficial and deleterious sweeps, and that the neutral heterozygosity is strongly affected due to the deleterious sweeps even when the selection is changing slowly while the beneficial sweeps are not much impacted..." --> "...and deleterious mutations, which leads to different levels of neutral heterozygosity at sites linked to beneficial vs. deleterious sweeps. We have also shown that the neutral heterozygosity is strongly affected by deleterious sweeps even when selection is changing slowly, while the footprint of beneficial sweeps is not much impacted...". **C:** Most readers might associate 'sweep' with linkage to a beneficial allele; the term 'deleterious sweep' might be problematic.
 - l.6–13: **C/S:** This sentence is too long and hard to read. Suggestion: "In this article, the fundamental quantity of interest is the mean absorption time and the key effect is that as a newborn mutant is more likely to be lost when selection is negative than when it is positive, and in a slowly changing environment, the contribution to polymorphism will come only from the part of the cycle when the selection is strongly positive, the time-averaged quantities will be quantitatively different from those due to positively selected mutants in constant environment." --> "In this article, the fundamental quantity of interest is the mean absorption time. The key effect is that as a de novo mutation is more likely to be lost if selection is negative than if it is positive. In a slowly changing environment, the contribution to polymorphism will therefore come only from the part of the cycle when selection is strongly positive, and the time-averaged quantities will be quantitatively different from those due to positively selected mutants in a constant environment.".
 - l.19: **S:** Suggest a comma after "scenarios" and after "(Barton, 2000)".
+
+### Appendix A
+
+Page 31
+- l.16: **R:** "...conditions allows one to..." --> "...conditions allow one to..."
+
+## Appendix B
+
+**S:** I wonder if it would make sense to exchange the order of Appendices B and C. Appendix B not only is direct extension of Appendix A, but also does the case of no selection appear early on in the main text.
+
+Page 34
+- l.1: **R:** Insert "the" between "of" and "error function".
+
+## Appendix C
+
+Page 35
+- l.4–8: **C:** The formulation towards then end of the sentence seems suboptimal to me. **S:** "...and the normalization constant $C_n$ is given by (see (22.2.1) of Abramowitz and Stegun (1964))..." --> "...and the normalization constant $C_n$ is given by eq. (22.2.1) of Abramowitz and Stegun (1964) as...".
+- l.15: **C/S:** The phrase "Putting the above discussion together in (A.1), we find that..." sounds unclear to me. I suggest to be more explicit about the steps necessary to obtain eq. (C.6).
+- l.18: **S:** Insert "eq." or "expression" before "(7.391.2).
+
+Page 36
+- l.11–12: **R:** "...the coefficients $d_{k}^{(m)}$'s obey..." --> "...the coefficients $d_{k}^{(m)}$ obey..."
+
+Page 37
+- l.3: **C:** "On adding (C.9) for $k = \pm 1$, we obtain..." sounds unclear to me.
+- TODO(Simon): Go on with l.7 (equal sign).
