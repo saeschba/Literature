@@ -1,6 +1,7 @@
 # Review of Manuscript TPB-D-22-00016 by Simon Aeschbacher
 
 ## Summary
+Jain and Kaushik develop population genetic diffusion theory and derive important results on the site-frequency spectrum (SFS) in a randomly mating diploid population subject to a changing environment. Environmental changes are modelled as periodic variation in the population size and/or the strength of selection. The consequences of such variation on the shape and magnitude of the unnormalised population SFS, the sample SFS, and the expected heterozygosity are explored and mathematically described for a number of relevant limiting cases, including no, weak and strong selection in either a slowly or a rapidly changing environments. The most substantial results include the finding that the time-averaged SFS in a slowly changing environment with strong positive and negative selection differs strongly in shape and magnitude from the equilibrium SFS in a static environment with a comparable strength of selection. Another result of high interest is that, if both selection and population size vary rapidly and selection is weak, the SFS is equivalent to the equilibrium SFS in a static environment after replacement of the mean population size by an effective population size. As an additional strength of the manuscript, the authors early on revisit previous theory on the SFS in a static environment, thereby bridging apparent gaps in clarity and cohesiveness of previous derivations. The derivations and results are presented to appropriate extent and detail. The figures illustrate the accuracy of the exact and approximate results well and compare these to numerical results. The mathematics employed by the authors in parts substantially surpass my expertise to judge its correctness. However, all derivations and lines of argument seemed plausible and well supported by figures. The manuscript suffers from a few points that need clarification and a larger number of minor linguistic issues (see Major and Minor comments below). Fixing these issues will be no problem at all. I highly recommend this manuscript for publication in Theoretical Population Biology, as it provides a substantial body of novel results relevant to the target audience of the journal.
 
 Abbreviations to be introduced:
 - site-frequency spectrum (SFS)
@@ -139,4 +140,24 @@ Page 36
 
 Page 37
 - l.3: **C:** "On adding (C.9) for $k = \pm 1$, we obtain..." sounds unclear to me.
-- TODO(Simon): Go on with l.7 (equal sign).
+- l.7: **Q:** Should the equal sign in "$\mathrm{Re}(d_1^{(m)}) = \dots$" indeed be an equal sign or rather an approximation sign?
+
+Page 38
+- l.6: **S:** Omit "on" before "using", and insert "is" between "and" and "given".
+- l.15: **S:** "...in (C.9) for..." --> "...from (C.9) for...".
+
+### Figures
+
+Figure 1
+- Caption l.6: **S:** Insert an article "a" before "positively".
+- Caption l.8: **S:** Insert an article "a" before "negatively".
+
+Figure 2
+- **C:** The distinction between dotted and dashed lines is not well visible. In addition, I was confused as to whether "dotted line" on l.3 of the Caption indeed refers to the dotted lines in panels (a) and (b). The red line apparently referred to in panel (a) to me looks more like a dashed line. Then, on the other hand, what is referred to as a "dashed line" in panel (a) to me looks more like a dotted line.
+- Caption l.7: **S:** Insert a reference to panel (a), "(a)", after "environment".
+
+Figure 3
+- Caption l.5: **S:** "...points show (C.17) and (C.24) for..." --> "...crosses and triangles show (C.17) and (C.24) for...".
+
+Figure 5
+- Caption l.3–4: **C:** The second case of those listed here – and referred to as "$N(t), \bar{s}$" – does not apply to Figure 5.
