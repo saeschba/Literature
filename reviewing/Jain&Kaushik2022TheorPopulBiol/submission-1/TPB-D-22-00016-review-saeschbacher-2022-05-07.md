@@ -1,19 +1,14 @@
-# Review of Manuscript TPB-D-22-00016 by Simon Aeschbacher
+# Review of Manuscript TPB-D-22-00016 by Jain and Kaushik
 
 ## Summary
 Jain and Kaushik develop population genetic diffusion theory and derive important results on the site-frequency spectrum (SFS) in a randomly mating diploid population subject to a changing environment. Environmental changes are modelled as periodic variation in the population size and/or the strength of selection. The consequences of such variation on the shape and magnitude of the unnormalised population SFS, the sample SFS, and the expected heterozygosity are explored and mathematically described for a number of relevant limiting cases, including no, weak and strong selection in either a slowly or a rapidly changing environments. The most substantial results include the finding that the time-averaged SFS in a slowly changing environment with strong positive and negative selection differs strongly in shape and magnitude from the equilibrium SFS in a static environment with a comparable strength of selection. Another result of high interest is that, if both selection and population size vary rapidly and selection is weak, the SFS is equivalent to the equilibrium SFS in a static environment after replacement of the mean population size by an effective population size. As an additional strength of the manuscript, the authors early on revisit previous theory on the SFS in a static environment, thereby bridging apparent gaps in clarity and cohesiveness of previous derivations. The derivations and results are presented to appropriate extent and detail. The figures illustrate the accuracy of the exact and approximate results well and compare these to numerical results. The mathematics employed by the authors in parts substantially surpass my expertise to judge its correctness. However, all derivations and lines of argument seemed plausible and well supported by figures. The manuscript suffers from a few points that need clarification and a larger number of minor linguistic issues (see Major and Minor comments below). Fixing these issues will be no problem at all. I highly recommend this manuscript for publication in Theoretical Population Biology, as it provides a substantial body of novel results relevant to the target audience of the journal.
 
-Abbreviations to be introduced:
-- site-frequency spectrum (SFS)
-
 ## Major comments
-
 1. The distinction between "time-averaged SFS" and "equilibrium SFS" could be made more clear. I suggest the authors be more explicit about the contexts they refer to when they use these two terms. The reason is that the manuscript considers a range of scenarios in which at least one aspect of the environment (selection or demography) is dynamic, and thus in which "time-averaged" makes sense. On the other hand, "equilibrium" may refer to the fully constant scenario (constant population size, constant selection), but technically also to an equilibrium of a fast process relative to a slow process in those cases where a separation of time scales is assumed. For specific cases, see "Minor comments" below.
 2. There might be a confusion between "difference in phase" and "difference in period". My impression is that the assumption of "no difference in periods" between the dynamics of selection and demography is sometimes also referred to as a situation of "no difference in phase" between selection and demography. If I understood the formulation of the model correctly, there is no explicit parameter expressing a phase difference. I suggest that the authors either refrain from using "phase difference" and only write about "difference in period", or that they extend either eq. (3) or (4) to include "$t + \tau$" instead of $t$ on the RHS, respectively, where $\tau$ is the phase difference. My impression is that the former solution is more appropriate, as the latter one might complicate the scope of the current manuscript. However, I might be missing an obvious connection between phase and period not made explicit in the manuscript.
 3. In the Discussion I missed a paragraph on limitations and crucial assumptions of the work presented here. In connection with this point, I also missed a more comprehensive outlook of what future work should address next in the view of the authors.
 
 ## Minor comments
-
 I use the following abbreviations to qualify my comments:
 - **C:** Comment
 - **Q:** Question
@@ -38,12 +33,10 @@ Page 5
 - l.4: **S:** To increase clarity: "...how the time-averaged SFS deviates from the equilibrium SFS" --> "...how the time-averaged SFS in a changing environment deviates from the equilibrium SFS in a constant environment".
 
 ### 2 Model
-
 Page 6
 - l.9–10: **C/Q:** This last part of the sentence could be understood as saying that the condition $0 \le \nu \lt 1$ ensures deterministic dynamics. I do not see how this is the case, but I might be missing something. I suggest the authors double-check the formulation.
 
 ### 3 Site frequency spectrum: diffusion theory
-
 Page 7
 - l.2–3: **S:** "...earlier work [...], using which we find that..." --> "...earlier work [...], from which we find that...". Also, there should be a full stop after Eq. (5).
 - l.13: **C:** Avoid parenthesis within parenthesis in the citations.
@@ -52,7 +45,6 @@ Page 8
 - l.2: **C/S:** "handle" may not be the best choice here. Perhaps use "solve" or "gain insight from"?
 
 ### Results
-
 Page 9
 - l.2: **C:** If I am not mistaken, by "static environment" the authors refer to both a constant selective environment ($s(t) = \bar{s}$) as well as a constant population size ($N(t) = \bar{N}$). It may be useful to state this explicitly once.
 - l.3–5: **R:** "...SFS is known for a long time..." --> "...SFS has been known for a long time..." **C:** It is unclear what is meant by "its [N.B.: not it's] expression is not transparent". Does this mean that the derivation of these expressions is not clear in previous work? Or that the obtained expressions are (more) complicated (than necessary)?. The part "and simple analytical approximations have not been obtained, and therefore, we first discuss these below." reads a bit strange, because the simple analytical expressions first need to be derived before they can be discussed. **S:** I propose to revise this sentence completely, but I am lacking sufficient insight to make an appropriate suggestion.
@@ -92,7 +84,6 @@ Page 24
 - l.18: **S:** "...given by the expression (14a) in the constant..." --> "...given by expression (14a) for a constant..."
 
 ### 5 Discussion
-
 Page 27
 - l.2: **R:** Insert an article "a" between "how" and "changing".
 - l.15–20: **S:** I suggest to split this long sentence into two, to move the comma from between "size" and "$N_e$" to between "environment" and "but", and to omit the double-parentheses at the very end. Specifically, "We find that the effect of demography is mainly seen when the population size changes rapidly where the time-averaged statistical quantities behave the same way as in the constant environment but with reduced population size, $N_e$ given by the harmonic mean of the changing population size over a period (see (33))" --> "We find that the effect of demography is mainly seen when the population size changes rapidly. In this case, the time-averaged statistical quantities behave the same way as in the constant environment, but with reduced population size $N_e$ given by the harmonic mean of the changing population size over a period (see eq. 33)".
@@ -117,19 +108,16 @@ Page 30
 - l.19: **S:** Suggest a comma after "scenarios" and after "(Barton, 2000)".
 
 ### Appendix A
-
 Page 31
 - l.16: **R:** "...conditions allows one to..." --> "...conditions allow one to..."
 
 ## Appendix B
-
 **S:** I wonder if it would make sense to exchange the order of Appendices B and C. Appendix B not only is direct extension of Appendix A, but also does the case of no selection appear early on in the main text.
 
 Page 34
 - l.1: **R:** Insert "the" between "of" and "error function".
 
 ## Appendix C
-
 Page 35
 - l.4–8: **C:** The formulation towards then end of the sentence seems suboptimal to me. **S:** "...and the normalization constant $C_n$ is given by (see (22.2.1) of Abramowitz and Stegun (1964))..." --> "...and the normalization constant $C_n$ is given by eq. (22.2.1) of Abramowitz and Stegun (1964) as...".
 - l.15: **C/S:** The phrase "Putting the above discussion together in (A.1), we find that..." sounds unclear to me. I suggest to be more explicit about the steps necessary to obtain eq. (C.6).
@@ -147,7 +135,6 @@ Page 38
 - l.15: **S:** "...in (C.9) for..." --> "...from (C.9) for...".
 
 ### Figures
-
 Figure 1
 - Caption l.6: **S:** Insert an article "a" before "positively".
 - Caption l.8: **S:** Insert an article "a" before "negatively".
@@ -161,3 +148,5 @@ Figure 3
 
 Figure 5
 - Caption l.3–4: **C:** The second case of those listed here – and referred to as "$N(t), \bar{s}$" – does not apply to Figure 5.
+
+Simon Aeschbacher
