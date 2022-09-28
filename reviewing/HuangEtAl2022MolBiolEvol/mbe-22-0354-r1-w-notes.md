@@ -1,0 +1,154 @@
+# Review of Manuscript MBE-22-0354.R1 by Huang et al. "Inference of gene flow between species under misspecified models"
+
+## Instructions by Mol. Biol. Evol. fir Articles
+Articles are original reports of significant discoveries, **methods**, and resources. Articles may present novel and important empirical results, theories that have the potential to advance our understanding of molecular evolution, or **statistical, computational, or experimental methods**. Articles based primarily on empirical results need to be more than confirmatory, and must provide data that advance the field of evolutionary biology. Theoretical and methodological reports need to **clearly demonstrate the robustness and practical utility of the advanced methods using computer simulations and example data analysis**. MBE also welcomes articles presenting the accuracy and comparative effectiveness of existing methods and algorithms, which should also include guidelines for selecting methods in practical data analysis.
+
+Articles may describe significant advances in widely-used software tools, databases, and experimental protocols that currently serve as critical enabling technologies for molecular evolutionary studies. Articles must clearly describe how the advances will broaden the application scope or significantly accelerate the pace of biological discovery. MBE also welcomes articles describing new resources that have broad applicability and clear potential to become widely used. Authors of resource articles that describe incremental, but highly impactful advances should consider submitting them as Brief Communications. All research resources must be made available for general usage at the time of publication.
+
+Format: Articles have an **abstract of up to 250 words**. This is followed by sections (in order) with headings: Introduction, Results, Discussion, and Materials and Methods. Results and Discussion may be combined. Subsections are allowed throughout. For articles describing new or improved methods and resources, authors should add a section entitled New Approaches after the Introduction. This section should clearly and succinctly present the new or improved methods or approaches, with extensive details provided in the Materials and Methods section, if necessary (See General Author Guidelines for all other information on manuscript preparation).
+
+## Recommendations
+- [ ] Accept in present form
+- [ ] Minor revision
+- [ ] Major revision
+- [ ] Reject, resubmission discouraged
+
+## Summary
+Huang and co-authors investigate the effects of model misspecification on the inference of population splits and gene flow from multilocus sequence data. The authors focus on the case in which the inferential model assumes a single, discrete pulse of introgression, while the true (data-generating) model entails i) continuous migration, ii) a different direction or assignment of the introgression pulse, or iii) gene flow from a non-sampled ghost population. The authors first review and derive analytical results for a sample of two haploid sequences, one from each of two populations, under an asymptotic model that assumes an infinite number of freely recombining loci under the MSci and the isolation-with-migration (IM) model. Given likelihood functions for both models, the authors minimise the Kullback-Leibler divergence between the two functions with respect to the data-generating model, and thus obtain the *pseudo-true parameter values* under the MSci model. The authors extend this framework to the cases in which the data-generating model is the isolation-with-initial migration (IIM) or the secondary-contact (SC) model of of gene flow.
+To establish a correspondence between the probability of introgression in the MSci model and the rates and times of gene flow under the continuous-migration models (IM, IIM, SC), the authors focus on the probability that any migration occurs in the latter models. The authors complement their analytical theory with simulations to extend the scope of the asymptotic theory and cover more complex demographic histories. In general, the authors find that species divergence times and effective sizes of recent populations are well estimated under the misspecified model if gene flow is not too high. However, estimates of introgression times inferred under the MSci model are biased towards the more recent end of respective periods of continuous gene flow in the data-generating models. Assignment of introgression events to wrong branches resulted in estimates of introgression times collapsing with population divergence times, and underestimation of introgression probabilities. The authors found that including more and longer loci, as well as sampling larger numbers of sequences per population tended to provide more precise, but not necessarily more accurate, parameter estimates.
+
+I have no doubt that the authors address a so-far under-explored and under-appreciated issue in studies of speciation and population differentiation. Once published, the paper will likely trigger further theoretical studies, but also direct empirical studies on divergence with gene flow and help interpreting the results thereof. In regard of this latter, empirical perspective, a strength of the manuscript is that it explores the effects of the number of loci, the length of these loci, and of including more than one sequence per locus from each population. Topic and scope of the manuscript nicely fit in the realm of Molecular Biology and Evolution. However, the manuscript still suffers from a number of points detailed below that prevent me from recommending a straight acceptance. My major concerns include the length of the manuscript, notational and structural issues, and a lack of clarity about which analytical results are new as opposed to restated from previous literature. I am aware of the fact that some issues I raised below might interfere with modifications that were introduced by the authors in response to earlier reviews. Some of my suggestions might thus conflict with earlier reviewers' requests. An editorial decision may need to be taken in such cases.
+
+
+## Major concerns
+
+1. I understood that the main focus of the manuscript is on assessing the impact of model misspecification on estimates of population divergence times, the timing and amount of gene flow, and effective population sizes. The authors did well in establishing this story line in the Introduction. However, and somewhat oddly, the Introduction also contains a mini review of methods for inference of gene flow from multilocus sequence data (from line 97 to line 159). This part reviews summary and approximate approaches to full likelihood approaches of inference, which is a topic at most tangential, if not orthogonal, to the paper's main story. In addition, such a mini review runs the risk of being incomplete. Indeed, the authors seem to ignore, for instance, Approximate Bayesian Computation, to which some of the limitations that the authors ascribe to approximate methods apply to a much lesser extent. I suggest that the Introduction be streamlined to only cover the parts most relevant to the paper's story, which is assessing the effect of model misspecification.
+2. In sub-subsection "Asymptotic theory" of the Results, the authors introduce analytical results leading to likelihood functions under the MSci and continuous-migration models (IM, IIM, SC). It is currently not clear enough which of the results presented are novel and which ones were obtained by previous authors. Without checking in detail, but based on my recollection of earlier relevant literature, I feel that all the results presented for the IM, IIM, and SC model were obtained before collectively by Wilkinson-Herbots (2008 Theor Popul Biol; 2021 Theor Popul Biol) and Costa and Wilkinson-Herbots (2017 Genetics; 2021 Theor Popul Biol). I think the authors should make more clear which results are novel, and provide references for result they restate from earlier literature.
+3. The notation notation should be improved throughout the manuscript to clearly differentiate between parameters and their values, as opposed to their estimators and estimates.
+4. I found the abbreviation "MSci" for "MSC-with-introgression" (where MSC represents "multi-species coalescent") inappropriate for two reasons. First, the abbreviation seems unintuitive to me: it is tempting to deduce "continuous introgression/immigration" from "ci". Second, the abbreviation runs against the apparent logic according to which the abbreviations for other models treated in the manuscript were formed. I appreciate that "MSci" was already used as an abbreviation for MSC-with-introgression by Flouri et al. (2020). However, I think it would make sense to stick to "MSNC" for multi-species network coalescent as previously used by Wen and Nakhleh (2018) and Zhang et al. (2018).
+5. It remained unclear to me if BPP only uses information from all possible inter-population pairs of sequences, or if within-population pairs of sequences are also used. I understand that the analytical theory in the current manuscript only covers the case of a single sequence from each of two populations, and the probability of the data is computed only for an inter-population pair of sequences. Even after consulting Flouri et al. (2018, 2020), it was not entirely clear if to me if BPP, in contrast to the analytical theory, also considers within-population pairs of sequences. I suggest the authors explicitly state what information BPP uses from the data.
+6. The Discussion starts with a detailed and excessively long paragraph comparing the current study to a previous one (Wen and Nakhleh 2018). This paragraph seems to have been introduced in response to a claim by a previous reviewer, but it is oddly placed. It distracts from the main findings of the paper, which in my view should be restated and interpreted first. I suggest the authors reduce to the minimum the comparison to Wen and Nakhleh (2018) and defer it to the second half of the Discussion.
+7. The manuscript seems too long and I think this is primarily due to issues 1 (overloaded Introduction) and 6 (oddly placed and overly detailed first paragraph of the Discussion), but also due to excessively detailed language in the Results section. I strongly suggest the authors make an effort to reduce the length of the manuscript by about 20%.
+8. The supplementary figures were provided mixed with source and style files, and I could not find any caption texts to the supplementary figures. I thus had to search for the relevant files and relate them to the references from the main text. I also cannot provide a complete review, because the caption texts were missing. The authors should provide all figure captions in a further revision.
+
+## Minor comments
+**C:** comment; **Q:** question; **S:** suggestion; **R:** request.
+
+### Abstract
+- First line of abstract: **S:** "species divergences" --> "species divergence"
+
+### Introduction
+- [l.70] **R:** Please provide (a) reference(s) for the case of introgressed alleles linked to loci under selection. **C:** To my knowledge, the relevant literature traces back to the works of Petry (1983, Theor Popul Biol), Bengtsson (1985, in Evolution -- Essays in honour of John Maynard Smith), and Barton and Bengtsson (1986, Heredity).
+- [l.80--81] **C/R:** I feel the references here are somewhat random and exclusively to papers with an empirical focus. I think it is more appropriate here to cite theory papers that introduced the concepts. Again, this work traces back to Petry (1983, Theor Popul Biol), Bengtsson (1985, in Evolution -- Essays in honour of John Maynard Smith), and Barton and Bengtsson (1986, Heredity), and was then complemented e.g. by Bürger and Akerman (2011, Theor Popul Biol), Akerman and Bürger (2013, J Math Biol), and Aeschbacher and Bürger (2014, Genetics).
+- [l.84] **C:** It is not entirely clear what subject "altering" refers to. I suggest to write ", which in turn alters..." to more clearly relate to the changes in ecology and distribution of the species.
+- [l.127–131] **C:** The two-step approach is insufficiently explained. The second step in particular remains unclear (what does the second step do with the trees as input?).
+- [l.148] **R:** Please check the recent works by Hahn and Hibbins (e.g. Hibbins and Hahn 2019, Genetics) extending the framework of $D$ statistics to infer the direction and timing of gene flow.
+- [l.150–153] **C:** This statement does not apply to all summary methods; Approximate Bayesian Computation, for instance, can infer gene flow among sister taxa.
+- [l.182–184] **C:** I struggled following the path of logic here. The conclusion that a model assumed in data analyses may often be wrong to me does not immediately follow from the imperfection of summary inference methods. The focus of this paper seems to be on the issue of model misspecification and non-identifiability, and it is in this context that the current statement in lines 182–184 should be developed and phrased.
+- [l.225] **S:** "...we use BPP..." --> "...we use the software BPP..."
+- [l.226] **C:** I found the statement confusing that the data were simulated under the MSci model, because Figure 4 suggests data were also simulated under the (I)IM model.
+
+### Results
+- [l.260] **C/R:** I found it confusing that the authors use both $M$ and $M_{AB}$ for the scaled migration rate, even though in all cases treated by the authors $M = M_{AB}$ holds. Also, $M$ and $M_{AB}$ are never formally defined. In particular, a definition of $M_{AB}$ is necessary, as it is otherwise unclear what effective population size is used to scale the migration rate; all readers may not be familiar with the convention of scaling by the size of the recipient population thought forward in time. **C/S:** Related to the preceding comment, from Eq. (1) and the subsequent definition of $w$ as $w := 4M_{AB}/\theta_{B}$ I conclude that the authors defined $M_{AB} := N_{B}m_{AB}$. However, this definition runs against the convention of defining $M$ as $M := 4Nm$ in analogy to $\theta := 4N\mu$. I suggest the authors fix this.
+- [l.265-266] **C:** The clause about the IIM being represented as an IM model with ghost population is confusing, as it interferes with the generic definition of the IIM. **R:** Please explain better how the case of a ghost population is built from an IM model and ultimately resembles an IIM model. This way, the currently also confusing sentence in lines 273–274 should become more clear.
+- [l.336] **R:** It is unclear what "This" refers to. I think it should say "Equation (7)".
+- [l.339–341] **C:** This sentence is unclear. **S:** "Consider the analysis under the MSci model of data generated under..."
+- [l.376] **C:** As stated below (Figure 1), I suggest the parameter values are not provided in the caption of Figure 1, which should be generic, but either in a table or in the caption of figures that depend on the parameter values.
+- [l.539] **R:** "was" --> "is"
+- [l.541] **R:** "came" --> "come"
+- [l.607–609] **C:** I think this sentence may read cryptic to non-expert readers. Please provide some more context and be specific about which parameters become identifiable if more than one sequence is sampled per taxon (I think these are $\theta_A$, $\theta_B$, and $\theta_H$)
+- [l.638] **C:** "While" did not make sense to me here as a conjunction. **S:** "For a low number of sites per locus ($n=250$), CIs for parameters such as the introgression time and probability [...] were large, but for $n>1000$, CIs were small for all parameters."
+- [l.663] **S:** "...impacted on..." --> "...affected..."
+- [l.663–664] **R:** "...the parameters were grossly wrong..." --> "...the respective point estimates were highly inaccurate..." **C:** Parameters per se cannot be wrong, their estimated values can be, though.
+- [l.666–669] **C/R:** I missed why a model without gene flow is (nearly) the correct model given the parameters in the caption of Figure 1. Please clarify.
+- [l.680] **R:** I disagree with the use of "confirm" here. The simulation results shown are compatible with the interpretation of a ridge, but they do not confirm the ridge in the sense of a sufficient condition. **S:** "The simulations [...] are compatible with that interpretation."
+- [l.681–684] **C:** I do not think that the ability to reflect the relevant uncertainty about a model is exclusive to the Bayesian approach. Rather, the additional uncertainty about the appropriateness of the prior may confound the focal uncertainty, which I consider a disadvantage.
+- [l.687] **S:** "...help to avoid making..." --> "...help avoid..."
+- [l.688–691] **Q:** Could estimates of the migrant proportion and historical population sizes be improved if information from within-species pairs of sequences were used? This may actually be what BPP does already, but I am asking because the authors are not explicit about this point.
+- [l.720–721] **S:** Please refer to the relevant supplementary figures showing results for the IIM and SC model.
+- [l.752] **S:** "...introgression time..." --> "...the estimator of the introgression time..."
+- [l.800] **S:** I suggest avoiding the notation "$\theta_A$–$\theta_D$" as a shortcut for "$\theta_A$, $\theta_B$, $\theta_C$, $\theta_D$" here, and at other places in the manuscript in analogous cases.
+- [l.803–804] **C:** I could not verify this statement about the performance in the A-B setting relative to the B-B setting. Performance in the B-B setting to me seemed to be superior, not similar, to the one in the A-B setting.
+- [l.805] **R:** Here and at several other places throughout the manuscript, please distinguish in the notation between the parameters and their estimates. Here, $\tau_T$ should read $\hat{\tau}_T$, as the expectation stated refers to the estimate, not the parameter.
+- [l.812] **R:** The second $\tau_X$ in this line should be denoted as an estimate, $\hat{\tau}_X$.
+- [l.829] **Q:** Should $t_{ac}$ not read $t_{bc}$?
+- [l.838] **R:** Please write out the set of $\theta$ parameters instead of stating them as a "range".
+- [l.840] **R:** $\tau_T$ should read $\hat{\tau}_T$, as it refers to an estimate.
+- [l.850] **R:** $\tau_S$ should read $\hat{\tau}_S$, as it refers to an estimate.
+- [l.873] **S:** "...apparent due to large differences between..." --> "...apparent in large differences between..."
+- [l.913] **R:** "...the introgression time $\tau_X$..." --> "...the estimated introgression time $\hat{\tau}_X$..."
+- [l.915] **R:** "increases" --> "increased"
+- [l.918] **C:** I could not locate the parameter $\phi^{\ast}_{\mathrm{C-A}}$ at first in Figure 4 because I was confused by the subscript. I think the subscripts should be omitted to increase clarity.
+- [l.919] **C:** In my view there is no need to restate Eq. (10) here.
+- [l.938] **S:** "predicts" --> "suggested"
+- [l.951] **R:** Please spell out the set of $\theta$ parameters.
+- [l.973] **R:** The second $\tau_X$ should read $\hat{\tau}_X$, and the approximate sign should be an equal sign if the LHS is indeed to state the parameter, not its estimate.
+- [l.975] **R:** $\phi_{\mathrm{D-A}}$ should read $\hat{\phi}_{\mathrm{D-A}}$
+- [l.988] **C:** There is no need to re-introduce the abbreviation "MSci"
+- [l.1000] **S:** I suggest the authors insert a topic sentence to introduce the aspect being investigated in this subsection.
+- [l.1019] **C/R:** I did not understand what the authors meant by "In the Bayesian analysis, this difference affects only the information content in the data". Please rephrase to increase clarity.
+- [l.1033] **S:** I suggest to stick to conventional figure panel labels instead of 7a$^{\prime}$.
+- [l.1042] **R:** Both $\tau$ symbols should read $\hat{\tau}$ to denote the quantities as estimates.
+- [l.1044] **R:** $\phi$ should read $\hat{\phi}$.
+- [l.1063] **R:** $\phi_X$ should read $\hat{\phi}_X$.
+- [l.1064–1065] **S:** "...$\tau_X$ should be between $(\tau_U, \tau_T) = (\theta_0, 2\theta_0) = (0.002, 0.004)$ and..." --> "...$\hat{\tau}_X$ should be between $\tau_U = \theta_0 = 0.002$ and $\tau_T = 2\theta_0 = 0.004$, and..."
+- [l.1075] **S:** "($\phi < \phi_0$)" --> "($\hat{\phi} < \phi_0$)"
+
+### Discussion
+- [l.1088] **S:** Insert a comma after "introgression". "..., so that..." --> "...in which..."
+- [l.1099] **Q:** Why "smaller than" and not "equal to"?
+- [l.1130] **C:** The citation misses parentheses.
+- [l.1161–1162] **S:** Omit "..., and so on".
+- [l.1203–1206] **S:** I suggest to phrase this part less confrontative.
+- [l.1248] **S:** "simulation" --> "simulations"
+- [l.1250] **S:** "...it involved..." --> "...the model involved..."
+- [l.1251] **S:** "simulation" --> "simulations"; "...on Bayesian estimation..." --> "...on the Bayesian estimation..."
+- [l.1253] **S:** "consider" --> "considered"
+- [l.1259] **S:** "has" --> "had"
+- [l.1260] **Q:** What do the authors mean by "localized effects"? **R:** Insert "the" in front of "estimation".
+- [l.1364] **S:** "are" --> "were"
+- [l.1365] **S:** "occurs" --> "occurred"
+- [l.1367] **S:** "is" --> "was"
+- [l.1322–1340] **C:** I feel that this paragraph is beyond the scope of the paper, and thus distracting. It could be omitted in an effort to shorten the manuscript.
+- [l.1341–1387] **C:** I feel that this paragraph introduces a novel aspect beyond the scope of the paper. It could be omitted in an effort to shorten the manuscript. I understand that this paragraph was introduced as part of the first revision. An editorial decision may be necessary about whether to keep it or not.
+- [l.1454] **S:** I suggest to avoid "..., etc.".
+
+### Conclusions
+- [l.1476] **S:** "are" --> "were"
+- [l.1480] **S:** "are" --> "were"
+- [l.1486–1489] **C:** It is unclear who the subject of this sentence is. Are the authors referring to the behaviour of an inferential model or an a-posteriori action by the user?
+- [l.1502] **C:** It is unclear what is meant by "local".
+- [l.1516] **S:** "onto" --> "to"
+- [l.1520–1521] **C:** I think it is an overstatement to imply that the intensity of gene flow could be quantified well in general. The results show that the intensity of gene flow is estimated well only under certain conditions.
+
+### Methods
+- [l.1539–1545] **C/S:** The statement of the default parameter values here is redundant to the one in the caption of Figure 1. In combination with my concern stated above and below (see comment to Figure 1), I propose that the authors state the full set of values only once, e.g. here, and then i) refer to here from the captions of relevant figures and ii) state deviations from the set of default values in these captions if appropriate.
+- [l.1560] **C:** I found "Replicate" confusing here, because it was not clear if "replicate" refers to the replicates already specified in the preceding sentences or if another layer of replication was applied. If the latter is not the case, I think "Replicate" can be omitted here without harm.
+- [l.1566] **S:** As stated before, I suggest the authors state explicitly if BPP only operates with coalescences of sequences sampled from different taxa (between-population coalescences) or also from the same taxon (within-population coalescences). I am suggesting this because the analytical theory employed in this paper is based only on between-population coalescences, and it would be interesting to the reader to know if performance improvements with $S > 2$ per taxon are an effect of $S$ only or also of the additional use of information from within-population coalescences. Around here seems one place where the suggested statement could be placed.
+- [l.1590–1191] **C:** I found it inconsistent that the authors sometimes state the parameter values used in simulations in the text and caption, and sometimes provide them inside the figures (Figure 4). I suggest the authors unify how they provide parameter values.
+- [l.1624] **S:** "Datasize" for $L$ did not make too much sense to me. I suggest the authors say "three numbers of loci $L$$".
+- [l.1640–l1641 and l.1645–1647] **C/S:** These two positions are confusing, because they say that data were simulated under two different models that are equivalent. I understood what the authors want to say, but to increase clarity, I suggest that the authors change lines 1640 and 1641 from "We simulated data under the MSci model A (...) of figure 7a$^{\prime}$..." to "To assess the effect of non-sampled ghost population, we assumed data were generated under MSci model A (...) of figure 7a$^{\prime}$...".
+
+### Appendix A
+[l.1915–1924] **Q:** Were the likelihood functions derived here not already provided collectively by Wilkinson-Herbots (2008 Theor Popul Biol; 2021 Theor Popul Biol) and Costa and Wilkinson-Herbots (2017 Genetics; 2021 Theor Popul Biol)? **R:** Please make clear which results were obtained before and by whom, and which results are novel.
+
+### Figures and Tables
+- [Figure 1]
+    - **C:** I found the green triangles unnecessary, if not confusing. Simply having no arrows should do, as in the remaining figures, to denote periods of isolation. **S:** In panel (d), please add $\tau_S$ and $\tau_T$ to the figure. **C/S:** In panel (e), it was not clear what exactly is meant by "$\tau_R \searrow$". In the caption, please describe the configuration at which the estimate of $\phi$ under the SC, IM, and IIM models show a kink.
+    - Caption, l.2–3: **C/S:** I disagree with the definition of the IIM model as an IM model with a ghost species. The latter may be one instance of an IIM model, but certainly does not provide a canonical definition of the IIM model. I suggest to rephrase this sentence.
+    - Caption, l.3–4: **R:** The definition of the SC model is not unambiguous. This partially has to do with the somewhat unfortunate dual meaning assigned to $\tau_T$ as both a time at which gene flow starts (IM and IIM model) and stops (SC model). Here, $\tau_T$ has not even been defined before, and a definition of the SC model in terms of $\tau_T$ cannot be sufficient given the current set of parameters. Please rectify this.
+    - Caption, l.5–8: **S:** As stated in previous comments, I advise against assigning specific values to parameters here, because doing so blurs the distinction between the description of the generic models and the specification of model instances chosen by the others in the simulations. I suggest to not provide specific values in this caption at all, but do so only in the Materials and Methods, and then to refer to the values specified there in the captions of figures that show results that hold under specific parameter values, if necessary.
+- [Figure 2]
+    - Caption, l.1: **R:** Please remove the tag "(2s-IM:MLE)" from the final version.
+- [Figure 3]
+    - Caption, l.1–2: **R:** Please clarify why all three models (IM, IIM, SC) are stated here, but the figure apparently shows results only for the IM and IIM models. The corresponding text in the Results text confusingly also explains results related to the SCM, even though no results are shown for the SCM in Figure 3. Please adjust Figure 3 and/or the references to Figure 3 as well as to supplementary figures, where appropriate.
+    - Caption, l.4: **S:** As suggested above, please remove the statement of specific parameter values from the caption of Figure 1, and, here, refer to the Materials and Methods section instead of Figure 1.
+    - Caption, l.7–8: **C/R:** The notation used to state that estimates of the $\tau$ and the $\theta$ parameters were multiplied by $10^3$ is prone to being misread and mistyped down the road ($\tau$s could be misread as $\tau_S$). At least I stumbled over the notation. I thus suggest to improve the clarity.
+- [Figure 4]
+    - Caption, l.8: **C:** The sentence "The key is in the simulation-analysis format" seemed too compact and thus unclear to me. Suggestion: "Labels of scenarios state the model under which data were simulated before the hyphen, and the model under which the data were analysed after the hyphen, e.g. ..."
+    - Caption, l.9: **C/R:** As in Figure 3, please make the sentence that states which parameters were scaled more clear (the notation is confusing and could mislead to an understanding that only the parameters related to population $S$ were scaled).
+- [Figure 6]
+    - Caption, l.4: **S:** "An MSci model used..." --> "The MSci model used..."
+- [Figure 7]
+    - Caption, l.2: **Q:** This is a detail, but should species labels "$XUV$" and "$TB$" not read "$U$" and "B", respectively? I may not have fully grasped which notational convention the authors implemented.
+    - Caption, l.3: **Q:** Is there a word missing between "This" and "is" in "This is assumed to simulate..."?
