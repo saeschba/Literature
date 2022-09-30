@@ -2,3 +2,4 @@ responses-to-reviews-subm-01.pdf filter=lfs diff=lfs merge=lfs -text
 decision-letter-subm-01.pdf filter=lfs diff=lfs merge=lfs -text
 qZzE0I-MBE-22-0354.R1_Proof_hi.pdf filter=lfs diff=lfs merge=lfs -text
 mbe-22-0354-r1.pdf filter=lfs diff=lfs merge=lfs -text
+qZzE0I-MBE-22-0354.R1_Proof_hi-annot.pdf.pdf filter=lfs diff=lfs merge=lfs -text
