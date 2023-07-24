@@ -1,0 +1,12 @@
+# Confidential comments to the editor
+
+Dear Tal,
+
+In addition to my comments to the authors, let me express two additional concerns.
+
+My first concern refers to minor comment 2 by reviewer 2 (re. line 55, page 3, left column in the original main text). Reviewer 2 suggested that the authors state explicitly that "t_aa, t_ab and t_bb correspond to a sample of 2". I support this suggestion. The authors refused to implement this suggestion, apparently because the authors misunderstood reviewer 2's suggestion as implying that their approach (BPP) cannot handle samples of size larger than 2 from each population. It is true that BPP and the theory outlined by the authors deals with samples of size two and more. However, I think reviewer 2 wanted the authors to point out that $t_{aa}$, $t_{ab}$, and $t_{bb}$ are *pairwise* coalescence times, i.e. the time it takes *two* lineages to coalesce, irrespective (and, in fact, independently) of whether these two lineages are part of a sample of 2 or more. It does not cost the authors and the paper anything to follow the suggestion of reviewer 2.
+
+Another concern relates to minor comment 10 by reviewer 2 (re. lines 50–55, page 13, left column in the original main text). Reviewer 2 asked about the effect of the priors, especially of choosing prior means close to the true parameter value. The authors evaded this concern by arguing that they used diffused priors with wide variance and that therefore the prior means should have little impact on the posterior parameter estimates. I only partially buy this argument. It may be true that the posterior estimates of the parameters are largely driven by the data irrespective of the prior mean. However, the authors also perform Bayesian model selection. In this case, the use of diffuse priors can lead to a curse of dimensions, so that a more complex model, even if true, may receive (too) little support. The Bayes factors in favour (or against) the more complex model may therefore strongly depend on the prior choice. I know that a sensitivity analysis of the prior choice would require a lot of additional computational work and I am hesitant to request such an analysis. However, I would have hoped that the authors discussed their prior choice as a potential limitation in their Discussion.
+
+Kind regards,
+Simon

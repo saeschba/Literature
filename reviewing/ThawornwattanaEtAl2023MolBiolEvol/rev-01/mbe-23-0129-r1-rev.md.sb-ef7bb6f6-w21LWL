@@ -1,20 +1,25 @@
-# Review of Manuscript MBE-23-0129.R1 by Thawornwattana *et al.* "Inferring the direction of introgression using genomic sequence data"
-
-Author: Simon Aeschbacher
-Date: 24 July 2023
-
-
+---
+title: Review of Manuscript MBE-23-0129.R1 by Thawornwattana *et al.* "Inferring the direction of introgression using genomic sequence data"
+author: Simon Aeschbacher
+date: 21 May 2023
+geometry: "left=3cm,right=3cm,top=2.5cm,bottom=2.5cm"
+output: pdf_document
+linestretch: 1.15
+---
 
 ## Summary
 Thawornwattana and coauthors have revised their manuscript on inferring the direction of pulse-introgression between two populations according to the comments of three reviewers. I have read the revised manuscript and the point-by-point answers by the authors to the reviewers' comments. 
 
 The authors have dealt with most of my comments to a satisfactory extent. However, I still think that the Discussion needs substantial editorial revision to improve the reading flow, accommodate the majority of the MBE readers, and include explicit a mentioning of limitations and assumptions of the approach. I still disagree with the author's use of nomenclature and abbreviations for some models, and I noticed a few comments that the authors did not seem to have addressed as requested. For a detailed list of my comments, see below ("Re. authors' response to major concerns") and ("Re. authors' response to minor comments").
 
-As part of their revisions (major change iii according to the authors's response), and as far as I can judge in response to main comment 3) by reviewer 2, the authors have now introduced a major subsection "Unidentifiability of introgression models" right at the beginning of the Discussion. I found this decision unfortunate for two reasons. First, this new subsection is far too long and too technical. The reviewers and the editor seemed to agree on a strong need to make this already technical manuscript understandable to a majority of the MBE readers. Instead, the authors now dive into classifying different types of incompatibilities and devote far too much attention to a topic that is subordinate to the main story.
-
-Second, I was surprised that the authors placed this subsection at the beginning of the Discussion, where it is guaranteed to deter many MBE readers and thus prevent them from reaching the concise summary and an interpretation of the main results that one would typically expect at the beginning of an Discussion. In short, I strongly request i) a reduction to a minimally complex discussion of the problem of non-identifiability, and ii) that this part be moved away from the beginning of the Discussion to a place after the summary of the main theoretical results, but still before the discussion of the *Heliconius* results.
+As part of their revisions (major change iii according to the authors's response), and as far as I can judge in response to main comment 3) by reviewer 2, the authors have now introduced a major subsection "Unidentifiability of introgression models" right at the beginning of the Discussion. I found this decision unfortunate for two reasons. First, this new subsection is far too long and too technical. The reviewers and the editor seemed to agree on a strong need to make this already technical manuscript understandable to a majority of the MBE readers. Instead, the authors now dive into classifying different types of incompatibilities and devote far too much attention to a topic that is subordinate to the main story. Second, I was surprised that the authors placed this subsection at the beginning of the Discussion, where it is guaranteed to deter many MBE readers and thus prevent them from reaching the concise summary and an interpretation of the main results that one would typically expect at the beginning of an Discussion. In short, I strongly request i) a reduction to a minimally complex discussion of the problem of non-identifiability, and ii) that this part be moved away from the beginning of the Discussion to a place after the summary of the main theoretical results, but still before the discussion of the *Heliconius* results.
 
 Finally, I spotted a few more minor issues, which I list at the very end of my review.
+
+Outline:
+- [x] Dealt with most of my major comments to a satisfactory extent and addressed my minor comments. However, in a few cases, I disagree with the authors' reaction, and I list these instances below. List only those points to which I have something additional to say.
+- [x] As part of their revisions (major change iii), and as far as I can judge in response to main comment 3) by reviewer 2, the authors have now introduced a major subsection "Unidentifiability of introgression models" right at the beginning of the Discussion. --> Argue against this subsection as is and request reduction to a minimally complicated discussion of the non-identifiabilities encountered (too technical, against the common concern of all reviewers that the manuscript might be too and technical for MBE); move the subsection away from the start of the Discussion.
+- [ ] Spotted some more minor issues that I am listing at the very bottom.
 
 ## Re. authors' response to major concerns
 
@@ -89,21 +94,19 @@ In the following, I refer to page and line numbers in the revised manuscript (th
 - [1119–1121] **C:** The statement "Most introgressed alleles are 1120 expected to be purged in the recipient species because of incompatibilities with the host genomic background." seems to unilateral to me. We simply do not yet know – and there is ample disagreement about – the extent to which genetic incompatibilities between genes and genes, or between genes and the genetic background are responsible for variation in effective migration rate along the genome. An alternative explanation is that immigrating alleles are locally maladapted to the recipient species' environment. I thus suggest that the authors rephrase their sentence to a more balanced statement.
 - [l.1177-1186] **C/R** I disagree that the (parameter) estimates are in general consistent among chromosomes and between coding and noncoding data. There seems to be strong differences between chromosomes and between coding and noncoding data. I also do not see how these differences would be explained by the fact that some individuals were from inbred lines. This fact may explain differences among individuals or populations, as it is a genome-wide effect on average. However, variation in estimates *along* the genome require alternative explanations, including variation in recombination rate and/or the strength of different types of selection. As mentioned above, I miss these biological mechanisms as potential explanations for the within-genome variation in parameter estimates that the authors found.
 - [l.1196] **R:** Replace "... comparison had the ..." by "... comparison have the ...".
-- [l.1200] **R:** Replace "excludes ..." by "exclude ..." (CIs seems to be plural).
-- [l.1203] **S:** Replace "test" by "tests".
-- [l.1205–1280] **S:** To address my request above that the Discussion be restructured, I suggest that this subsection ("Inferring the direction of gene flow using genomic data") be the first one after a short introductory paragraph to the Discussion that reminds the reader of the purpose of the study and re-states the main results.
-- [l.1220–1221] ***S:** Insert "our" before "Bayesian test of gene flow ...".
-- [l.1238ff] **C:** In my view, here is where the authors could start with a small part on the issue of identifiability, the relation of their work to the literature, and the limitations of their approach.
-- [l.1277] **S:** Replace "... offer ample chances ..." by "... thus there is ample room ...".
-- [l.1317] **R:** Replace "consists" by "consisted".
-- [l.1368] **R:** Replace "are" by "were".
-- [l.1426] **R:** Replace "... the Z chromosome 21 for which ..." by "... the Z chromosome (chromosome 21), for which ...".
-- [.1450] **R:** Replace "... is used to ..." by "... was used to ...".
-- [l.1452–l.1454] **C:** This sentence is not yet complete. Suggestion: "We used the Bayes factor $B_{10} = \frac{M_1}{M_0}$, where ...".
+- TODO(Simon): Continue with l.1200.
 
-### Figures
-- Figure 5, first line of caption: **R:** Replace "simulatie" by "simulate".
 
-### Tables
-- Table 1, row (e), column 3 (Notes): **C/S:** The clause "... but there is no such deficit or in the true model I or in the data." is unclear. Perhaps replace by "... but there is no such deficit, nor in the true model I nor in the data."?
-- Table 1, footnote: Insert "the" after "the behavior of". Insert "the" before "analysis of sequence data".
+    
+## Confidential comments to the editor
+
+Dear Tal,
+
+In addition to my comments to the authors, let me express two additional concerns.
+
+My first concern refers to minor comment 2 by reviewer 2 (re. line 55, page 3, left column in the original main text). Reviewer 2 suggested that the authors state explicitly that "t_aa, t_ab and t_bb correspond to a sample of 2". I support this suggestion. The authors refused to implement this suggestion, apparently because the authors misunderstood reviewer 2's suggestion as implying that their approach (BPP) cannot handle samples of size larger than 2 from each population. It is true that BPP and the theory outlined by the authors deals with samples of size two and more. However, I think reviewer 2 wanted the authors to point out that $t_{aa}$, $t_{ab}$, and $t_{bb}$ are *pairwise* coalescence times, i.e. the time it takes *two* lineages to coalesce, irrespective (and, in fact, independently) of whether these two lineages are part of a sample of 2 or more. It does not cost the authors and the paper anything to follow the suggestion of reviewer 2.
+
+Another concern relates to minor comment 10 by reviewer 2 (re. lines 50–55, page 13, left column in the original main text). Reviewer 2 asked about the effect of the priors, especially of choosing prior means close to the true parameter value. The authors evaded this concern by arguing that they used diffused priors with wide variance and that therefore the prior means should have little impact on the posterior parameter estimates. I only partially buy this argument. It may be true that the posterior estimates of the parameters are largely driven by the data irrespective of the prior mean. However, the authors also perform Bayesian model selection. In this case, the use of diffuse priors can lead to a curse of dimensions, so that a more complex model, even if true, may receive (too) little support. The Bayes factors in favour (or against) the more complex model may therefore strongly depend on the prior choice. I know that a sensitivity analysis of the prior choice would require a lot of additional computational work and I am hesitant to request such an analysis. However, I would have hoped that the authors discussed their prior choice as a potential limitation in their Discussion.
+
+Kind regards,
+Simon
